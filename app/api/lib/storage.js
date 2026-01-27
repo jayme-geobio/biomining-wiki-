@@ -1,26 +1,40 @@
-import { Redis } from '@upstash/redis';
+// In-memory storage - works immediately without any configuration
+// Comments will persist until server restarts
+// For permanent storage, configure Upstash Redis (see .env.local.example)
 
-// Initialize Redis client - falls back to in-memory for local development
+let memoryStorage = {};
 let redis = null;
-let memoryFallback = {};
-
-try {
-  if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
-    redis = new Redis({
-      url: process.env.UPSTASH_REDIS_REST_URL,
-      token: process.env.UPSTASH_REDIS_REST_TOKEN,
-    });
-  }
-} catch (error) {
-  console.warn('Redis initialization failed, using in-memory fallback:', error.message);
-}
+let redisInitialized = false;
 
 const COMMENTS_KEY = 'biomining_comments';
+
+// Lazy initialize Redis only when env vars are present
+async function getRedis() {
+  if (redisInitialized) return redis;
+  redisInitialized = true;
+
+  if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+    try {
+      const { Redis } = await import('@upstash/redis');
+      redis = new Redis({
+        url: process.env.UPSTASH_REDIS_REST_URL,
+        token: process.env.UPSTASH_REDIS_REST_TOKEN,
+      });
+      console.log('Upstash Redis connected');
+    } catch (error) {
+      console.warn('Redis initialization failed, using in-memory storage:', error.message);
+      redis = null;
+    }
+  } else {
+    console.log('No Redis config found, using in-memory storage');
+  }
+
+  return redis;
+}
 
 // Hash IP address for privacy
 function hashIP(ip) {
   if (!ip || ip === 'unknown') return 'unknown';
-  // Simple hash - in production, use crypto.createHash('sha256')
   let hash = 0;
   for (let i = 0; i < ip.length; i++) {
     const char = ip.charCodeAt(i);
@@ -32,51 +46,53 @@ function hashIP(ip) {
 
 export async function getComments(page) {
   try {
-    if (redis) {
-      const data = await redis.get(COMMENTS_KEY);
+    const client = await getRedis();
+    if (client) {
+      const data = await client.get(COMMENTS_KEY);
       const comments = data || {};
       return comments[page] || [];
     }
-    return memoryFallback[page] || [];
+    return memoryStorage[page] || [];
   } catch (error) {
     console.error('Error getting comments:', error);
-    return memoryFallback[page] || [];
+    return memoryStorage[page] || [];
   }
 }
 
 export async function getAllComments() {
   try {
-    if (redis) {
-      const data = await redis.get(COMMENTS_KEY);
+    const client = await getRedis();
+    if (client) {
+      const data = await client.get(COMMENTS_KEY);
       return data || {};
     }
-    return memoryFallback;
+    return memoryStorage;
   } catch (error) {
     console.error('Error getting all comments:', error);
-    return memoryFallback;
+    return memoryStorage;
   }
 }
 
 export async function addComment(page, comment) {
   try {
-    // Hash the IP before storing
     const commentWithHashedIP = {
       ...comment,
       ip: hashIP(comment.ip)
     };
 
-    if (redis) {
-      const data = await redis.get(COMMENTS_KEY) || {};
+    const client = await getRedis();
+    if (client) {
+      const data = await client.get(COMMENTS_KEY) || {};
       if (!data[page]) {
         data[page] = [];
       }
       data[page].push(commentWithHashedIP);
-      await redis.set(COMMENTS_KEY, data);
+      await client.set(COMMENTS_KEY, data);
     } else {
-      if (!memoryFallback[page]) {
-        memoryFallback[page] = [];
+      if (!memoryStorage[page]) {
+        memoryStorage[page] = [];
       }
-      memoryFallback[page].push(commentWithHashedIP);
+      memoryStorage[page].push(commentWithHashedIP);
     }
     return true;
   } catch (error) {
@@ -87,23 +103,24 @@ export async function addComment(page, comment) {
 
 export async function updateComment(page, commentId, updates) {
   try {
-    if (redis) {
-      const data = await redis.get(COMMENTS_KEY) || {};
+    const client = await getRedis();
+    if (client) {
+      const data = await client.get(COMMENTS_KEY) || {};
       if (!data[page]) return false;
 
       const commentIndex = data[page].findIndex(c => c.id === commentId);
       if (commentIndex === -1) return false;
 
       data[page][commentIndex] = { ...data[page][commentIndex], ...updates };
-      await redis.set(COMMENTS_KEY, data);
+      await client.set(COMMENTS_KEY, data);
       return true;
     } else {
-      if (!memoryFallback[page]) return false;
+      if (!memoryStorage[page]) return false;
 
-      const commentIndex = memoryFallback[page].findIndex(c => c.id === commentId);
+      const commentIndex = memoryStorage[page].findIndex(c => c.id === commentId);
       if (commentIndex === -1) return false;
 
-      memoryFallback[page][commentIndex] = { ...memoryFallback[page][commentIndex], ...updates };
+      memoryStorage[page][commentIndex] = { ...memoryStorage[page][commentIndex], ...updates };
       return true;
     }
   } catch (error) {
@@ -114,23 +131,24 @@ export async function updateComment(page, commentId, updates) {
 
 export async function deleteComment(page, commentId) {
   try {
-    if (redis) {
-      const data = await redis.get(COMMENTS_KEY) || {};
+    const client = await getRedis();
+    if (client) {
+      const data = await client.get(COMMENTS_KEY) || {};
       if (!data[page]) return false;
 
       const commentIndex = data[page].findIndex(c => c.id === commentId);
       if (commentIndex === -1) return false;
 
       data[page].splice(commentIndex, 1);
-      await redis.set(COMMENTS_KEY, data);
+      await client.set(COMMENTS_KEY, data);
       return true;
     } else {
-      if (!memoryFallback[page]) return false;
+      if (!memoryStorage[page]) return false;
 
-      const commentIndex = memoryFallback[page].findIndex(c => c.id === commentId);
+      const commentIndex = memoryStorage[page].findIndex(c => c.id === commentId);
       if (commentIndex === -1) return false;
 
-      memoryFallback[page].splice(commentIndex, 1);
+      memoryStorage[page].splice(commentIndex, 1);
       return true;
     }
   } catch (error) {
