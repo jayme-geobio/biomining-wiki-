@@ -187,7 +187,8 @@ export default function CommentSystem({ pageName, contentRef }) {
         setSubmitMessage({ type: 'error', text: data.error || 'Failed to submit comment.' });
       }
     } catch (error) {
-      setSubmitMessage({ type: 'error', text: 'Network error. Please try again.' });
+      console.error('Comment submission error:', error);
+      setSubmitMessage({ type: 'error', text: `Error: ${error.message}` });
     } finally {
       setIsSubmitting(false);
     }
