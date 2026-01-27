@@ -172,10 +172,18 @@ export default function CommentSystem({ pageName, contentRef }) {
         })
       });
 
-      const data = await response.json();
+      // Check if response has content
+      const text = await response.text();
+      let data;
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch (e) {
+        console.error('Failed to parse response:', text);
+        throw new Error(`Server returned invalid response: ${text.slice(0, 100)}`);
+      }
 
       if (response.ok) {
-        setSubmitMessage({ type: 'success', text: data.message });
+        setSubmitMessage({ type: 'success', text: data.message || 'Comment submitted!' });
         setCommentText('');
         setShowCommentForm(false);
         setSelectedText('');
