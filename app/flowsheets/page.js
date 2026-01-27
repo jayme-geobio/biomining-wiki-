@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
 import { ChevronDown, ChevronRight, Zap, Target, AlertCircle } from 'lucide-react';
 
 const flowsheetData = [

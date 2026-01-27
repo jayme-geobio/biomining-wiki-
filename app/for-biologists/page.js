@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
 import { ChevronDown, ChevronRight, Mountain, Factory, Beaker, AlertCircle, TrendingUp, Clock, Droplets, FileCheck } from 'lucide-react';
 
 export default function ForBiologists() {

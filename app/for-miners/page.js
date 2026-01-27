@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
 import { ChevronDown, ChevronRight, Microscope, Zap, Beaker, Factory, FlaskConical, FileCheck } from 'lucide-react';
 
 export default function ForMiners() {

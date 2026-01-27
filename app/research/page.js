@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
 import { ChevronDown, ChevronRight, Lightbulb, FlaskConical, Database, TrendingUp, Users, Microscope, Target } from 'lucide-react';
 
 const researchData = {
