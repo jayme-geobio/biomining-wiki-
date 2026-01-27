@@ -58,8 +58,12 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo/Title */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <Microscope className="w-8 h-8 text-emerald-400" />
+            <Link href="/" className="flex items-center space-x-3">
+              <img
+                src="/images/homeworld-icon.png"
+                alt="Homeworld"
+                className="w-8 h-8"
+              />
               <span className="text-xl font-bold text-white hidden sm:block">Biomining Wiki</span>
               <span className="text-xl font-bold text-white sm:hidden">Bio Wiki</span>
             </Link>

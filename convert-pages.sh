@@ -9,6 +9,13 @@ sed -n '1p' Navigation.jsx >> app/Navigation.js
 echo "import Link from 'next/link';" >> app/Navigation.js
 sed '1d' Navigation.jsx | sed "s/<a/<Link/g; s/<\/a>/<\/Link>/g" >> app/Navigation.js
 
+# Footer component
+echo "'use client';" > app/Footer.js
+echo "" >> app/Footer.js
+sed -n '1p' Footer.jsx >> app/Footer.js
+echo "import Link from 'next/link';" >> app/Footer.js
+sed '1d' Footer.jsx | sed "s/<a/<Link/g; s/<\/a>/<\/Link>/g" >> app/Footer.js
+
 # index (home page)
 echo "'use client';" > app/page.js
 echo "" >> app/page.js
