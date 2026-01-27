@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronRight, Zap, Beaker, Droplets, Microscope, Target, Cpu } from 'lucide-react';
+import CommentableContent from '../components/CommentableContent';
 
 export default function WhatIsBiomining() {
   const [expandedSection, setExpandedSection] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 p-6">
-      <div className="max-w-5xl mx-auto">
+    <CommentableContent pageName="what-is-biomining">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 p-6">
+        <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">What Is "Biomining"?</h1>
@@ -196,8 +198,9 @@ export default function WhatIsBiomining() {
             Biomining Fit Test →
           </a>
         </div>
+        </div>
       </div>
-    </div>
+    </CommentableContent>
   );
 }
 

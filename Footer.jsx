@@ -1,5 +1,4 @@
 import React from 'react';
-import { Linkedin, Twitter } from 'lucide-react';
 
 export default function Footer() {
   const navigation = {
@@ -33,7 +32,7 @@ export default function Footer() {
             <img
               src="/images/homeworld-logo-full.png"
               alt="Homeworld Logo"
-              className="h-12 mb-4"
+              className="h-20 mb-4"
             />
             <p className="text-sm text-emerald-200">
               Bridging biology and mining for sustainable critical mineral recovery
@@ -116,37 +115,9 @@ export default function Footer() {
         <div className="border-t border-emerald-700/30 my-8"></div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-4 text-sm text-emerald-200">
-            <span>© Homeworld Collective Inc {new Date().getFullYear()}</span>
-            <span className="hidden md:inline">|</span>
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <span className="text-sm text-emerald-200">Follow us on</span>
-            <a
-              href="https://www.linkedin.com/company/homeworld-collective/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-emerald-200 hover:text-white transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="https://twitter.com/homeworldcoll"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-emerald-200 hover:text-white transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-5 h-5" />
-            </a>
-          </div>
-
+        <div className="flex justify-center items-center">
           <div className="text-sm text-emerald-200">
-            Somerville, MA | San Francisco, CA
+            <span>© Homeworld Collective Inc {new Date().getFullYear()}</span>
           </div>
         </div>
       </div>

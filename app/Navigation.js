@@ -62,7 +62,7 @@ export default function Navigation() {
               <img
                 src="/images/homeworld-icon.png"
                 alt="Homeworld"
-                className="w-8 h-8"
+                className="w-10 h-10"
               />
               <span className="text-xl font-bold text-white hidden sm:block">Biomining Wiki</span>
               <span className="text-xl font-bold text-white sm:hidden">Bio Wiki</span>
