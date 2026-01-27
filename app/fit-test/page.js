@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, CheckCircle2, XCircle, AlertTriangle, Target, TrendingUp } from 'lucide-react';
 

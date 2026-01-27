@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, Users, Lightbulb, GraduationCap, Factory, AlertTriangle, Target, TrendingUp, Layers } from 'lucide-react';
 

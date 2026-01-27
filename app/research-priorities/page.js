@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Lightbulb, Target, TrendingUp, Database, Microscope, Zap } from 'lucide-react';
 
