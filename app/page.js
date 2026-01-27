@@ -245,7 +245,7 @@ function PathCard({ title, subtitle, icon: Icon, color, sections, link }) {
         })}
       </div>
 
-      <a
+      <Link
         href={link}
         className={`mt-6 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-colors`}
       >
@@ -258,7 +258,7 @@ function PathCard({ title, subtitle, icon: Icon, color, sections, link }) {
 
 function ResourceCard({ title, description, icon: Icon, link, small = false }) {
   return (
-    <a
+    <Link
       href={link}
       className="bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/30 transition-all block"
     >
