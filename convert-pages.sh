@@ -2,6 +2,13 @@
 
 # Add 'use client' directive and convert links for each page
 
+# Navigation component
+echo "'use client';" > app/Navigation.js
+echo "" >> app/Navigation.js
+sed -n '1p' Navigation.jsx >> app/Navigation.js
+echo "import Link from 'next/link';" >> app/Navigation.js
+sed '1d' Navigation.jsx | sed "s/<a/<Link/g; s/<\/a>/<\/Link>/g" >> app/Navigation.js
+
 # index (home page)
 echo "'use client';" > app/page.js
 echo "" >> app/page.js
