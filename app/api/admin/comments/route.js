@@ -26,7 +26,6 @@ export async function GET(request) {
 
     return NextResponse.json(allComments);
   } catch (error) {
-    console.error('Error fetching admin comments:', error);
     return NextResponse.json(
       { error: 'Failed to fetch comments' },
       { status: 500 }
@@ -81,7 +80,6 @@ export async function PATCH(request) {
     });
 
   } catch (error) {
-    console.error('Error updating comment:', error);
     return NextResponse.json(
       { error: 'Failed to update comment' },
       { status: 500 }

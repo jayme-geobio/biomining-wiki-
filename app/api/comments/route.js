@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getComments, addComment } from '../lib/storage';
+import { getComments, addComment, hashIP } from '../lib/storage';
 
 // Configuration
 const MAX_COMMENTS_PER_HOUR = parseInt(process.env.MAX_COMMENTS_PER_HOUR || '3');
@@ -26,7 +26,6 @@ export async function GET(request) {
 
     return NextResponse.json(pageComments);
   } catch (error) {
-    console.error('Error fetching comments:', error);
     return NextResponse.json(
       { error: 'Failed to fetch comments' },
       { status: 500 }
@@ -75,7 +74,6 @@ export async function POST(request) {
     }, { status: 201 });
 
   } catch (error) {
-    console.error('Error submitting comment:', error);
     return NextResponse.json(
       { error: 'Failed to submit comment' },
       { status: 500 }
@@ -111,9 +109,11 @@ function checkRateLimit(pageComments, clientIp) {
     return false;
   }
 
+  // Hash the IP to match stored format
+  const hashedIp = hashIP(clientIp);
   const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
   const recentComments = pageComments.filter(
-    c => c.ip === clientIp && new Date(c.timestamp) > oneHourAgo
+    c => c.ip === hashedIp && new Date(c.timestamp) > oneHourAgo
   );
 
   return recentComments.length >= MAX_COMMENTS_PER_HOUR;

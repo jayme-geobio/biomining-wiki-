@@ -1,13 +1,12 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MessageSquare, X, Send, AlertCircle } from 'lucide-react';
 
 export default function CommentSystem({ pageName, contentRef }) {
   const [comments, setComments] = useState([]);
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [selectedText, setSelectedText] = useState('');
-  const [selectedRange, setSelectedRange] = useState(null);
   const [commentPosition, setCommentPosition] = useState({ x: 0, y: 0 });
   const [commentText, setCommentText] = useState('');
   const [sectionTitle, setSectionTitle] = useState('');
@@ -33,7 +32,6 @@ export default function CommentSystem({ pageName, contentRef }) {
         const rect = range.getBoundingClientRect();
 
         setSelectedText(text);
-        setSelectedRange(range);
         setCommentPosition({
           x: rect.right + window.scrollX + 10,
           y: rect.top + window.scrollY
@@ -50,14 +48,12 @@ export default function CommentSystem({ pageName, contentRef }) {
         }
       } else {
         setSelectedText('');
-        setSelectedRange(null);
       }
     };
 
     const handleClickOutside = (e) => {
       if (!e.target.closest('.comment-icon-btn') && !e.target.closest('.comment-form')) {
         setSelectedText('');
-        setSelectedRange(null);
         setShowCommentForm(false);
       }
     };
@@ -81,7 +77,7 @@ export default function CommentSystem({ pageName, contentRef }) {
         highlightComments(data);
       }
     } catch (error) {
-      console.error('Error loading comments:', error);
+      // Error loading comments silently handled
     }
   };
 
@@ -178,7 +174,6 @@ export default function CommentSystem({ pageName, contentRef }) {
       try {
         data = text ? JSON.parse(text) : {};
       } catch (e) {
-        console.error('Failed to parse response:', text);
         throw new Error(`Server returned invalid response: ${text.slice(0, 100)}`);
       }
 
@@ -187,7 +182,6 @@ export default function CommentSystem({ pageName, contentRef }) {
         setCommentText('');
         setShowCommentForm(false);
         setSelectedText('');
-        setSelectedRange(null);
 
         // Clear message after 5 seconds
         setTimeout(() => setSubmitMessage(null), 5000);
@@ -195,7 +189,6 @@ export default function CommentSystem({ pageName, contentRef }) {
         setSubmitMessage({ type: 'error', text: data.error || 'Failed to submit comment.' });
       }
     } catch (error) {
-      console.error('Comment submission error:', error);
       setSubmitMessage({ type: 'error', text: `Error: ${error.message}` });
     } finally {
       setIsSubmitting(false);

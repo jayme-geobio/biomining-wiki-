@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Home, Microscope, Mountain, BookOpen, Target } from 'lucide-react';
+import { Menu, X, ChevronDown, Home, Microscope, Mountain, BookOpen } from 'lucide-react';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,15 +35,6 @@ export default function Navigation() {
         { name: 'Complex Materials', href: '/complex-materials' },
         { name: 'Flowsheets', href: '/flowsheets' },
         { name: 'Research', href: '/research' }
-      ]
-    },
-    strategic: {
-      name: 'Strategic Topics',
-      icon: Target,
-      items: [
-        { name: 'Fit Test', href: '/fit-test' },
-        { name: 'Mining–Academia', href: '/mining-academia' },
-        { name: 'Research Priorities', href: '/research-priorities' }
       ]
     }
   };

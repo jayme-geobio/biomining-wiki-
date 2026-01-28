@@ -17,11 +17,6 @@ export default function Footer() {
       { name: 'Complex Materials', href: '/complex-materials' },
       { name: 'Flowsheets', href: '/flowsheets' },
       { name: 'Research', href: '/research' }
-    ],
-    strategic: [
-      { name: 'Fit Test', href: '/fit-test' },
-      { name: 'Mining–Academia', href: '/mining-academia' },
-      { name: 'Research Priorities', href: '/research-priorities' }
     ]
   };
 
@@ -43,7 +38,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation Columns */}
-          <div className="md:col-span-9 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="md:col-span-9 grid grid-cols-2 md:grid-cols-3 gap-6">
             {/* Learn */}
             <div>
               <h3 className="font-semibold text-emerald-300 mb-3">Learn</h3>
@@ -83,23 +78,6 @@ export default function Footer() {
               <h3 className="font-semibold text-emerald-300 mb-3">Resources</h3>
               <ul className="space-y-2">
                 {navigation.resources.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="text-sm text-emerald-100 hover:text-white transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Strategic Topics */}
-            <div>
-              <h3 className="font-semibold text-emerald-300 mb-3">Strategic Topics</h3>
-              <ul className="space-y-2">
-                {navigation.strategic.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}

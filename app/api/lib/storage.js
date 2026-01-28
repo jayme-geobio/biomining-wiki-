@@ -3,8 +3,8 @@
 
 const memoryStorage = {};
 
-// Hash IP address for privacy
-function hashIP(ip) {
+// Hash IP address for privacy (exported for rate limiting)
+export function hashIP(ip) {
   if (!ip || ip === 'unknown') return 'unknown';
   let hash = 0;
   for (let i = 0; i < ip.length; i++) {

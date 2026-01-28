@@ -197,8 +197,8 @@ export default function WhatIsBiomining() {
           <Link href="/" className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
             ← Back to Home
           </Link>
-          <Link href="/fit-test" className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
-            Biomining Fit Test →
+          <Link href="/glossary" className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
+            Glossary →
           </Link>
         </div>
         </div>

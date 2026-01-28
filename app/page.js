@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, Users, Lightbulb, GraduationCap, Factory, AlertTriangle, Target, TrendingUp, Layers } from 'lucide-react';
+import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, GraduationCap, Factory, AlertTriangle, Target, TrendingUp } from 'lucide-react';
 
 export default function BiominingHome() {
   return (
@@ -40,30 +40,6 @@ export default function BiominingHome() {
               <p className="text-blue-200 font-semibold">
                 Biomining's niche is precisely where this complexity makes conventional chemistry expensive, blunt, or risky—and
                 where biology's ability to couple redox, binding, and adaptation can unlock value.
-              </p>
-            </div>
-          </div>
-
-          {/* Thesis Section */}
-          <div className="max-w-4xl mx-auto mb-16 bg-purple-950/50 rounded-xl p-8 border border-purple-700/50">
-            <h2 className="text-2xl font-bold text-purple-300 mb-4 flex items-center gap-2">
-              <Layers className="w-7 h-7" />
-              Our Thesis: Biology as Modules, Not Mine Replacements
-            </h2>
-            <div className="text-purple-100 space-y-3">
-              <p>
-                Biology cannot replace a mine. It can, however, become a <strong>new class of modules</strong> inside
-                mining and mineral processing flowsheets.
-              </p>
-              <div className="bg-purple-900/30 rounded-lg p-4 border-l-4 border-purple-400 mt-4">
-                <p className="text-purple-200">
-                  <strong>These modules look like:</strong> Reagent + separation + control, not just "bugs in a heap."
-                  Bioprocesses that slot into existing flowsheets. Units judged on $/tonne, % recovery, risk, and closure outcomes.
-                </p>
-              </div>
-              <p className="mt-4">
-                By changing the <strong>cost and risk curve</strong>, today's "waste" becomes tomorrow's "ore."
-                This wiki shows where, why, and how.
               </p>
             </div>
           </div>
@@ -130,36 +106,6 @@ export default function BiominingHome() {
                 description="Real-world integration examples and bio-modules"
                 icon={Target}
                 link="/flowsheets"
-              />
-            </div>
-          </div>
-
-          {/* Advanced Topics */}
-          <div className="mt-12 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-            <h2 className="text-2xl font-bold text-white mb-6 text-center">
-              Strategic Topics
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <ResourceCard
-                title="Fit Test"
-                description="Is biomining a good fit for your project?"
-                icon={Target}
-                link="/fit-test"
-                small={true}
-              />
-              <ResourceCard
-                title="Mining–Academia"
-                description="Shifting collaboration models for faster learning"
-                icon={Users}
-                link="/mining-academia"
-                small={true}
-              />
-              <ResourceCard
-                title="Research Priorities"
-                description="Fundamental directions to unlock real scale"
-                icon={Lightbulb}
-                link="/research-priorities"
-                small={true}
               />
             </div>
           </div>

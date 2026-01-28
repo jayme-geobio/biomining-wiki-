@@ -41,7 +41,6 @@ export default function AdminCommentsPage() {
         alert('Authentication failed');
       }
     } catch (error) {
-      console.error('Error loading comments:', error);
       alert('Failed to load comments');
     } finally {
       setLoading(false);
@@ -72,7 +71,6 @@ export default function AdminCommentsPage() {
         alert(data.error || 'Failed to moderate comment');
       }
     } catch (error) {
-      console.error('Error moderating comment:', error);
       alert('Failed to moderate comment');
     }
   };
