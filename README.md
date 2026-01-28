@@ -2,7 +2,7 @@
 
 A comprehensive educational website about biomining - the use of biological mechanisms to aid metal recovery, mineral processing, and management of mining-related wastes. This site bridges the knowledge gap between biologists and mining professionals working on critical mineral recovery.
 
-**Built by [Homeworld Collective](https://homeworldcollective.com)**
+**Built by [Ariana Caiati for Homeworld Collective](https://homeworldcollective.com)**
 
 ## Technology Stack
 
