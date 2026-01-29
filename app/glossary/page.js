@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Search, Mountain, Microscope, BookOpen } from 'lucide-react';
+import CommentableContent from '../components/CommentableContent';
 
 const glossaryData = {
   mining: [
@@ -162,8 +163,9 @@ export default function Glossary() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
-      <div className="max-w-5xl mx-auto">
+    <CommentableContent pageName="glossary">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
+        <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <BookOpen className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
@@ -248,14 +250,15 @@ export default function Glossary() {
           </div>
         )}
 
-        {/* Navigation */}
-        <div className="mt-12 text-center">
-          <Link href="/" className="text-emerald-400 hover:text-emerald-300 flex items-center justify-center gap-2">
-            ← Back to Home
-          </Link>
+          {/* Navigation */}
+          <div className="mt-12 text-center">
+            <Link href="/" className="text-emerald-400 hover:text-emerald-300 flex items-center justify-center gap-2">
+              ← Back to Home
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </CommentableContent>
   );
 }
 

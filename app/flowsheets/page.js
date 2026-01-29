@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Zap, Target, AlertCircle } from 'lucide-react';
+import CommentableContent from '../components/CommentableContent';
 
 const flowsheetData = [
   {
@@ -186,8 +187,9 @@ export default function Flowsheets() {
   const [expandedFlowsheet, setExpandedFlowsheet] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 p-6">
-      <div className="max-w-6xl mx-auto">
+    <CommentableContent pageName="flowsheets">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 p-6">
+        <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-white mb-3">Example Flowsheets</h1>
@@ -234,17 +236,18 @@ export default function Flowsheets() {
           </ul>
         </div>
 
-        {/* Navigation */}
-        <div className="mt-12 flex justify-between">
-          <Link href="/for-biologists" className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
-            ← Back to Mining 101
-          </Link>
-          <Link href="/" className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
-            Home
-          </Link>
+          {/* Navigation */}
+          <div className="mt-12 flex justify-between">
+            <Link href="/for-biologists" className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
+              ← Back to Mining 101
+            </Link>
+            <Link href="/" className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
+              Home
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </CommentableContent>
   );
 }
 

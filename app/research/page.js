@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Lightbulb, FlaskConical, Database, TrendingUp, Users, Microscope, Target } from 'lucide-react';
+import CommentableContent from '../components/CommentableContent';
 
 const researchData = {
   frontiers: [
@@ -212,8 +213,9 @@ export default function Research() {
   const [expandedEcosystem, setExpandedEcosystem] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
-      <div className="max-w-6xl mx-auto">
+    <CommentableContent pageName="research">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
+        <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <Lightbulb className="w-12 h-12 text-purple-400 mx-auto mb-4" />
@@ -291,14 +293,15 @@ export default function Research() {
           </div>
         </div>
 
-        {/* Navigation */}
-        <div className="mt-12 text-center">
-          <Link href="/" className="text-purple-400 hover:text-purple-300 flex items-center justify-center gap-2">
-            ← Back to Home
-          </Link>
+          {/* Navigation */}
+          <div className="mt-12 text-center">
+            <Link href="/" className="text-purple-400 hover:text-purple-300 flex items-center justify-center gap-2">
+              ← Back to Home
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </CommentableContent>
   );
 }
 

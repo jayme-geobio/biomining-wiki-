@@ -3,13 +3,15 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Mountain, Factory, Beaker, AlertCircle, TrendingUp, Clock, Droplets, FileCheck } from 'lucide-react';
+import CommentableContent from '../components/CommentableContent';
 
 export default function ForBiologists() {
   const [expandedSection, setExpandedSection] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 p-6">
-      <div className="max-w-5xl mx-auto">
+    <CommentableContent pageName="for-biologists">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 p-6">
+        <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">Mining 101 for Biologists</h1>
@@ -250,17 +252,18 @@ export default function ForBiologists() {
           </div>
         </Section>
 
-        {/* Navigation */}
-        <div className="mt-12 flex justify-between">
-          <Link href="/" className="text-emerald-400 hover:text-emerald-300 flex items-center gap-2">
-            ← Back to Home
-          </Link>
-          <Link href="/flowsheets" className="text-emerald-400 hover:text-emerald-300 flex items-center gap-2">
-            See Example Flowsheets →
-          </Link>
+          {/* Navigation */}
+          <div className="mt-12 flex justify-between">
+            <Link href="/" className="text-emerald-400 hover:text-emerald-300 flex items-center gap-2">
+              ← Back to Home
+            </Link>
+            <Link href="/flowsheets" className="text-emerald-400 hover:text-emerald-300 flex items-center gap-2">
+              See Example Flowsheets →
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </CommentableContent>
   );
 }
 

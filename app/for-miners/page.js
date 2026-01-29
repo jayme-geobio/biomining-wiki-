@@ -3,13 +3,15 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Microscope, Zap, Beaker, Factory, FlaskConical, FileCheck } from 'lucide-react';
+import CommentableContent from '../components/CommentableContent';
 
 export default function ForMiners() {
   const [expandedSection, setExpandedSection] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 p-6">
-      <div className="max-w-5xl mx-auto">
+    <CommentableContent pageName="for-miners">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 p-6">
+        <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">Biology 101 for Mining Professionals</h1>
@@ -319,17 +321,18 @@ export default function ForMiners() {
           </div>
         </Section>
 
-        {/* Navigation */}
-        <div className="mt-12 flex justify-between">
-          <Link href="/" className="text-amber-400 hover:text-amber-300 flex items-center gap-2">
-            ← Back to Home
-          </Link>
-          <Link href="/complex-materials" className="text-amber-400 hover:text-amber-300 flex items-center gap-2">
-            Explore Complex Materials →
-          </Link>
+          {/* Navigation */}
+          <div className="mt-12 flex justify-between">
+            <Link href="/" className="text-amber-400 hover:text-amber-300 flex items-center gap-2">
+              ← Back to Home
+            </Link>
+            <Link href="/complex-materials" className="text-amber-400 hover:text-amber-300 flex items-center gap-2">
+              Explore Complex Materials →
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </CommentableContent>
   );
 }
 

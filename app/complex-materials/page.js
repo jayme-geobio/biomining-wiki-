@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle, Sparkles } from 'lucide-react';
+import CommentableContent from '../components/CommentableContent';
 
 const materialsData = {
   ard: {
@@ -171,8 +172,9 @@ export default function ComplexMaterials() {
   const [expandedMaterial, setExpandedMaterial] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-purple-900 p-6">
-      <div className="max-w-5xl mx-auto">
+    <CommentableContent pageName="complex-materials">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-purple-900 p-6">
+        <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <Sparkles className="w-12 h-12 text-purple-400 mx-auto mb-4" />
@@ -236,17 +238,18 @@ export default function ComplexMaterials() {
           </p>
         </div>
 
-        {/* Navigation */}
-        <div className="mt-12 flex justify-between">
-          <Link href="/" className="text-purple-400 hover:text-purple-300 flex items-center gap-2">
-            ← Back to Home
-          </Link>
-          <Link href="/research" className="text-purple-400 hover:text-purple-300 flex items-center gap-2">
-            Research Frontiers →
-          </Link>
+          {/* Navigation */}
+          <div className="mt-12 flex justify-between">
+            <Link href="/" className="text-purple-400 hover:text-purple-300 flex items-center gap-2">
+              ← Back to Home
+            </Link>
+            <Link href="/research" className="text-purple-400 hover:text-purple-300 flex items-center gap-2">
+              Research Frontiers →
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </CommentableContent>
   );
 }
 
