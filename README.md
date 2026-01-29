@@ -4,6 +4,8 @@ A comprehensive educational website about biomining - the use of biological mech
 
 **Built by Ariana Caiati for [Homeworld Collective](https://homeworldcollective.com)**
 
+Source Content: Materials made by Jayme-Feyhl Buska
+
 ## Technology Stack
 
 - **Framework:** Next.js 14 (App Router)
