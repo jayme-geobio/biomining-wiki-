@@ -30,7 +30,7 @@ export default function Footer() {
             <img
               src="/images/homeworld-logo-full.png"
               alt="Homeworld Logo"
-              className="h-20 mb-4"
+              className="h-10 mb-4"
             />
             <p className="text-sm text-emerald-200">
               Bridging biology and mining for sustainable critical mineral recovery
