@@ -33,8 +33,8 @@ export default function CommentSystem({ pageName, contentRef }) {
 
         setSelectedText(text);
         setCommentPosition({
-          x: rect.right + window.scrollX + 10,
-          y: rect.top + window.scrollY
+          x: rect.right + 10,
+          y: rect.top
         });
 
         // Get section title
