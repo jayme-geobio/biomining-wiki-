@@ -94,7 +94,7 @@ const researchData = {
     {
       title: "Instrumentation, Sensing, and Modeling",
       icon: TrendingUp,
-      color: "amber",
+      color: "blue",
       keyIssues: [
         "Lack of rugged, low-cost sensors for low-pH, high-ionic-strength environments",
         "Bioleaching models don't adequately couple microbial kinetics with hydrology and chemical speciation",
@@ -214,24 +214,24 @@ export default function Research() {
 
   return (
     <CommentableContent pageName="research">
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
-        <div className="max-w-6xl mx-auto">
+      <div className="min-h-screen py-8 px-6">
+        <div className="max-w-6xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <Lightbulb className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-white mb-3">Research Frontiers & Collaboration</h1>
-          <p className="text-xl text-purple-200 max-w-3xl mx-auto">
+          <Lightbulb className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+          <h1 className="text-4xl font-bold text-gray-900 mb-3">Research Frontiers & Collaboration</h1>
+          <p className="text-xl text-purple-700 max-w-3xl mx-auto">
             Open problems, infrastructure needs, and collaboration opportunities in biomining
           </p>
         </div>
 
         {/* Research Frontiers */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <FlaskConical className="w-7 h-7 text-purple-400" />
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+            <FlaskConical className="w-7 h-7 text-purple-600" />
             Cross-Cutting Technical Frontiers
           </h2>
-          <p className="text-slate-300 mb-6">
+          <p className="text-gray-600 mb-6">
             These problem statements and bottlenecks represent a public R&D agenda distilled from workshops,
             literature, and field experience. They're areas where breakthroughs would significantly advance biomining.
           </p>
@@ -249,11 +249,11 @@ export default function Research() {
 
         {/* Ecosystem & Infrastructure */}
         <section>
-          <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <Users className="w-7 h-7 text-emerald-400" />
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+            <Users className="w-7 h-7 text-emerald-600" />
             Ecosystem, Infrastructure & Collaboration
           </h2>
-          <p className="text-slate-300 mb-6">
+          <p className="text-gray-600 mb-6">
             Biomining is a socio-technical field, not just a set of reactions. These initiatives would strengthen
             the ecosystem and accelerate translation from lab to field.
           </p>
@@ -270,32 +270,32 @@ export default function Research() {
         </section>
 
         {/* Call to Action */}
-        <div className="mt-12 bg-gradient-to-r from-purple-900/50 to-emerald-900/50 border border-purple-500/50 rounded-xl p-8">
-          <h3 className="text-2xl font-bold text-white mb-4 text-center">Get Involved</h3>
-          <p className="text-slate-200 text-center mb-6 max-w-3xl mx-auto">
+        <div className="mt-12 bg-gradient-to-r from-purple-50 to-emerald-50 border border-purple-200 rounded-xl p-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Get Involved</h3>
+          <p className="text-gray-700 text-center mb-6 max-w-3xl mx-auto">
             These challenges require collaboration across disciplines, sectors, and institutions. Whether you're
             a researcher, mining professional, investor, or policymaker, there's a role for you in advancing
             sustainable biomining technologies.
           </p>
           <div className="grid md:grid-cols-3 gap-4 text-center">
-            <div className="bg-white/5 rounded-lg p-4">
-              <h4 className="font-semibold text-purple-300 mb-2">Researchers</h4>
-              <p className="text-slate-300 text-sm">Focus on high-impact problems with clear paths to field deployment</p>
+            <div className="bg-[#ededed] rounded-lg p-4 border border-gray-200">
+              <h4 className="font-semibold text-purple-700 mb-2">Researchers</h4>
+              <p className="text-gray-600 text-sm">Focus on high-impact problems with clear paths to field deployment</p>
             </div>
-            <div className="bg-white/5 rounded-lg p-4">
-              <h4 className="font-semibold text-emerald-300 mb-2">Industry</h4>
-              <p className="text-slate-300 text-sm">Share pre-competitive data and pilot sites to accelerate innovation</p>
+            <div className="bg-[#ededed] rounded-lg p-4 border border-gray-200">
+              <h4 className="font-semibold text-emerald-700 mb-2">Industry</h4>
+              <p className="text-gray-600 text-sm">Share pre-competitive data and pilot sites to accelerate innovation</p>
             </div>
-            <div className="bg-white/5 rounded-lg p-4">
-              <h4 className="font-semibold text-amber-300 mb-2">Funders</h4>
-              <p className="text-slate-300 text-sm">Support TEA-aware research and pilot-scale demonstration projects</p>
+            <div className="bg-[#ededed] rounded-lg p-4 border border-gray-200">
+              <h4 className="font-semibold text-[#264563] mb-2">Funders</h4>
+              <p className="text-gray-600 text-sm">Support TEA-aware research and pilot-scale demonstration projects</p>
             </div>
           </div>
         </div>
 
           {/* Navigation */}
           <div className="mt-12 text-center">
-            <Link href="/" className="text-purple-400 hover:text-purple-300 flex items-center justify-center gap-2">
+            <Link href="/" className="text-purple-600 hover:text-purple-800 flex items-center justify-center gap-2">
               ← Back to Home
             </Link>
           </div>
@@ -309,36 +309,36 @@ function FrontierCard({ frontier, expanded, onToggle }) {
   const Icon = frontier.icon;
 
   const colorClasses = {
-    purple: { bg: 'bg-purple-900/20', border: 'border-purple-500/50', text: 'text-purple-300' },
-    blue: { bg: 'bg-blue-900/20', border: 'border-blue-500/50', text: 'text-blue-300' },
-    green: { bg: 'bg-green-900/20', border: 'border-green-500/50', text: 'text-green-300' },
-    amber: { bg: 'bg-amber-900/20', border: 'border-amber-500/50', text: 'text-amber-300' }
+    purple: { bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-700' },
+    blue: { bg: 'bg-[#264563]/10', border: 'border-[#264563]/30', text: 'text-[#264563]' },
+    green: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-700' },
+    blue: { bg: 'bg-[#264563]/10', border: 'border-[#264563]/30', text: 'text-[#264563]' }
   };
 
   const colors = colorClasses[frontier.color];
 
   return (
-    <div className={`backdrop-blur-sm rounded-xl border ${colors.border} ${colors.bg} overflow-hidden`}>
+    <div className={`rounded-xl border ${colors.border} ${colors.bg} overflow-hidden`}>
       <button
         onClick={onToggle}
-        className="w-full p-5 flex items-center justify-between hover:bg-white/5 transition-colors"
+        className="w-full p-5 flex items-center justify-between hover:bg-[#e5e5e5] transition-colors"
       >
         <div className="flex items-center gap-3">
           <Icon className={`w-6 h-6 ${colors.text}`} />
-          <h3 className="text-xl font-bold text-white text-left">{frontier.title}</h3>
+          <h3 className="text-xl font-bold text-gray-900 text-left">{frontier.title}</h3>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-slate-300" /> : <ChevronRight className="w-6 h-6 text-slate-300" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500" /> : <ChevronRight className="w-6 h-6 text-gray-500" />}
       </button>
 
       {expanded && (
-        <div className="p-6 pt-0 border-t border-white/10 space-y-5">
+        <div className="p-6 pt-0 border-t border-gray-200 space-y-5">
           {/* Key Issues */}
           <div>
-            <h4 className="font-semibold text-red-400 mb-3">Key Issues & Bottlenecks</h4>
+            <h4 className="font-semibold text-red-600 mb-3">Key Issues & Bottlenecks</h4>
             <ul className="space-y-2">
               {frontier.keyIssues.map((issue, i) => (
-                <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
-                  <span className="text-red-400 mt-1">⚠</span>
+                <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
+                  <span className="text-red-500 mt-1">⚠</span>
                   <span>{issue}</span>
                 </li>
               ))}
@@ -347,12 +347,12 @@ function FrontierCard({ frontier, expanded, onToggle }) {
 
           {/* Opportunities */}
           <div>
-            <h4 className="font-semibold text-emerald-400 mb-3">Research Opportunities</h4>
+            <h4 className="font-semibold text-emerald-600 mb-3">Research Opportunities</h4>
             <div className="space-y-3">
               {frontier.opportunities.map((opp, i) => (
-                <div key={i} className="bg-slate-800/30 rounded-lg p-4 border border-emerald-500/30">
-                  <h5 className="font-semibold text-emerald-300 text-sm mb-1">{opp.title}</h5>
-                  <p className="text-slate-300 text-sm">{opp.description}</p>
+                <div key={i} className="bg-[#ededed] rounded-lg p-4 border border-emerald-200">
+                  <h5 className="font-semibold text-emerald-700 text-sm mb-1">{opp.title}</h5>
+                  <p className="text-gray-600 text-sm">{opp.description}</p>
                 </div>
               ))}
             </div>
@@ -367,28 +367,28 @@ function EcosystemCard({ item, expanded, onToggle }) {
   const Icon = item.icon;
 
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 overflow-hidden">
+    <div className="bg-[#ededed] rounded-xl border border-gray-200 overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full p-5 flex items-center justify-between hover:bg-white/5 transition-colors"
+        className="w-full p-5 flex items-center justify-between hover:bg-gray-100 transition-colors"
       >
         <div className="text-left">
           <div className="flex items-center gap-3 mb-2">
-            <Icon className="w-6 h-6 text-emerald-400" />
-            <h3 className="text-xl font-bold text-white">{item.title}</h3>
+            <Icon className="w-6 h-6 text-emerald-600" />
+            <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
           </div>
-          <p className="text-slate-300 text-sm">{item.description}</p>
+          <p className="text-gray-600 text-sm">{item.description}</p>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-slate-300 flex-shrink-0 ml-4" /> : <ChevronRight className="w-6 h-6 text-slate-300 flex-shrink-0 ml-4" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500 flex-shrink-0 ml-4" /> : <ChevronRight className="w-6 h-6 text-gray-500 flex-shrink-0 ml-4" />}
       </button>
 
       {expanded && (
-        <div className="p-6 pt-0 border-t border-white/10">
+        <div className="p-6 pt-0 border-t border-gray-200">
           <div className="space-y-4">
             {item.initiatives.map((initiative, i) => (
-              <div key={i} className="bg-slate-800/30 rounded-lg p-4 border border-slate-600/50">
-                <h4 className="font-semibold text-white mb-2">{initiative.name}</h4>
-                <p className="text-slate-300 text-sm">{initiative.description}</p>
+              <div key={i} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <h4 className="font-semibold text-gray-900 mb-2">{initiative.name}</h4>
+                <p className="text-gray-600 text-sm">{initiative.description}</p>
               </div>
             ))}
           </div>

@@ -10,38 +10,38 @@ export default function ForBiologists() {
 
   return (
     <CommentableContent pageName="for-biologists">
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 p-6">
-        <div className="max-w-5xl mx-auto">
+      <div className="min-h-screen py-8 px-6">
+        <div className="max-w-5xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">Mining 101 for Biologists</h1>
-          <p className="text-xl text-emerald-200 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Mining 101 for Biologists</h1>
+          <p className="text-xl text-emerald-700 max-w-3xl mx-auto">
             If you want biology to matter in mining, you have to know where your biology would live in a flowsheet
           </p>
         </div>
 
         {/* Why This Matters */}
-        <div className="bg-amber-950/30 border-2 border-amber-500/50 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-amber-300 mb-3 flex items-center gap-2">
+        <div className="bg-[#264563]/10 border-2 border-[#264563]/30 rounded-xl p-6 mb-8">
+          <h2 className="text-xl font-bold text-[#264563] mb-3 flex items-center gap-2">
             <AlertCircle className="w-6 h-6" />
             Why Biologists Need to Understand Mining
           </h2>
-          <div className="text-amber-100 space-y-3">
+          <div className="text-[#264563] space-y-3">
             <p>
               From the mining side, <strong>"biomining" is not a magical stand-alone box</strong>. It's a candidate
               step in a tightly constrained value chain where:
             </p>
             <ul className="ml-6 space-y-2">
               <li className="flex items-start gap-2">
-                <span className="text-amber-400 mt-1">•</span>
+                <span className="text-[#264563] mt-1">•</span>
                 Rock is moved at <strong>millions of tonnes per year</strong> scale
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-amber-400 mt-1">•</span>
+                <span className="text-[#264563] mt-1">•</span>
                 Margins can be thin and metal prices volatile
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-amber-400 mt-1">•</span>
+                <span className="text-[#264563] mt-1">•</span>
                 Time scales, water availability, and permitting often matter as much as chemistry
               </li>
             </ul>
@@ -60,28 +60,28 @@ export default function ForBiologists() {
           onToggle={() => setExpandedSection(expandedSection === 'journey' ? null : 'journey')}
         >
           <div className="space-y-4">
-            <p className="text-slate-200">
+            <p className="text-gray-700">
               At a high level, the mining value chain looks like this:
             </p>
 
-            <div className="bg-slate-800/50 rounded-lg p-6 border border-slate-600">
-              <div className="font-mono text-sm text-emerald-300 space-y-2">
+            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+              <div className="font-mono text-sm text-emerald-700 space-y-2">
                 <div>Rock in ground</div>
-                <div className="ml-4">↓ <span className="text-slate-400">(exploration & resource modeling)</span></div>
+                <div className="ml-4">↓ <span className="text-gray-400">(exploration & resource modeling)</span></div>
                 <div>Ore body defined</div>
-                <div className="ml-4">↓ <span className="text-slate-400">(mine planning & development)</span></div>
+                <div className="ml-4">↓ <span className="text-gray-400">(mine planning & development)</span></div>
                 <div>Ore and waste rock excavated</div>
-                <div className="ml-4">↓ <span className="text-slate-400">(crushing, grinding, concentration)</span></div>
+                <div className="ml-4">↓ <span className="text-gray-400">(crushing, grinding, concentration)</span></div>
                 <div>Concentrate / leach solution</div>
-                <div className="ml-4">↓ <span className="text-slate-400">(metallurgical refining)</span></div>
+                <div className="ml-4">↓ <span className="text-gray-400">(metallurgical refining)</span></div>
                 <div>Saleable product (metal, concentrate, chemicals)</div>
                 <div className="ml-4">↓</div>
                 <div>Tailings, waste rock, water to be managed and closed</div>
               </div>
             </div>
 
-            <div className="bg-emerald-900/30 rounded-lg p-4 border border-emerald-700/50">
-              <p className="text-emerald-200 text-sm">
+            <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+              <p className="text-emerald-800 text-sm">
                 <strong>Where biology plugs in:</strong> Heap/in-situ leaching, metal separation and polishing,
                 AMD treatment and closure, tailings reprocessing
               </p>
@@ -228,8 +228,8 @@ export default function ForBiologists() {
           expanded={expandedSection === 'checklist'}
           onToggle={() => setExpandedSection(expandedSection === 'checklist' ? null : 'checklist')}
         >
-          <div className="bg-slate-800/50 rounded-lg p-6 border border-emerald-500/50">
-            <p className="text-emerald-200 mb-4">
+          <div className="bg-gray-50 rounded-lg p-6 border border-emerald-200">
+            <p className="text-emerald-700 mb-4">
               Before investing heavily in a biomining concept, answer these in one page:
             </p>
             <div className="space-y-4">
@@ -245,7 +245,7 @@ export default function ForBiologists() {
                   <div className="bg-emerald-500 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                     {i + 1}
                   </div>
-                  <p className="text-slate-200">{q}</p>
+                  <p className="text-gray-700">{q}</p>
                 </div>
               ))}
             </div>
@@ -254,10 +254,10 @@ export default function ForBiologists() {
 
           {/* Navigation */}
           <div className="mt-12 flex justify-between">
-            <Link href="/" className="text-emerald-400 hover:text-emerald-300 flex items-center gap-2">
+            <Link href="/" className="text-emerald-600 hover:text-emerald-800 flex items-center gap-2">
               ← Back to Home
             </Link>
-            <Link href="/flowsheets" className="text-emerald-400 hover:text-emerald-300 flex items-center gap-2">
+            <Link href="/flowsheets" className="text-emerald-600 hover:text-emerald-800 flex items-center gap-2">
               See Example Flowsheets →
             </Link>
           </div>
@@ -269,19 +269,19 @@ export default function ForBiologists() {
 
 function Section({ title, icon: Icon, expanded, onToggle, children }) {
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-xl mb-4 border border-white/20 overflow-hidden">
+    <div className="bg-[#ededed] rounded-xl mb-4 border border-gray-200 overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
+        className="w-full p-6 flex items-center justify-between hover:bg-gray-100 transition-colors"
       >
         <div className="flex items-center gap-3">
-          <Icon className="w-6 h-6 text-emerald-400" />
-          <h2 className="text-xl font-bold text-white">{title}</h2>
+          <Icon className="w-6 h-6 text-emerald-600" />
+          <h2 className="text-xl font-bold text-gray-900">{title}</h2>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-slate-300" /> : <ChevronRight className="w-6 h-6 text-slate-300" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500" /> : <ChevronRight className="w-6 h-6 text-gray-500" />}
       </button>
       {expanded && (
-        <div className="p-6 pt-0 border-t border-white/10">
+        <div className="p-6 pt-0 border-t border-gray-200">
           {children}
         </div>
       )}
@@ -291,19 +291,19 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
 
 function StageCard({ title, what, whyBiology, whereBio }) {
   return (
-    <div className="bg-slate-800/30 rounded-lg p-5 border border-slate-600/50">
-      <h3 className="text-lg font-semibold text-white mb-3">{title}</h3>
+    <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
+      <h3 className="text-lg font-semibold text-gray-900 mb-3">{title}</h3>
 
       <div className="mb-4">
-        <h4 className="text-sm font-semibold text-slate-400 mb-1">What it is:</h4>
-        <p className="text-slate-200 text-sm">{what}</p>
+        <h4 className="text-sm font-semibold text-gray-400 mb-1">What it is:</h4>
+        <p className="text-gray-700 text-sm">{what}</p>
       </div>
 
       <div className="mb-4">
-        <h4 className="text-sm font-semibold text-emerald-400 mb-2">Why it matters to biologists:</h4>
+        <h4 className="text-sm font-semibold text-emerald-600 mb-2">Why it matters to biologists:</h4>
         <ul className="space-y-1">
           {whyBiology.map((item, i) => (
-            <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
+            <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
               <span className="text-emerald-500 mt-1">•</span>
               <span>{item}</span>
             </li>
@@ -311,12 +311,12 @@ function StageCard({ title, what, whyBiology, whereBio }) {
         </ul>
       </div>
 
-      <div className="bg-emerald-900/20 rounded p-3 border border-emerald-700/30">
-        <h4 className="text-sm font-semibold text-emerald-300 mb-2">Where biology might plug in:</h4>
+      <div className="bg-emerald-50 rounded p-3 border border-emerald-200">
+        <h4 className="text-sm font-semibold text-emerald-700 mb-2">Where biology might plug in:</h4>
         <ul className="space-y-1">
           {whereBio.map((item, i) => (
-            <li key={i} className="text-emerald-200 text-sm flex items-start gap-2">
-              <span className="text-emerald-400">→</span>
+            <li key={i} className="text-emerald-800 text-sm flex items-start gap-2">
+              <span className="text-emerald-600">→</span>
               <span>{item}</span>
             </li>
           ))}
@@ -328,14 +328,14 @@ function StageCard({ title, what, whyBiology, whereBio }) {
 
 function ConstraintCard({ title, icon: Icon, description, implication }) {
   return (
-    <div className="bg-slate-800/30 rounded-lg p-5 border border-amber-600/30">
+    <div className="bg-gray-50 rounded-lg p-5 border border-[#264563]/30">
       <div className="flex items-center gap-2 mb-2">
-        <Icon className="w-5 h-5 text-amber-400" />
-        <h3 className="font-semibold text-white">{title}</h3>
+        <Icon className="w-5 h-5 text-[#264563]" />
+        <h3 className="font-semibold text-gray-900">{title}</h3>
       </div>
-      <p className="text-slate-300 text-sm mb-3">{description}</p>
-      <div className="bg-amber-900/20 rounded p-3 border-l-4 border-amber-500">
-        <p className="text-amber-200 text-sm">
+      <p className="text-gray-600 text-sm mb-3">{description}</p>
+      <div className="bg-[#264563]/10 rounded p-3 border-l-4 border-[#264563]">
+        <p className="text-[#264563] text-sm">
           <strong>Implication:</strong> {implication}
         </p>
       </div>

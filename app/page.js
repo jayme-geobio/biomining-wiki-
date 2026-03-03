@@ -6,47 +6,56 @@ import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, Graduat
 
 export default function BiominingHome() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-white mb-4">
-              Biomining Wiki
-            </h1>
-            <p className="text-xl text-emerald-200 max-w-3xl mx-auto">
-              A bridge between biology and mining for critical mineral recovery
-            </p>
-            <p className="text-slate-300 mt-4 max-w-2xl mx-auto">
-              Leveraging biological mechanisms to unlock value from complex materials where conventional chemistry is too costly, too blunt, or too risky
-            </p>
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          {/* Hero Card + Ghost Box */}
+          <div className="mb-16">
+            <div className="flex gap-6 items-stretch">
+              {/* Solid card */}
+              <div className="flex-1 bg-[#ededed] rounded-3xl p-10 shadow-xl">
+                <h1 className="text-5xl font-bold text-gray-900 mb-3 leading-tight">
+                  Biomining Wiki
+                </h1>
+                <p className="text-xl text-gray-600 mb-3">
+                  A bridge between biology and mining for critical mineral recovery
+                </p>
+                <p className="text-gray-500 text-base">
+                  Leveraging biological mechanisms to unlock value from complex materials where conventional chemistry is too costly, too blunt, or too risky
+                </p>
+              </div>
+              {/* Ghost outline box */}
+              <div className="flex-1 rounded-3xl border-2 border-[#ededed] shadow-xl" />
+            </div>
           </div>
 
           {/* Why Now Section */}
-          <div className="max-w-4xl mx-auto mb-16 bg-blue-950/50 rounded-xl p-8 border border-blue-700/50">
-            <h2 className="text-2xl font-bold text-blue-300 mb-4 flex items-center gap-2">
-              <TrendingUp className="w-7 h-7" />
-              Why Biomining Now?
-            </h2>
-            <div className="text-blue-100 space-y-3">
-              <p>
-                Mining and critical mineral recovery face a <strong>new constraint set</strong>: rising demand from clean energy,
-                shifting toward harder feedstocks, and intensifying limits around energy, water, tailings, and social licence.
-              </p>
-              <p>
-                <strong>Complexity</strong> is the central issue. Most lab breakthroughs use simplified systems, but industry faces
-                polymetallic ores, process waters with diverse co-metals, legacy wastes, and tight operational constraints.
-              </p>
-              <p className="text-blue-200 font-semibold">
-                Biomining's niche is precisely where this complexity makes conventional chemistry expensive, blunt, or risky—and
-                where biology's ability to couple redox, binding, and adaptation can unlock value.
-              </p>
+          <div className="mb-16">
+            <div className="bg-[#ededed] rounded-3xl p-8 shadow-xl">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <TrendingUp className="w-6 h-6 text-emerald-600" />
+                Why Biomining Now?
+              </h2>
+              <div className="text-gray-700 space-y-3">
+                <p>
+                  Mining and critical mineral recovery face a <strong>new constraint set</strong>: rising demand from clean energy,
+                  shifting toward harder feedstocks, and intensifying limits around energy, water, tailings, and social licence.
+                </p>
+                <p>
+                  <strong>Complexity</strong> is the central issue. Most lab breakthroughs use simplified systems, but industry faces
+                  polymetallic ores, process waters with diverse co-metals, legacy wastes, and tight operational constraints.
+                </p>
+                <p className="text-emerald-700 font-semibold">
+                  Biomining's niche is precisely where this complexity makes conventional chemistry expensive, blunt, or risky—and
+                  where biology's ability to couple redox, binding, and adaptation can unlock value.
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Dual Path Selection */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-16">
-            {/* Path for Biologists */}
+          <div className="grid md:grid-cols-2 gap-8 mt-16">
             <PathCard
               title="For Biologists"
               subtitle="Learn how your biology fits into mining operations"
@@ -61,12 +70,11 @@ export default function BiominingHome() {
               link="/for-biologists"
             />
 
-            {/* Path for Mining Professionals */}
             <PathCard
               title="For Mining Professionals"
               subtitle="Understand how biology can enhance your operations"
               icon={Mountain}
-              color="amber"
+              color="blue"
               sections={[
                 { title: "Microbial Energy & Metabolism", icon: Microscope },
                 { title: "Mechanisms of Metal Mobilization", icon: Beaker },
@@ -78,74 +86,79 @@ export default function BiominingHome() {
           </div>
 
           {/* Core Resources */}
-          <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-            <h2 className="text-2xl font-bold text-white mb-6 text-center">
-              Essential Resources
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <ResourceCard
-                title="What Is Biomining?"
-                description="Definitions, mechanisms, and where biotech outcompetes chemistry"
-                icon={GraduationCap}
-                link="/what-is-biomining"
-              />
-              <ResourceCard
-                title="Core Glossary"
-                description="Shared vocabulary bridging mining and biology"
-                icon={BookOpen}
-                link="/glossary"
-              />
-              <ResourceCard
-                title="Complex Materials"
-                description="Tailings, AMD, e-waste, and where biology helps most"
-                icon={Droplets}
-                link="/complex-materials"
-              />
-              <ResourceCard
-                title="Flowsheets"
-                description="Real-world integration examples and bio-modules"
-                icon={Target}
-                link="/flowsheets"
-              />
+          <div className="mt-16">
+            <div className="bg-[#ededed] rounded-3xl p-8 shadow-xl">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Essential Resources
+              </h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <ResourceCard
+                  title="What Is Biomining?"
+                  description="Definitions, mechanisms, and where biotech outcompetes chemistry"
+                  icon={GraduationCap}
+                  link="/what-is-biomining"
+                />
+                <ResourceCard
+                  title="Core Glossary"
+                  description="Shared vocabulary bridging mining and biology"
+                  icon={BookOpen}
+                  link="/glossary"
+                />
+                <ResourceCard
+                  title="Complex Materials"
+                  description="Tailings, AMD, e-waste, and where biology helps most"
+                  icon={Droplets}
+                  link="/complex-materials"
+                />
+                <ResourceCard
+                  title="Flowsheets"
+                  description="Real-world integration examples and bio-modules"
+                  icon={Target}
+                  link="/flowsheets"
+                />
+              </div>
             </div>
           </div>
 
           {/* What is Biomining Definition */}
-          <div className="mt-12 max-w-4xl mx-auto bg-emerald-950/50 rounded-xl p-8 border border-emerald-700/50">
-            <h3 className="text-xl font-semibold text-emerald-300 mb-3 flex items-center gap-2">
-              <GraduationCap className="w-6 h-6" />
-              What This Wiki Covers
-            </h3>
-            <p className="text-emerald-100 mb-4">
-              <strong>Biomining</strong> means <strong>any use of biological mechanisms</strong>—cells, enzymes,
-              proteins, metabolites, or consortia—to aid metal recovery, mineral processing, or management of
-              mining-related wastes and liabilities.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mt-6">
-              <div className="bg-emerald-900/20 rounded-lg p-4 border border-emerald-700/30">
-                <h4 className="text-emerald-300 font-semibold mb-2">Mechanisms</h4>
-                <ul className="text-emerald-200 text-sm space-y-1">
-                  <li>• Bioleaching & biooxidation</li>
-                  <li>• Bioseparation & biosorption</li>
-                  <li>• Bioprecipitation</li>
-                  <li>• Monitoring & biosensing</li>
-                </ul>
+          <div className="mt-12">
+            <div className="bg-[#ededed] rounded-3xl p-8 shadow-xl">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                <GraduationCap className="w-6 h-6 text-emerald-600" />
+                What This Wiki Covers
+              </h3>
+              <p className="text-gray-700 mb-4">
+                <strong>Biomining</strong> means <strong>any use of biological mechanisms</strong>—cells, enzymes,
+                proteins, metabolites, or consortia—to aid metal recovery, mineral processing, or management of
+                mining-related wastes and liabilities.
+              </p>
+              <div className="grid md:grid-cols-2 gap-4 mt-6">
+                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                  <h4 className="text-emerald-800 font-semibold mb-2">Mechanisms</h4>
+                  <ul className="text-emerald-700 text-sm space-y-1">
+                    <li>• Bioleaching & biooxidation</li>
+                    <li>• Bioseparation & biosorption</li>
+                    <li>• Bioprecipitation</li>
+                    <li>• Monitoring & biosensing</li>
+                  </ul>
+                </div>
+                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                  <h4 className="text-emerald-800 font-semibold mb-2">Applications</h4>
+                  <ul className="text-emerald-700 text-sm space-y-1">
+                    <li>• Heap & tank leaching</li>
+                    <li>• Metal separation & polishing</li>
+                    <li>• AMD treatment & closure</li>
+                    <li>• Tailings reprocessing</li>
+                  </ul>
+                </div>
               </div>
-              <div className="bg-emerald-900/20 rounded-lg p-4 border border-emerald-700/30">
-                <h4 className="text-emerald-300 font-semibold mb-2">Applications</h4>
-                <ul className="text-emerald-200 text-sm space-y-1">
-                  <li>• Heap & tank leaching</li>
-                  <li>• Metal separation & polishing</li>
-                  <li>• AMD treatment & closure</li>
-                  <li>• Tailings reprocessing</li>
-                </ul>
-              </div>
+              <p className="text-gray-500 mt-4 text-sm italic">
+                Our goal: a gold-standard, technically accurate, practically oriented resource for both communities
+                to design better projects together.
+              </p>
             </div>
-            <p className="text-emerald-100 mt-4 text-sm italic">
-              Our goal: a gold-standard, technically accurate, practically oriented resource for both communities
-              to design better projects together.
-            </p>
           </div>
+
         </div>
       </div>
     </div>
@@ -155,37 +168,33 @@ export default function BiominingHome() {
 function PathCard({ title, subtitle, icon: Icon, color, sections, link }) {
   const colorClasses = {
     emerald: {
-      bg: 'from-emerald-900/50 to-emerald-800/30',
-      border: 'border-emerald-500/50',
-      text: 'text-emerald-300',
-      hover: 'hover:border-emerald-400'
+      iconColor: 'text-emerald-600',
+      btn: 'bg-emerald-600 hover:bg-emerald-700 text-white',
     },
-    amber: {
-      bg: 'from-amber-900/50 to-amber-800/30',
-      border: 'border-amber-500/50',
-      text: 'text-amber-300',
-      hover: 'hover:border-amber-400'
+    blue: {
+      iconColor: 'text-[#264563]',
+      btn: 'bg-[#264563] hover:bg-[#1e3450] text-white',
     }
   };
 
   const colors = colorClasses[color];
 
   return (
-    <div className={`bg-gradient-to-br ${colors.bg} backdrop-blur-sm rounded-2xl p-8 border-2 ${colors.border} ${colors.hover} transition-all duration-300 hover:scale-105`}>
+    <div className="bg-[#ededed] rounded-3xl p-8 shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300">
       <div className="flex items-center gap-3 mb-4">
-        <Icon className={`w-8 h-8 ${colors.text}`} />
+        <Icon className={`w-7 h-7 ${colors.iconColor}`} />
         <div>
-          <h2 className="text-2xl font-bold text-white">{title}</h2>
-          <p className="text-slate-300 text-sm">{subtitle}</p>
+          <h2 className="text-xl font-bold text-gray-900">{title}</h2>
+          <p className="text-gray-500 text-sm">{subtitle}</p>
         </div>
       </div>
 
-      <div className="space-y-3 mt-6">
+      <div className="space-y-2 mt-5">
         {sections.map((section, i) => {
           const SectionIcon = section.icon;
           return (
-            <div key={i} className="flex items-center gap-3 text-slate-200">
-              <SectionIcon className="w-5 h-5 text-slate-400" />
+            <div key={i} className="flex items-center gap-3 text-gray-600">
+              <SectionIcon className="w-4 h-4 text-gray-400" />
               <span className="text-sm">{section.title}</span>
             </div>
           );
@@ -194,24 +203,24 @@ function PathCard({ title, subtitle, icon: Icon, color, sections, link }) {
 
       <Link
         href={link}
-        className={`mt-6 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-colors`}
+        className={`mt-6 flex items-center justify-center gap-2 ${colors.btn} px-6 py-2.5 rounded-lg transition-colors text-sm font-medium`}
       >
         <span>Start Learning</span>
-        <ChevronRight className="w-5 h-5" />
+        <ChevronRight className="w-4 h-4" />
       </Link>
     </div>
   );
 }
 
-function ResourceCard({ title, description, icon: Icon, link, small = false }) {
+function ResourceCard({ title, description, icon: Icon, link }) {
   return (
     <Link
       href={link}
-      className="bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/30 transition-all block"
+      className="bg-gray-50 hover:bg-white rounded-xl p-5 border border-gray-200 hover:border-emerald-200 hover:shadow-md transition-all block"
     >
-      <Icon className={`${small ? 'w-6 h-6' : 'w-8 h-8'} text-emerald-400 mb-3`} />
-      <h3 className={`${small ? 'text-base' : 'text-lg'} font-semibold text-white mb-2`}>{title}</h3>
-      <p className="text-slate-300 text-sm">{description}</p>
+      <Icon className="w-7 h-7 text-emerald-600 mb-3" />
+      <h3 className="text-base font-semibold text-gray-900 mb-1.5">{title}</h3>
+      <p className="text-gray-500 text-sm">{description}</p>
     </Link>
   );
 }

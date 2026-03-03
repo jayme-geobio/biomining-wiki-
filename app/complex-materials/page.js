@@ -73,7 +73,7 @@ const materialsData = {
   tailings: {
     name: "Tailings",
     icon: Factory,
-    color: "amber",
+    color: "blue",
     definition: "Fine residues after processing; they track what was processed and what was not recovered",
     hazards: [
       "Dam failures cause catastrophic loss of life",
@@ -173,43 +173,43 @@ export default function ComplexMaterials() {
 
   return (
     <CommentableContent pageName="complex-materials">
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-purple-900 p-6">
-        <div className="max-w-5xl mx-auto">
+      <div className="min-h-screen py-8 px-6">
+        <div className="max-w-5xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
         {/* Header */}
         <div className="text-center mb-8">
-          <Sparkles className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-white mb-3">Complex Materials Guide</h1>
-          <p className="text-xl text-purple-200 max-w-3xl mx-auto mb-4">
+          <Sparkles className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+          <h1 className="text-4xl font-bold text-gray-900 mb-3">Complex Materials Guide</h1>
+          <p className="text-xl text-purple-700 max-w-3xl mx-auto mb-4">
             Where biology helps most: materials too complex, contaminated, or low-grade for conventional processing
           </p>
-          <p className="text-slate-300 max-w-3xl mx-auto text-sm">
+          <p className="text-gray-600 max-w-3xl mx-auto text-sm">
             Biology won't replace conventional mining for high-grade ores - that's highly optimized. But for complex
             materials where traditional methods struggle, biotechnology can shift the economics and reduce environmental impact.
           </p>
         </div>
 
         {/* Key Insight */}
-        <div className="bg-purple-950/30 border-2 border-purple-500/50 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-purple-300 mb-3">When Biology Wins</h2>
-          <ul className="text-purple-100 space-y-2">
+        <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-6 mb-8">
+          <h2 className="text-xl font-bold text-purple-700 mb-3">When Biology Wins</h2>
+          <ul className="text-purple-800 space-y-2">
             <li className="flex items-start gap-2">
-              <span className="text-purple-400 mt-1">✓</span>
+              <span className="text-purple-600 mt-1">✓</span>
               <span><strong>Low-grade material</strong> where conventional processing is uneconomic</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-purple-400 mt-1">✓</span>
+              <span className="text-purple-600 mt-1">✓</span>
               <span><strong>Complex mineralogy</strong> (refractory ores, polymetallic systems)</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-purple-400 mt-1">✓</span>
+              <span className="text-purple-600 mt-1">✓</span>
               <span><strong>Environmental hazards</strong> (AMD, tailings, legacy sites)</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-purple-400 mt-1">✓</span>
+              <span className="text-purple-600 mt-1">✓</span>
               <span><strong>Remote locations</strong> where chemical transport is expensive or impossible</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-purple-400 mt-1">✓</span>
+              <span className="text-purple-600 mt-1">✓</span>
               <span><strong>Thin margins</strong> where small OPEX reductions make projects viable</span>
             </li>
           </ul>
@@ -229,9 +229,9 @@ export default function ComplexMaterials() {
         </div>
 
         {/* Bottom Insight */}
-        <div className="mt-8 bg-emerald-950/30 border border-emerald-700/50 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-emerald-300 mb-2">The Best Opportunities</h3>
-          <p className="text-emerald-100 text-sm">
+        <div className="mt-8 bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+          <h3 className="text-lg font-semibold text-emerald-700 mb-2">The Best Opportunities</h3>
+          <p className="text-emerald-800 text-sm">
             The sweet spot for biomining is where you're dealing with <strong>waste, legacy sites, or materials
             too costly to process conventionally</strong>. These are the contexts where biology's advantages
             (lower OPEX, mild conditions, selectivity, reduced environmental impact) matter most.
@@ -240,10 +240,10 @@ export default function ComplexMaterials() {
 
           {/* Navigation */}
           <div className="mt-12 flex justify-between">
-            <Link href="/" className="text-purple-400 hover:text-purple-300 flex items-center gap-2">
+            <Link href="/" className="text-purple-600 hover:text-purple-800 flex items-center gap-2">
               ← Back to Home
             </Link>
-            <Link href="/research" className="text-purple-400 hover:text-purple-300 flex items-center gap-2">
+            <Link href="/research" className="text-purple-600 hover:text-purple-800 flex items-center gap-2">
               Research Frontiers →
             </Link>
           </div>
@@ -257,17 +257,17 @@ function MaterialCard({ materialKey, material, expanded, onToggle }) {
   const Icon = material.icon;
 
   const colorClasses = {
-    orange: { bg: 'bg-orange-900/20', border: 'border-orange-500/50', text: 'text-orange-300', header: 'bg-orange-950/50' },
-    slate: { bg: 'bg-slate-900/20', border: 'border-slate-500/50', text: 'text-slate-300', header: 'bg-slate-950/50' },
-    amber: { bg: 'bg-amber-900/20', border: 'border-amber-500/50', text: 'text-amber-300', header: 'bg-amber-950/50' },
-    emerald: { bg: 'bg-emerald-900/20', border: 'border-emerald-500/50', text: 'text-emerald-300', header: 'bg-emerald-950/50' },
-    violet: { bg: 'bg-violet-900/20', border: 'border-violet-500/50', text: 'text-violet-300', header: 'bg-violet-950/50' }
+    orange: { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-700', header: 'bg-orange-50' },
+    slate: { bg: 'bg-gray-50', border: 'border-gray-200', text: 'text-gray-700', header: 'bg-gray-100' },
+    blue: { bg: 'bg-[#264563]/10', border: 'border-[#264563]/30', text: 'text-[#264563]', header: 'bg-[#264563]/10' },
+    emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-700', header: 'bg-emerald-50' },
+    violet: { bg: 'bg-violet-50', border: 'border-violet-200', text: 'text-violet-700', header: 'bg-violet-50' }
   };
 
   const colors = colorClasses[material.color];
 
   return (
-    <div className={`backdrop-blur-sm rounded-xl border ${colors.border} ${colors.bg} overflow-hidden`}>
+    <div className={`rounded-xl border ${colors.border} ${colors.bg} overflow-hidden`}>
       <button
         onClick={onToggle}
         className={`w-full p-5 ${colors.header} flex items-center justify-between hover:opacity-90 transition-opacity`}
@@ -275,30 +275,30 @@ function MaterialCard({ materialKey, material, expanded, onToggle }) {
         <div className="flex items-center gap-3">
           <Icon className={`w-6 h-6 ${colors.text}`} />
           <div className="text-left">
-            <h2 className="text-xl font-bold text-white">{material.name}</h2>
-            <p className="text-xs text-slate-400 mt-1">Maturity: {material.maturity}</p>
+            <h2 className="text-xl font-bold text-gray-900">{material.name}</h2>
+            <p className="text-xs text-gray-500 mt-1">Maturity: {material.maturity}</p>
           </div>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-slate-300" /> : <ChevronRight className="w-6 h-6 text-slate-300" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500" /> : <ChevronRight className="w-6 h-6 text-gray-500" />}
       </button>
 
       {expanded && (
         <div className="p-6 space-y-5">
           {/* Definition */}
           <div>
-            <p className="text-slate-200 italic">{material.definition}</p>
+            <p className="text-gray-700 italic">{material.definition}</p>
           </div>
 
           {/* Hazards */}
           <div>
-            <h3 className="font-semibold text-white mb-2 flex items-center gap-2">
-              <AlertTriangle className="w-5 h-5 text-red-400" />
+            <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+              <AlertTriangle className="w-5 h-5 text-red-500" />
               Key Hazards & Challenges
             </h3>
             <ul className="space-y-1">
               {material.hazards.map((hazard, i) => (
-                <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
-                  <span className="text-red-400 mt-1">•</span>
+                <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
+                  <span className="text-red-500 mt-1">•</span>
                   <span>{hazard}</span>
                 </li>
               ))}
@@ -307,15 +307,15 @@ function MaterialCard({ materialKey, material, expanded, onToggle }) {
 
           {/* Bio Opportunities */}
           <div>
-            <h3 className="font-semibold text-white mb-3 flex items-center gap-2">
-              <Beaker className="w-5 h-5 text-emerald-400" />
+            <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+              <Beaker className="w-5 h-5 text-emerald-600" />
               Where Biology Can Help
             </h3>
             <div className="space-y-3">
               {material.bioOpportunities.map((opp, i) => (
-                <div key={i} className="bg-slate-800/30 rounded-lg p-4 border border-slate-600/50">
-                  <h4 className="font-semibold text-emerald-300 text-sm mb-1">{opp.title}</h4>
-                  <p className="text-slate-300 text-sm">{opp.description}</p>
+                <div key={i} className="bg-[#ededed] rounded-lg p-4 border border-gray-200">
+                  <h4 className="font-semibold text-emerald-700 text-sm mb-1">{opp.title}</h4>
+                  <p className="text-gray-600 text-sm">{opp.description}</p>
                 </div>
               ))}
             </div>
@@ -323,7 +323,7 @@ function MaterialCard({ materialKey, material, expanded, onToggle }) {
 
           {/* Why Biology */}
           <div className={`${colors.header} rounded-lg p-4 border ${colors.border}`}>
-            <h3 className="font-semibold text-white text-sm mb-2">💡 Why Biology Works Here</h3>
+            <h3 className="font-semibold text-gray-900 text-sm mb-2">Why Biology Works Here</h3>
             <p className={`text-sm ${colors.text}`}>{material.whyBiology}</p>
           </div>
         </div>

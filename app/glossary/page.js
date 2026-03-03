@@ -164,28 +164,28 @@ export default function Glossary() {
 
   return (
     <CommentableContent pageName="glossary">
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
-        <div className="max-w-5xl mx-auto">
+      <div className="min-h-screen py-8 px-6">
+        <div className="max-w-5xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
         {/* Header */}
         <div className="text-center mb-8">
-          <BookOpen className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-white mb-3">Core Glossary</h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <BookOpen className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
+          <h1 className="text-4xl font-bold text-gray-900 mb-3">Core Glossary</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Canonical definitions bridging mining and biology terminology
           </p>
         </div>
 
         {/* Search and Filter */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-6 border border-white/20">
+        <div className="bg-[#ededed] rounded-xl p-6 mb-6 border border-gray-200">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search terms..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500"
+                className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
               />
             </div>
             <div className="flex gap-2">
@@ -194,7 +194,7 @@ export default function Glossary() {
                 className={`px-4 py-3 rounded-lg font-medium transition-colors ${
                   selectedCategory === 'all'
                     ? 'bg-emerald-600 text-white'
-                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
                 All
@@ -203,8 +203,8 @@ export default function Glossary() {
                 onClick={() => setSelectedCategory('mining')}
                 className={`px-4 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                   selectedCategory === 'mining'
-                    ? 'bg-amber-600 text-white'
-                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                    ? 'bg-[#264563] text-white'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
                 <Mountain className="w-4 h-4" />
@@ -215,7 +215,7 @@ export default function Glossary() {
                 className={`px-4 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                   selectedCategory === 'biology'
                     ? 'bg-emerald-600 text-white'
-                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
                 <Microscope className="w-4 h-4" />
@@ -226,7 +226,7 @@ export default function Glossary() {
         </div>
 
         {/* Results Count */}
-        <div className="text-slate-400 text-sm mb-4">
+        <div className="text-gray-400 text-sm mb-4">
           Showing {filteredTerms.length} term{filteredTerms.length !== 1 ? 's' : ''}
         </div>
 
@@ -246,13 +246,13 @@ export default function Glossary() {
 
         {filteredTerms.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-slate-400">No terms found matching your search.</p>
+            <p className="text-gray-400">No terms found matching your search.</p>
           </div>
         )}
 
           {/* Navigation */}
           <div className="mt-12 text-center">
-            <Link href="/" className="text-emerald-400 hover:text-emerald-300 flex items-center justify-center gap-2">
+            <Link href="/" className="text-emerald-600 hover:text-emerald-800 flex items-center justify-center gap-2">
               ← Back to Home
             </Link>
           </div>
@@ -265,64 +265,64 @@ export default function Glossary() {
 function TermCard({ term, expanded, onToggle }) {
   const categoryColors = {
     mining: {
-      bg: 'bg-amber-900/20',
-      border: 'border-amber-500/50',
-      badge: 'bg-amber-600',
-      text: 'text-amber-300'
+      bg: 'bg-[#264563]/10',
+      border: 'border-[#264563]/30',
+      badge: 'bg-[#264563]',
+      text: 'text-[#264563]'
     },
     biology: {
-      bg: 'bg-emerald-900/20',
-      border: 'border-emerald-500/50',
+      bg: 'bg-emerald-50',
+      border: 'border-emerald-200',
       badge: 'bg-emerald-600',
-      text: 'text-emerald-300'
+      text: 'text-emerald-700'
     }
   };
 
   const colors = categoryColors[term.category];
 
   return (
-    <div className={`bg-white/10 backdrop-blur-sm rounded-lg border ${colors.border} overflow-hidden transition-all`}>
+    <div className={`bg-[#ededed] rounded-lg border ${colors.border} overflow-hidden transition-all`}>
       <button
         onClick={onToggle}
-        className="w-full p-4 flex items-center justify-between hover:bg-white/5 transition-colors"
+        className="w-full p-4 flex items-center justify-between hover:bg-gray-100 transition-colors"
       >
         <div className="flex items-center gap-3">
           <span className={`px-2 py-1 rounded text-xs font-semibold text-white ${colors.badge}`}>
             {term.category === 'mining' ? <Mountain className="w-3 h-3 inline" /> : <Microscope className="w-3 h-3 inline" />}
           </span>
-          <span className="text-lg font-bold text-white">{term.term}</span>
+          <span className="text-lg font-bold text-gray-900">{term.term}</span>
         </div>
-        <span className="text-slate-400 text-2xl">{expanded ? '−' : '+'}</span>
+        <span className="text-gray-400 text-2xl">{expanded ? '−' : '+'}</span>
       </button>
 
       {expanded && (
-        <div className="p-4 pt-0 border-t border-white/10">
+        <div className="p-4 pt-0 border-t border-gray-200">
           <div className="space-y-4 mt-4">
             <div>
-              <h4 className="text-sm font-semibold text-slate-400 mb-1">Definition</h4>
-              <p className="text-slate-200">{term.definition}</p>
+              <h4 className="text-sm font-semibold text-gray-400 mb-1">Definition</h4>
+              <p className="text-gray-700">{term.definition}</p>
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-slate-400 mb-1">Examples</h4>
-              <p className="text-slate-300 text-sm italic">{term.examples}</p>
+              <h4 className="text-sm font-semibold text-gray-400 mb-1">Examples</h4>
+              <p className="text-gray-600 text-sm italic">{term.examples}</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-4 mt-4">
               <div className={`${colors.bg} rounded-lg p-3 border ${colors.border}`}>
-                <h4 className="text-sm font-semibold text-emerald-400 mb-2 flex items-center gap-2">
+                <h4 className="text-sm font-semibold text-emerald-600 mb-2 flex items-center gap-2">
                   <Microscope className="w-4 h-4" />
                   For Biologists
                 </h4>
-                <p className="text-emerald-100 text-sm">{term.forBiologists}</p>
+                <p className="text-emerald-800 text-sm">{term.forBiologists}</p>
               </div>
 
               <div className={`${colors.bg} rounded-lg p-3 border ${colors.border}`}>
-                <h4 className="text-sm font-semibold text-amber-400 mb-2 flex items-center gap-2">
+                <h4 className="text-sm font-semibold text-[#264563] mb-2 flex items-center gap-2">
                   <Mountain className="w-4 h-4" />
                   For Miners
                 </h4>
-                <p className="text-amber-100 text-sm">{term.forMiners}</p>
+                <p className="text-[#264563] text-sm">{term.forMiners}</p>
               </div>
             </div>
           </div>

@@ -10,28 +10,28 @@ export default function WhatIsBiomining() {
 
   return (
     <CommentableContent pageName="what-is-biomining">
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 p-6">
-        <div className="max-w-5xl mx-auto">
+      <div className="min-h-screen py-8 px-6">
+        <div className="max-w-5xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">What Is "Biomining"?</h1>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">What Is "Biomining"?</h1>
+          <p className="text-xl text-[#264563] max-w-3xl mx-auto">
             Definitions, mechanisms, and where biotech outcompetes chemistry
           </p>
         </div>
 
         {/* Definition */}
-        <div className="bg-blue-950/30 border-2 border-blue-500/50 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-blue-300 mb-3">Our Definition</h2>
-          <div className="text-blue-100 space-y-3">
+        <div className="bg-[#264563]/10 border-2 border-[#264563]/30 rounded-xl p-6 mb-8">
+          <h2 className="text-xl font-bold text-[#264563] mb-3">Our Definition</h2>
+          <div className="text-[#264563] space-y-3">
             <p className="text-lg">
               "Biomining" is often shorthand for "bugs in heaps." That definition is <strong>too narrow</strong>.
             </p>
-            <div className="bg-blue-900/30 rounded-lg p-4 border-l-4 border-blue-400 mt-4">
-              <p className="text-blue-100 font-semibold">
+            <div className="bg-[#264563]/10 rounded-lg p-4 border-l-4 border-[#264563] mt-4">
+              <p className="text-[#264563] font-semibold">
                 For this wiki, <strong>biomining</strong> means:
               </p>
-              <p className="text-blue-200 mt-2 text-lg italic">
+              <p className="text-[#264563] mt-2 text-lg italic">
                 Any use of biological mechanisms—cells, enzymes, proteins, metabolites, or consortia—to aid
                 metal recovery, mineral processing, or the management of mining-related wastes and liabilities.
               </p>
@@ -85,7 +85,7 @@ export default function WhatIsBiomining() {
               description="Microbially driven precipitation of minerals that immobilize or concentrate metals"
               details="Includes biomineralization, biocement, and microbially induced calcite or sulfate minerals (e.g., metal sulfides, carbonates, phosphates)"
               icon={Beaker}
-              color="amber"
+              color="blue"
             />
 
             <MechanismCard
@@ -107,7 +107,7 @@ export default function WhatIsBiomining() {
           onToggle={() => setExpandedSection(expandedSection === 'excel' ? null : 'excel')}
         >
           <div className="space-y-3">
-            <p className="text-slate-200 mb-4">
+            <p className="text-gray-700 mb-4">
               Biotech's value proposition is not that biology can do everything. It is that biology does certain
               things <strong>exceptionally well under complex constraints</strong>:
             </p>
@@ -154,8 +154,8 @@ export default function WhatIsBiomining() {
               ]}
             />
 
-            <div className="bg-emerald-900/20 rounded-lg p-5 border border-emerald-700/50 mt-6">
-              <p className="text-emerald-200">
+            <div className="bg-emerald-50 rounded-lg p-5 border border-emerald-200 mt-6">
+              <p className="text-emerald-800">
                 <strong>Biotech's strongest foothold:</strong> Complex materials and complex conditions,
                 where conventional solutions are too costly, too carbon-intensive, or too permitting-sensitive to scale.
               </p>
@@ -164,28 +164,28 @@ export default function WhatIsBiomining() {
         </Section>
 
         {/* Thesis Summary */}
-        <div className="mt-12 bg-purple-950/30 border border-purple-700/50 rounded-xl p-6">
-          <h2 className="text-xl font-bold text-purple-300 mb-3">The Bottom Line</h2>
-          <div className="text-purple-100 space-y-3">
+        <div className="mt-12 bg-purple-50 border border-purple-200 rounded-xl p-6">
+          <h2 className="text-xl font-bold text-purple-700 mb-3">The Bottom Line</h2>
+          <div className="text-purple-800 space-y-3">
             <p>
               Biomining is <strong>not a replacement for mines</strong>. It's a <strong>toolkit of modules</strong> that
               can plug into existing flowsheets where:
             </p>
             <ul className="ml-6 space-y-2">
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 mt-1">•</span>
+                <span className="text-purple-700 mt-1">•</span>
                 <span>Complexity makes conventional chemistry expensive, blunt, or risky</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 mt-1">•</span>
+                <span className="text-purple-700 mt-1">•</span>
                 <span>Selectivity, adaptation, or mild conditions offer strategic advantages</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 mt-1">•</span>
+                <span className="text-purple-700 mt-1">•</span>
                 <span>Environmental benefits (closure, water quality, social licence) add value beyond metal recovery</span>
               </li>
             </ul>
-            <p className="mt-4 font-semibold text-purple-200">
+            <p className="mt-4 font-semibold text-purple-700">
               These modules are judged on the same metrics as anything else: $/tonne, % recovery, impurity removal,
               risk, permitting footprint, and closure outcomes.
             </p>
@@ -194,10 +194,10 @@ export default function WhatIsBiomining() {
 
         {/* Navigation */}
         <div className="mt-12 flex justify-between">
-          <Link href="/" className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
+          <Link href="/" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
             ← Back to Home
           </Link>
-          <Link href="/glossary" className="text-blue-400 hover:text-blue-300 flex items-center gap-2">
+          <Link href="/glossary" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
             Glossary →
           </Link>
         </div>
@@ -209,19 +209,19 @@ export default function WhatIsBiomining() {
 
 function Section({ title, icon: Icon, expanded, onToggle, children }) {
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-xl mb-4 border border-white/20 overflow-hidden">
+    <div className="bg-[#ededed] rounded-xl mb-4 border border-gray-200 overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
+        className="w-full p-6 flex items-center justify-between hover:bg-gray-100 transition-colors"
       >
         <div className="flex items-center gap-3">
-          <Icon className="w-6 h-6 text-blue-400" />
-          <h2 className="text-xl font-bold text-white">{title}</h2>
+          <Icon className="w-6 h-6 text-[#264563]" />
+          <h2 className="text-xl font-bold text-gray-900">{title}</h2>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-slate-300" /> : <ChevronRight className="w-6 h-6 text-slate-300" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500" /> : <ChevronRight className="w-6 h-6 text-gray-500" />}
       </button>
       {expanded && (
-        <div className="p-6 pt-0 border-t border-white/10">
+        <div className="p-6 pt-0 border-t border-gray-200">
           {children}
         </div>
       )}
@@ -231,24 +231,24 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
 
 function MechanismCard({ number, title, description, details, icon: Icon, color }) {
   const colors = {
-    blue: 'bg-blue-800/30 border-blue-600/30 text-blue-300',
-    purple: 'bg-purple-800/30 border-purple-600/30 text-purple-300',
-    emerald: 'bg-emerald-800/30 border-emerald-600/30 text-emerald-300',
-    amber: 'bg-amber-800/30 border-amber-600/30 text-amber-300',
-    violet: 'bg-violet-800/30 border-violet-600/30 text-violet-300'
+    blue: 'bg-[#264563]/10 border-[#264563]/30 text-[#264563]',
+    purple: 'bg-purple-50 border-purple-200 text-purple-700',
+    emerald: 'bg-emerald-50 border-emerald-200 text-emerald-700',
+    blue: 'bg-[#264563]/10 border-[#264563]/30 text-[#264563]',
+    violet: 'bg-violet-50 border-violet-200 text-violet-700'
   };
 
   return (
     <div className={`rounded-lg p-5 border ${colors[color]}`}>
       <div className="flex items-start gap-3 mb-3">
         <div className="flex items-center gap-2">
-          <span className="text-white font-bold text-lg">{number}.</span>
+          <span className="text-gray-900 font-bold text-lg">{number}.</span>
           <Icon className="w-6 h-6" />
         </div>
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
-          <p className="text-slate-200 text-sm mb-2">{description}</p>
-          <p className="text-slate-300 text-sm italic">{details}</p>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
+          <p className="text-gray-700 text-sm mb-2">{description}</p>
+          <p className="text-gray-600 text-sm italic">{details}</p>
         </div>
       </div>
     </div>
@@ -257,12 +257,12 @@ function MechanismCard({ number, title, description, details, icon: Icon, color 
 
 function AdvantageCard({ title, items }) {
   return (
-    <div className="bg-slate-800/30 rounded-lg p-4 border border-slate-600/50">
-      <h4 className="font-semibold text-white mb-2">{title}</h4>
+    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+      <h4 className="font-semibold text-gray-900 mb-2">{title}</h4>
       <ul className="space-y-2">
         {items.map((item, i) => (
-          <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
-            <span className="text-emerald-400 mt-1">→</span>
+          <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
+            <span className="text-emerald-600 mt-1">→</span>
             <span>{item}</span>
           </li>
         ))}

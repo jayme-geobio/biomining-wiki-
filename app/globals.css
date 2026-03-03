@@ -79,6 +79,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Full-page background image */
+body {
+  background-image: url('/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
 /* Comment form animations */
 @keyframes slideIn {
   from {

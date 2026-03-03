@@ -10,22 +10,22 @@ export default function ForMiners() {
 
   return (
     <CommentableContent pageName="for-miners">
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 p-6">
-        <div className="max-w-5xl mx-auto">
+      <div className="min-h-screen py-8 px-6">
+        <div className="max-w-5xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">Biology 101 for Mining Professionals</h1>
-          <p className="text-xl text-amber-200 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Biology 101 for Mining Professionals</h1>
+          <p className="text-xl text-[#264563] max-w-3xl mx-auto">
             Understanding how microbes and biomolecules interact with metals and minerals
           </p>
         </div>
 
         {/* Key Insight */}
-        <div className="bg-amber-950/30 border-2 border-amber-500/50 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-amber-300 mb-3">
+        <div className="bg-[#264563]/10 border-2 border-[#264563]/30 rounded-xl p-6 mb-8">
+          <h2 className="text-xl font-bold text-[#264563] mb-3">
             Biology as Switchable, Selective Chemistry
           </h2>
-          <p className="text-amber-100">
+          <p className="text-[#264563]">
             Microbes provide <strong>switchable, selective chemistry</strong> for metal extraction and management.
             Like reagents and catalysts, they're constrained by temperature, pH, ionic strength, inhibitors, and
             substrate availability. Understanding these constraints is key to successful integration.
@@ -40,7 +40,7 @@ export default function ForMiners() {
           onToggle={() => setExpandedSection(expandedSection === 'energy' ? null : 'energy')}
         >
           <div className="space-y-4">
-            <p className="text-slate-200">
+            <p className="text-gray-700">
               At a high level, microbes need three things to survive and do work:
             </p>
 
@@ -73,8 +73,8 @@ export default function ForMiners() {
               />
             </div>
 
-            <div className="bg-slate-800/50 rounded-lg p-6 border border-slate-600 mt-6">
-              <h3 className="text-lg font-semibold text-white mb-4">
+            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 mt-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Key Functional Groups in Biomining
               </h3>
 
@@ -119,7 +119,7 @@ export default function ForMiners() {
           onToggle={() => setExpandedSection(expandedSection === 'mechanisms' ? null : 'mechanisms')}
         >
           <div className="space-y-4">
-            <p className="text-slate-200 mb-4">
+            <p className="text-gray-700 mb-4">
               Microbes mobilize and capture metals through several mechanistic pathways. All can be engineered or tuned:
             </p>
 
@@ -160,7 +160,7 @@ export default function ForMiners() {
               description="Microbial activity alters local chemistry to precipitate new minerals"
               application="Changes pH, redox, carbonate, or sulfide levels"
               example="SRB produce sulfide that precipitates Cu, Zn, and other metals from solution"
-              color="amber"
+              color="blue"
             />
           </div>
         </Section>
@@ -173,7 +173,7 @@ export default function ForMiners() {
           onToggle={() => setExpandedSection(expandedSection === 'modalities' ? null : 'modalities')}
         >
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white mb-3">
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">
               Classical Bioleaching & Biooxidation
             </h3>
 
@@ -219,51 +219,51 @@ export default function ForMiners() {
               challenges="Geotechnical risks, regulatory hurdles, containment"
             />
 
-            <h3 className="text-lg font-semibold text-white mb-3 mt-8">
+            <h3 className="text-lg font-semibold text-gray-900 mb-3 mt-8">
               Bioseparations & Advanced Flowsheets
             </h3>
 
-            <div className="bg-purple-900/20 rounded-lg p-5 border border-purple-500/30">
-              <h4 className="font-semibold text-purple-300 mb-3">Emerging Technologies for REEs & Complex Matrices</h4>
-              <ul className="space-y-2 text-slate-200 text-sm">
+            <div className="bg-purple-50 rounded-lg p-5 border border-purple-200">
+              <h4 className="font-semibold text-purple-700 mb-3">Emerging Technologies for REEs & Complex Matrices</h4>
+              <ul className="space-y-2 text-gray-700 text-sm">
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">•</span>
+                  <span className="text-purple-600 mt-1">•</span>
                   <span><strong>Protein/peptide-based ligands</strong> (e.g., lanmodulin) for selective REE capture</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">•</span>
+                  <span className="text-purple-600 mt-1">•</span>
                   <span><strong>Hybrid biomolecular ligands</strong> – peptides + polymers for improved manufacturability</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">•</span>
+                  <span className="text-purple-600 mt-1">•</span>
                   <span><strong>Non-chromatographic deployments</strong> – membranes, beads, structured packings for PLS polishing</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">•</span>
+                  <span className="text-purple-600 mt-1">•</span>
                   <span><strong>Applications</strong>: Coal by-products, phosphogypsum, red mud, spent catalysts, magnet scrap</span>
                 </li>
               </ul>
-              <p className="text-purple-200 text-sm mt-3 italic">
+              <p className="text-purple-700 text-sm mt-3 italic">
                 Challenges: Matrix effects, fouling, immobilization strategies, feed chemistry variability
               </p>
             </div>
 
-            <h3 className="text-lg font-semibold text-white mb-3 mt-8">
+            <h3 className="text-lg font-semibold text-gray-900 mb-3 mt-8">
               Bioremediation & Recovery from Waste
             </h3>
 
-            <div className="bg-emerald-900/20 rounded-lg p-5 border border-emerald-500/30">
-              <ul className="space-y-3 text-slate-200 text-sm">
+            <div className="bg-emerald-50 rounded-lg p-5 border border-emerald-200">
+              <ul className="space-y-3 text-gray-700 text-sm">
                 <li>
-                  <strong className="text-emerald-300">AMD/ARD Bioremediation:</strong> Constructed wetlands,
+                  <strong className="text-emerald-700">AMD/ARD Bioremediation:</strong> Constructed wetlands,
                   SRB bioreactors, algae systems that remove metals and raise pH via sulfate reduction and metal sulfide precipitation
                 </li>
                 <li>
-                  <strong className="text-emerald-300">Metal Recovery from AMD:</strong> Coupling bioremediation
+                  <strong className="text-emerald-700">Metal Recovery from AMD:</strong> Coupling bioremediation
                   with selective sorbents or biomineralization to recover Cu, Zn, REEs, and other metals
                 </li>
                 <li>
-                  <strong className="text-emerald-300">E-waste & Urban Mining:</strong> Bioleaching and biosorption
+                  <strong className="text-emerald-700">E-waste & Urban Mining:</strong> Bioleaching and biosorption
                   applied to circuit boards, magnets, and electronics as alternative to high-temperature smelting
                 </li>
               </ul>
@@ -278,8 +278,8 @@ export default function ForMiners() {
           expanded={expandedSection === 'checklist'}
           onToggle={() => setExpandedSection(expandedSection === 'checklist' ? null : 'checklist')}
         >
-          <div className="bg-slate-800/50 rounded-lg p-6 border border-amber-500/50">
-            <p className="text-amber-200 mb-4">
+          <div className="bg-gray-50 rounded-lg p-6 border border-[#264563]/30">
+            <p className="text-[#264563] mb-4">
               Before dismissing or adopting a bio-solution, ask these questions:
             </p>
             <div className="space-y-4">
@@ -305,14 +305,14 @@ export default function ForMiners() {
                   detail: "Does it simplify permitting (less chemical transport, lower emissions)? Does it improve closure outcomes and community relations?"
                 }
               ].map((item, i) => (
-                <div key={i} className="border-l-4 border-amber-500 pl-4">
+                <div key={i} className="border-l-4 border-[#264563] pl-4">
                   <div className="flex items-start gap-3">
-                    <div className="bg-amber-500 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
+                    <div className="bg-[#264563]/100 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
                       {i + 1}
                     </div>
                     <div>
-                      <p className="text-white font-semibold">{item.q}</p>
-                      <p className="text-slate-300 text-sm mt-1">{item.detail}</p>
+                      <p className="text-gray-900 font-semibold">{item.q}</p>
+                      <p className="text-gray-600 text-sm mt-1">{item.detail}</p>
                     </div>
                   </div>
                 </div>
@@ -323,10 +323,10 @@ export default function ForMiners() {
 
           {/* Navigation */}
           <div className="mt-12 flex justify-between">
-            <Link href="/" className="text-amber-400 hover:text-amber-300 flex items-center gap-2">
+            <Link href="/" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
               ← Back to Home
             </Link>
-            <Link href="/complex-materials" className="text-amber-400 hover:text-amber-300 flex items-center gap-2">
+            <Link href="/complex-materials" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
               Explore Complex Materials →
             </Link>
           </div>
@@ -338,19 +338,19 @@ export default function ForMiners() {
 
 function Section({ title, icon: Icon, expanded, onToggle, children }) {
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-xl mb-4 border border-white/20 overflow-hidden">
+    <div className="bg-[#ededed] rounded-xl mb-4 border border-gray-200 overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
+        className="w-full p-6 flex items-center justify-between hover:bg-gray-100 transition-colors"
       >
         <div className="flex items-center gap-3">
-          <Icon className="w-6 h-6 text-amber-400" />
-          <h2 className="text-xl font-bold text-white">{title}</h2>
+          <Icon className="w-6 h-6 text-[#264563]" />
+          <h2 className="text-xl font-bold text-gray-900">{title}</h2>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-slate-300" /> : <ChevronRight className="w-6 h-6 text-slate-300" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500" /> : <ChevronRight className="w-6 h-6 text-gray-500" />}
       </button>
       {expanded && (
-        <div className="p-6 pt-0 border-t border-white/10">
+        <div className="p-6 pt-0 border-t border-gray-200">
           {children}
         </div>
       )}
@@ -360,12 +360,12 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
 
 function NeedCard({ title, examples }) {
   return (
-    <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-600">
-      <h3 className="font-semibold text-white mb-2">{title}</h3>
+    <div className="bg-gray-100 rounded-lg p-4 border border-gray-200">
+      <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
       <ul className="space-y-1">
         {examples.map((ex, i) => (
-          <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
-            <span className="text-amber-500 mt-1">→</span>
+          <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
+            <span className="text-[#264563] mt-1">→</span>
             <span>{ex}</span>
           </li>
         ))}
@@ -376,33 +376,33 @@ function NeedCard({ title, examples }) {
 
 function MicrobeCard({ name, examples, function: func, relevance }) {
   return (
-    <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-500/50">
-      <h4 className="font-semibold text-emerald-300">{name}</h4>
-      <p className="text-slate-400 text-xs mt-1 italic">{examples}</p>
-      <p className="text-slate-200 text-sm mt-2"><strong>Function:</strong> {func}</p>
-      <p className="text-amber-300 text-sm mt-1"><strong>Relevance:</strong> {relevance}</p>
+    <div className="bg-gray-100 rounded-lg p-4 border border-gray-200">
+      <h4 className="font-semibold text-emerald-700">{name}</h4>
+      <p className="text-gray-400 text-xs mt-1 italic">{examples}</p>
+      <p className="text-gray-700 text-sm mt-2"><strong>Function:</strong> {func}</p>
+      <p className="text-[#264563] text-sm mt-1"><strong>Relevance:</strong> {relevance}</p>
     </div>
   );
 }
 
 function MechanismCard({ title, description, application, example, color }) {
   const colorClasses = {
-    red: 'border-red-500/50 bg-red-900/10',
-    blue: 'border-blue-500/50 bg-blue-900/10',
-    purple: 'border-purple-500/50 bg-purple-900/10',
-    green: 'border-green-500/50 bg-green-900/10',
-    amber: 'border-amber-500/50 bg-amber-900/10'
+    red: 'border-red-200 bg-red-50',
+    blue: 'border-[#264563]/30 bg-[#264563]/10',
+    purple: 'border-purple-200 bg-purple-50',
+    green: 'border-green-200 bg-green-50',
+    blue: 'border-[#264563]/30 bg-[#264563]/10'
   };
 
   return (
     <div className={`rounded-lg p-4 border ${colorClasses[color]}`}>
-      <h3 className="font-semibold text-white mb-1">{title}</h3>
-      <p className="text-slate-200 text-sm mb-2">{description}</p>
-      <p className="text-slate-300 text-sm mb-2">
-        <strong className="text-slate-200">Application:</strong> {application}
+      <h3 className="font-semibold text-gray-900 mb-1">{title}</h3>
+      <p className="text-gray-700 text-sm mb-2">{description}</p>
+      <p className="text-gray-600 text-sm mb-2">
+        <strong className="text-gray-700">Application:</strong> {application}
       </p>
-      <div className="bg-slate-800/50 rounded p-2 border border-slate-600/50">
-        <p className="text-slate-300 text-xs">
+      <div className="bg-gray-100 rounded p-2 border border-gray-200">
+        <p className="text-gray-600 text-xs">
           <strong>Example:</strong> {example}
         </p>
       </div>
@@ -412,31 +412,31 @@ function MechanismCard({ title, description, application, example, color }) {
 
 function ModalityCard({ title, description, applications, parameters, integration, challenges }) {
   return (
-    <div className="bg-slate-800/30 rounded-lg p-5 border border-slate-600/50">
-      <h4 className="text-lg font-semibold text-white mb-2">{title}</h4>
-      <p className="text-slate-200 text-sm mb-3">{description}</p>
+    <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
+      <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
+      <p className="text-gray-700 text-sm mb-3">{description}</p>
 
       <div className="grid md:grid-cols-2 gap-4 mb-3">
         <div>
-          <p className="text-xs font-semibold text-emerald-400 mb-1">APPLICATIONS</p>
-          <p className="text-slate-300 text-sm">{applications}</p>
+          <p className="text-xs font-semibold text-emerald-600 mb-1">APPLICATIONS</p>
+          <p className="text-gray-600 text-sm">{applications}</p>
         </div>
         <div>
-          <p className="text-xs font-semibold text-blue-400 mb-1">KEY PARAMETERS</p>
-          <ul className="text-slate-300 text-xs space-y-0.5">
+          <p className="text-xs font-semibold text-[#264563] mb-1">KEY PARAMETERS</p>
+          <ul className="text-gray-600 text-xs space-y-0.5">
             {parameters.map((p, i) => <li key={i}>• {p}</li>)}
           </ul>
         </div>
       </div>
 
       <div className="mb-2">
-        <p className="text-xs font-semibold text-purple-400 mb-1">INTEGRATION</p>
-        <p className="text-slate-300 text-sm">{integration}</p>
+        <p className="text-xs font-semibold text-purple-600 mb-1">INTEGRATION</p>
+        <p className="text-gray-600 text-sm">{integration}</p>
       </div>
 
-      <div className="bg-red-900/20 rounded p-2 border border-red-700/30">
-        <p className="text-xs font-semibold text-red-400 mb-1">COMMON CHALLENGES</p>
-        <p className="text-red-200 text-xs">{challenges}</p>
+      <div className="bg-red-50 rounded p-2 border border-red-200">
+        <p className="text-xs font-semibold text-red-600 mb-1">COMMON CHALLENGES</p>
+        <p className="text-red-700 text-xs">{challenges}</p>
       </div>
     </div>
   );
