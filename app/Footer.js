@@ -17,16 +17,16 @@ export default function Footer() {
 
   return (
     /* Floating footer: centered, max-w-6xl to match nav and Essential Resources box */
-    <div className="flex justify-center px-6 py-6 mt-10">
-      <div className="w-full max-w-6xl">
-        <footer className="bg-slate-900 text-white rounded-2xl shadow-2xl px-8 py-8">
+    <div className="flex justify-center px-12 py-6 mt-10">
+      <div className="w-full">
+        <footer className="bg-[#0a3954] text-white rounded-2xl shadow-2xl px-12 py-8 border border-white">
 
           {/* Logo + Nav Links */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
             <img
               src="/images/homeworld-logo-full.png"
               alt="Homeworld Logo"
-              className="h-7"
+              className="h-14"
             />
             <div className="flex flex-wrap gap-2">
               {navLinks.map((item) => (

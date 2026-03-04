@@ -214,12 +214,12 @@ export default function Research() {
 
   return (
     <CommentableContent pageName="research">
-      <div className="min-h-screen py-8 px-6">
-        <div className="max-w-6xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
+      <div className="min-h-screen py-8 px-12">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
         {/* Header */}
         <div className="text-center mb-12">
           <Lightbulb className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">Research Frontiers & Collaboration</h1>
+          <h1 className="text-4xl font-bold text-[#264563] mb-3">Research Frontiers & Collaboration</h1>
           <p className="text-xl text-purple-700 max-w-3xl mx-auto">
             Open problems, infrastructure needs, and collaboration opportunities in biomining
           </p>
@@ -227,11 +227,11 @@ export default function Research() {
 
         {/* Research Frontiers */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-[#264563] mb-6 flex items-center gap-2">
             <FlaskConical className="w-7 h-7 text-purple-600" />
             Cross-Cutting Technical Frontiers
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-[#264563] mb-6">
             These problem statements and bottlenecks represent a public R&D agenda distilled from workshops,
             literature, and field experience. They're areas where breakthroughs would significantly advance biomining.
           </p>
@@ -249,11 +249,11 @@ export default function Research() {
 
         {/* Ecosystem & Infrastructure */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-[#264563] mb-6 flex items-center gap-2">
             <Users className="w-7 h-7 text-emerald-600" />
             Ecosystem, Infrastructure & Collaboration
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-[#264563] mb-6">
             Biomining is a socio-technical field, not just a set of reactions. These initiatives would strengthen
             the ecosystem and accelerate translation from lab to field.
           </p>
@@ -271,24 +271,24 @@ export default function Research() {
 
         {/* Call to Action */}
         <div className="mt-12 bg-gradient-to-r from-purple-50 to-emerald-50 border border-purple-200 rounded-xl p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Get Involved</h3>
-          <p className="text-gray-700 text-center mb-6 max-w-3xl mx-auto">
+          <h3 className="text-2xl font-bold text-[#264563] mb-4 text-center">Get Involved</h3>
+          <p className="text-[#264563] text-center mb-6 max-w-3xl mx-auto">
             These challenges require collaboration across disciplines, sectors, and institutions. Whether you're
             a researcher, mining professional, investor, or policymaker, there's a role for you in advancing
             sustainable biomining technologies.
           </p>
           <div className="grid md:grid-cols-3 gap-4 text-center">
-            <div className="bg-[#ededed] rounded-lg p-4 border border-gray-200">
+            <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
               <h4 className="font-semibold text-purple-700 mb-2">Researchers</h4>
-              <p className="text-gray-600 text-sm">Focus on high-impact problems with clear paths to field deployment</p>
+              <p className="text-[#264563] text-sm">Focus on high-impact problems with clear paths to field deployment</p>
             </div>
-            <div className="bg-[#ededed] rounded-lg p-4 border border-gray-200">
+            <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
               <h4 className="font-semibold text-emerald-700 mb-2">Industry</h4>
-              <p className="text-gray-600 text-sm">Share pre-competitive data and pilot sites to accelerate innovation</p>
+              <p className="text-[#264563] text-sm">Share pre-competitive data and pilot sites to accelerate innovation</p>
             </div>
-            <div className="bg-[#ededed] rounded-lg p-4 border border-gray-200">
+            <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
               <h4 className="font-semibold text-[#264563] mb-2">Funders</h4>
-              <p className="text-gray-600 text-sm">Support TEA-aware research and pilot-scale demonstration projects</p>
+              <p className="text-[#264563] text-sm">Support TEA-aware research and pilot-scale demonstration projects</p>
             </div>
           </div>
         </div>
@@ -325,9 +325,9 @@ function FrontierCard({ frontier, expanded, onToggle }) {
       >
         <div className="flex items-center gap-3">
           <Icon className={`w-6 h-6 ${colors.text}`} />
-          <h3 className="text-xl font-bold text-gray-900 text-left">{frontier.title}</h3>
+          <h3 className="text-xl font-bold text-[#264563] text-left">{frontier.title}</h3>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500" /> : <ChevronRight className="w-6 h-6 text-gray-500" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-[#264563]" /> : <ChevronRight className="w-6 h-6 text-[#264563]" />}
       </button>
 
       {expanded && (
@@ -337,7 +337,7 @@ function FrontierCard({ frontier, expanded, onToggle }) {
             <h4 className="font-semibold text-red-600 mb-3">Key Issues & Bottlenecks</h4>
             <ul className="space-y-2">
               {frontier.keyIssues.map((issue, i) => (
-                <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
+                <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
                   <span className="text-red-500 mt-1">⚠</span>
                   <span>{issue}</span>
                 </li>
@@ -350,9 +350,9 @@ function FrontierCard({ frontier, expanded, onToggle }) {
             <h4 className="font-semibold text-emerald-600 mb-3">Research Opportunities</h4>
             <div className="space-y-3">
               {frontier.opportunities.map((opp, i) => (
-                <div key={i} className="bg-[#ededed] rounded-lg p-4 border border-emerald-200">
+                <div key={i} className="bg-[#edede6] rounded-lg p-4 border border-emerald-200">
                   <h5 className="font-semibold text-emerald-700 text-sm mb-1">{opp.title}</h5>
-                  <p className="text-gray-600 text-sm">{opp.description}</p>
+                  <p className="text-[#264563] text-sm">{opp.description}</p>
                 </div>
               ))}
             </div>
@@ -367,7 +367,7 @@ function EcosystemCard({ item, expanded, onToggle }) {
   const Icon = item.icon;
 
   return (
-    <div className="bg-[#ededed] rounded-xl border border-gray-200 overflow-hidden">
+    <div className="bg-[#edede6] rounded-xl border border-gray-200 overflow-hidden">
       <button
         onClick={onToggle}
         className="w-full p-5 flex items-center justify-between hover:bg-gray-100 transition-colors"
@@ -375,11 +375,11 @@ function EcosystemCard({ item, expanded, onToggle }) {
         <div className="text-left">
           <div className="flex items-center gap-3 mb-2">
             <Icon className="w-6 h-6 text-emerald-600" />
-            <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+            <h3 className="text-xl font-bold text-[#264563]">{item.title}</h3>
           </div>
-          <p className="text-gray-600 text-sm">{item.description}</p>
+          <p className="text-[#264563] text-sm">{item.description}</p>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500 flex-shrink-0 ml-4" /> : <ChevronRight className="w-6 h-6 text-gray-500 flex-shrink-0 ml-4" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-[#264563] flex-shrink-0 ml-4" /> : <ChevronRight className="w-6 h-6 text-[#264563] flex-shrink-0 ml-4" />}
       </button>
 
       {expanded && (
@@ -387,8 +387,8 @@ function EcosystemCard({ item, expanded, onToggle }) {
           <div className="space-y-4">
             {item.initiatives.map((initiative, i) => (
               <div key={i} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-2">{initiative.name}</h4>
-                <p className="text-gray-600 text-sm">{initiative.description}</p>
+                <h4 className="font-semibold text-[#264563] mb-2">{initiative.name}</h4>
+                <p className="text-[#264563] text-sm">{initiative.description}</p>
               </div>
             ))}
           </div>

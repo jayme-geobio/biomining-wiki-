@@ -188,11 +188,11 @@ export default function Flowsheets() {
 
   return (
     <CommentableContent pageName="flowsheets">
-      <div className="min-h-screen py-8 px-6">
-        <div className="max-w-6xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
+      <div className="min-h-screen py-8 px-12">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">Example Flowsheets</h1>
+          <h1 className="text-4xl font-bold text-[#264563] mb-3">Example Flowsheets</h1>
           <p className="text-xl text-[#264563] max-w-3xl mx-auto">
             See how biology integrates into real mining operations - from proven commercial processes to emerging applications
           </p>
@@ -260,7 +260,7 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
   };
 
   return (
-    <div className="bg-[#ededed] rounded-xl border border-gray-200 overflow-hidden">
+    <div className="bg-[#edede6] rounded-xl border border-gray-200 overflow-hidden">
       <button
         onClick={onToggle}
         className="w-full p-6 flex items-center justify-between hover:bg-gray-100 transition-colors"
@@ -270,21 +270,21 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
             <span className={`px-3 py-1 rounded-full text-xs font-semibold text-white ${typeColors[flowsheet.type]}`}>
               {flowsheet.type}
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-semibold text-gray-700 bg-gray-100">
+            <span className="px-3 py-1 rounded-full text-xs font-semibold text-[#264563] bg-gray-100">
               {flowsheet.maturity}
             </span>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-1">{flowsheet.title}</h2>
-          <p className="text-gray-600 text-sm">{flowsheet.description}</p>
+          <h2 className="text-2xl font-bold text-[#264563] mb-1">{flowsheet.title}</h2>
+          <p className="text-[#264563] text-sm">{flowsheet.description}</p>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500 flex-shrink-0" /> : <ChevronRight className="w-6 h-6 text-gray-500 flex-shrink-0" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-[#264563] flex-shrink-0" /> : <ChevronRight className="w-6 h-6 text-[#264563] flex-shrink-0" />}
       </button>
 
       {expanded && (
         <div className="p-6 pt-0 border-t border-gray-200 space-y-6">
           {/* Diagram */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <h3 className="font-semibold text-[#264563] mb-3 flex items-center gap-2">
               <Target className="w-5 h-5 text-[#264563]" />
               Flowsheet Diagram
             </h3>
@@ -297,7 +297,7 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
 
           {/* Bio Integration Points */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <h3 className="font-semibold text-[#264563] mb-3 flex items-center gap-2">
               <Zap className="w-5 h-5 text-purple-600" />
               Biological Integration Points
             </h3>
@@ -307,16 +307,16 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
                   <h4 className="font-semibold text-purple-700 mb-2">{point.stage}</h4>
                   <div className="space-y-2 text-sm">
                     <div>
-                      <span className="text-gray-500">Role:</span>
-                      <span className="text-gray-700 ml-2">{point.role}</span>
+                      <span className="text-[#264563]">Role:</span>
+                      <span className="text-[#264563] ml-2">{point.role}</span>
                     </div>
                     <div>
-                      <span className="text-gray-500">What it does:</span>
-                      <span className="text-gray-700 ml-2">{point.what}</span>
+                      <span className="text-[#264563]">What it does:</span>
+                      <span className="text-[#264563] ml-2">{point.what}</span>
                     </div>
                     <div>
-                      <span className="text-gray-500">Control:</span>
-                      <span className="text-gray-700 ml-2">{point.control}</span>
+                      <span className="text-[#264563]">Control:</span>
+                      <span className="text-[#264563] ml-2">{point.control}</span>
                     </div>
                   </div>
                 </div>
@@ -326,13 +326,13 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
 
           {/* Reality Check */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <h3 className="font-semibold text-[#264563] mb-3 flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-[#264563]" />
               Reality Check: What You Need to Know
             </h3>
             <ul className="space-y-2">
               {flowsheet.reality.map((item, i) => (
-                <li key={i} className="text-gray-700 text-sm flex items-start gap-2">
+                <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
                   <span className="text-[#264563] mt-1">→</span>
                   <span>{item}</span>
                 </li>

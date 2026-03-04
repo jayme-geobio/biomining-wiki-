@@ -52,17 +52,17 @@ export default function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-900 border-b border-emerald-700/30 shadow-lg backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-24">
           {/* Logo/Title */}
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-3">
               <img
                 src="/images/homeworld-icon.png"
                 alt="Homeworld"
-                className="w-10 h-10"
+                className="w-20 h-20"
               />
-              <span className="text-xl font-bold text-white hidden sm:block">Biomining Wiki</span>
-              <span className="text-xl font-bold text-white sm:hidden">Bio Wiki</span>
+              <span className="text-3xl font-bold text-white hidden sm:block">Biomining Wiki</span>
+              <span className="text-3xl font-bold text-white sm:hidden">Bio Wiki</span>
             </a>
           </div>
 
@@ -71,9 +71,9 @@ export default function Navigation() {
             {/* Home */}
             <a
               href={navigation.main[0].href}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg text-emerald-100 hover:bg-white/10 hover:text-white transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-emerald-100 hover:bg-white/10 hover:text-white transition-colors text-xl"
             >
-              <Home className="w-4 h-4" />
+              <Home className="w-6 h-6" />
               <span>{navigation.main[0].name}</span>
             </a>
 
@@ -83,11 +83,11 @@ export default function Navigation() {
                 <button
                   onClick={() => toggleDropdown(key)}
                   onMouseEnter={() => setActiveDropdown(key)}
-                  className="flex items-center gap-1 px-3 py-2 rounded-lg text-emerald-100 hover:bg-white/10 hover:text-white transition-colors"
+                  className="flex items-center gap-1 px-3 py-2 rounded-lg text-emerald-100 hover:bg-white/10 hover:text-white transition-colors text-xl"
                 >
-                  <section.icon className="w-4 h-4" />
+                  <section.icon className="w-6 h-6" />
                   <span>{section.name}</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === key ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-6 h-6 transition-transform ${activeDropdown === key ? 'rotate-180' : ''}`} />
                 </button>
 
                 {/* Dropdown Menu */}
@@ -130,9 +130,9 @@ export default function Navigation() {
             {/* Home */}
             <a
               href={navigation.main[0].href}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg text-emerald-100 hover:bg-white/10 hover:text-white transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-emerald-100 hover:bg-white/10 hover:text-white transition-colors text-xl"
             >
-              <Home className="w-4 h-4" />
+              <Home className="w-6 h-6" />
               <span>{navigation.main[0].name}</span>
             </a>
 
@@ -141,13 +141,13 @@ export default function Navigation() {
               <div key={key} className="space-y-1">
                 <button
                   onClick={() => toggleDropdown(key)}
-                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-emerald-100 hover:bg-white/10 hover:text-white transition-colors"
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-emerald-100 hover:bg-white/10 hover:text-white transition-colors text-xl"
                 >
                   <div className="flex items-center gap-2">
-                    <section.icon className="w-4 h-4" />
+                    <section.icon className="w-6 h-6" />
                     <span>{section.name}</span>
                   </div>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === key ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-6 h-6 transition-transform ${activeDropdown === key ? 'rotate-180' : ''}`} />
                 </button>
 
                 {/* Mobile Dropdown Items */}

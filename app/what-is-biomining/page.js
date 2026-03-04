@@ -10,11 +10,11 @@ export default function WhatIsBiomining() {
 
   return (
     <CommentableContent pageName="what-is-biomining">
-      <div className="min-h-screen py-8 px-6">
-        <div className="max-w-5xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
+      <div className="min-h-screen py-8 px-12">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">What Is "Biomining"?</h1>
+          <h1 className="text-4xl font-bold text-[#264563] mb-4">What Is "Biomining"?</h1>
           <p className="text-xl text-[#264563] max-w-3xl mx-auto">
             Definitions, mechanisms, and where biotech outcompetes chemistry
           </p>
@@ -107,7 +107,7 @@ export default function WhatIsBiomining() {
           onToggle={() => setExpandedSection(expandedSection === 'excel' ? null : 'excel')}
         >
           <div className="space-y-3">
-            <p className="text-gray-700 mb-4">
+            <p className="text-[#264563] mb-4">
               Biotech's value proposition is not that biology can do everything. It is that biology does certain
               things <strong>exceptionally well under complex constraints</strong>:
             </p>
@@ -209,16 +209,16 @@ export default function WhatIsBiomining() {
 
 function Section({ title, icon: Icon, expanded, onToggle, children }) {
   return (
-    <div className="bg-[#ededed] rounded-xl mb-4 border border-gray-200 overflow-hidden">
+    <div className="bg-[#edede6] rounded-xl mb-4 border border-gray-200 overflow-hidden">
       <button
         onClick={onToggle}
         className="w-full p-6 flex items-center justify-between hover:bg-gray-100 transition-colors"
       >
         <div className="flex items-center gap-3">
           <Icon className="w-6 h-6 text-[#264563]" />
-          <h2 className="text-xl font-bold text-gray-900">{title}</h2>
+          <h2 className="text-xl font-bold text-[#264563]">{title}</h2>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500" /> : <ChevronRight className="w-6 h-6 text-gray-500" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-[#264563]" /> : <ChevronRight className="w-6 h-6 text-[#264563]" />}
       </button>
       {expanded && (
         <div className="p-6 pt-0 border-t border-gray-200">
@@ -242,13 +242,13 @@ function MechanismCard({ number, title, description, details, icon: Icon, color 
     <div className={`rounded-lg p-5 border ${colors[color]}`}>
       <div className="flex items-start gap-3 mb-3">
         <div className="flex items-center gap-2">
-          <span className="text-gray-900 font-bold text-lg">{number}.</span>
+          <span className="text-[#264563] font-bold text-lg">{number}.</span>
           <Icon className="w-6 h-6" />
         </div>
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
-          <p className="text-gray-700 text-sm mb-2">{description}</p>
-          <p className="text-gray-600 text-sm italic">{details}</p>
+          <h3 className="text-lg font-semibold text-[#264563] mb-2">{title}</h3>
+          <p className="text-[#264563] text-sm mb-2">{description}</p>
+          <p className="text-[#264563] text-sm italic">{details}</p>
         </div>
       </div>
     </div>
@@ -258,10 +258,10 @@ function MechanismCard({ number, title, description, details, icon: Icon, color 
 function AdvantageCard({ title, items }) {
   return (
     <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-      <h4 className="font-semibold text-gray-900 mb-2">{title}</h4>
+      <h4 className="font-semibold text-[#264563] mb-2">{title}</h4>
       <ul className="space-y-2">
         {items.map((item, i) => (
-          <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
+          <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
             <span className="text-emerald-600 mt-1">→</span>
             <span>{item}</span>
           </li>

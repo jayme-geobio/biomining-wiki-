@@ -9,35 +9,35 @@ export default function BiominingHome() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="px-12 pt-6 pb-6">
           {/* Hero Card + Ghost Box */}
-          <div className="mb-16">
+          <div className="mb-6">
             <div className="flex gap-6 items-stretch">
               {/* Solid card */}
-              <div className="flex-1 bg-[#ededed] rounded-3xl p-10 shadow-xl">
-                <h1 className="text-5xl font-bold text-gray-900 mb-3 leading-tight">
+              <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
+                <h1 className="text-5xl font-bold text-[#264563] mb-3 leading-tight">
                   Biomining Wiki
                 </h1>
-                <p className="text-xl text-gray-600 mb-3">
+                <p className="text-xl text-[#264563] mb-3">
                   A bridge between biology and mining for critical mineral recovery
                 </p>
-                <p className="text-gray-500 text-base">
+                <p className="text-[#264563] text-base">
                   Leveraging biological mechanisms to unlock value from complex materials where conventional chemistry is too costly, too blunt, or too risky
                 </p>
               </div>
               {/* Ghost outline box */}
-              <div className="flex-1 rounded-3xl border-2 border-[#ededed] shadow-xl" />
+              <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
             </div>
           </div>
 
           {/* Why Now Section */}
-          <div className="mb-16">
-            <div className="bg-[#ededed] rounded-3xl p-8 shadow-xl">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <div className="mb-6">
+            <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
+              <h2 className="text-2xl font-bold text-[#264563] mb-4 flex items-center gap-2">
                 <TrendingUp className="w-6 h-6 text-emerald-600" />
                 Why Biomining Now?
               </h2>
-              <div className="text-gray-700 space-y-3">
+              <div className="text-[#264563] space-y-3">
                 <p>
                   Mining and critical mineral recovery face a <strong>new constraint set</strong>: rising demand from clean energy,
                   shifting toward harder feedstocks, and intensifying limits around energy, water, tailings, and social licence.
@@ -55,7 +55,7 @@ export default function BiominingHome() {
           </div>
 
           {/* Dual Path Selection */}
-          <div className="grid md:grid-cols-2 gap-8 mt-16">
+          <div className="grid md:grid-cols-2 gap-8 mt-6">
             <PathCard
               title="For Biologists"
               subtitle="Learn how your biology fits into mining operations"
@@ -86,9 +86,9 @@ export default function BiominingHome() {
           </div>
 
           {/* Core Resources */}
-          <div className="mt-16">
-            <div className="bg-[#ededed] rounded-3xl p-8 shadow-xl">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+          <div className="mt-6">
+            <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
+              <h2 className="text-2xl font-bold text-[#264563] mb-6 text-center">
                 Essential Resources
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -121,13 +121,13 @@ export default function BiominingHome() {
           </div>
 
           {/* What is Biomining Definition */}
-          <div className="mt-12">
-            <div className="bg-[#ededed] rounded-3xl p-8 shadow-xl">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-2">
+          <div className="mt-6">
+            <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
+              <h3 className="text-xl font-semibold text-[#264563] mb-3 flex items-center gap-2">
                 <GraduationCap className="w-6 h-6 text-emerald-600" />
                 What This Wiki Covers
               </h3>
-              <p className="text-gray-700 mb-4">
+              <p className="text-[#264563] mb-4">
                 <strong>Biomining</strong> means <strong>any use of biological mechanisms</strong>—cells, enzymes,
                 proteins, metabolites, or consortia—to aid metal recovery, mineral processing, or management of
                 mining-related wastes and liabilities.
@@ -152,7 +152,7 @@ export default function BiominingHome() {
                   </ul>
                 </div>
               </div>
-              <p className="text-gray-500 mt-4 text-sm italic">
+              <p className="text-[#264563] mt-4 text-sm italic">
                 Our goal: a gold-standard, technically accurate, practically oriented resource for both communities
                 to design better projects together.
               </p>
@@ -180,12 +180,12 @@ function PathCard({ title, subtitle, icon: Icon, color, sections, link }) {
   const colors = colorClasses[color];
 
   return (
-    <div className="bg-[#ededed] rounded-3xl p-8 shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300">
+    <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white hover:shadow-2xl transition-all duration-300">
       <div className="flex items-center gap-3 mb-4">
         <Icon className={`w-7 h-7 ${colors.iconColor}`} />
         <div>
-          <h2 className="text-xl font-bold text-gray-900">{title}</h2>
-          <p className="text-gray-500 text-sm">{subtitle}</p>
+          <h2 className="text-xl font-bold text-[#264563]">{title}</h2>
+          <p className="text-[#264563] text-sm">{subtitle}</p>
         </div>
       </div>
 
@@ -193,8 +193,8 @@ function PathCard({ title, subtitle, icon: Icon, color, sections, link }) {
         {sections.map((section, i) => {
           const SectionIcon = section.icon;
           return (
-            <div key={i} className="flex items-center gap-3 text-gray-600">
-              <SectionIcon className="w-4 h-4 text-gray-400" />
+            <div key={i} className="flex items-center gap-3 text-[#264563]">
+              <SectionIcon className="w-4 h-4 text-[#264563]/50" />
               <span className="text-sm">{section.title}</span>
             </div>
           );
@@ -219,8 +219,8 @@ function ResourceCard({ title, description, icon: Icon, link }) {
       className="bg-gray-50 hover:bg-white rounded-xl p-5 border border-gray-200 hover:border-emerald-200 hover:shadow-md transition-all block"
     >
       <Icon className="w-7 h-7 text-emerald-600 mb-3" />
-      <h3 className="text-base font-semibold text-gray-900 mb-1.5">{title}</h3>
-      <p className="text-gray-500 text-sm">{description}</p>
+      <h3 className="text-base font-semibold text-[#264563] mb-1.5">{title}</h3>
+      <p className="text-[#264563] text-sm">{description}</p>
     </Link>
   );
 }

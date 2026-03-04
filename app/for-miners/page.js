@@ -10,11 +10,11 @@ export default function ForMiners() {
 
   return (
     <CommentableContent pageName="for-miners">
-      <div className="min-h-screen py-8 px-6">
-        <div className="max-w-5xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
+      <div className="min-h-screen py-8 px-12">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Biology 101 for Mining Professionals</h1>
+          <h1 className="text-4xl font-bold text-[#264563] mb-4">Biology 101 for Mining Professionals</h1>
           <p className="text-xl text-[#264563] max-w-3xl mx-auto">
             Understanding how microbes and biomolecules interact with metals and minerals
           </p>
@@ -40,7 +40,7 @@ export default function ForMiners() {
           onToggle={() => setExpandedSection(expandedSection === 'energy' ? null : 'energy')}
         >
           <div className="space-y-4">
-            <p className="text-gray-700">
+            <p className="text-[#264563]">
               At a high level, microbes need three things to survive and do work:
             </p>
 
@@ -74,7 +74,7 @@ export default function ForMiners() {
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 mt-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <h3 className="text-lg font-semibold text-[#264563] mb-4">
                 Key Functional Groups in Biomining
               </h3>
 
@@ -119,7 +119,7 @@ export default function ForMiners() {
           onToggle={() => setExpandedSection(expandedSection === 'mechanisms' ? null : 'mechanisms')}
         >
           <div className="space-y-4">
-            <p className="text-gray-700 mb-4">
+            <p className="text-[#264563] mb-4">
               Microbes mobilize and capture metals through several mechanistic pathways. All can be engineered or tuned:
             </p>
 
@@ -173,7 +173,7 @@ export default function ForMiners() {
           onToggle={() => setExpandedSection(expandedSection === 'modalities' ? null : 'modalities')}
         >
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+            <h3 className="text-lg font-semibold text-[#264563] mb-3">
               Classical Bioleaching & Biooxidation
             </h3>
 
@@ -219,13 +219,13 @@ export default function ForMiners() {
               challenges="Geotechnical risks, regulatory hurdles, containment"
             />
 
-            <h3 className="text-lg font-semibold text-gray-900 mb-3 mt-8">
+            <h3 className="text-lg font-semibold text-[#264563] mb-3 mt-8">
               Bioseparations & Advanced Flowsheets
             </h3>
 
             <div className="bg-purple-50 rounded-lg p-5 border border-purple-200">
               <h4 className="font-semibold text-purple-700 mb-3">Emerging Technologies for REEs & Complex Matrices</h4>
-              <ul className="space-y-2 text-gray-700 text-sm">
+              <ul className="space-y-2 text-[#264563] text-sm">
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
                   <span><strong>Protein/peptide-based ligands</strong> (e.g., lanmodulin) for selective REE capture</span>
@@ -248,12 +248,12 @@ export default function ForMiners() {
               </p>
             </div>
 
-            <h3 className="text-lg font-semibold text-gray-900 mb-3 mt-8">
+            <h3 className="text-lg font-semibold text-[#264563] mb-3 mt-8">
               Bioremediation & Recovery from Waste
             </h3>
 
             <div className="bg-emerald-50 rounded-lg p-5 border border-emerald-200">
-              <ul className="space-y-3 text-gray-700 text-sm">
+              <ul className="space-y-3 text-[#264563] text-sm">
                 <li>
                   <strong className="text-emerald-700">AMD/ARD Bioremediation:</strong> Constructed wetlands,
                   SRB bioreactors, algae systems that remove metals and raise pH via sulfate reduction and metal sulfide precipitation
@@ -311,8 +311,8 @@ export default function ForMiners() {
                       {i + 1}
                     </div>
                     <div>
-                      <p className="text-gray-900 font-semibold">{item.q}</p>
-                      <p className="text-gray-600 text-sm mt-1">{item.detail}</p>
+                      <p className="text-[#264563] font-semibold">{item.q}</p>
+                      <p className="text-[#264563] text-sm mt-1">{item.detail}</p>
                     </div>
                   </div>
                 </div>
@@ -338,16 +338,16 @@ export default function ForMiners() {
 
 function Section({ title, icon: Icon, expanded, onToggle, children }) {
   return (
-    <div className="bg-[#ededed] rounded-xl mb-4 border border-gray-200 overflow-hidden">
+    <div className="bg-[#edede6] rounded-xl mb-4 border border-gray-200 overflow-hidden">
       <button
         onClick={onToggle}
         className="w-full p-6 flex items-center justify-between hover:bg-gray-100 transition-colors"
       >
         <div className="flex items-center gap-3">
           <Icon className="w-6 h-6 text-[#264563]" />
-          <h2 className="text-xl font-bold text-gray-900">{title}</h2>
+          <h2 className="text-xl font-bold text-[#264563]">{title}</h2>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500" /> : <ChevronRight className="w-6 h-6 text-gray-500" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-[#264563]" /> : <ChevronRight className="w-6 h-6 text-[#264563]" />}
       </button>
       {expanded && (
         <div className="p-6 pt-0 border-t border-gray-200">
@@ -361,10 +361,10 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
 function NeedCard({ title, examples }) {
   return (
     <div className="bg-gray-100 rounded-lg p-4 border border-gray-200">
-      <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
+      <h3 className="font-semibold text-[#264563] mb-2">{title}</h3>
       <ul className="space-y-1">
         {examples.map((ex, i) => (
-          <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
+          <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
             <span className="text-[#264563] mt-1">→</span>
             <span>{ex}</span>
           </li>
@@ -378,8 +378,8 @@ function MicrobeCard({ name, examples, function: func, relevance }) {
   return (
     <div className="bg-gray-100 rounded-lg p-4 border border-gray-200">
       <h4 className="font-semibold text-emerald-700">{name}</h4>
-      <p className="text-gray-400 text-xs mt-1 italic">{examples}</p>
-      <p className="text-gray-700 text-sm mt-2"><strong>Function:</strong> {func}</p>
+      <p className="text-[#264563]/50 text-xs mt-1 italic">{examples}</p>
+      <p className="text-[#264563] text-sm mt-2"><strong>Function:</strong> {func}</p>
       <p className="text-[#264563] text-sm mt-1"><strong>Relevance:</strong> {relevance}</p>
     </div>
   );
@@ -396,13 +396,13 @@ function MechanismCard({ title, description, application, example, color }) {
 
   return (
     <div className={`rounded-lg p-4 border ${colorClasses[color]}`}>
-      <h3 className="font-semibold text-gray-900 mb-1">{title}</h3>
-      <p className="text-gray-700 text-sm mb-2">{description}</p>
-      <p className="text-gray-600 text-sm mb-2">
-        <strong className="text-gray-700">Application:</strong> {application}
+      <h3 className="font-semibold text-[#264563] mb-1">{title}</h3>
+      <p className="text-[#264563] text-sm mb-2">{description}</p>
+      <p className="text-[#264563] text-sm mb-2">
+        <strong className="text-[#264563]">Application:</strong> {application}
       </p>
       <div className="bg-gray-100 rounded p-2 border border-gray-200">
-        <p className="text-gray-600 text-xs">
+        <p className="text-[#264563] text-xs">
           <strong>Example:</strong> {example}
         </p>
       </div>
@@ -413,17 +413,17 @@ function MechanismCard({ title, description, application, example, color }) {
 function ModalityCard({ title, description, applications, parameters, integration, challenges }) {
   return (
     <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
-      <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
-      <p className="text-gray-700 text-sm mb-3">{description}</p>
+      <h4 className="text-lg font-semibold text-[#264563] mb-2">{title}</h4>
+      <p className="text-[#264563] text-sm mb-3">{description}</p>
 
       <div className="grid md:grid-cols-2 gap-4 mb-3">
         <div>
           <p className="text-xs font-semibold text-emerald-600 mb-1">APPLICATIONS</p>
-          <p className="text-gray-600 text-sm">{applications}</p>
+          <p className="text-[#264563] text-sm">{applications}</p>
         </div>
         <div>
           <p className="text-xs font-semibold text-[#264563] mb-1">KEY PARAMETERS</p>
-          <ul className="text-gray-600 text-xs space-y-0.5">
+          <ul className="text-[#264563] text-xs space-y-0.5">
             {parameters.map((p, i) => <li key={i}>• {p}</li>)}
           </ul>
         </div>
@@ -431,7 +431,7 @@ function ModalityCard({ title, description, applications, parameters, integratio
 
       <div className="mb-2">
         <p className="text-xs font-semibold text-purple-600 mb-1">INTEGRATION</p>
-        <p className="text-gray-600 text-sm">{integration}</p>
+        <p className="text-[#264563] text-sm">{integration}</p>
       </div>
 
       <div className="bg-red-50 rounded p-2 border border-red-200">

@@ -10,11 +10,11 @@ export default function ForBiologists() {
 
   return (
     <CommentableContent pageName="for-biologists">
-      <div className="min-h-screen py-8 px-6">
-        <div className="max-w-5xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
+      <div className="min-h-screen py-8 px-12">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Mining 101 for Biologists</h1>
+          <h1 className="text-4xl font-bold text-[#264563] mb-4">Mining 101 for Biologists</h1>
           <p className="text-xl text-emerald-700 max-w-3xl mx-auto">
             If you want biology to matter in mining, you have to know where your biology would live in a flowsheet
           </p>
@@ -60,20 +60,20 @@ export default function ForBiologists() {
           onToggle={() => setExpandedSection(expandedSection === 'journey' ? null : 'journey')}
         >
           <div className="space-y-4">
-            <p className="text-gray-700">
+            <p className="text-[#264563]">
               At a high level, the mining value chain looks like this:
             </p>
 
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
               <div className="font-mono text-sm text-emerald-700 space-y-2">
                 <div>Rock in ground</div>
-                <div className="ml-4">↓ <span className="text-gray-400">(exploration & resource modeling)</span></div>
+                <div className="ml-4">↓ <span className="text-[#264563]/50">(exploration & resource modeling)</span></div>
                 <div>Ore body defined</div>
-                <div className="ml-4">↓ <span className="text-gray-400">(mine planning & development)</span></div>
+                <div className="ml-4">↓ <span className="text-[#264563]/50">(mine planning & development)</span></div>
                 <div>Ore and waste rock excavated</div>
-                <div className="ml-4">↓ <span className="text-gray-400">(crushing, grinding, concentration)</span></div>
+                <div className="ml-4">↓ <span className="text-[#264563]/50">(crushing, grinding, concentration)</span></div>
                 <div>Concentrate / leach solution</div>
-                <div className="ml-4">↓ <span className="text-gray-400">(metallurgical refining)</span></div>
+                <div className="ml-4">↓ <span className="text-[#264563]/50">(metallurgical refining)</span></div>
                 <div>Saleable product (metal, concentrate, chemicals)</div>
                 <div className="ml-4">↓</div>
                 <div>Tailings, waste rock, water to be managed and closed</div>
@@ -245,7 +245,7 @@ export default function ForBiologists() {
                   <div className="bg-emerald-500 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                     {i + 1}
                   </div>
-                  <p className="text-gray-700">{q}</p>
+                  <p className="text-[#264563]">{q}</p>
                 </div>
               ))}
             </div>
@@ -269,16 +269,16 @@ export default function ForBiologists() {
 
 function Section({ title, icon: Icon, expanded, onToggle, children }) {
   return (
-    <div className="bg-[#ededed] rounded-xl mb-4 border border-gray-200 overflow-hidden">
+    <div className="bg-[#edede6] rounded-xl mb-4 border border-gray-200 overflow-hidden">
       <button
         onClick={onToggle}
         className="w-full p-6 flex items-center justify-between hover:bg-gray-100 transition-colors"
       >
         <div className="flex items-center gap-3">
           <Icon className="w-6 h-6 text-emerald-600" />
-          <h2 className="text-xl font-bold text-gray-900">{title}</h2>
+          <h2 className="text-xl font-bold text-[#264563]">{title}</h2>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500" /> : <ChevronRight className="w-6 h-6 text-gray-500" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-[#264563]" /> : <ChevronRight className="w-6 h-6 text-[#264563]" />}
       </button>
       {expanded && (
         <div className="p-6 pt-0 border-t border-gray-200">
@@ -292,18 +292,18 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
 function StageCard({ title, what, whyBiology, whereBio }) {
   return (
     <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
-      <h3 className="text-lg font-semibold text-gray-900 mb-3">{title}</h3>
+      <h3 className="text-lg font-semibold text-[#264563] mb-3">{title}</h3>
 
       <div className="mb-4">
-        <h4 className="text-sm font-semibold text-gray-400 mb-1">What it is:</h4>
-        <p className="text-gray-700 text-sm">{what}</p>
+        <h4 className="text-sm font-semibold text-[#264563]/50 mb-1">What it is:</h4>
+        <p className="text-[#264563] text-sm">{what}</p>
       </div>
 
       <div className="mb-4">
         <h4 className="text-sm font-semibold text-emerald-600 mb-2">Why it matters to biologists:</h4>
         <ul className="space-y-1">
           {whyBiology.map((item, i) => (
-            <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
+            <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
               <span className="text-emerald-500 mt-1">•</span>
               <span>{item}</span>
             </li>
@@ -331,9 +331,9 @@ function ConstraintCard({ title, icon: Icon, description, implication }) {
     <div className="bg-gray-50 rounded-lg p-5 border border-[#264563]/30">
       <div className="flex items-center gap-2 mb-2">
         <Icon className="w-5 h-5 text-[#264563]" />
-        <h3 className="font-semibold text-gray-900">{title}</h3>
+        <h3 className="font-semibold text-[#264563]">{title}</h3>
       </div>
-      <p className="text-gray-600 text-sm mb-3">{description}</p>
+      <p className="text-[#264563] text-sm mb-3">{description}</p>
       <div className="bg-[#264563]/10 rounded p-3 border-l-4 border-[#264563]">
         <p className="text-[#264563] text-sm">
           <strong>Implication:</strong> {implication}

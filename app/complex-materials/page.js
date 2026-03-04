@@ -173,16 +173,16 @@ export default function ComplexMaterials() {
 
   return (
     <CommentableContent pageName="complex-materials">
-      <div className="min-h-screen py-8 px-6">
-        <div className="max-w-5xl mx-auto bg-[#ededed] rounded-3xl shadow-2xl p-8 md:p-12">
+      <div className="min-h-screen py-8 px-12">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
         {/* Header */}
         <div className="text-center mb-8">
           <Sparkles className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">Complex Materials Guide</h1>
+          <h1 className="text-4xl font-bold text-[#264563] mb-3">Complex Materials Guide</h1>
           <p className="text-xl text-purple-700 max-w-3xl mx-auto mb-4">
             Where biology helps most: materials too complex, contaminated, or low-grade for conventional processing
           </p>
-          <p className="text-gray-600 max-w-3xl mx-auto text-sm">
+          <p className="text-[#264563] max-w-3xl mx-auto text-sm">
             Biology won't replace conventional mining for high-grade ores - that's highly optimized. But for complex
             materials where traditional methods struggle, biotechnology can shift the economics and reduce environmental impact.
           </p>
@@ -258,7 +258,7 @@ function MaterialCard({ materialKey, material, expanded, onToggle }) {
 
   const colorClasses = {
     orange: { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-700', header: 'bg-orange-50' },
-    slate: { bg: 'bg-gray-50', border: 'border-gray-200', text: 'text-gray-700', header: 'bg-gray-100' },
+    slate: { bg: 'bg-gray-50', border: 'border-gray-200', text: 'text-[#264563]', header: 'bg-gray-100' },
     blue: { bg: 'bg-[#264563]/10', border: 'border-[#264563]/30', text: 'text-[#264563]', header: 'bg-[#264563]/10' },
     emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-700', header: 'bg-emerald-50' },
     violet: { bg: 'bg-violet-50', border: 'border-violet-200', text: 'text-violet-700', header: 'bg-violet-50' }
@@ -275,29 +275,29 @@ function MaterialCard({ materialKey, material, expanded, onToggle }) {
         <div className="flex items-center gap-3">
           <Icon className={`w-6 h-6 ${colors.text}`} />
           <div className="text-left">
-            <h2 className="text-xl font-bold text-gray-900">{material.name}</h2>
-            <p className="text-xs text-gray-500 mt-1">Maturity: {material.maturity}</p>
+            <h2 className="text-xl font-bold text-[#264563]">{material.name}</h2>
+            <p className="text-xs text-[#264563] mt-1">Maturity: {material.maturity}</p>
           </div>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-gray-500" /> : <ChevronRight className="w-6 h-6 text-gray-500" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-[#264563]" /> : <ChevronRight className="w-6 h-6 text-[#264563]" />}
       </button>
 
       {expanded && (
         <div className="p-6 space-y-5">
           {/* Definition */}
           <div>
-            <p className="text-gray-700 italic">{material.definition}</p>
+            <p className="text-[#264563] italic">{material.definition}</p>
           </div>
 
           {/* Hazards */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+            <h3 className="font-semibold text-[#264563] mb-2 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-red-500" />
               Key Hazards & Challenges
             </h3>
             <ul className="space-y-1">
               {material.hazards.map((hazard, i) => (
-                <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
+                <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
                   <span className="text-red-500 mt-1">•</span>
                   <span>{hazard}</span>
                 </li>
@@ -307,15 +307,15 @@ function MaterialCard({ materialKey, material, expanded, onToggle }) {
 
           {/* Bio Opportunities */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <h3 className="font-semibold text-[#264563] mb-3 flex items-center gap-2">
               <Beaker className="w-5 h-5 text-emerald-600" />
               Where Biology Can Help
             </h3>
             <div className="space-y-3">
               {material.bioOpportunities.map((opp, i) => (
-                <div key={i} className="bg-[#ededed] rounded-lg p-4 border border-gray-200">
+                <div key={i} className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
                   <h4 className="font-semibold text-emerald-700 text-sm mb-1">{opp.title}</h4>
-                  <p className="text-gray-600 text-sm">{opp.description}</p>
+                  <p className="text-[#264563] text-sm">{opp.description}</p>
                 </div>
               ))}
             </div>
@@ -323,7 +323,7 @@ function MaterialCard({ materialKey, material, expanded, onToggle }) {
 
           {/* Why Biology */}
           <div className={`${colors.header} rounded-lg p-4 border ${colors.border}`}>
-            <h3 className="font-semibold text-gray-900 text-sm mb-2">Why Biology Works Here</h3>
+            <h3 className="font-semibold text-[#264563] text-sm mb-2">Why Biology Works Here</h3>
             <p className={`text-sm ${colors.text}`}>{material.whyBiology}</p>
           </div>
         </div>
