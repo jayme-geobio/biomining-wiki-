@@ -251,9 +251,12 @@ export default function Glossary() {
         )}
 
           {/* Navigation */}
-          <div className="mt-12 text-center">
-            <Link href="/" className="text-emerald-600 hover:text-emerald-800 flex items-center justify-center gap-2">
+          <div className="mt-12 flex justify-between">
+            <Link href="/" className="text-[#264563] hover:text-[#264563]/70 flex items-center gap-2">
               ← Back to Home
+            </Link>
+            <Link href="/what-is-biomining" className="text-[#264563] hover:text-[#264563]/70 flex items-center gap-2">
+              ← What Is Biomining?
             </Link>
           </div>
         </div>
@@ -272,7 +275,7 @@ function TermCard({ term, expanded, onToggle }) {
     },
     biology: {
       bg: 'bg-emerald-50',
-      border: 'border-emerald-200',
+      border: 'border-emerald-600',
       badge: 'bg-emerald-600',
       text: 'text-emerald-700'
     }
@@ -309,15 +312,15 @@ function TermCard({ term, expanded, onToggle }) {
             </div>
 
             <div className="grid md:grid-cols-2 gap-4 mt-4">
-              <div className={`${colors.bg} rounded-lg p-3 border ${colors.border}`}>
+              <div className="bg-[#264563]/10 rounded-lg p-3 border border-[#264563]/30">
                 <h4 className="text-sm font-semibold text-emerald-600 mb-2 flex items-center gap-2">
                   <Microscope className="w-4 h-4" />
                   For Biologists
                 </h4>
-                <p className="text-emerald-800 text-sm">{term.forBiologists}</p>
+                <p className="text-[#264563] text-sm">{term.forBiologists}</p>
               </div>
 
-              <div className={`${colors.bg} rounded-lg p-3 border ${colors.border}`}>
+              <div className="bg-[#264563]/10 rounded-lg p-3 border border-[#264563]/30">
                 <h4 className="text-sm font-semibold text-[#264563] mb-2 flex items-center gap-2">
                   <Mountain className="w-4 h-4" />
                   For Miners

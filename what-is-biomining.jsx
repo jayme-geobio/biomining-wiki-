@@ -18,17 +18,17 @@ export default function WhatIsBiomining() {
         </div>
 
         {/* Definition */}
-        <div className="bg-blue-950/30 border-2 border-blue-500/50 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-blue-300 mb-3">Our Definition</h2>
-          <div className="text-blue-100 space-y-3">
+        <div className="bg-blue-950/30 border-2 border-white/30 rounded-xl p-6 mb-8">
+          <h2 className="text-xl font-bold text-white mb-3">Our Definition</h2>
+          <div className="text-white space-y-3">
             <p className="text-lg">
               "Biomining" is often shorthand for "bugs in heaps." That definition is <strong>too narrow</strong>.
             </p>
-            <div className="bg-blue-900/30 rounded-lg p-4 border-l-4 border-blue-400 mt-4">
-              <p className="text-blue-100 font-semibold">
+            <div className="bg-blue-900/30 rounded-lg p-4 border-l-4 border-white/40 mt-4">
+              <p className="text-white font-semibold">
                 For this wiki, <strong>biomining</strong> means:
               </p>
-              <p className="text-blue-200 mt-2 text-lg italic">
+              <p className="text-white/90 mt-2 text-lg italic">
                 Any use of biological mechanisms—cells, enzymes, proteins, metabolites, or consortia—to aid
                 metal recovery, mineral processing, or the management of mining-related wastes and liabilities.
               </p>
@@ -161,28 +161,28 @@ export default function WhatIsBiomining() {
         </Section>
 
         {/* Thesis Summary */}
-        <div className="mt-12 bg-purple-950/30 border border-purple-700/50 rounded-xl p-6">
-          <h2 className="text-xl font-bold text-purple-300 mb-3">The Bottom Line</h2>
-          <div className="text-purple-100 space-y-3">
+        <div className="mt-12 bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-xl p-6">
+          <h2 className="text-xl font-bold text-white mb-3">The Bottom Line</h2>
+          <div className="text-slate-200 space-y-3">
             <p>
               Biomining is <strong>not a replacement for mines</strong>. It's a <strong>toolkit of modules</strong> that
               can plug into existing flowsheets where:
             </p>
             <ul className="ml-6 space-y-2">
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 mt-1">•</span>
+                <span className="text-emerald-400 mt-1">•</span>
                 <span>Complexity makes conventional chemistry expensive, blunt, or risky</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 mt-1">•</span>
+                <span className="text-emerald-400 mt-1">•</span>
                 <span>Selectivity, adaptation, or mild conditions offer strategic advantages</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-purple-400 mt-1">•</span>
+                <span className="text-emerald-400 mt-1">•</span>
                 <span>Environmental benefits (closure, water quality, social licence) add value beyond metal recovery</span>
               </li>
             </ul>
-            <p className="mt-4 font-semibold text-purple-200">
+            <p className="mt-4 font-semibold text-white">
               These modules are judged on the same metrics as anything else: $/tonne, % recovery, impurity removal,
               risk, permitting footprint, and closure outcomes.
             </p>
@@ -206,13 +206,13 @@ export default function WhatIsBiomining() {
 
 function Section({ title, icon: Icon, expanded, onToggle, children }) {
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-xl mb-4 border border-white/20 overflow-hidden">
+    <div className="bg-white/10 backdrop-blur-sm rounded-xl mb-4 border-2 border-white/30 overflow-hidden">
       <button
         onClick={onToggle}
         className="w-full p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
       >
         <div className="flex items-center gap-3">
-          <Icon className="w-6 h-6 text-blue-400" />
+          <Icon className="w-6 h-6 text-emerald-400" />
           <h2 className="text-xl font-bold text-white">{title}</h2>
         </div>
         {expanded ? <ChevronDown className="w-6 h-6 text-slate-300" /> : <ChevronRight className="w-6 h-6 text-slate-300" />}
