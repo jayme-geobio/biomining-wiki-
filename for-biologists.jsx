@@ -8,7 +8,7 @@ export default function ForBiologists() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 p-6">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="bg-emerald-950/30 border-2 border-white/30 rounded-xl p-8 mb-8 text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Mining 101 for Biologists</h1>
           <p className="text-xl text-emerald-200 max-w-3xl mx-auto">
             If you want biology to matter in mining, you have to know where your biology would live in a flowsheet
@@ -16,27 +16,27 @@ export default function ForBiologists() {
         </div>
 
         {/* Why This Matters */}
-        <div className="bg-amber-950/30 border-2 border-amber-500/50 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-amber-300 mb-3 flex items-center gap-2">
+        <div className="bg-emerald-950/30 border-2 border-emerald-500/50 rounded-xl p-6 mb-8">
+          <h2 className="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">
             <AlertCircle className="w-6 h-6" />
             Why Biologists Need to Understand Mining
           </h2>
-          <div className="text-amber-100 space-y-3">
+          <div className="text-emerald-100 space-y-3">
             <p>
               From the mining side, <strong>"biomining" is not a magical stand-alone box</strong>. It's a candidate
               step in a tightly constrained value chain where:
             </p>
             <ul className="ml-6 space-y-2">
               <li className="flex items-start gap-2">
-                <span className="text-amber-400 mt-1">•</span>
+                <span className="text-emerald-400 mt-1">•</span>
                 Rock is moved at <strong>millions of tonnes per year</strong> scale
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-amber-400 mt-1">•</span>
+                <span className="text-emerald-400 mt-1">•</span>
                 Margins can be thin and metal prices volatile
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-amber-400 mt-1">•</span>
+                <span className="text-emerald-400 mt-1">•</span>
                 Time scales, water availability, and permitting often matter as much as chemistry
               </li>
             </ul>
@@ -263,7 +263,7 @@ export default function ForBiologists() {
 
 function Section({ title, icon: Icon, expanded, onToggle, children }) {
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-xl mb-4 border border-white/20 overflow-hidden">
+    <div className="bg-white/10 backdrop-blur-sm rounded-xl mb-4 border-2 border-emerald-500/30 overflow-hidden">
       <button
         onClick={onToggle}
         className="w-full p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
@@ -322,14 +322,14 @@ function StageCard({ title, what, whyBiology, whereBio }) {
 
 function ConstraintCard({ title, icon: Icon, description, implication }) {
   return (
-    <div className="bg-slate-800/30 rounded-lg p-5 border border-amber-600/30">
+    <div className="bg-slate-800/30 rounded-lg p-5 border border-emerald-600/30">
       <div className="flex items-center gap-2 mb-2">
-        <Icon className="w-5 h-5 text-amber-400" />
+        <Icon className="w-5 h-5 text-emerald-400" />
         <h3 className="font-semibold text-white">{title}</h3>
       </div>
       <p className="text-slate-300 text-sm mb-3">{description}</p>
-      <div className="bg-amber-900/20 rounded p-3 border-l-4 border-amber-500">
-        <p className="text-amber-200 text-sm">
+      <div className="bg-emerald-900/20 rounded p-3 border-l-4 border-emerald-500">
+        <p className="text-emerald-200 text-sm">
           <strong>Implication:</strong> {implication}
         </p>
       </div>
