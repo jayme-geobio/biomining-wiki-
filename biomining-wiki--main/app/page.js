@@ -48,7 +48,7 @@ export default function BiominingHome() {
                 </p>
                 <p className="text-emerald-700 font-semibold">
                   Biomining's niche is precisely where this complexity makes conventional chemistry expensive, blunt, or risky—and
-                  where biology's ability to couple redox, binding, and adaptation can unlock value.
+                  where biology's ability to couple and where biology can couple selectivity with adaptation to unlock value.
                 </p>
               </div>
             </div>

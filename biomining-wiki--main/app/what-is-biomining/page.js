@@ -60,7 +60,7 @@ export default function WhatIsBiomining() {
               <MechanismCard
                 number="1"
                 title="Bioleaching"
-                description="Extraction or liberation of metals from ores or wastes via microbial activity, moving metals into an aqueous phase"
+                description="Extraction or liberation of metals from ores or wastes via microbial activity, moving metals into solution"
                 details="Mechanisms include acid generation, redox cycling, and ligand production"
                 icon={Droplets}
                 color="blue"
@@ -76,7 +76,7 @@ export default function WhatIsBiomining() {
               <MechanismCard
                 number="3"
                 title="Bioseparation and Biosorption"
-                description="Use of biomolecules for separation and concentration of metals"
+                description="Binding of metals to biomolecules, enabling separation and concentration from complex mixtures"
                 details="Includes metallophores, siderophore-like ligands, engineered binding proteins, cell-free proteins, peptides, polymers, whole cells, bio-based resins, and membranes"
                 icon={Target}
                 color="emerald"
@@ -84,16 +84,16 @@ export default function WhatIsBiomining() {
               <MechanismCard
                 number="4"
                 title="Bioprecipitation and Controlled Mineral Formation"
-                description="Microbially driven precipitation of minerals that immobilize or concentrate metals"
-                details="Includes biomineralization, biocement, and microbially induced calcite or sulfate minerals (e.g., metal sulfides, carbonates, phosphates)"
+                description="Microbially driven precipitation of minerals that concentrate or immobilize metals, enabling their recovery or stabilization"
+                details="Includes biomineralization, biocement, and microbially induced mineral formation (e.g., metal sulfides, carbonates, phosphates)"
                 icon={Beaker}
                 color="teal"
               />
               <MechanismCard
                 number="5"
                 title="Monitoring and Control (Biosensing)"
-                description="Biological tools for sensing metals, redox state, or specific analytes"
-                details="Functional community metrics and molecular assays that serve as early-warning indicators or control signals for process management"
+                description="Biological tools for sensing metals, redox state, or specific analytes to monitor mining systems and inform process control"
+                details="Functional community metrics and molecular assays that serve as early-warning indicators and inform process control"
                 icon={Cpu}
                 color="sky"
               />
@@ -115,30 +115,28 @@ export default function WhatIsBiomining() {
               <AdvantageCard
                 title="Redox Catalysis"
                 items={[
-                  "Microbes drive oxidation/reduction cycles (e.g., Fe²⁺ ↔ Fe³⁺, S⁰ ↔ sulfate) efficiently and regeneratively",
-                  "Potential to reduce external oxidant/reductant requirements"
+                  "Microbes drive oxidation-reduction cycles (e.g., Fe²⁺ ↔ Fe³⁺, S⁰ ↔ sulfate) efficiently and regeneratively",
+                  "Potential to reduce the amount of external oxidant-reductant required"
                 ]}
               />
               <AdvantageCard
                 title="Chelation and Complexation"
                 items={[
                   "Metallophores, siderophore-like ligands, and engineered chelators show high affinity and selectivity",
-                  "Can operate in aqueous conditions where traditional extractants struggle"
+                  "Can operate in complex aqueous mixtures and at low metal concentrations where traditional extractants struggle"
                 ]}
               />
               <AdvantageCard
                 title="Binding Selectivity"
                 items={[
-                  "Proteins and biopolymers as 'molecular coin sorters'",
-                  "Discriminate between metals with similar chemistry",
+                  "Proteins and biopolymers act as 'molecular coin sorters', discriminating between metals with similar chemistry",
                   "Critical for rare earth elements, PGMs, and complex polymetallic streams"
                 ]}
               />
               <AdvantageCard
                 title="Mineral Transformation and Precipitation"
                 items={[
-                  "Biomineralization and biocement for controlled precipitation",
-                  "Selective metal sulfides, carbonates",
+                  "Biomineralization and biocement enable controlled precipitation of metal sulfides and carbonates",
                   "Useful for both recovery and stabilization of wastes"
                 ]}
               />
@@ -151,8 +149,8 @@ export default function WhatIsBiomining() {
               />
               <div className="bg-emerald-600 rounded-lg p-5 border border-emerald-600 mt-6">
                 <p className="text-white">
-                  <strong>Biotech's strongest foothold:</strong> Complex materials and complex conditions,
-                  where conventional solutions are too costly, too carbon-intensive, or too permitting-sensitive to scale.
+                  <strong>Biotech's strongest foothold:</strong> Complex materials and operating conditions
+                  where conventional solutions are too costly, too carbon-intensive, or too permitting-constrained to scale.
                 </p>
               </div>
             </div>
@@ -174,15 +172,15 @@ export default function WhatIsBiomining() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-emerald-600 mt-1">•</span>
-                <span>Selectivity, adaptation, or mild conditions offer strategic advantages</span>
+                <span>Selectivity, adaptation, or operation under milder conditions offer strategic advantages</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-emerald-600 mt-1">•</span>
-                <span>Environmental benefits (closure, water quality, social licence) add value beyond metal recovery</span>
+                <span>Environmental outcomes (closure, water quality, social licence) add value beyond metal recovery</span>
               </li>
             </ul>
             <p className="mt-4 font-semibold text-[#264563]">
-              These modules are judged on the same metrics as anything else: $/tonne, % recovery, impurity removal,
+              These modules are judged on the same metrics as any other process: $/tonne, % recovery, impurity removal,
               risk, permitting footprint, and closure outcomes.
             </p>
           </div>

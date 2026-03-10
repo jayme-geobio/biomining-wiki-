@@ -9,7 +9,7 @@ const glossaryData = {
   mining: [
     {
       term: "Mineral",
-      definition: "Solid inorganic substance with a defined chemical composition and crystalline structure",
+      definition: "Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure",
       examples: "Quartz, chalcopyrite, pyrite",
       forBiologists: "The building blocks of rocks that microbes interact with. Different minerals require different biological strategies for metal extraction.",
       forMiners: "Standard definition - biology doesn't change mineralogy, but can change reaction pathways."
