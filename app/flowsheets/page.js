@@ -188,64 +188,71 @@ export default function Flowsheets() {
 
   return (
     <CommentableContent pageName="flowsheets">
-      <div className="min-h-screen py-8 px-12">
+      <div className="min-h-screen py-8 px-12 space-y-6">
+
+        {/* Box 1: Header */}
+        <div className="flex gap-6 items-stretch">
+          <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
+            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Example Flowsheets</h1>
+            <p className="text-xl text-[#264563]">
+              See how biology integrates into real mining operations — from proven commercial processes to emerging applications
+            </p>
+          </div>
+          <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
+        </div>
+
+        {/* Box 2: Content */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-[#264563] mb-3">Example Flowsheets</h1>
-          <p className="text-xl text-[#264563] max-w-3xl mx-auto">
-            See how biology integrates into real mining operations - from proven commercial processes to emerging applications
-          </p>
-        </div>
 
-        {/* Flowsheets */}
-        <div className="space-y-4">
-          {flowsheetData.map(flowsheet => (
-            <FlowsheetCard
-              key={flowsheet.id}
-              flowsheet={flowsheet}
-              expanded={expandedFlowsheet === flowsheet.id}
-              onToggle={() => setExpandedFlowsheet(expandedFlowsheet === flowsheet.id ? null : flowsheet.id)}
-            />
-          ))}
-        </div>
+          {/* Flowsheets */}
+          <div className="space-y-4">
+            {flowsheetData.map(flowsheet => (
+              <FlowsheetCard
+                key={flowsheet.id}
+                flowsheet={flowsheet}
+                expanded={expandedFlowsheet === flowsheet.id}
+                onToggle={() => setExpandedFlowsheet(expandedFlowsheet === flowsheet.id ? null : flowsheet.id)}
+              />
+            ))}
+          </div>
 
-        {/* Key Takeaway */}
-        <div className="mt-8 bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-emerald-700 mb-2">Integration Patterns</h3>
-          <p className="text-emerald-800 text-sm mb-3">
-            Notice the common patterns across these flowsheets:
-          </p>
-          <ul className="text-emerald-800 text-sm space-y-2">
-            <li className="flex items-start gap-2">
-              <span className="text-emerald-600">•</span>
-              <span><strong>Biology as a unit operation</strong> - integrated into larger flowsheets, not standalone</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-emerald-600">•</span>
-              <span><strong>Control parameters matter</strong> - pH, temperature, residence time, nutrients are critical</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-emerald-600">•</span>
-              <span><strong>Side-stream applications</strong> - polishing, impurity removal, water treatment add value without replacing main process</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-emerald-600">•</span>
-              <span><strong>Dual benefits</strong> - best cases combine economic value with environmental improvement</span>
-            </li>
-          </ul>
-        </div>
+          {/* Key Takeaway */}
+          <div className="mt-8 bg-white rounded-xl p-6 border border-emerald-200">
+            <h3 className="text-lg font-semibold text-emerald-700 mb-2">Integration Patterns</h3>
+            <p className="text-[#264563] text-sm mb-3">
+              Notice the common patterns across these flowsheets:
+            </p>
+            <ul className="text-[#264563] text-sm space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-600">•</span>
+                <span><strong>Biology as a unit operation</strong> — integrated into larger flowsheets, not standalone</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-600">•</span>
+                <span><strong>Control parameters matter</strong> — pH, temperature, residence time, nutrients are critical</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-600">•</span>
+                <span><strong>Side-stream applications</strong> — polishing, impurity removal, water treatment add value without replacing main process</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-600">•</span>
+                <span><strong>Dual benefits</strong> — best cases combine economic value with environmental improvement</span>
+              </li>
+            </ul>
+          </div>
 
           {/* Navigation */}
           <div className="mt-12 flex justify-between">
-            <Link href="/for-biologists" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
+            <Link href="/for-biologists" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
               ← Back to Mining 101
             </Link>
-            <Link href="/" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
+            <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
               Home
             </Link>
           </div>
         </div>
+
       </div>
     </CommentableContent>
   );
@@ -253,42 +260,42 @@ export default function Flowsheets() {
 
 function FlowsheetCard({ flowsheet, expanded, onToggle }) {
   const typeColors = {
-    "Classical Bio-Application": "bg-[#264563]",
-    "Proven Bio-Technology": "bg-emerald-600",
-    "Emerging Bio-Application": "bg-purple-600",
-    "Environmental Bio-Application": "bg-green-600"
+    "Classical Bio-Application":    "bg-[#264563]",
+    "Proven Bio-Technology":        "bg-emerald-600",
+    "Emerging Bio-Application":     "bg-amber-600",
+    "Environmental Bio-Application": "bg-teal-600"
   };
 
   return (
-    <div className="bg-[#edede6] rounded-xl border border-gray-200 overflow-hidden">
+    <div className="rounded-xl border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full p-6 flex items-center justify-between hover:bg-gray-100 transition-colors"
+        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors text-left"
       >
-        <div className="text-left">
-          <div className="flex items-center gap-3 mb-2">
+        <div>
+          <div className="flex items-center gap-3 mb-2 flex-wrap">
             <span className={`px-3 py-1 rounded-full text-xs font-semibold text-white ${typeColors[flowsheet.type]}`}>
               {flowsheet.type}
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-semibold text-[#264563] bg-gray-100">
+            <span className="px-3 py-1 rounded-full text-xs font-semibold text-white/70 bg-white/10">
               {flowsheet.maturity}
             </span>
           </div>
-          <h2 className="text-2xl font-bold text-[#264563] mb-1">{flowsheet.title}</h2>
-          <p className="text-[#264563] text-sm">{flowsheet.description}</p>
+          <h2 className="text-2xl font-bold text-white mb-1">{flowsheet.title}</h2>
+          <p className="text-white/80 text-sm">{flowsheet.description}</p>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-[#264563] flex-shrink-0" /> : <ChevronRight className="w-6 h-6 text-[#264563] flex-shrink-0" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-white flex-shrink-0 ml-4" /> : <ChevronRight className="w-6 h-6 text-white flex-shrink-0 ml-4" />}
       </button>
 
       {expanded && (
-        <div className="p-6 pt-0 border-t border-gray-200 space-y-6">
+        <div className="bg-[#edede6] p-6 space-y-6">
           {/* Diagram */}
           <div>
             <h3 className="font-semibold text-[#264563] mb-3 flex items-center gap-2">
               <Target className="w-5 h-5 text-[#264563]" />
               Flowsheet Diagram
             </h3>
-            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
               <pre className="text-emerald-700 text-sm font-mono whitespace-pre-wrap overflow-x-auto">
                 {flowsheet.diagram}
               </pre>
@@ -298,26 +305,17 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
           {/* Bio Integration Points */}
           <div>
             <h3 className="font-semibold text-[#264563] mb-3 flex items-center gap-2">
-              <Zap className="w-5 h-5 text-purple-600" />
+              <Zap className="w-5 h-5 text-emerald-600" />
               Biological Integration Points
             </h3>
             <div className="space-y-3">
               {flowsheet.bioIntegration.map((point, i) => (
-                <div key={i} className="bg-gray-50 rounded-lg p-4 border border-purple-200">
-                  <h4 className="font-semibold text-purple-700 mb-2">{point.stage}</h4>
-                  <div className="space-y-2 text-sm">
-                    <div>
-                      <span className="text-[#264563]">Role:</span>
-                      <span className="text-[#264563] ml-2">{point.role}</span>
-                    </div>
-                    <div>
-                      <span className="text-[#264563]">What it does:</span>
-                      <span className="text-[#264563] ml-2">{point.what}</span>
-                    </div>
-                    <div>
-                      <span className="text-[#264563]">Control:</span>
-                      <span className="text-[#264563] ml-2">{point.control}</span>
-                    </div>
+                <div key={i} className="bg-white rounded-lg p-4 border border-emerald-200">
+                  <h4 className="font-semibold text-emerald-700 mb-2">{point.stage}</h4>
+                  <div className="space-y-1 text-sm text-[#264563]">
+                    <div><strong>Role:</strong> {point.role}</div>
+                    <div><strong>What it does:</strong> {point.what}</div>
+                    <div><strong>Control:</strong> {point.control}</div>
                   </div>
                 </div>
               ))}

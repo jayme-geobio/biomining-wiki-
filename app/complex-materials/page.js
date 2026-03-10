@@ -2,14 +2,13 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle, Sparkles } from 'lucide-react';
+import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 
 const materialsData = {
   ard: {
     name: "Acid Rock Drainage (ARD) / Acid Mine Drainage (AMD)",
     icon: Droplets,
-    color: "orange",
     definition: "Acidic, metal-rich drainage formed when sulfide minerals are exposed to oxygen and water; often biologically accelerated",
     hazards: [
       "Ecological damage to watersheds and groundwater",
@@ -41,7 +40,6 @@ const materialsData = {
   wasteRock: {
     name: "Bulk Waste Rock & Refractory Ores",
     icon: Mountain,
-    color: "slate",
     definition: "Heterogeneous rock with low grades and/or refractory mineralogy; can contain 'hidden' critical metals",
     hazards: [
       "Potential leaching of metals over time",
@@ -73,7 +71,6 @@ const materialsData = {
   tailings: {
     name: "Tailings",
     icon: Factory,
-    color: "blue",
     definition: "Fine residues after processing; they track what was processed and what was not recovered",
     hazards: [
       "Dam failures cause catastrophic loss of life",
@@ -105,7 +102,6 @@ const materialsData = {
   ewaste: {
     name: "Electronic Waste (E-waste)",
     icon: Cpu,
-    color: "emerald",
     definition: "Discarded electronics rich in Cu, Au, Pd, REEs, and critical metals, but with complex polymer/metal mixtures",
     hazards: [
       "World's fastest growing waste stream (74.7M tons by 2030)",
@@ -137,7 +133,6 @@ const materialsData = {
   other: {
     name: "Other Secondary Resources",
     icon: Beaker,
-    color: "violet",
     definition: "Slag, fly ash, phosphogypsum, red mud, produced waters, and geothermal brines",
     hazards: [
       "Slag: Metal oxides from smelting; weathers and leaches over time",
@@ -173,121 +168,106 @@ export default function ComplexMaterials() {
 
   return (
     <CommentableContent pageName="complex-materials">
-      <div className="min-h-screen py-8 px-12">
+      <div className="min-h-screen py-8 px-12 space-y-6">
+
+        {/* Box 1: Header */}
+        <div className="flex gap-6 items-stretch">
+          <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
+            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Complex Materials Guide</h1>
+            <p className="text-xl text-[#264563]">
+              Where biology helps most: materials too complex, contaminated, or low-grade for conventional processing
+            </p>
+          </div>
+          <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
+        </div>
+
+        {/* Box 2: Content */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <Sparkles className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-[#264563] mb-3">Complex Materials Guide</h1>
-          <p className="text-xl text-purple-700 max-w-3xl mx-auto mb-4">
-            Where biology helps most: materials too complex, contaminated, or low-grade for conventional processing
-          </p>
-          <p className="text-[#264563] max-w-3xl mx-auto text-sm">
-            Biology won't replace conventional mining for high-grade ores - that's highly optimized. But for complex
-            materials where traditional methods struggle, biotechnology can shift the economics and reduce environmental impact.
-          </p>
-        </div>
 
-        {/* Key Insight */}
-        <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold text-purple-700 mb-3">When Biology Wins</h2>
-          <ul className="text-purple-800 space-y-2">
-            <li className="flex items-start gap-2">
-              <span className="text-purple-600 mt-1">✓</span>
-              <span><strong>Low-grade material</strong> where conventional processing is uneconomic</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-600 mt-1">✓</span>
-              <span><strong>Complex mineralogy</strong> (refractory ores, polymetallic systems)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-600 mt-1">✓</span>
-              <span><strong>Environmental hazards</strong> (AMD, tailings, legacy sites)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-600 mt-1">✓</span>
-              <span><strong>Remote locations</strong> where chemical transport is expensive or impossible</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-purple-600 mt-1">✓</span>
-              <span><strong>Thin margins</strong> where small OPEX reductions make projects viable</span>
-            </li>
-          </ul>
-        </div>
+          {/* Key Insight */}
+          <div className="mb-8">
+            <h2 className="text-xl font-bold text-[#264563] mb-3">When Biology Wins</h2>
+            <div className="text-[#264563] space-y-2">
+              <p className="mb-3">
+                Biology won't replace conventional mining for high-grade ores — that's highly optimized. But for complex
+                materials where traditional methods struggle, biotechnology can shift the economics and reduce environmental impact.
+              </p>
+              {[
+                ["Low-grade material", "where conventional processing is uneconomic"],
+                ["Complex mineralogy", "(refractory ores, polymetallic systems)"],
+                ["Environmental hazards", "(AMD, tailings, legacy sites)"],
+                ["Remote locations", "where chemical transport is expensive or impossible"],
+                ["Thin margins", "where small OPEX reductions make projects viable"],
+              ].map(([bold, rest], i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <span className="text-emerald-600 mt-1">✓</span>
+                  <span><strong>{bold}</strong> {rest}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        {/* Materials */}
-        <div className="space-y-4">
-          {Object.keys(materialsData).map(key => (
-            <MaterialCard
-              key={key}
-              materialKey={key}
-              material={materialsData[key]}
-              expanded={expandedMaterial === key}
-              onToggle={() => setExpandedMaterial(expandedMaterial === key ? null : key)}
-            />
-          ))}
-        </div>
+          {/* Materials */}
+          <div className="space-y-4">
+            {Object.keys(materialsData).map(key => (
+              <MaterialCard
+                key={key}
+                material={materialsData[key]}
+                expanded={expandedMaterial === key}
+                onToggle={() => setExpandedMaterial(expandedMaterial === key ? null : key)}
+              />
+            ))}
+          </div>
 
-        {/* Bottom Insight */}
-        <div className="mt-8 bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-emerald-700 mb-2">The Best Opportunities</h3>
-          <p className="text-emerald-800 text-sm">
-            The sweet spot for biomining is where you're dealing with <strong>waste, legacy sites, or materials
-            too costly to process conventionally</strong>. These are the contexts where biology's advantages
-            (lower OPEX, mild conditions, selectivity, reduced environmental impact) matter most.
-          </p>
-        </div>
+          {/* Bottom Insight */}
+          <div className="mt-8 bg-white rounded-xl p-6 border border-emerald-200">
+            <h3 className="text-lg font-semibold text-emerald-700 mb-2">The Best Opportunities</h3>
+            <p className="text-[#264563] text-sm">
+              The sweet spot for biomining is where you're dealing with <strong>waste, legacy sites, or materials
+              too costly to process conventionally</strong>. These are the contexts where biology's advantages
+              (lower OPEX, mild conditions, selectivity, reduced environmental impact) matter most.
+            </p>
+          </div>
 
           {/* Navigation */}
           <div className="mt-12 flex justify-between">
-            <Link href="/" className="text-purple-600 hover:text-purple-800 flex items-center gap-2">
+            <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
               ← Back to Home
             </Link>
-            <Link href="/research" className="text-purple-600 hover:text-purple-800 flex items-center gap-2">
+            <Link href="/research" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
               Research Frontiers →
             </Link>
           </div>
         </div>
+
       </div>
     </CommentableContent>
   );
 }
 
-function MaterialCard({ materialKey, material, expanded, onToggle }) {
+function MaterialCard({ material, expanded, onToggle }) {
   const Icon = material.icon;
 
-  const colorClasses = {
-    orange: { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-700', header: 'bg-orange-50' },
-    slate: { bg: 'bg-gray-50', border: 'border-gray-200', text: 'text-[#264563]', header: 'bg-gray-100' },
-    blue: { bg: 'bg-[#264563]/10', border: 'border-[#264563]/30', text: 'text-[#264563]', header: 'bg-[#264563]/10' },
-    emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-700', header: 'bg-emerald-50' },
-    violet: { bg: 'bg-violet-50', border: 'border-violet-200', text: 'text-violet-700', header: 'bg-violet-50' }
-  };
-
-  const colors = colorClasses[material.color];
-
   return (
-    <div className={`rounded-xl border ${colors.border} ${colors.bg} overflow-hidden`}>
+    <div className="rounded-xl border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className={`w-full p-5 ${colors.header} flex items-center justify-between hover:opacity-90 transition-opacity`}
+        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
       >
-        <div className="flex items-center gap-3">
-          <Icon className={`w-6 h-6 ${colors.text}`} />
-          <div className="text-left">
-            <h2 className="text-xl font-bold text-[#264563]">{material.name}</h2>
-            <p className="text-xs text-[#264563] mt-1">Maturity: {material.maturity}</p>
+        <div className="flex items-center gap-3 text-left">
+          <Icon className="w-6 h-6 text-white flex-shrink-0" />
+          <div>
+            <h2 className="text-xl font-bold text-white">{material.name}</h2>
+            <p className="text-white/60 text-xs mt-0.5">Maturity: {material.maturity}</p>
           </div>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-[#264563]" /> : <ChevronRight className="w-6 h-6 text-[#264563]" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-white flex-shrink-0" /> : <ChevronRight className="w-6 h-6 text-white flex-shrink-0" />}
       </button>
 
       {expanded && (
-        <div className="p-6 space-y-5">
+        <div className="bg-[#edede6] p-6 space-y-5">
           {/* Definition */}
-          <div>
-            <p className="text-[#264563] italic">{material.definition}</p>
-          </div>
+          <p className="text-[#264563] italic">{material.definition}</p>
 
           {/* Hazards */}
           <div>
@@ -313,7 +293,7 @@ function MaterialCard({ materialKey, material, expanded, onToggle }) {
             </h3>
             <div className="space-y-3">
               {material.bioOpportunities.map((opp, i) => (
-                <div key={i} className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
+                <div key={i} className="bg-white rounded-lg p-4 border border-gray-200">
                   <h4 className="font-semibold text-emerald-700 text-sm mb-1">{opp.title}</h4>
                   <p className="text-[#264563] text-sm">{opp.description}</p>
                 </div>
@@ -322,9 +302,9 @@ function MaterialCard({ materialKey, material, expanded, onToggle }) {
           </div>
 
           {/* Why Biology */}
-          <div className={`${colors.header} rounded-lg p-4 border ${colors.border}`}>
-            <h3 className="font-semibold text-[#264563] text-sm mb-2">Why Biology Works Here</h3>
-            <p className={`text-sm ${colors.text}`}>{material.whyBiology}</p>
+          <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+            <h3 className="font-semibold text-emerald-800 text-sm mb-2">Why Biology Works Here</h3>
+            <p className="text-emerald-900 text-sm">{material.whyBiology}</p>
           </div>
         </div>
       )}

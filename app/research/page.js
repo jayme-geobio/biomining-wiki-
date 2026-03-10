@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ChevronDown, ChevronRight, Lightbulb, FlaskConical, Database, TrendingUp, Users, Microscope, Target } from 'lucide-react';
+import { ChevronDown, ChevronRight, FlaskConical, Database, TrendingUp, Users, Microscope, Target } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 
 const researchData = {
@@ -10,7 +10,6 @@ const researchData = {
     {
       title: "Metal-Biology Interactions in Complex Matrices",
       icon: FlaskConical,
-      color: "purple",
       keyIssues: [
         "Binding constants measured in simple buffers don't map cleanly to separation performance in real PLS, leachates, or tailings porewaters",
         "Competing ions, organics, colloids, and solids all affect selectivity and capacity",
@@ -38,7 +37,6 @@ const researchData = {
     {
       title: "Realistic Feedstocks, Complexity Proxies, and Benchmarks",
       icon: Database,
-      color: "blue",
       keyIssues: [
         "Lab studies often use synthetic solutions that don't represent real PLS complexity",
         "No standard feedstocks for comparing technologies across labs",
@@ -66,7 +64,6 @@ const researchData = {
     {
       title: "Ecology, Evolution, and Field Persistence",
       icon: Microscope,
-      color: "green",
       keyIssues: [
         "Limited understanding of in situ microbial communities (especially deep subsurface and highly acidic systems)",
         "Poor predictive understanding of evolutionary stability of engineered traits under field conditions",
@@ -94,7 +91,6 @@ const researchData = {
     {
       title: "Instrumentation, Sensing, and Modeling",
       icon: TrendingUp,
-      color: "blue",
       keyIssues: [
         "Lack of rugged, low-cost sensors for low-pH, high-ionic-strength environments",
         "Bioleaching models don't adequately couple microbial kinetics with hydrology and chemical speciation",
@@ -214,92 +210,98 @@ export default function Research() {
 
   return (
     <CommentableContent pageName="research">
-      <div className="min-h-screen py-8 px-12">
+      <div className="min-h-screen py-8 px-12 space-y-6">
+
+        {/* Box 1: Header */}
+        <div className="flex gap-6 items-stretch">
+          <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
+            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Research Frontiers & Collaboration</h1>
+            <p className="text-xl text-[#264563]">
+              Open problems, infrastructure needs, and collaboration opportunities in biomining
+            </p>
+          </div>
+          <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
+        </div>
+
+        {/* Box 2: Content */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <Lightbulb className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-[#264563] mb-3">Research Frontiers & Collaboration</h1>
-          <p className="text-xl text-purple-700 max-w-3xl mx-auto">
-            Open problems, infrastructure needs, and collaboration opportunities in biomining
-          </p>
-        </div>
 
-        {/* Research Frontiers */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-[#264563] mb-6 flex items-center gap-2">
-            <FlaskConical className="w-7 h-7 text-purple-600" />
-            Cross-Cutting Technical Frontiers
-          </h2>
-          <p className="text-[#264563] mb-6">
-            These problem statements and bottlenecks represent a public R&D agenda distilled from workshops,
-            literature, and field experience. They're areas where breakthroughs would significantly advance biomining.
-          </p>
-          <div className="space-y-4">
-            {researchData.frontiers.map((frontier, i) => (
-              <FrontierCard
-                key={i}
-                frontier={frontier}
-                expanded={expandedFrontier === i}
-                onToggle={() => setExpandedFrontier(expandedFrontier === i ? null : i)}
-              />
-            ))}
-          </div>
-        </section>
-
-        {/* Ecosystem & Infrastructure */}
-        <section>
-          <h2 className="text-2xl font-bold text-[#264563] mb-6 flex items-center gap-2">
-            <Users className="w-7 h-7 text-emerald-600" />
-            Ecosystem, Infrastructure & Collaboration
-          </h2>
-          <p className="text-[#264563] mb-6">
-            Biomining is a socio-technical field, not just a set of reactions. These initiatives would strengthen
-            the ecosystem and accelerate translation from lab to field.
-          </p>
-          <div className="space-y-4">
-            {researchData.ecosystem.map((item, i) => (
-              <EcosystemCard
-                key={i}
-                item={item}
-                expanded={expandedEcosystem === i}
-                onToggle={() => setExpandedEcosystem(expandedEcosystem === i ? null : i)}
-              />
-            ))}
-          </div>
-        </section>
-
-        {/* Call to Action */}
-        <div className="mt-12 bg-gradient-to-r from-purple-50 to-emerald-50 border border-purple-200 rounded-xl p-8">
-          <h3 className="text-2xl font-bold text-[#264563] mb-4 text-center">Get Involved</h3>
-          <p className="text-[#264563] text-center mb-6 max-w-3xl mx-auto">
-            These challenges require collaboration across disciplines, sectors, and institutions. Whether you're
-            a researcher, mining professional, investor, or policymaker, there's a role for you in advancing
-            sustainable biomining technologies.
-          </p>
-          <div className="grid md:grid-cols-3 gap-4 text-center">
-            <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
-              <h4 className="font-semibold text-purple-700 mb-2">Researchers</h4>
-              <p className="text-[#264563] text-sm">Focus on high-impact problems with clear paths to field deployment</p>
+          {/* Research Frontiers */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
+              <FlaskConical className="w-7 h-7 text-[#264563]" />
+              Cross-Cutting Technical Frontiers
+            </h2>
+            <p className="text-[#264563] mb-6">
+              These problem statements and bottlenecks represent a public R&D agenda distilled from workshops,
+              literature, and field experience. They're areas where breakthroughs would significantly advance biomining.
+            </p>
+            <div className="space-y-4">
+              {researchData.frontiers.map((frontier, i) => (
+                <FrontierCard
+                  key={i}
+                  frontier={frontier}
+                  expanded={expandedFrontier === i}
+                  onToggle={() => setExpandedFrontier(expandedFrontier === i ? null : i)}
+                />
+              ))}
             </div>
-            <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
-              <h4 className="font-semibold text-emerald-700 mb-2">Industry</h4>
-              <p className="text-[#264563] text-sm">Share pre-competitive data and pilot sites to accelerate innovation</p>
+          </section>
+
+          {/* Ecosystem & Infrastructure */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
+              <Users className="w-7 h-7 text-emerald-600" />
+              Ecosystem, Infrastructure & Collaboration
+            </h2>
+            <p className="text-[#264563] mb-6">
+              Biomining is a socio-technical field, not just a set of reactions. These initiatives would strengthen
+              the ecosystem and accelerate translation from lab to field.
+            </p>
+            <div className="space-y-4">
+              {researchData.ecosystem.map((item, i) => (
+                <EcosystemCard
+                  key={i}
+                  item={item}
+                  expanded={expandedEcosystem === i}
+                  onToggle={() => setExpandedEcosystem(expandedEcosystem === i ? null : i)}
+                />
+              ))}
             </div>
-            <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
-              <h4 className="font-semibold text-[#264563] mb-2">Funders</h4>
-              <p className="text-[#264563] text-sm">Support TEA-aware research and pilot-scale demonstration projects</p>
+          </section>
+
+          {/* Call to Action */}
+          <div className="bg-white border border-gray-200 rounded-xl p-8">
+            <h3 className="text-2xl font-bold text-[#264563] mb-4 text-center">Get Involved</h3>
+            <p className="text-[#264563] text-center mb-6 max-w-3xl mx-auto">
+              These challenges require collaboration across disciplines, sectors, and institutions. Whether you're
+              a researcher, mining professional, investor, or policymaker, there's a role for you in advancing
+              sustainable biomining technologies.
+            </p>
+            <div className="grid md:grid-cols-3 gap-4 text-center">
+              <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
+                <h4 className="font-semibold text-[#264563] mb-2">Researchers</h4>
+                <p className="text-[#264563] text-sm">Focus on high-impact problems with clear paths to field deployment</p>
+              </div>
+              <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
+                <h4 className="font-semibold text-emerald-700 mb-2">Industry</h4>
+                <p className="text-[#264563] text-sm">Share pre-competitive data and pilot sites to accelerate innovation</p>
+              </div>
+              <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
+                <h4 className="font-semibold text-[#264563] mb-2">Funders</h4>
+                <p className="text-[#264563] text-sm">Support TEA-aware research and pilot-scale demonstration projects</p>
+              </div>
             </div>
           </div>
-        </div>
 
           {/* Navigation */}
           <div className="mt-12 text-center">
-            <Link href="/" className="text-purple-600 hover:text-purple-800 flex items-center justify-center gap-2">
+            <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center justify-center gap-2">
               ← Back to Home
             </Link>
           </div>
         </div>
+
       </div>
     </CommentableContent>
   );
@@ -308,33 +310,24 @@ export default function Research() {
 function FrontierCard({ frontier, expanded, onToggle }) {
   const Icon = frontier.icon;
 
-  const colorClasses = {
-    purple: { bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-700' },
-    blue: { bg: 'bg-[#264563]/10', border: 'border-[#264563]/30', text: 'text-[#264563]' },
-    green: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-700' },
-    blue: { bg: 'bg-[#264563]/10', border: 'border-[#264563]/30', text: 'text-[#264563]' }
-  };
-
-  const colors = colorClasses[frontier.color];
-
   return (
-    <div className={`rounded-xl border ${colors.border} ${colors.bg} overflow-hidden`}>
+    <div className="rounded-xl border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full p-5 flex items-center justify-between hover:bg-[#e5e5e5] transition-colors"
+        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
       >
         <div className="flex items-center gap-3">
-          <Icon className={`w-6 h-6 ${colors.text}`} />
-          <h3 className="text-xl font-bold text-[#264563] text-left">{frontier.title}</h3>
+          <Icon className="w-6 h-6 text-white" />
+          <h3 className="text-xl font-bold text-white text-left">{frontier.title}</h3>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-[#264563]" /> : <ChevronRight className="w-6 h-6 text-[#264563]" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-white flex-shrink-0" /> : <ChevronRight className="w-6 h-6 text-white flex-shrink-0" />}
       </button>
 
       {expanded && (
-        <div className="p-6 pt-0 border-t border-gray-200 space-y-5">
+        <div className="bg-[#edede6] p-6 space-y-5">
           {/* Key Issues */}
           <div>
-            <h4 className="font-semibold text-red-600 mb-3">Key Issues & Bottlenecks</h4>
+            <h4 className="font-semibold text-[#264563] mb-3">Key Issues & Bottlenecks</h4>
             <ul className="space-y-2">
               {frontier.keyIssues.map((issue, i) => (
                 <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
@@ -347,10 +340,10 @@ function FrontierCard({ frontier, expanded, onToggle }) {
 
           {/* Opportunities */}
           <div>
-            <h4 className="font-semibold text-emerald-600 mb-3">Research Opportunities</h4>
+            <h4 className="font-semibold text-emerald-700 mb-3">Research Opportunities</h4>
             <div className="space-y-3">
               {frontier.opportunities.map((opp, i) => (
-                <div key={i} className="bg-[#edede6] rounded-lg p-4 border border-emerald-200">
+                <div key={i} className="bg-white rounded-lg p-4 border border-emerald-200">
                   <h5 className="font-semibold text-emerald-700 text-sm mb-1">{opp.title}</h5>
                   <p className="text-[#264563] text-sm">{opp.description}</p>
                 </div>
@@ -367,26 +360,26 @@ function EcosystemCard({ item, expanded, onToggle }) {
   const Icon = item.icon;
 
   return (
-    <div className="bg-[#edede6] rounded-xl border border-gray-200 overflow-hidden">
+    <div className="rounded-xl border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full p-5 flex items-center justify-between hover:bg-gray-100 transition-colors"
+        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors text-left"
       >
-        <div className="text-left">
-          <div className="flex items-center gap-3 mb-2">
-            <Icon className="w-6 h-6 text-emerald-600" />
-            <h3 className="text-xl font-bold text-[#264563]">{item.title}</h3>
+        <div className="flex items-center gap-3">
+          <Icon className="w-6 h-6 text-white flex-shrink-0" />
+          <div>
+            <h3 className="text-xl font-bold text-white">{item.title}</h3>
+            <p className="text-white/70 text-sm mt-0.5">{item.description}</p>
           </div>
-          <p className="text-[#264563] text-sm">{item.description}</p>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-[#264563] flex-shrink-0 ml-4" /> : <ChevronRight className="w-6 h-6 text-[#264563] flex-shrink-0 ml-4" />}
+        {expanded ? <ChevronDown className="w-6 h-6 text-white flex-shrink-0 ml-4" /> : <ChevronRight className="w-6 h-6 text-white flex-shrink-0 ml-4" />}
       </button>
 
       {expanded && (
-        <div className="p-6 pt-0 border-t border-gray-200">
+        <div className="bg-[#edede6] p-6">
           <div className="space-y-4">
             {item.initiatives.map((initiative, i) => (
-              <div key={i} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+              <div key={i} className="bg-white rounded-lg p-4 border border-gray-200">
                 <h4 className="font-semibold text-[#264563] mb-2">{initiative.name}</h4>
                 <p className="text-[#264563] text-sm">{initiative.description}</p>
               </div>
