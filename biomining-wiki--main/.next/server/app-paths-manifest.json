@@ -1,6 +1,5 @@
 {
-  "/glossary/page": "app/glossary/page.js",
   "/page": "app/page.js",
-  "/what-is-biomining/page": "app/what-is-biomining/page.js",
-  "/api/comments/route": "app/api/comments/route.js"
+  "/glossary/page": "app/glossary/page.js",
+  "/what-is-biomining/page": "app/what-is-biomining/page.js"
 }
