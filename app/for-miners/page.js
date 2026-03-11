@@ -17,7 +17,7 @@ export default function ForMiners() {
           <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Biology 101 for Mining Professionals</h1>
             <p className="text-xl text-[#264563]">
-              Understanding how microbes and biomolecules interact with metals and minerals
+              If mining is going to use biology, you need to understand how microbes and biomolecules interact with metals and minerals.
             </p>
           </div>
           <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
@@ -33,8 +33,8 @@ export default function ForMiners() {
             </h2>
             <div className="text-[#264563] space-y-3">
               <p>
-                Microbes provide <strong>switchable, selective chemistry</strong> for metal extraction and management.
-                Like reagents and catalysts, they're constrained by temperature, pH, ionic strength, inhibitors, and
+                Biology provides <strong>switchable, selective chemistry</strong> for metal extraction and management.
+                Like reagents and catalysts, microbes and biomolecules are constrained by temperature, pH, ionic strength, inhibitors, and
                 substrate availability. Understanding these constraints is key to successful integration.
               </p>
               <div className="bg-[#264563]/5 rounded-lg p-4 border-l-4 border-[#264563] mt-4">
@@ -43,88 +43,22 @@ export default function ForMiners() {
                   that can adapt, self-regenerate, and operate selectively where conventional chemistry struggles.
                 </p>
               </div>
+              <p className="mt-4 font-semibold">
+              This guide helps you understand how biological systems interact with metals and minerals and how they fit into mining processes.
+              </p>
             </div>
           </div>
-
-          {/* Microbial Energy & Carbon */}
+          {/* Biological Systems in Mining */}
+          {/* Biological Systems in Mining */}
           <Section
-            title="Microbial Energy and Carbon Sources"
+            title="Biological Systems in Mining"
             icon={Zap}
-            expanded={expandedSection === 'energy'}
-            onToggle={() => setExpandedSection(expandedSection === 'energy' ? null : 'energy')}
+            expanded={expandedSection === 'bioSystems'}
+            onToggle={() => setExpandedSection(expandedSection === 'bioSystems' ? null : 'bioSystems')}
           >
-            <div className="space-y-4">
-              <p className="text-[#264563]">
-                At a high level, microbes need three things to survive and do work:
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-4">
-                <NeedCard
-                  title="Energy Source"
-                  examples={[
-                    "Light (not relevant here)",
-                    "Oxidation of Fe²⁺",
-                    "Reduced sulfur compounds",
-                    "Organic carbon"
-                  ]}
-                />
-                <NeedCard
-                  title="Electron Donors/Acceptors"
-                  examples={[
-                    "Fe²⁺ / Fe³⁺",
-                    "Reduced/oxidized sulfur",
-                    "O₂, nitrate, sulfate",
-                    "CO₂"
-                  ]}
-                />
-                <NeedCard
-                  title="Carbon Source"
-                  examples={[
-                    "CO₂ (autotrophs)",
-                    "Organic carbon (heterotrophs)",
-                    "Mixed modes"
-                  ]}
-                />
-              </div>
-
-              <div className="bg-white rounded-lg p-6 border border-[#264563]/20 mt-6">
-                <h3 className="text-lg font-semibold text-[#264563] mb-4">
-                  Key Functional Groups in Biomining
-                </h3>
-
-                <div className="space-y-4">
-                  <MicrobeCard
-                    name="Iron & Sulfur-Oxidizing Autotrophs"
-                    examples="Acidithiobacillus ferrooxidans, Leptospirillum spp."
-                    function="Generate Fe³⁺ and sulfuric acid that attack sulfide minerals"
-                    relevance="Core organisms in bioleaching and biooxidation"
-                  />
-
-                  <MicrobeCard
-                    name="Sulfur-Oxidizers"
-                    examples="Acidithiobacillus thiooxidans"
-                    function="Drive sulfuric acid production and metal solubilization"
-                    relevance="Essential for maintaining acidity in heaps and tanks"
-                  />
-
-                  <MicrobeCard
-                    name="Sulfate-Reducing Bacteria (SRB)"
-                    examples="Desulfovibrio, Desulfotomaculum"
-                    function="Produce sulfide that precipitates metals as metal sulfides"
-                    relevance="Critical for AMD treatment and metal recovery from drainage"
-                  />
-
-                  <MicrobeCard
-                    name="Heterotrophs & Consortia"
-                    examples="Various species working together"
-                    function="Produce organic acids and chelators, modify biofilms, influence sorption"
-                    relevance="Support ecosystems in heaps and modify mineral surfaces"
-                  />
-                </div>
-              </div>
-            </div>
+            <BiologicalSystemsSection />
           </Section>
-
+          
           {/* Mechanisms */}
           <Section
             title="Mechanisms of Metal Mobilization & Capture"
@@ -350,7 +284,179 @@ export default function ForMiners() {
     </CommentableContent>
   );
 }
+function BiologicalSystemsSection() {
+  const [expandedSubsection, setExpandedSubsection] = useState(null);
 
+  return (
+    <div className="space-y-6">
+      <p className="text-[#264563]">
+        Biology enters mining in two main forms: microbial systems that mobilize metals from solid materials and bio-derived systems that selectively capture metals from solution.
+      </p>
+
+      <div className="rounded-xl border border-[#264563]/20 overflow-hidden bg-white">
+        <button
+          onClick={() =>
+            setExpandedSubsection(expandedSubsection === 'living' ? null : 'living')
+          }
+          className="w-full p-5 flex items-center justify-between hover:bg-[#264563]/5 transition-colors"
+        >
+          <h3 className="text-lg font-semibold text-[#264563]">
+            Microbial Systems - bacteria, archaea & fungi
+          </h3>
+          {expandedSubsection === 'living' ? (
+            <ChevronDown className="w-5 h-5 text-[#264563]" />
+          ) : (
+            <ChevronRight className="w-5 h-5 text-[#264563]" />
+          )}
+        </button>
+
+        {expandedSubsection === 'living' && (
+          <div className="p-6 pt-0 border-t border-[#264563]/10 space-y-4">
+            <p className="text-[#264563] pt-4">
+              At a high level, microbes need three things to survive and do work:
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              <NeedCard
+                title="Energy Source"
+                examples={[
+                  "Light (not relevant here)",
+                  "Oxidation of Fe²⁺",
+                  "Reduced sulfur compounds",
+                  "Organic carbon"
+                ]}
+              />
+              <NeedCard
+                title="Electron Donors/Acceptors"
+                examples={[
+                  "Fe²⁺ / Fe³⁺",
+                  "Reduced/oxidized sulfur",
+                  "O₂, nitrate, sulfate",
+                  "CO₂"
+                ]}
+              />
+              <NeedCard
+                title="Carbon Source"
+                examples={[
+                  "CO₂ (autotrophs)",
+                  "Organic carbon (heterotrophs)",
+                  "Mixed modes"
+                ]}
+              />
+            </div>
+
+            <div className="mt-6">
+              <h4 className="text-base font-semibold text-[#264563] mb-4">
+                Key Functional Groups in Biomining
+              </h4>
+
+              <div className="space-y-4">
+                <MicrobeCard
+                  name="Iron & Sulfur-Oxidizing Autotrophs"
+                  examples="Acidithiobacillus ferrooxidans, Leptospirillum spp."
+                  function="Generate Fe³⁺ and sulfuric acid that attack sulfide minerals"
+                  relevance="Core organisms in bioleaching and biooxidation"
+                />
+
+                <MicrobeCard
+                  name="Sulfur-Oxidizers"
+                  examples="Acidithiobacillus thiooxidans"
+                  function="Drive sulfuric acid production and metal solubilization"
+                  relevance="Essential for maintaining acidity in heaps and tanks"
+                />
+
+                <MicrobeCard
+                  name="Sulfate-Reducing Bacteria (SRB)"
+                  examples="Desulfovibrio, Desulfotomaculum"
+                  function="Produce sulfide that precipitates metals as metal sulfides"
+                  relevance="Critical for AMD treatment and metal recovery from drainage"
+                />
+
+                <MicrobeCard
+                  name="Heterotrophs & Consortia"
+                  examples="Various species working together"
+                  function="Produce organic acids and chelators, modify biofilms, influence sorption"
+                  relevance="Support ecosystems in heaps and modify mineral surfaces"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="rounded-xl border border-[#264563]/20 overflow-hidden bg-white">
+        <button
+          onClick={() =>
+            setExpandedSubsection(expandedSubsection === 'nonliving' ? null : 'nonliving')
+          }
+          className="w-full p-5 flex items-center justify-between hover:bg-[#264563]/5 transition-colors"
+        >
+          <h3 className="text-lg font-semibold text-[#264563]">
+            Biomolecular Systems - biomolecules & bio-derived materials
+          </h3>
+          {expandedSubsection === 'nonliving' ? (
+            <ChevronDown className="w-5 h-5 text-[#264563]" />
+          ) : (
+            <ChevronRight className="w-5 h-5 text-[#264563]" />
+          )}
+        </button>
+
+        {expandedSubsection === 'nonliving' && (
+          <div className="p-6 pt-0 border-t border-[#264563]/10 space-y-4">
+            <p className="text-[#264563] pt-4">
+              Not all biological mining tools rely on living cells. Some use proteins, peptides, polysaccharides, or other bio-derived materials to selectively bind, separate, recover, or sense metals.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <NeedCard
+                title="What They Include"
+                examples={[
+                  "Proteins and peptides",
+                  "Bio-derived ligands",
+                  "Biosorbent materials",
+                  "Immobilized biomolecules"
+                ]}
+              />
+              <NeedCard
+                title="What They Depend On"
+                examples={[
+                  "Binding chemistry",
+                  "Selectivity and capacity",
+                  "Stability under process conditions",
+                  "Regeneration and manufacturability"
+                ]}
+              />
+            </div>
+
+            <div className="bg-[#264563]/5 rounded-lg p-5 border border-[#264563]/20 mt-6">
+              <h4 className="text-base font-semibold text-[#264563] mb-3">
+                Common Roles in Mining Flowsheets
+              </h4>
+              <ul className="space-y-2 text-[#264563] text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#264563] mt-1">•</span>
+                  <span>Selective capture of rare earths or other target metals from complex solutions</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#264563] mt-1">•</span>
+                  <span>Polishing dilute streams where conventional separations are inefficient</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#264563] mt-1">•</span>
+                  <span>Use in beads, membranes, resins, or structured packings</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#264563] mt-1">•</span>
+                  <span>Potential integration into side-stream recovery or impurity management steps</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 function Section({ title, icon: Icon, expanded, onToggle, children }) {
   return (
     <div className="rounded-xl mb-4 border-2 border-white overflow-hidden">

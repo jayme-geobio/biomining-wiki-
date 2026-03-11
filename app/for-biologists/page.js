@@ -17,7 +17,7 @@ export default function ForBiologists() {
           <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
             <h1 className="text-4xl font-bold text-emerald-900 mb-3 leading-tight">Mining 101 for Biologists</h1>
             <p className="text-xl text-emerald-700">
-              If you want biology to matter in mining, you have to know where your biology would live in a flowsheet
+            If biology is going to matter in mining, you need to know where it lives in a flowsheet
             </p>
           </div>
           <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
@@ -40,11 +40,11 @@ export default function ForBiologists() {
               <ul className="ml-6 space-y-2">
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 mt-1">•</span>
-                  Rock is moved at <strong>millions of tonnes per year</strong> scale
+                  Rock is moved at a scale of<strong>millions of tonnes per year</strong>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 mt-1">•</span>
-                  Margins can be thin and metal prices volatile
+                  Margins can be thin and metal prices are volatile
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 mt-1">•</span>
@@ -72,17 +72,17 @@ export default function ForBiologists() {
 
               <div className="bg-white rounded-lg p-6 border border-emerald-200">
                 <div className="font-mono text-sm text-emerald-700 space-y-2">
-                  <div>Rock in ground</div>
+                  <div>Rock in the ground</div>
                   <div className="ml-4">↓ <span className="text-emerald-600">(exploration & resource modeling)</span></div>
                   <div>Ore body defined</div>
                   <div className="ml-4">↓ <span className="text-emerald-600">(mine planning & development)</span></div>
                   <div>Ore and waste rock excavated</div>
                   <div className="ml-4">↓ <span className="text-emerald-600">(crushing, grinding, concentration)</span></div>
                   <div>Concentrate / leach solution</div>
-                  <div className="ml-4">↓ <span className="text-emerald-600">(metallurgical refining)</span></div>
-                  <div>Saleable product (metal, concentrate, chemicals)</div>
+                  <div className="ml-4">↓ <span className="text-emerald-600">(metallurgical extraction & refining)</span></div>
+                  <div>Saleable product(s) (metal, concentrate, chemicals)</div>
                   <div className="ml-4">↓</div>
-                  <div>Tailings, waste rock, water to be managed and closed</div>
+                  <div>Tailings, waste rock, water management and closure</div>
                 </div>
               </div>
 
@@ -119,7 +119,7 @@ export default function ForBiologists() {
 
               <StageCard
                 title="2. Mine Planning & Development"
-                what="Choosing mining method (open pit vs underground), mine layout, and routing material to ore stockpiles, low-grade stockpiles, waste dumps, or tailings"
+                what="Choosing a mining method (open pit vs underground), mine layout, and routing material to ore stockpiles, low-grade stockpiles, waste dumps, or tailings"
                 whyBiology={[
                   "Decisions here govern tonnage, time, and access for your process",
                   "Long-residence-time bio-processes best suited for stockpiles, tailings, or AMD",
@@ -132,7 +132,7 @@ export default function ForBiologists() {
               />
 
               <StageCard
-                title="3. Extraction: Getting Rock Out"
+                title="3. Mining: Getting The Rock Out"
                 what="Drill, blast, load, and haul rock. Scale: tens to hundreds of thousands of tonnes per day. Mix of ore and waste is imperfect"
                 whyBiology={[
                   "Input material is stressed, mixed, partly oxidized rock - not pure minerals",
@@ -146,37 +146,47 @@ export default function ForBiologists() {
               />
 
               <StageCard
-                title="4. Comminution & Concentration"
-                what="Crushing/grinding to liberate minerals, then concentration via flotation, gravity, or magnetic separation. Produces concentrate (high value) and tailings"
+                title="4. Comminution"
+                what="Crushing and grinding to liberate minerals and increase surface area for downstream processing"
                 whyBiology={[
-                  "Comminution is the most energy-intensive step",
-                  "Biology that enables coarser processing while maintaining recovery is extremely valuable",
-                  "Tailings are huge, lower-grade targets for bio-recovery"
+                  "Comminution is often the most energy-intensive step in mining",
+                  "Separation efficiency strongly depends on mineral surface chemistry and particle size",
+                  "Biology that allows coarser processing without sacrificing recovery is extremely valuable"
                 ]}
                 whereBio={[
-                  "Bio-assisted comminution (microbes weakening grain boundaries)",
-                  "Recovery of critical elements from tailings",
-                  "Bio-compatible tailings design"
+                  "Bio-assisted comminution (microbes weakening grain boundaries)"
                 ]}
               />
 
               <StageCard
-                title="5. Metallurgy & Refining"
-                what="Convert concentrates to saleable products via hydrometallurgy (leach, SX, IX, EW) or pyrometallurgy (smelting, refining)"
+                title="5. Concentration & Leaching"
+                what="Metals are either concentrated using flotation, gravity, or magnetic separation, or extracted by leaching into solution. These routes produce either concentrate or a metal-bearing leach solution"
                 whyBiology={[
-                  "Selectivity and purity are critical here",
-                  "Biology offers highly selective ligands and mild operating conditions",
-                  "Impurities can wreck downstream processes"
+                  "Mineral surface chemistry governs flotation selectivity and leach kinetics",
+                  "Biology can modify mineral surfaces to improve or suppress flotation of specific minerals",
+                  "Bioleaching can replace or supplement chemical leaching for sulfide ores"
                 ]}
                 whereBio={[
-                  "Bioleaching/biooxidation as primary leach steps",
+                  "Bio-modification of mineral surfaces to improve flotation or separation",
+                  "Bioleaching/biooxidation for direct metal extraction",
+                ]}
+              />
+
+              <StageCard
+                title="6. Metallurgy & Refining"
+                what="Convert concentrates or metal-bearing solutions into saleable products via hydrometallurgy (precipitation, SX, IX, EW) or pyrometallurgy (smelting, refining)"
+                whyBiology={[
+                  "Impurities and purity thresholds are critical — small contamination can wreck downstream processes",
+                  "Biology offers highly selective ligands under mild operating conditions"
+                ]}
+                whereBio={[
                   "Bioseparations for polishing and capturing critical co-products",
                   "SRB reactors for treating bleed streams"
                 ]}
               />
 
               <StageCard
-                title="6. Waste, Water & Closure"
+                title="7. Waste, Water & Closure"
                 what="Managing tailings storage, waste-rock dumps, water systems, and long-term closure obligations"
                 whyBiology={[
                   "Acid mine drainage and seepage can persist for decades",
@@ -185,7 +195,7 @@ export default function ForBiologists() {
                 ]}
                 whereBio={[
                   "Constructed wetlands and SRB reactors for AMD",
-                  "Treating AMD as a resource (recover Cu, Zn, REEs)",
+                  "Treating AMD and tailings as a resource (recover Cu, Zn, REEs)",
                   "Using former mine sites as test beds for new tech"
                 ]}
               />
@@ -203,20 +213,20 @@ export default function ForBiologists() {
               <ConstraintCard
                 title="Time"
                 icon={Clock}
-                description="Operations expect days to weeks, not months to years (except heaps/dumps)"
+                description="Operations expect fast processing times - often hours to days, not months to years (except in heap or dump leaching)"
                 implication="If your process is slow, consider treating stockpiles, tailings, or AMD where slow is acceptable, or use biology to polish/condition streams"
               />
               <ConstraintCard
                 title="Throughput & Scale"
                 icon={TrendingUp}
-                description="Mid-size mines move tens of millions of tonnes per year"
+                description="Mid-size mines process tens of millions of tonnes of ore annually."
                 implication="Be explicit about scale. Side-stream bio-units are more realistic early targets than whole-plant replacements"
               />
               <ConstraintCard
                 title="Process Integration & Risk"
                 icon={AlertCircle}
                 description="Mines are complex, coupled systems. Unexpected downtime is extremely expensive"
-                implication="Emphasize instrumentation and control. Design 'safe failure' modes with bypass options. Provide clear lab → pilot → demo pathways"
+                implication="Design 'safe failure' modes with bypass options, emphasizing instrumentation and control. Provide clear lab → pilot → demonstration pathways"
               />
               <ConstraintCard
                 title="Water, Reagents & Permitting"

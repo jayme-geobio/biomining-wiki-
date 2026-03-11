@@ -11,7 +11,7 @@ const glossaryData = {
       term: "Mineral",
       definition: "Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure",
       examples: "Quartz, chalcopyrite, pyrite",
-      forBiologists: "The building blocks of rocks that microbes interact with. Different minerals require different biological strategies for metal extraction.",
+      forBiologists: "Minerals are the building blocks of rocks that biological systems interact with. Different minerals require different biological strategies for metal extraction.",
       forMiners: "Standard definition - biology doesn't change mineralogy, but can change reaction pathways."
     },
     {
@@ -73,18 +73,32 @@ const glossaryData = {
   ],
   biology: [
     {
-      term: "Autotroph / Heterotroph",
-      definition: "Organisms that fix carbon from CO₂ vs. those that rely on organic carbon",
-      examples: "Autotroph: Acidithiobacillus; Heterotroph: most fungi",
+      term: "Autotroph",
+      definition: "Organisms that use CO₂ as their carbon source",
+      examples: "Acidithiobacillus",
       forBiologists: "Standard definition. Most bioleaching microbes are autotrophs (CO₂ fixers).",
       forMiners: "Autotrophs don't need organic carbon - cheaper to operate in metal-rich, nutrient-poor environments."
     },
     {
+      term: "Heterotroph",
+      definition: "Organisms that rely on organic carbon",
+      examples: "Most fungi",
+      forBiologists: "Standard definition. Use organic compounds as their carbon source.",
+      forMiners: "Heterotrophs often grow quickly and produce metal-mobilizing compounds."
+    },
+    {
       term: "Lithotroph",
-      definition: "Organism using inorganic electron donors such as Fe²⁺, reduced sulfur, or H₂ for energy",
+      definition: "Organisms using inorganic electron donors such as Fe²⁺, reduced sulfur, or H₂",
       examples: "Iron-oxidizers, sulfur-oxidizers",
-      forBiologists: "Key players in bioleaching. They 'eat' the mineral electrons.",
+      forBiologists: "Key players in bioleaching. They obtain electrons from inorganic minerals.",
       forMiners: "Lithotrophs are the workforce of bioleaching - they generate the acids and oxidants that dissolve metals."
+    },
+    {
+      term: "Organotroph",
+      definition: "Organisms using organic compounds as electron donors",
+      examples: "Aspergillus, Gluconobacter",
+      forBiologists: "Standard definition. Obtain electrons from organic molecules.",
+      forMiners: "Often produce organic acids and ligands that help dissolve minerals and mobilize metals."
     },
     {
       term: "Bioleaching",

@@ -34,7 +34,7 @@ const materialsData = {
         description: "'Superbank' concept: biobanking extremophiles from legacy sites for bioprospecting and method development"
       }
     ],
-    whyBiology: "Microbes both cause AMD and can solve it. Biology offers passive, low-cost treatment that can simultaneously recover value.",
+    whyBiology: "Microbes cause AMD but can also help solve it. Biology offers passive, low-cost treatment that can simultaneously recover value.",
     maturity: "High - proven in constructed wetlands and pilot-scale SRB reactors"
   },
   wasteRock: {
@@ -175,7 +175,7 @@ export default function ComplexMaterials() {
           <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Complex Materials Guide</h1>
             <p className="text-xl text-[#264563]">
-              Where biology helps most: materials too complex, contaminated, or low-grade for conventional processing
+              Materials too mineralogically complex, contaminated, or low-grade for conventional processing
             </p>
           </div>
           <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
