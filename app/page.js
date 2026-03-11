@@ -39,8 +39,8 @@ export default function BiominingHome() {
               </h2>
               <div className="text-[#264563] space-y-3">
                 <p>
-                  Mining and critical mineral recovery face a <strong>new constraint set</strong>: rising demand from clean energy,
-                  shifting toward harder feedstocks, and intensifying limits around energy, water, tailings, and social licence.
+                  Mining and critical mineral recovery face a <strong>new set of constraints</strong>: rising demand from clean energy, 
+                  a shift toward more complex feedstocks, and tightening limits around energy, water, tailings, and social licence.
                 </p>
                 <p>
                   <strong>Complexity</strong> is the central issue. Most lab breakthroughs use simplified systems, but industry faces
@@ -48,7 +48,7 @@ export default function BiominingHome() {
                 </p>
                 <p className="text-emerald-700 font-semibold">
                   Biomining's niche is precisely where this complexity makes conventional chemistry expensive, blunt, or risky—and
-                  where biology's ability to couple redox, binding, and adaptation can unlock value.
+                  where biology's ability to couple and where biology can couple selectivity with adaptation to unlock value.
                 </p>
               </div>
             </div>
