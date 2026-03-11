@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ChevronDown, ChevronRight, Microscope, Zap, Beaker, Factory, FlaskConical, FileCheck } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 
+
 export default function ForMiners() {
   const [expandedSection, setExpandedSection] = useState(null);
 
@@ -76,7 +77,7 @@ export default function ForMiners() {
                 description="Production of acid (e.g., H₂SO₄) that dissolves minerals"
                 application="Critical for sulfides and carbonates"
                 example="Microbes oxidize sulfur to sulfuric acid, which attacks chalcopyrite (CuFeS₂)"
-                color="red"
+                color="amber"
               />
 
               <MechanismCard
@@ -92,7 +93,7 @@ export default function ForMiners() {
                 description="Production of ligands that complex metals and keep them in solution"
                 application="Metallophores, siderophores, organic acids"
                 example="Microbes secrete organic acids that chelate rare earth elements"
-                color="purple"
+                color="emerald"
               />
 
               <MechanismCard
@@ -108,7 +109,7 @@ export default function ForMiners() {
                 description="Microbial activity alters local chemistry to precipitate new minerals"
                 application="Changes pH, redox, carbonate, or sulfide levels"
                 example="SRB produce sulfide that precipitates Cu, Zn, and other metals from solution"
-                color="blue"
+                color="sky"
               />
             </div>
           </Section>
@@ -482,7 +483,7 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
 function NeedCard({ title, examples }) {
   return (
     <div className="bg-white rounded-lg p-4 border border-[#264563]/20">
-      <h3 className="font-semibold text-[#264563] mb-2">{title}</h3>
+      <h3 className="text-lg font-bold text-[#264563] mb-2">{title}</h3>
       <ul className="space-y-1">
         {examples.map((ex, i) => (
           <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
@@ -498,7 +499,7 @@ function NeedCard({ title, examples }) {
 function MicrobeCard({ name, examples, function: func, relevance }) {
   return (
     <div className="bg-white rounded-lg p-4 border border-[#264563]/20">
-      <h4 className="font-semibold text-[#264563]">{name}</h4>
+      <h4 className="text-lg font-bold text-[#264563]">{name}</h4>
       <p className="text-[#264563]/50 text-xs mt-1 italic">{examples}</p>
       <p className="text-[#264563] text-sm mt-2"><strong>Function:</strong> {func}</p>
       <p className="text-[#264563] text-sm mt-1"><strong>Relevance:</strong> {relevance}</p>
@@ -508,15 +509,17 @@ function MicrobeCard({ name, examples, function: func, relevance }) {
 
 function MechanismCard({ title, description, application, example, color }) {
   const colorClasses = {
-    red:    'border-red-200 bg-red-50',
-    blue:   'border-[#264563]/20 bg-[#264563]/5',
-    purple: 'border-purple-200 bg-purple-50',
-    teal:   'border-teal-200 bg-teal-50',
+    blue:    { border: 'border-[#264563]',   text: 'text-[#264563]' },
+    amber:   { border: 'border-amber-500',   text: 'text-amber-500' },
+    emerald: { border: 'border-emerald-700', text: 'text-emerald-700' },
+    teal:    { border: 'border-teal-500',    text: 'text-teal-500' },
+    sky:     { border: 'border-sky-500',     text: 'text-sky-500' },
   };
+  const { border, text } = colorClasses[color] || colorClasses.blue;
 
   return (
-    <div className={`rounded-lg p-4 border ${colorClasses[color] || colorClasses.blue}`}>
-      <h3 className="font-semibold text-[#264563] mb-1">{title}</h3>
+    <div className={`rounded-lg p-4 border bg-white ${border}`}>
+      <h3 className={`text-lg font-bold mb-1 ${text}`}>{title}</h3>
       <p className="text-[#264563] text-sm mb-2">{description}</p>
       <p className="text-[#264563] text-sm mb-2">
         <strong>Application:</strong> {application}
@@ -533,7 +536,7 @@ function MechanismCard({ title, description, application, example, color }) {
 function ModalityCard({ title, description, applications, parameters, integration, challenges }) {
   return (
     <div className="bg-white rounded-lg p-5 border border-[#264563]/20">
-      <h4 className="text-lg font-semibold text-[#264563] mb-2">{title}</h4>
+      <h4 className="text-lg font-bold text-[#264563] mb-2">{title}</h4>
       <p className="text-[#264563] text-sm mb-3">{description}</p>
 
       <div className="grid md:grid-cols-2 gap-4 mb-3">
@@ -554,9 +557,9 @@ function ModalityCard({ title, description, applications, parameters, integratio
         <p className="text-[#264563] text-sm">{integration}</p>
       </div>
 
-      <div className="bg-red-50 rounded p-2 border border-red-200">
-        <p className="text-xs font-semibold text-red-600 mb-1">COMMON CHALLENGES</p>
-        <p className="text-red-700 text-xs">{challenges}</p>
+      <div className="bg-orange-50 rounded p-2 border border-orange-500">
+        <p className="text-xs font-semibold text-orange-500 mb-1">COMMON CHALLENGES</p>
+        <p className="text-orange-600 text-xs">{challenges}</p>
       </div>
     </div>
   );

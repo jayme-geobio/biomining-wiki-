@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ChevronDown, ChevronRight, Zap, Beaker, Droplets, Microscope, Target, Cpu } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 
+
 export default function WhatIsBiomining() {
   const [expandedSection, setExpandedSection] = useState(null);
 
@@ -240,7 +241,7 @@ function MechanismCard({ number, title, description, details, icon: Icon, color 
           <Icon className={`w-6 h-6 ${iconColors[color]}`} />
         </div>
         <div className="flex-1">
-          <h3 className={`text-lg font-semibold mb-2 ${iconColors[color]}`}>{title}</h3>
+          <h3 className={`text-lg font-bold mb-2 ${iconColors[color]}`}>{title}</h3>
           <p className="text-[#264563] text-sm mb-2">{description}</p>
           <p className="text-[#264563]/70 text-sm italic">{details}</p>
         </div>
@@ -252,11 +253,11 @@ function MechanismCard({ number, title, description, details, icon: Icon, color 
 function AdvantageCard({ title, items }) {
   return (
     <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-      <h4 className="font-semibold text-[#264563] mb-2">{title}</h4>
+      <h4 className="text-lg font-bold text-[#264563] mb-2">{title}</h4>
       <ul className="space-y-2">
         {items.map((item, i) => (
           <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
-            <span className="text-emerald-600 mt-1">→</span>
+            <span className="text-emerald-600">→</span>
             <span>{item}</span>
           </li>
         ))}

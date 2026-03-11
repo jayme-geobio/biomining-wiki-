@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ChevronDown, ChevronRight, Mountain, Factory, Beaker, AlertCircle, TrendingUp, Clock, Droplets, FileCheck } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 
+
 export default function ForBiologists() {
   const [expandedSection, setExpandedSection] = useState(null);
 
@@ -15,7 +16,7 @@ export default function ForBiologists() {
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
           <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
-            <h1 className="text-4xl font-bold text-emerald-900 mb-3 leading-tight">Mining 101 for Biologists</h1>
+            <h1 className="text-4xl font-bold text-emerald-700 mb-3 leading-tight">Mining 101 for Biologists</h1>
             <p className="text-xl text-emerald-700">
             If biology is going to matter in mining, you need to know where it lives in a flowsheet
             </p>
@@ -28,26 +29,26 @@ export default function ForBiologists() {
 
           {/* Why This Matters */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold text-emerald-800 mb-3 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-emerald-700 mb-3 flex items-center gap-2">
               <AlertCircle className="w-6 h-6 text-emerald-700" />
               Why Biologists Need to Understand Mining
             </h2>
-            <div className="text-emerald-900 space-y-3">
+            <div className="text-emerald-700 space-y-3">
               <p>
                 From the mining side, <strong>"biomining" is not a magical stand-alone box</strong>. It's a candidate
                 step in a tightly constrained value chain where:
               </p>
               <ul className="ml-6 space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-600 mt-1">•</span>
+                  <span className="text-emerald-700 mt-1">•</span>
                   Rock is moved at a scale of<strong>millions of tonnes per year</strong>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-600 mt-1">•</span>
+                  <span className="text-emerald-700 mt-1">•</span>
                   Margins can be thin and metal prices are volatile
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-600 mt-1">•</span>
+                  <span className="text-emerald-700 mt-1">•</span>
                   Time scales, water availability, and permitting often matter as much as chemistry
                 </li>
               </ul>
@@ -66,28 +67,28 @@ export default function ForBiologists() {
             onToggle={() => setExpandedSection(expandedSection === 'journey' ? null : 'journey')}
           >
             <div className="space-y-4">
-              <p className="text-emerald-900">
+              <p className="text-emerald-700">
                 At a high level, the mining value chain looks like this:
               </p>
 
-              <div className="bg-white rounded-lg p-6 border border-emerald-200">
+              <div className="bg-white rounded-lg p-6 border border-emerald-700">
                 <div className="font-mono text-sm text-emerald-700 space-y-2">
                   <div>Rock in the ground</div>
-                  <div className="ml-4">↓ <span className="text-emerald-600">(exploration & resource modeling)</span></div>
+                  <div className="ml-4">↓ <span className="text-emerald-700">(exploration & resource modeling)</span></div>
                   <div>Ore body defined</div>
-                  <div className="ml-4">↓ <span className="text-emerald-600">(mine planning & development)</span></div>
+                  <div className="ml-4">↓ <span className="text-emerald-700">(mine planning & development)</span></div>
                   <div>Ore and waste rock excavated</div>
-                  <div className="ml-4">↓ <span className="text-emerald-600">(crushing, grinding, concentration)</span></div>
+                  <div className="ml-4">↓ <span className="text-emerald-700">(crushing, grinding, concentration)</span></div>
                   <div>Concentrate / leach solution</div>
-                  <div className="ml-4">↓ <span className="text-emerald-600">(metallurgical extraction & refining)</span></div>
+                  <div className="ml-4">↓ <span className="text-emerald-700">(metallurgical extraction & refining)</span></div>
                   <div>Saleable product(s) (metal, concentrate, chemicals)</div>
                   <div className="ml-4">↓</div>
                   <div>Tailings, waste rock, water management and closure</div>
                 </div>
               </div>
 
-              <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                <p className="text-emerald-800 text-sm">
+              <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-700">
+                <p className="text-emerald-700 text-sm">
                   <strong>Where biology plugs in:</strong> Heap/in-situ leaching, metal separation and polishing,
                   AMD treatment and closure, tailings reprocessing
                 </p>
@@ -244,9 +245,9 @@ export default function ForBiologists() {
             expanded={expandedSection === 'checklist'}
             onToggle={() => setExpandedSection(expandedSection === 'checklist' ? null : 'checklist')}
           >
-            <div className="bg-white rounded-lg p-6 border border-emerald-200">
+            <div className="bg-white rounded-lg p-6 border border-emerald-700">
               <p className="text-emerald-700 mb-4">
-                Before investing heavily in a biomining concept, answer these in one page:
+                Before investing heavily in a biomining concept, answer these questions:
               </p>
               <div className="space-y-4">
                 {[
@@ -261,7 +262,7 @@ export default function ForBiologists() {
                     <div className="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
                       {i + 1}
                     </div>
-                    <p className="text-emerald-900">{q}</p>
+                    <p className="text-emerald-700">{q}</p>
                   </div>
                 ))}
               </div>
@@ -270,10 +271,10 @@ export default function ForBiologists() {
 
           {/* Navigation */}
           <div className="mt-12 flex justify-between">
-            <Link href="/" className="text-emerald-700 hover:text-emerald-900 flex items-center gap-2">
+            <Link href="/" className="text-emerald-700 hover:text-emerald-700 flex items-center gap-2">
               ← Back to Home
             </Link>
-            <Link href="/flowsheets" className="text-emerald-700 hover:text-emerald-900 flex items-center gap-2">
+            <Link href="/flowsheets" className="text-emerald-700 hover:text-emerald-700 flex items-center gap-2">
               See Example Flowsheets →
             </Link>
           </div>
@@ -308,32 +309,32 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
 
 function StageCard({ title, what, whyBiology, whereBio }) {
   return (
-    <div className="bg-white rounded-lg p-5 border border-emerald-200">
-      <h3 className="text-lg font-semibold text-emerald-900 mb-3">{title}</h3>
+    <div className="bg-white rounded-lg p-5 border border-emerald-700">
+      <h3 className="text-lg font-bold text-emerald-700 mb-3">{title}</h3>
 
       <div className="mb-4">
-        <h4 className="text-sm font-semibold text-emerald-600 mb-1">What it is:</h4>
-        <p className="text-emerald-900 text-sm">{what}</p>
+        <h4 className="text-sm font-semibold text-emerald-700 mb-1">What it is:</h4>
+        <p className="text-emerald-700 text-sm">{what}</p>
       </div>
 
       <div className="mb-4">
         <h4 className="text-sm font-semibold text-emerald-700 mb-2">Why it matters to biologists:</h4>
         <ul className="space-y-1">
           {whyBiology.map((item, i) => (
-            <li key={i} className="text-emerald-900 text-sm flex items-start gap-2">
-              <span className="text-emerald-500 mt-1">•</span>
+            <li key={i} className="text-emerald-700 text-sm flex items-start gap-2">
+              <span className="text-emerald-700 mt-1">•</span>
               <span>{item}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="bg-emerald-50 rounded p-3 border border-emerald-200">
-        <h4 className="text-sm font-semibold text-emerald-700 mb-2">Where biology might plug in:</h4>
+      <div className="bg-emerald-700 rounded p-3">
+        <h4 className="text-sm font-semibold text-white mb-2">Where biology might plug in:</h4>
         <ul className="space-y-1">
           {whereBio.map((item, i) => (
-            <li key={i} className="text-emerald-800 text-sm flex items-start gap-2">
-              <span className="text-emerald-600">→</span>
+            <li key={i} className="text-white text-sm flex items-start gap-2">
+              <span className="text-white">→</span>
               <span>{item}</span>
             </li>
           ))}
@@ -345,14 +346,14 @@ function StageCard({ title, what, whyBiology, whereBio }) {
 
 function ConstraintCard({ title, icon: Icon, description, implication }) {
   return (
-    <div className="bg-white rounded-lg p-5 border border-emerald-200">
+    <div className="bg-white rounded-lg p-5 border border-emerald-700">
       <div className="flex items-center gap-2 mb-2">
         <Icon className="w-5 h-5 text-emerald-700" />
-        <h3 className="font-semibold text-emerald-900">{title}</h3>
+        <h3 className="text-lg font-bold text-emerald-700">{title}</h3>
       </div>
-      <p className="text-emerald-900 text-sm mb-3">{description}</p>
+      <p className="text-emerald-700 text-sm mb-3">{description}</p>
       <div className="bg-emerald-50 rounded p-3 border-l-4 border-emerald-600">
-        <p className="text-emerald-800 text-sm">
+        <p className="text-emerald-700 text-sm">
           <strong>Implication:</strong> {implication}
         </p>
       </div>

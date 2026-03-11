@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ChevronDown, ChevronRight, FlaskConical, Database, TrendingUp, Users, Microscope, Target } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 
+
 const researchData = {
   frontiers: [
     {
@@ -223,74 +224,70 @@ export default function Research() {
           <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
         </div>
 
-        {/* Box 2: Content */}
+        {/* Box 2: Cross-Cutting Technical Frontiers */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h2 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
+            <FlaskConical className="w-7 h-7 text-[#264563]" />
+            Cross-Cutting Technical Frontiers
+          </h2>
+          <p className="text-[#264563] mb-6">
+            These problem statements and bottlenecks represent a public R&D agenda distilled from workshops,
+            literature, and field experience. They're areas where breakthroughs would significantly advance biomining.
+          </p>
+          <div className="space-y-4">
+            {researchData.frontiers.map((frontier, i) => (
+              <FrontierCard
+                key={i}
+                frontier={frontier}
+                expanded={expandedFrontier === i}
+                onToggle={() => setExpandedFrontier(expandedFrontier === i ? null : i)}
+              />
+            ))}
+          </div>
+        </div>
 
-          {/* Research Frontiers */}
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
-              <FlaskConical className="w-7 h-7 text-[#264563]" />
-              Cross-Cutting Technical Frontiers
-            </h2>
-            <p className="text-[#264563] mb-6">
-              These problem statements and bottlenecks represent a public R&D agenda distilled from workshops,
-              literature, and field experience. They're areas where breakthroughs would significantly advance biomining.
-            </p>
-            <div className="space-y-4">
-              {researchData.frontiers.map((frontier, i) => (
-                <FrontierCard
-                  key={i}
-                  frontier={frontier}
-                  expanded={expandedFrontier === i}
-                  onToggle={() => setExpandedFrontier(expandedFrontier === i ? null : i)}
-                />
-              ))}
+        {/* Box 3: Ecosystem, Infrastructure & Collaboration */}
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h2 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
+            <Users className="w-7 h-7 text-emerald-600" />
+            Ecosystem, Infrastructure & Collaboration
+          </h2>
+          <p className="text-[#264563] mb-6">
+            Biomining is a socio-technical field, not just a set of reactions. These initiatives would strengthen
+            the ecosystem and accelerate translation from lab to field.
+          </p>
+          <div className="space-y-4">
+            {researchData.ecosystem.map((item, i) => (
+              <EcosystemCard
+                key={i}
+                item={item}
+                expanded={expandedEcosystem === i}
+                onToggle={() => setExpandedEcosystem(expandedEcosystem === i ? null : i)}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Box 4: Get Involved */}
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h3 className="text-2xl font-bold text-[#264563] mb-4 text-center">Get Involved</h3>
+          <p className="text-[#264563] text-center mb-6 max-w-3xl mx-auto">
+            These challenges require collaboration across disciplines, sectors, and institutions. Whether you're
+            a researcher, mining professional, investor, or policymaker, there's a role for you in advancing
+            sustainable biomining technologies.
+          </p>
+          <div className="grid md:grid-cols-3 gap-4 text-center">
+            <div className="bg-[#264563] rounded-lg p-4">
+              <h4 className="text-lg font-bold text-white mb-2">Researchers</h4>
+              <p className="text-white/80 text-sm">Focus on high-impact problems with clear paths to field deployment</p>
             </div>
-          </section>
-
-          {/* Ecosystem & Infrastructure */}
-          <section className="mb-10">
-            <h2 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
-              <Users className="w-7 h-7 text-emerald-600" />
-              Ecosystem, Infrastructure & Collaboration
-            </h2>
-            <p className="text-[#264563] mb-6">
-              Biomining is a socio-technical field, not just a set of reactions. These initiatives would strengthen
-              the ecosystem and accelerate translation from lab to field.
-            </p>
-            <div className="space-y-4">
-              {researchData.ecosystem.map((item, i) => (
-                <EcosystemCard
-                  key={i}
-                  item={item}
-                  expanded={expandedEcosystem === i}
-                  onToggle={() => setExpandedEcosystem(expandedEcosystem === i ? null : i)}
-                />
-              ))}
+            <div className="bg-[#264563] rounded-lg p-4">
+              <h4 className="text-lg font-bold text-white mb-2">Industry</h4>
+              <p className="text-white/80 text-sm">Share pre-competitive data and pilot sites to accelerate innovation</p>
             </div>
-          </section>
-
-          {/* Call to Action */}
-          <div className="bg-white border border-gray-200 rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-[#264563] mb-4 text-center">Get Involved</h3>
-            <p className="text-[#264563] text-center mb-6 max-w-3xl mx-auto">
-              These challenges require collaboration across disciplines, sectors, and institutions. Whether you're
-              a researcher, mining professional, investor, or policymaker, there's a role for you in advancing
-              sustainable biomining technologies.
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 text-center">
-              <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
-                <h4 className="font-semibold text-[#264563] mb-2">Researchers</h4>
-                <p className="text-[#264563] text-sm">Focus on high-impact problems with clear paths to field deployment</p>
-              </div>
-              <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
-                <h4 className="font-semibold text-emerald-700 mb-2">Industry</h4>
-                <p className="text-[#264563] text-sm">Share pre-competitive data and pilot sites to accelerate innovation</p>
-              </div>
-              <div className="bg-[#edede6] rounded-lg p-4 border border-gray-200">
-                <h4 className="font-semibold text-[#264563] mb-2">Funders</h4>
-                <p className="text-[#264563] text-sm">Support TEA-aware research and pilot-scale demonstration projects</p>
-              </div>
+            <div className="bg-[#264563] rounded-lg p-4">
+              <h4 className="text-lg font-bold text-white mb-2">Funders</h4>
+              <p className="text-white/80 text-sm">Support TEA-aware research and pilot-scale demonstration projects</p>
             </div>
           </div>
 
@@ -327,11 +324,11 @@ function FrontierCard({ frontier, expanded, onToggle }) {
         <div className="bg-[#edede6] p-6 space-y-5">
           {/* Key Issues */}
           <div>
-            <h4 className="font-semibold text-[#264563] mb-3">Key Issues & Bottlenecks</h4>
+            <h4 className="text-lg font-bold text-[#264563] mb-3">Key Issues & Bottlenecks</h4>
             <ul className="space-y-2">
               {frontier.keyIssues.map((issue, i) => (
                 <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
-                  <span className="text-red-500 mt-1">⚠</span>
+                  <span className="text-orange-500 flex-shrink-0">⚠</span>
                   <span>{issue}</span>
                 </li>
               ))}
@@ -340,11 +337,11 @@ function FrontierCard({ frontier, expanded, onToggle }) {
 
           {/* Opportunities */}
           <div>
-            <h4 className="font-semibold text-emerald-700 mb-3">Research Opportunities</h4>
+            <h4 className="text-lg font-bold text-emerald-700 mb-3">Research Opportunities</h4>
             <div className="space-y-3">
               {frontier.opportunities.map((opp, i) => (
-                <div key={i} className="bg-white rounded-lg p-4 border border-emerald-200">
-                  <h5 className="font-semibold text-emerald-700 text-sm mb-1">{opp.title}</h5>
+                <div key={i} className="bg-white rounded-lg p-4 border border-emerald-700">
+                  <h5 className="text-lg font-normal text-emerald-700 mb-1">{opp.title}</h5>
                   <p className="text-[#264563] text-sm">{opp.description}</p>
                 </div>
               ))}
@@ -380,7 +377,7 @@ function EcosystemCard({ item, expanded, onToggle }) {
           <div className="space-y-4">
             {item.initiatives.map((initiative, i) => (
               <div key={i} className="bg-white rounded-lg p-4 border border-gray-200">
-                <h4 className="font-semibold text-[#264563] mb-2">{initiative.name}</h4>
+                <h4 className="text-lg font-bold text-[#264563] mb-2">{initiative.name}</h4>
                 <p className="text-[#264563] text-sm">{initiative.description}</p>
               </div>
             ))}

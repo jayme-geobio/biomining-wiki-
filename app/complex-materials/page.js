@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 
+
 const materialsData = {
   ard: {
     name: "Acid Rock Drainage (ARD) / Acid Mine Drainage (AMD)",
@@ -220,8 +221,8 @@ export default function ComplexMaterials() {
           </div>
 
           {/* Bottom Insight */}
-          <div className="mt-8 bg-white rounded-xl p-6 border border-emerald-200">
-            <h3 className="text-lg font-semibold text-emerald-700 mb-2">The Best Opportunities</h3>
+          <div className="mt-8 bg-white rounded-xl p-6 border border-emerald-700">
+            <h3 className="text-lg font-bold text-emerald-700 mb-2">The Best Opportunities</h3>
             <p className="text-[#264563] text-sm">
               The sweet spot for biomining is where you're dealing with <strong>waste, legacy sites, or materials
               too costly to process conventionally</strong>. These are the contexts where biology's advantages
@@ -247,7 +248,6 @@ export default function ComplexMaterials() {
 
 function MaterialCard({ material, expanded, onToggle }) {
   const Icon = material.icon;
-
   return (
     <div className="rounded-xl border-2 border-white overflow-hidden">
       <button
@@ -271,14 +271,14 @@ function MaterialCard({ material, expanded, onToggle }) {
 
           {/* Hazards */}
           <div>
-            <h3 className="font-semibold text-[#264563] mb-2 flex items-center gap-2">
-              <AlertTriangle className="w-5 h-5 text-red-500" />
+            <h3 className="text-lg font-bold text-[#264563] mb-2 flex items-center gap-2">
+              <AlertTriangle className="w-5 h-5 text-orange-500" />
               Key Hazards & Challenges
             </h3>
             <ul className="space-y-1">
               {material.hazards.map((hazard, i) => (
                 <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
+                  <span className="text-orange-500 mt-1">•</span>
                   <span>{hazard}</span>
                 </li>
               ))}
@@ -287,14 +287,14 @@ function MaterialCard({ material, expanded, onToggle }) {
 
           {/* Bio Opportunities */}
           <div>
-            <h3 className="font-semibold text-[#264563] mb-3 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-[#264563] mb-3 flex items-center gap-2">
               <Beaker className="w-5 h-5 text-emerald-600" />
               Where Biology Can Help
             </h3>
             <div className="space-y-3">
               {material.bioOpportunities.map((opp, i) => (
                 <div key={i} className="bg-white rounded-lg p-4 border border-gray-200">
-                  <h4 className="font-semibold text-emerald-700 text-sm mb-1">{opp.title}</h4>
+                  <h4 className="text-lg font-normal text-emerald-700 mb-1">{opp.title}</h4>
                   <p className="text-[#264563] text-sm">{opp.description}</p>
                 </div>
               ))}
@@ -302,8 +302,8 @@ function MaterialCard({ material, expanded, onToggle }) {
           </div>
 
           {/* Why Biology */}
-          <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-            <h3 className="font-semibold text-emerald-800 text-sm mb-2">Why Biology Works Here</h3>
+          <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-700">
+            <h3 className="text-lg font-bold text-emerald-700 mb-2">Why Biology Works Here</h3>
             <p className="text-emerald-900 text-sm">{material.whyBiology}</p>
           </div>
         </div>

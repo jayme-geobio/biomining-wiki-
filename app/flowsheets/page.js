@@ -217,8 +217,8 @@ export default function Flowsheets() {
           </div>
 
           {/* Key Takeaway */}
-          <div className="mt-8 bg-white rounded-xl p-6 border border-emerald-200">
-            <h3 className="text-lg font-semibold text-emerald-700 mb-2">Integration Patterns</h3>
+          <div className="mt-8 bg-white rounded-xl p-6 border border-emerald-700">
+            <h3 className="text-lg font-bold text-emerald-700 mb-2">Integration Patterns</h3>
             <p className="text-[#264563] text-sm mb-3">
               Notice the common patterns across these flowsheets:
             </p>
@@ -291,12 +291,12 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
         <div className="bg-[#edede6] p-6 space-y-6">
           {/* Diagram */}
           <div>
-            <h3 className="font-semibold text-[#264563] mb-3 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-[#264563] mb-3 flex items-center gap-2">
               <Target className="w-5 h-5 text-[#264563]" />
               Flowsheet Diagram
             </h3>
             <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <pre className="text-emerald-700 text-sm font-mono whitespace-pre-wrap overflow-x-auto">
+              <pre className="text-[#264563] text-sm font-mono whitespace-pre-wrap overflow-x-auto">
                 {flowsheet.diagram}
               </pre>
             </div>
@@ -304,14 +304,14 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
 
           {/* Bio Integration Points */}
           <div>
-            <h3 className="font-semibold text-[#264563] mb-3 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-[#264563] mb-3 flex items-center gap-2">
               <Zap className="w-5 h-5 text-emerald-600" />
               Biological Integration Points
             </h3>
             <div className="space-y-3">
               {flowsheet.bioIntegration.map((point, i) => (
-                <div key={i} className="bg-white rounded-lg p-4 border border-emerald-200">
-                  <h4 className="font-semibold text-emerald-700 mb-2">{point.stage}</h4>
+                <div key={i} className="bg-white rounded-lg p-4 border border-emerald-700">
+                  <h4 className="text-lg font-bold text-emerald-700 mb-2">{point.stage}</h4>
                   <div className="space-y-1 text-sm text-[#264563]">
                     <div><strong>Role:</strong> {point.role}</div>
                     <div><strong>What it does:</strong> {point.what}</div>
@@ -324,7 +324,7 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
 
           {/* Reality Check */}
           <div>
-            <h3 className="font-semibold text-[#264563] mb-3 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-[#264563] mb-3 flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-[#264563]" />
               Reality Check: What You Need to Know
             </h3>

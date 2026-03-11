@@ -81,12 +81,20 @@ html {
 
 /* Full-page background image */
 body {
+  position: relative;
+  min-height: 100vh;
+  color: #264563;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
   background-image: url('/images/background.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  min-height: 100vh;
-  color: #264563;
+  filter: blur(0.5px);
+  z-index: -1;
 }
 
 /* Comment form animations */

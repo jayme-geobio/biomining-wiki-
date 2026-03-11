@@ -13,8 +13,7 @@ export default function Navigation() {
     learn: {
       name: 'Learn',
       items: [
-        { name: 'What Is Biomining?', href: '/what-is-biomining' },
-        { name: 'Glossary', href: '/glossary' }
+        { name: 'What Is Biomining?', href: '/what-is-biomining' }
       ]
     },
     professionals: {
@@ -29,7 +28,8 @@ export default function Navigation() {
       items: [
         { name: 'Complex Materials', href: '/complex-materials' },
         { name: 'Flowsheets', href: '/flowsheets' },
-        { name: 'Research', href: '/research' }
+        { name: 'Research', href: '/research' },
+        { name: 'Glossary', href: '/glossary' }
       ]
     }
   };
@@ -107,11 +107,10 @@ export default function Navigation() {
           {/* Expanding spacer — opens the nav box to reveal the absolutely positioned items */}
           <div
             className={`hidden md:block transition-[max-height,opacity] duration-300 ease-out ${
-              openDropdown ? 'max-h-28 opacity-100' : 'max-h-0 opacity-0'
+              openDropdown ? 'max-h-36 opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            {/* Fixed-height invisible spacer — same for all sections so box never shifts */}
-            <div className="h-20" />
+            <div className="h-28" />
           </div>
 
           {/* Mobile menu */}

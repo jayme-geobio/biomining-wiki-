@@ -216,7 +216,7 @@ function ResourceCard({ title, description, icon: Icon, link }) {
   return (
     <Link
       href={link}
-      className="bg-gray-50 hover:bg-white rounded-xl p-5 border border-gray-200 hover:border-emerald-200 hover:shadow-md transition-all block"
+      className="bg-gray-50 hover:bg-white rounded-xl p-5 border border-gray-200 hover:border-emerald-700 hover:shadow-md transition-all block"
     >
       <Icon className="w-7 h-7 text-emerald-600 mb-3" />
       <h3 className="text-base font-semibold text-[#264563] mb-1.5">{title}</h3>
