@@ -69,7 +69,7 @@ export default function ForMiners() {
           >
             <div className="space-y-4">
               <p className="text-[#264563] mb-4">
-                Microbes mobilize and capture metals through several mechanistic pathways. All can be engineered or tuned:
+                Biological systems mobilize and capture metals through several mechanistic pathways. All can be engineered or tuned:
               </p>
 
               <MechanismCard
@@ -291,7 +291,7 @@ function BiologicalSystemsSection() {
   return (
     <div className="space-y-6">
       <p className="text-[#264563]">
-        Biology enters mining in two main forms: microbial systems that mobilize metals from solid materials and bio-derived systems that selectively capture metals from solution.
+        Biology enters mining in three main forms: 
       </p>
 
       <div className="rounded-xl border border-[#264563]/20 overflow-hidden bg-white">
@@ -400,48 +400,48 @@ function BiologicalSystemsSection() {
             <div className="space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">How Biomolecules Work</h4>
               <p>
-                Biomolecules interact with metals through specific chemical binding sites on their molecular structure. Functional groups such as carboxyl, amine, thiol, or phosphate groups can coordinate (trap) metal ions and hold them in place.
+                Biomolecules interact with metals through specific chemical binding sites on their molecular structure, which can coordinate (trap) metal ions and hold them in place. In natural biological systems, these interactions allow organisms to transport, store, and control metals needed for cellular processes. 
               </p>
-              <p>
-                At a high level, biomolecular systems need three things to perform:
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-4">
-                <NeedCard
-                  title="Selective Binding"
-                  examples={[
-                    "Biomolecules recognize and bind specific metals through molecular binding sites",
-                    "Highly selective interactions with target metals",
-                    "Enables capture of metals from complex mixtures"
-                  ]}
-                />
-                <NeedCard
-                  title="Seperation"
-                  examples={[
-                    "Bound metals stay on the biomolecular material while the rest flows past",
-                    "Target metal concentrates"
-                  ]}
-                />
-                <NeedCard
-                  title="Stable & Reusable Material"
-                  examples={[
-                    "Conditions are adjusted to release the bound metal",
-                    "Metal returns to solution in a concentrated stream",
-                    "Biomolecules can often be reused"
-                  ]}
-                />
-              </div>
-
-              <p className="italic">
-                In practice, performance depends not just on binding strength, but also on selectivity, stability, and the ability to regenerate the material.
-              </p>
+              
             </div>
 
             <div className="space-y-3 text-[#264563]">
-              <h4 className="text-base font-semibold">How Biomolecules Interact With Metals</h4>
+              <h4 className="text-base font-semibold">How Biomolecules Are Used in Mining</h4>
               <p>
-                Biomolecules influence how metals move by selectively binding, concentrating, or separating them from complex solutions. These interactions can pull target metals out of mixed streams, remove unwanted impurities, or help recover metals from dilute solutions. Think of this like a highly selective filter or molecular sorter — instead of changing the mineral itself, biomolecules recognize and capture specific metals once they are already in solution.
+                Biomolecular systems leverage these natural metal-binding interactions to selectively capture, concentrate, or separate metals from complex solutions. These interactions can pull target metals out of mixed streams, remove unwanted impurities, or recover metals from dilute solutions.
               </p>
+              <p>
+                At a high level, biomolecular systems function in three steps:
+              </p>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <NeedCard
+                    title="Selective Binding"
+                    examples={[
+                      "Biomolecules bind specific metals",
+                      "Binding can be highly selective",
+                      "Enables capture of metals from complex mixtures"
+                    ]}
+                  />
+                  <NeedCard
+                    title="Seperation"
+                    examples={[
+                      "Bound metals stay on the biomolecule",
+                      "Target metal concentrates"
+                    ]}
+                  />
+                  <NeedCard
+                    title="Release & Recovery"
+                    examples={[
+                      "Conditions are adjusted to release the bound metal",
+                      "Metal is recovered in a concentrated stream",
+                      "Biomolecules can often be reused"
+                    ]}
+                  />
+                  </div>
+                  <p className="italic">
+                  In practice, performance depends not just on binding strength, but also on selectivity, stability, and the ability to regenerate the material.
+                  </p>
+              
             </div>
           </div>
         )}
@@ -467,56 +467,54 @@ function BiologicalSystemsSection() {
         {expandedSubsection === 'phyto' && (
           <div className="p-6 pt-0 border-t border-[#264563]/10 space-y-6">
             <div className="pt-4 space-y-3 text-[#264563]">
-              <h4 className="text-base font-semibold">What Biomolecules Are</h4>
+              <h4 className="text-base font-semibold">What Phytomining Is</h4>
               <p>
-                Biomolecular systems use biological molecules such as proteins, peptides, polysaccharides, or other bio-derived materials to interact with metals. Unlike microbes, these are not living systems — they do not grow, reproduce, or metabolize.
+                Phytomining uses plants to extract metals from soils, mine waste, or low-grade deposits. Certain plants, known as hyperaccumulators, naturally absorb and concentrate metals in their tissues.
               </p>
             </div>
 
             <div className="space-y-3 text-[#264563]">
-              <h4 className="text-base font-semibold">How Biomolecules Work</h4>
+              <h4 className="text-base font-semibold">How Phytomining Works</h4>
               <p>
-                Biomolecules interact with metals through specific chemical binding sites on their molecular structure. Functional groups such as carboxyl, amine, thiol, or phosphate groups can coordinate (trap) metal ions and hold them in place.
+                Plants take up dissolved metals from the soil through their roots as part of normal nutrient uptake. These metals are transported through the plant and stored in leaves, stems, or other tissues.
               </p>
               <p>
-                At a high level, biomolecular systems need three things to perform:
+                At a high level, phytomining systems perform in three steps:
               </p>
 
               <div className="grid md:grid-cols-3 gap-4">
                 <NeedCard
-                  title="Selective Binding"
+                  title="Uptake"
                   examples={[
-                    "Biomolecules recognize and bind specific metals through molecular binding sites",
-                    "Highly selective interactions with target metals",
-                    "Enables capture of metals from complex mixtures"
+                    "Plant roots absorb dissolved metals from soil or pore water",
+                    "Metals enter the plant through normal nutrient transport pathways"
                   ]}
                 />
                 <NeedCard
-                  title="Seperation"
+                  title="Transport & Accumulation"
                   examples={[
-                    "Bound metals stay on the biomolecular material while the rest flows past",
-                    "Target metal concentrates"
+                    "Metals move through the plants vascular system",
+                    "Some species concentrate metals in leaves, stems, or other tissues"
                   ]}
                 />
                 <NeedCard
                   title="Stable & Reusable Material"
                   examples={[
-                    "Conditions are adjusted to release the bound metal",
-                    "Metal returns to solution in a concentrated stream",
-                    "Biomolecules can often be reused"
+                    "Metal-rich biomass is harvested",
+                    "Metals are recovered from the plant material through processing"
                   ]}
                 />
               </div>
 
               <p className="italic">
-                In practice, performance depends not just on binding strength, but also on selectivity, stability, and the ability to regenerate the material.
+                The most widely used application is the bioremediation of metal-contaminated soils.
               </p>
             </div>
 
             <div className="space-y-3 text-[#264563]">
-              <h4 className="text-base font-semibold">How Biomolecules Interact With Metals</h4>
+              <h4 className="text-base font-semibold">How Plants Interact With Metals</h4>
               <p>
-                Biomolecules influence how metals move by selectively binding, concentrating, or separating them from complex solutions. These interactions can pull target metals out of mixed streams, remove unwanted impurities, or help recover metals from dilute solutions. Think of this like a highly selective filter or molecular sorter — instead of changing the mineral itself, biomolecules recognize and capture specific metals once they are already in solution.
+                Plants influence how metals move through soils by absorbing dissolved metal ions through their roots and transporting them through their tissues. In some species, metals can accumulate to very high concentrations in leaves, stems, or other plant parts, allowing metals to be concentrated in biomass.
               </p>
             </div>
           </div>
