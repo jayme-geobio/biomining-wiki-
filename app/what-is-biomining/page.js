@@ -38,7 +38,7 @@ export default function WhatIsBiomining() {
                   For this wiki, <strong>biomining</strong> means:
                 </p>
                 <p className="text-[#264563] mt-2 text-lg italic">
-                  Any use of biological mechanisms—cells, enzymes, proteins, metabolites, or consortia—to aid
+                  Any use of biological mechanisms—cells, enzymes, proteins, plants, metabolites, or consortia—to aid
                   metal recovery, mineral processing, or the management of mining-related wastes and liabilities.
                 </p>
               </div>
@@ -78,7 +78,7 @@ export default function WhatIsBiomining() {
                 number="3"
                 title="Bioseparation and Biosorption"
                 description="Binding of metals to biomolecules, enabling separation and concentration from complex mixtures"
-                details="Includes metallophores, siderophore-like ligands, engineered binding proteins, cell-free proteins, peptides, polymers, whole cells, bio-based resins, and membranes"
+                details="Includes metallophores, siderophore-like ligands, engineered binding proteins, cell-free proteins, peptides, polymers, phytomining, bio-based resins, and membranes"
                 icon={Target}
                 color="emerald"
               />
