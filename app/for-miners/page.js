@@ -446,6 +446,82 @@ function BiologicalSystemsSection() {
           </div>
         )}
       </div>
+
+      <div className="rounded-xl border border-[#264563]/20 overflow-hidden bg-white">
+        <button
+          onClick={() =>
+            setExpandedSubsection(expandedSubsection === 'phyto' ? null : 'phyto')
+          }
+          className="w-full p-5 flex items-center justify-between hover:bg-[#264563]/5 transition-colors"
+        >
+          <h3 className="text-lg font-semibold text-[#264563]">
+            Phytomining
+          </h3>
+          {expandedSubsection === 'phyto' ? (
+            <ChevronDown className="w-5 h-5 text-[#264563]" />
+          ) : (
+            <ChevronRight className="w-5 h-5 text-[#264563]" />
+          )}
+        </button>
+
+        {expandedSubsection === 'phyto' && (
+          <div className="p-6 pt-0 border-t border-[#264563]/10 space-y-6">
+            <div className="pt-4 space-y-3 text-[#264563]">
+              <h4 className="text-base font-semibold">What Biomolecules Are</h4>
+              <p>
+                Biomolecular systems use biological molecules such as proteins, peptides, polysaccharides, or other bio-derived materials to interact with metals. Unlike microbes, these are not living systems — they do not grow, reproduce, or metabolize.
+              </p>
+            </div>
+
+            <div className="space-y-3 text-[#264563]">
+              <h4 className="text-base font-semibold">How Biomolecules Work</h4>
+              <p>
+                Biomolecules interact with metals through specific chemical binding sites on their molecular structure. Functional groups such as carboxyl, amine, thiol, or phosphate groups can coordinate (trap) metal ions and hold them in place.
+              </p>
+              <p>
+                At a high level, biomolecular systems need three things to perform:
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-4">
+                <NeedCard
+                  title="Selective Binding"
+                  examples={[
+                    "Biomolecules recognize and bind specific metals through molecular binding sites",
+                    "Highly selective interactions with target metals",
+                    "Enables capture of metals from complex mixtures"
+                  ]}
+                />
+                <NeedCard
+                  title="Seperation"
+                  examples={[
+                    "Bound metals stay on the biomolecular material while the rest flows past",
+                    "Target metal concentrates"
+                  ]}
+                />
+                <NeedCard
+                  title="Stable & Reusable Material"
+                  examples={[
+                    "Conditions are adjusted to release the bound metal",
+                    "Metal returns to solution in a concentrated stream",
+                    "Biomolecules can often be reused"
+                  ]}
+                />
+              </div>
+
+              <p className="italic">
+                In practice, performance depends not just on binding strength, but also on selectivity, stability, and the ability to regenerate the material.
+              </p>
+            </div>
+
+            <div className="space-y-3 text-[#264563]">
+              <h4 className="text-base font-semibold">How Biomolecules Interact With Metals</h4>
+              <p>
+                Biomolecules influence how metals move by selectively binding, concentrating, or separating them from complex solutions. These interactions can pull target metals out of mixed streams, remove unwanted impurities, or help recover metals from dilute solutions. Think of this like a highly selective filter or molecular sorter — instead of changing the mineral itself, biomolecules recognize and capture specific metals once they are already in solution.
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
     );
     }
