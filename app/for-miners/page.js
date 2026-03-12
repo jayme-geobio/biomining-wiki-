@@ -302,7 +302,7 @@ function BiologicalSystemsSection() {
           className="w-full p-5 flex items-center justify-between hover:bg-[#264563]/5 transition-colors"
         >
           <h3 className="text-lg font-semibold text-[#264563]">
-            Microbial Systems - bacteria, archaea & fungi
+            Microbial Systems
           </h3>
           {expandedSubsection === 'living' ? (
             <ChevronDown className="w-5 h-5 text-[#264563]" />
@@ -312,74 +312,60 @@ function BiologicalSystemsSection() {
         </button>
 
         {expandedSubsection === 'living' && (
-          <div className="p-6 pt-0 border-t border-[#264563]/10 space-y-4">
-            <p className="text-[#264563] pt-4">
-              At a high level, microbes need three things to survive and do work:
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-4">
-              <NeedCard
-                title="Energy Source"
-                examples={[
-                  "Light (not relevant here)",
-                  "Oxidation of Fe²⁺",
-                  "Reduced sulfur compounds",
-                  "Organic carbon"
-                ]}
-              />
-              <NeedCard
-                title="Electron Donors/Acceptors"
-                examples={[
-                  "Fe²⁺ / Fe³⁺",
-                  "Reduced/oxidized sulfur",
-                  "O₂, nitrate, sulfate",
-                  "CO₂"
-                ]}
-              />
-              <NeedCard
-                title="Carbon Source"
-                examples={[
-                  "CO₂ (autotrophs)",
-                  "Organic carbon (heterotrophs)",
-                  "Mixed modes"
-                ]}
-              />
+          <div className="p-6 pt-0 border-t border-[#264563]/10 space-y-6">
+            <div className="pt-4 space-y-3 text-[#264563]">
+              <h4 className="text-base font-semibold">What Microbes Are</h4>
+              <p>
+                Microorganisms (microbes) are microscopic living organisms such as bacteria, archaea, and fungi. Unlike chemical reagents or materials, they are living systems that grow, reproduce, and actively respond to their environment.
+              </p>
             </div>
 
-            <div className="mt-6">
-              <h4 className="text-base font-semibold text-[#264563] mb-4">
-                Key Functional Groups in Biomining
-              </h4>
-
-              <div className="space-y-4">
-                <MicrobeCard
-                  name="Iron & Sulfur-Oxidizing Autotrophs"
-                  examples="Acidithiobacillus ferrooxidans, Leptospirillum spp."
-                  function="Generate Fe³⁺ and sulfuric acid that attack sulfide minerals"
-                  relevance="Core organisms in bioleaching and biooxidation"
+            <div className="space-y-3 text-[#264563]">
+              <h4 className="text-base font-semibold">How Microbes Work</h4>
+              <p>
+                Microorganisms operate by carrying out chemical reactions to obtain energy from their environment. These reactions allow them to power their metabolism, maintain cellular processes, and produce new cells.
+              </p>
+              <p>
+                At a high level, microbes need three things to survive and do work:
+              </p>
+              <div className="grid md:grid-cols-3 gap-4">
+                <NeedCard
+                  title="Energy Source"
+                  examples={[
+                    "Light (not relevant here)",
+                    "Oxidation of Fe²⁺",
+                    "Reduced sulfur compounds",
+                    "Organic carbon"
+                  ]}
                 />
-
-                <MicrobeCard
-                  name="Sulfur-Oxidizers"
-                  examples="Acidithiobacillus thiooxidans"
-                  function="Drive sulfuric acid production and metal solubilization"
-                  relevance="Essential for maintaining acidity in heaps and tanks"
+                <NeedCard
+                  title="Electron Donors/Acceptors"
+                  examples={[
+                    "Fe²⁺ / Fe³⁺",
+                    "Reduced/oxidized sulfur",
+                    "O₂, nitrate, sulfate",
+                  ]}
                 />
-
-                <MicrobeCard
-                  name="Sulfate-Reducing Bacteria (SRB)"
-                  examples="Desulfovibrio, Desulfotomaculum"
-                  function="Produce sulfide that precipitates metals as metal sulfides"
-                  relevance="Critical for AMD treatment and metal recovery from drainage"
+                <NeedCard
+                  title="Carbon Source"
+                  examples={[
+                    "CO₂ (autotrophs)",
+                    "Organic carbon (heterotrophs)",
+                    "Mixed modes"
+                  ]}
                 />
-
-                <MicrobeCard
-                  name="Heterotrophs & Consortia"
-                  examples="Various species working together"
-                  function="Produce organic acids and chelators, modify biofilms, influence sorption"
-                  relevance="Support ecosystems in heaps and modify mineral surfaces"
-                />
+              
               </div>
+              <p className="italic">
+              In practice, some substances can serve multiple functions depending on the organism and metabolism.
+              </p>
+              </div>  
+            <div className="space-y-3 text-[#264563]">
+              <h4 className="text-base font-semibold">How Microbes Interact With Minerals</h4>
+              <p>
+              Microbes influence how metals move because their metabolism changes the chemistry of minerals and surrounding fluids. These changes can dissolve minerals, expose valuable metals for recovery, or form new minerals that capture or stabilize metals.
+              Think of familiar processes such as baking bread or turning milk into cheese — microbes drive reactions that gradually alter materials and their environment to produce valuable products.
+              </p>
             </div>
           </div>
         )}
@@ -393,7 +379,7 @@ function BiologicalSystemsSection() {
           className="w-full p-5 flex items-center justify-between hover:bg-[#264563]/5 transition-colors"
         >
           <h3 className="text-lg font-semibold text-[#264563]">
-            Biomolecular Systems - biomolecules & bio-derived materials
+            Biomolecular Systems
           </h3>
           {expandedSubsection === 'nonliving' ? (
             <ChevronDown className="w-5 h-5 text-[#264563]" />
@@ -403,61 +389,66 @@ function BiologicalSystemsSection() {
         </button>
 
         {expandedSubsection === 'nonliving' && (
-          <div className="p-6 pt-0 border-t border-[#264563]/10 space-y-4">
-            <p className="text-[#264563] pt-4">
-              Not all biological mining tools rely on living cells. Some use proteins, peptides, polysaccharides, or other bio-derived materials to selectively bind, separate, recover, or sense metals.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-4">
-              <NeedCard
-                title="What They Include"
-                examples={[
-                  "Proteins and peptides",
-                  "Bio-derived ligands",
-                  "Biosorbent materials",
-                  "Immobilized biomolecules"
-                ]}
-              />
-              <NeedCard
-                title="What They Depend On"
-                examples={[
-                  "Binding chemistry",
-                  "Selectivity and capacity",
-                  "Stability under process conditions",
-                  "Regeneration and manufacturability"
-                ]}
-              />
+          <div className="p-6 pt-0 border-t border-[#264563]/10 space-y-6">
+            <div className="pt-4 space-y-3 text-[#264563]">
+              <h4 className="text-base font-semibold">What Biomolecules Are</h4>
+              <p>
+                Biomolecular systems use biological molecules such as proteins, peptides, polysaccharides, or other bio-derived materials to interact with metals. Unlike microbes, these are not living systems — they do not grow, reproduce, or metabolize.
+              </p>
             </div>
 
-            <div className="bg-[#264563]/5 rounded-lg p-5 border border-[#264563]/20 mt-6">
-              <h4 className="text-base font-semibold text-[#264563] mb-3">
-                Common Roles in Mining Flowsheets
-              </h4>
-              <ul className="space-y-2 text-[#264563] text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#264563] mt-1">•</span>
-                  <span>Selective capture of rare earths or other target metals from complex solutions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#264563] mt-1">•</span>
-                  <span>Polishing dilute streams where conventional separations are inefficient</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#264563] mt-1">•</span>
-                  <span>Use in beads, membranes, resins, or structured packings</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#264563] mt-1">•</span>
-                  <span>Potential integration into side-stream recovery or impurity management steps</span>
-                </li>
-              </ul>
+            <div className="space-y-3 text-[#264563]">
+              <h4 className="text-base font-semibold">How Biomolecules Work</h4>
+              <p>
+                Biomolecules interact with metals through specific chemical binding sites on their molecular structure. Functional groups such as carboxyl, amine, thiol, or phosphate groups can coordinate (trap) metal ions and hold them in place.
+              </p>
+              <p>
+                At a high level, biomolecular systems need three things to perform:
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-4">
+                <NeedCard
+                  title="Selective Binding"
+                  examples={[
+                    "Biomolecules recognize and bind specific metals through molecular binding sites",
+                    "Highly selective interactions with target metals",
+                    "Enables capture of metals from complex mixtures"
+                  ]}
+                />
+                <NeedCard
+                  title="Seperation"
+                  examples={[
+                    "Bound metals stay on the biomolecular material while the rest flows past",
+                    "Target metal concentrates"
+                  ]}
+                />
+                <NeedCard
+                  title="Stable & Reusable Material"
+                  examples={[
+                    "Conditions are adjusted to release the bound metal",
+                    "Metal returns to solution in a concentrated stream",
+                    "Biomolecules can often be reused"
+                  ]}
+                />
+              </div>
+
+              <p className="italic">
+                In practice, performance depends not just on binding strength, but also on selectivity, stability, and the ability to regenerate the material.
+              </p>
+            </div>
+
+            <div className="space-y-3 text-[#264563]">
+              <h4 className="text-base font-semibold">How Biomolecules Interact With Metals</h4>
+              <p>
+                Biomolecules influence how metals move by selectively binding, concentrating, or separating them from complex solutions. These interactions can pull target metals out of mixed streams, remove unwanted impurities, or help recover metals from dilute solutions. Think of this like a highly selective filter or molecular sorter — instead of changing the mineral itself, biomolecules recognize and capture specific metals once they are already in solution.
+              </p>
             </div>
           </div>
         )}
       </div>
     </div>
-  );
-}
+    );
+    }
 function Section({ title, icon: Icon, expanded, onToggle, children }) {
   return (
     <div className="rounded-xl mb-4 border-2 border-white overflow-hidden">

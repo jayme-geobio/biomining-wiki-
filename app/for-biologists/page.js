@@ -53,8 +53,7 @@ export default function ForBiologists() {
                 </li>
               </ul>
               <p className="mt-4 font-semibold">
-                This guide helps you place biological ideas in realistic process contexts and speak the language
-                of mining engineers.
+                This guide helps place biological ideas within real mining processes while learning to speak the language of mining engineers.
               </p>
             </div>
           </div>
@@ -110,7 +109,7 @@ export default function ForBiologists() {
                 whyBiology={[
                   "New bio-technologies can change which parts of a deposit are considered 'ore'",
                   "Enable recovery of critical by-product elements currently ignored",
-                  "Bio-assays and biosensors for exploration geochemistry"
+                  "Bio-assays and biosensors help explore and identify favorable geochemistry"
                 ]}
                 whereBio={[
                   "Biosensors for exploration",
@@ -138,7 +137,7 @@ export default function ForBiologists() {
                 whyBiology={[
                   "Input material is stressed, mixed, partly oxidized rock - not pure minerals",
                   "Size distribution and surface damage from blasting affect leach kinetics",
-                  "Water infiltration and oxygen diffusion are key for heaps and in-situ"
+                  "Water infiltration and oxygen diffusion are key for heaps and in-situ leaching"
                 ]}
                 whereBio={[
                   "In-stope leaching (injecting solutions into fractured zones)",
@@ -161,7 +160,7 @@ export default function ForBiologists() {
 
               <StageCard
                 title="5. Concentration & Leaching"
-                what="Metals are either concentrated using flotation, gravity, or magnetic separation, or extracted by leaching into solution. These routes produce either concentrate or a metal-bearing leach solution"
+                what="Metals are either concentrated using flotation, gravity, or magnetic separation, or extracted by leaching into solution. These routes produce either concentrate or a metal-bearing leach solution, often called a pregnant leach solution (PLS)"
                 whyBiology={[
                   "Mineral surface chemistry governs flotation selectivity and leach kinetics",
                   "Biology can modify mineral surfaces to improve or suppress flotation of specific minerals",

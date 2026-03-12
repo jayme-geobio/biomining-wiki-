@@ -144,7 +144,7 @@ export default function WhatIsBiomining() {
               <AdvantageCard
                 title="Adaptation"
                 items={[
-                  "Systems that can evolve toward function—design the ecology, not just the strain",
+                  "Systems that can evolve toward function—design the ecosystem, not just the strain",
                   "Adaptive communities can tune performance over time within an operating envelope"
                 ]}
               />
