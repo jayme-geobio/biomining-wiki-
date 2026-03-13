@@ -7,7 +7,11 @@ import CommentableContent from '../components/CommentableContent';
 
 
 export default function WhatIsBiomining() {
-  const [expandedSection, setExpandedSection] = useState(null);
+  const [openSections, setOpenSections] = useState(new Set());
+
+  function toggleSection(key) {
+    setOpenSections(prev => { const next = new Set(prev); next.has(key) ? next.delete(key) : next.add(key); return next; });
+  }
 
   return (
     <CommentableContent pageName="what-is-biomining">
@@ -54,8 +58,8 @@ export default function WhatIsBiomining() {
           <Section
             title="1. Biological Mechanisms in Mining"
             icon={Microscope}
-            expanded={expandedSection === 'mechanisms'}
-            onToggle={() => setExpandedSection(expandedSection === 'mechanisms' ? null : 'mechanisms')}
+            expanded={openSections.has('mechanisms')}
+            onToggle={() => toggleSection('mechanisms')}
           >
             <div className="space-y-4">
               <MechanismCard
@@ -105,8 +109,8 @@ export default function WhatIsBiomining() {
           <Section
             title="2. Where Biotech Outcompetes Chemistry"
             icon={Zap}
-            expanded={expandedSection === 'excel'}
-            onToggle={() => setExpandedSection(expandedSection === 'excel' ? null : 'excel')}
+            expanded={openSections.has('excel')}
+            onToggle={() => toggleSection('excel')}
           >
             <div className="space-y-3">
               <p className="text-[#264563] mb-4">

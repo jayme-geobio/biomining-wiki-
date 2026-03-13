@@ -14,7 +14,7 @@ const researchData = {
       keyIssues: [
         "Binding constants measured in simple buffers don't map cleanly to separation performance in real PLS, leachates, or tailings porewaters",
         "Competing ions, organics, colloids, and solids all affect selectivity and capacity",
-        "Ligand space for REEs, PGMs, radionuclides, and polymetallic systems remains underexplored"
+        "Ligands for REEs, PGMs, radionuclides, and polymetallic systems remain underexplored"
       ],
       opportunities: [
         {
@@ -100,7 +100,7 @@ const researchData = {
       opportunities: [
         {
           title: "In Situ Sensors",
-          description: "Gas-phase and solution-phase sensors for redox, speciation, and biological activity in harsh conditions"
+          description: "Gas- and solution-phase sensors for redox, speciation, and biological activity in harsh conditions"
         },
         {
           title: "Coupled Biogeochemical Models",
@@ -206,8 +206,15 @@ const researchData = {
 };
 
 export default function Research() {
-  const [expandedFrontier, setExpandedFrontier] = useState(null);
-  const [expandedEcosystem, setExpandedEcosystem] = useState(null);
+  const [openFrontiers, setOpenFrontiers] = useState(new Set());
+  const [openEcosystems, setOpenEcosystems] = useState(new Set());
+
+  function toggleFrontier(i) {
+    setOpenFrontiers(prev => { const next = new Set(prev); next.has(i) ? next.delete(i) : next.add(i); return next; });
+  }
+  function toggleEcosystem(i) {
+    setOpenEcosystems(prev => { const next = new Set(prev); next.has(i) ? next.delete(i) : next.add(i); return next; });
+  }
 
   return (
     <CommentableContent pageName="research">
@@ -239,8 +246,8 @@ export default function Research() {
               <FrontierCard
                 key={i}
                 frontier={frontier}
-                expanded={expandedFrontier === i}
-                onToggle={() => setExpandedFrontier(expandedFrontier === i ? null : i)}
+                expanded={openFrontiers.has(i)}
+                onToggle={() => toggleFrontier(i)}
               />
             ))}
           </div>
@@ -261,8 +268,8 @@ export default function Research() {
               <EcosystemCard
                 key={i}
                 item={item}
-                expanded={expandedEcosystem === i}
-                onToggle={() => setExpandedEcosystem(expandedEcosystem === i ? null : i)}
+                expanded={openEcosystems.has(i)}
+                onToggle={() => toggleEcosystem(i)}
               />
             ))}
           </div>
@@ -306,7 +313,6 @@ export default function Research() {
 
 function FrontierCard({ frontier, expanded, onToggle }) {
   const Icon = frontier.icon;
-
   return (
     <div className="rounded-xl border-2 border-white overflow-hidden">
       <button
@@ -355,7 +361,6 @@ function FrontierCard({ frontier, expanded, onToggle }) {
 
 function EcosystemCard({ item, expanded, onToggle }) {
   const Icon = item.icon;
-
   return (
     <div className="rounded-xl border-2 border-white overflow-hidden">
       <button

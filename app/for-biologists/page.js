@@ -7,7 +7,11 @@ import CommentableContent from '../components/CommentableContent';
 
 
 export default function ForBiologists() {
-  const [expandedSection, setExpandedSection] = useState(null);
+  const [openSections, setOpenSections] = useState(new Set());
+
+  function toggleSection(key) {
+    setOpenSections(prev => { const next = new Set(prev); next.has(key) ? next.delete(key) : next.add(key); return next; });
+  }
 
   return (
     <CommentableContent pageName="for-biologists">
@@ -40,15 +44,15 @@ export default function ForBiologists() {
               </p>
               <ul className="ml-6 space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-700 mt-1">•</span>
+                  <span className="text-emerald-700" style={{marginTop: '-0.1em'}}>•</span>
                   Rock is moved at a scale of<strong>millions of tonnes per year</strong>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-700 mt-1">•</span>
+                  <span className="text-emerald-700" style={{marginTop: '-0.1em'}}>•</span>
                   Margins can be thin and metal prices are volatile
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-700 mt-1">•</span>
+                  <span className="text-emerald-700" style={{marginTop: '-0.1em'}}>•</span>
                   Time scales, water availability, and permitting often matter as much as chemistry
                 </li>
               </ul>
@@ -62,8 +66,8 @@ export default function ForBiologists() {
           <Section
             title="The Journey from Rock to Metal"
             icon={Mountain}
-            expanded={expandedSection === 'journey'}
-            onToggle={() => setExpandedSection(expandedSection === 'journey' ? null : 'journey')}
+            expanded={openSections.has('journey')}
+            onToggle={() => toggleSection('journey')}
           >
             <div className="space-y-4">
               <p className="text-emerald-700">
@@ -99,8 +103,8 @@ export default function ForBiologists() {
           <Section
             title="Mining Value Chain - Stage by Stage"
             icon={Factory}
-            expanded={expandedSection === 'stages'}
-            onToggle={() => setExpandedSection(expandedSection === 'stages' ? null : 'stages')}
+            expanded={openSections.has('stages')}
+            onToggle={() => toggleSection('stages')}
           >
             <div className="space-y-6">
               <StageCard
@@ -206,8 +210,8 @@ export default function ForBiologists() {
           <Section
             title="Constraints That Shape Bio-Adoption"
             icon={AlertCircle}
-            expanded={expandedSection === 'constraints'}
-            onToggle={() => setExpandedSection(expandedSection === 'constraints' ? null : 'constraints')}
+            expanded={openSections.has('constraints')}
+            onToggle={() => toggleSection('constraints')}
           >
             <div className="space-y-4">
               <ConstraintCard
@@ -241,8 +245,8 @@ export default function ForBiologists() {
           <Section
             title="Quick Design Checklist"
             icon={FileCheck}
-            expanded={expandedSection === 'checklist'}
-            onToggle={() => setExpandedSection(expandedSection === 'checklist' ? null : 'checklist')}
+            expanded={openSections.has('checklist')}
+            onToggle={() => toggleSection('checklist')}
           >
             <div className="bg-white rounded-lg p-6 border border-emerald-700">
               <p className="text-emerald-700 mb-4">
@@ -258,7 +262,7 @@ export default function ForBiologists() {
                   "What is your realistic first deployment? (side-stream polishing, tailings/AMD reprocessing, pilot at legacy site)"
                 ].map((q, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-bold">
+                    <div className="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-sm font-bold" style={{marginTop: '0.1em'}}>
                       {i + 1}
                     </div>
                     <p className="text-emerald-700">{q}</p>
@@ -321,7 +325,7 @@ function StageCard({ title, what, whyBiology, whereBio }) {
         <ul className="space-y-1">
           {whyBiology.map((item, i) => (
             <li key={i} className="text-emerald-700 text-sm flex items-start gap-2">
-              <span className="text-emerald-700 mt-1">•</span>
+              <span className="text-emerald-700" style={{marginTop: '-0.1em'}}>•</span>
               <span>{item}</span>
             </li>
           ))}

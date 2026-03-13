@@ -24,12 +24,12 @@ const flowsheetData = [
       {
         stage: "Heap Leach Pad",
         role: "Native or inoculated acidophiles (Acidithiobacillus, Leptospirillum)",
-        what: "Microbes oxidize Fe²⁺ to Fe³⁺ and produce sulfuric acid, which dissolves copper from minerals",
+        what: "Microbes oxidize ferrous iron (Fe²⁺) to ferric iron (Fe³⁺) and produce sulfuric acid, which dissolves copper from minerals",
         control: "pH control (1.5-2.5), nutrient addition (N, P), aeration management"
       },
       {
         stage: "Side-stream Bio-polishing",
-        role: "Optional: biosorption or bioseparation",
+        role: "Biosorption or bioseparation",
         what: "Remove impurities (Fe, Mn, Al) from PLS before SX to improve efficiency",
         control: "Selective biomolecules or microbial biomass; regeneration cycles"
       },
@@ -184,7 +184,11 @@ const flowsheetData = [
 ];
 
 export default function Flowsheets() {
-  const [expandedFlowsheet, setExpandedFlowsheet] = useState(null);
+  const [openFlowsheets, setOpenFlowsheets] = useState(new Set());
+
+  function toggleFlowsheet(key) {
+    setOpenFlowsheets(prev => { const next = new Set(prev); next.has(key) ? next.delete(key) : next.add(key); return next; });
+  }
 
   return (
     <CommentableContent pageName="flowsheets">
@@ -210,8 +214,8 @@ export default function Flowsheets() {
               <FlowsheetCard
                 key={flowsheet.id}
                 flowsheet={flowsheet}
-                expanded={expandedFlowsheet === flowsheet.id}
-                onToggle={() => setExpandedFlowsheet(expandedFlowsheet === flowsheet.id ? null : flowsheet.id)}
+                expanded={openFlowsheets.has(flowsheet.id)}
+                onToggle={() => toggleFlowsheet(flowsheet.id)}
               />
             ))}
           </div>
@@ -313,9 +317,9 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
                 <div key={i} className="bg-white rounded-lg p-4 border border-emerald-700">
                   <h4 className="text-lg font-bold text-emerald-700 mb-2">{point.stage}</h4>
                   <div className="space-y-1 text-sm text-[#264563]">
-                    <div><strong>Role:</strong> {point.role}</div>
+                    <div><strong>Method:</strong> {point.role}</div>
                     <div><strong>What it does:</strong> {point.what}</div>
-                    <div><strong>Control:</strong> {point.control}</div>
+                    <div><strong>Levers and Controls:</strong> {point.control}</div>
                   </div>
                 </div>
               ))}
@@ -326,12 +330,12 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
           <div>
             <h3 className="text-lg font-bold text-[#264563] mb-3 flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-[#264563]" />
-              Reality Check: What You Need to Know
+              What You Need to Know
             </h3>
             <ul className="space-y-2">
               {flowsheet.reality.map((item, i) => (
                 <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
-                  <span className="text-[#264563] mt-1">→</span>
+                  <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>→</span>
                   <span>{item}</span>
                 </li>
               ))}

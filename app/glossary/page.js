@@ -162,7 +162,11 @@ const glossaryData = {
 export default function Glossary() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [expandedTerm, setExpandedTerm] = useState(null);
+  const [openTerms, setOpenTerms] = useState(new Set());
+
+  function toggleTerm(key) {
+    setOpenTerms(prev => { const next = new Set(prev); next.has(key) ? next.delete(key) : next.add(key); return next; });
+  }
 
   const allTerms = [
     ...glossaryData.mining.map(t => ({ ...t, category: 'mining' })),
@@ -250,10 +254,8 @@ export default function Glossary() {
             <TermCard
               key={i}
               term={term}
-              expanded={expandedTerm === `${term.category}-${i}`}
-              onToggle={() => setExpandedTerm(
-                expandedTerm === `${term.category}-${i}` ? null : `${term.category}-${i}`
-              )}
+              expanded={openTerms.has(`${term.category}-${i}`)}
+              onToggle={() => toggleTerm(`${term.category}-${i}`)}
             />
           ))}
         </div>

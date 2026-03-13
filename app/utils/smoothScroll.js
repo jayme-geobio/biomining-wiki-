@@ -1,7 +1,6 @@
-export function smoothScrollToElement(element, duration = 750, onComplete) {
+export function smoothScrollToElement(element, duration = 750, onComplete, navHeight = 140) {
   if (!element) return;
   const rect = element.getBoundingClientRect();
-  const navHeight = 140;
   const targetY = window.scrollY + rect.top - navHeight;
   const startY = window.scrollY;
   const distance = targetY - startY;

@@ -51,7 +51,7 @@ const materialsData = {
     bioOpportunities: [
       {
         title: "Refractory Biooxidation",
-        description: "For gold and other metals trapped in sulfides - break down sulfide matrix to release metals (BIOX®-style processing)"
+        description: "For gold and other metals trapped in sulfides - biooxidation breaks down sulfide matrix to release metals (BIOX®-style processing)"
       },
       {
         title: "Biogenic Lixiviants",
@@ -72,7 +72,7 @@ const materialsData = {
   tailings: {
     name: "Tailings",
     icon: Factory,
-    definition: "Fine residues after processing; they track what was processed and what was not recovered",
+    definition: "Fine residues remaining after mineral processing that record what material was processed and what metals were not recovered",
     hazards: [
       "Dam failures cause catastrophic loss of life",
       "Dust carries heavy metals to nearby communities",
@@ -90,11 +90,11 @@ const materialsData = {
       },
       {
         title: "Tailings Revalorization",
-        description: "Historic tailings often contain critical metals that weren't extracted originally - bioleach without expensive re-mining infrastructure"
+        description: "Historic tailings often contain critical metals that weren't extracted originally - making bioleaching possible without expensive re-mining infrastructure"
       },
       {
         title: "Orebank Standardization",
-        description: "Tailings-derived samples as standardized test feedstocks for technology benchmarking across labs"
+        description: "Tailings-derived samples as standardized test feedstocks for biotechnology benchmarking across labs"
       }
     ],
     whyBiology: "Bioleaching is cheaper than rebuilding infrastructure. Biocement and stabilization avoid toxic chemical transport to remote sites.",
@@ -108,7 +108,7 @@ const materialsData = {
       "World's fastest growing waste stream (74.7M tons by 2030)",
       "Complex mix of metals, plastics, glass - hard to separate",
       "Current recycling exposes workers to carcinogens",
-      "Thin profit margins mean much ends up in landfills"
+      "Thin profit margins sends material to landfills"
     ],
     bioOpportunities: [
       {
@@ -136,8 +136,8 @@ const materialsData = {
     icon: Beaker,
     definition: "Slag, fly ash, phosphogypsum, red mud, produced waters, and geothermal brines",
     hazards: [
-      "Slag: Metal oxides from smelting; weathers and leaches over time",
-      "Fly ash: Coal combustion byproduct with REEs and heavy metals",
+      "Slag: Metal oxides from smelting; heavy metals leach into groundwater over decades if untreated",
+      "Fly ash: Coal combustion byproduct with REEs and heavy metals; billions of tons stockpiled globally with limited disposal options",
       "Phosphogypsum: Radioactive waste from fertilizer production",
       "Red mud: Caustic bauxite waste with REEs, Sc, and other metals"
     ],
@@ -165,7 +165,11 @@ const materialsData = {
 };
 
 export default function ComplexMaterials() {
-  const [expandedMaterial, setExpandedMaterial] = useState(null);
+  const [openMaterials, setOpenMaterials] = useState(new Set());
+
+  function toggleMaterial(key) {
+    setOpenMaterials(prev => { const next = new Set(prev); next.has(key) ? next.delete(key) : next.add(key); return next; });
+  }
 
   return (
     <CommentableContent pageName="complex-materials">
@@ -201,7 +205,7 @@ export default function ComplexMaterials() {
                 ["Thin margins", "where small OPEX reductions make projects viable"],
               ].map(([bold, rest], i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <span className="text-emerald-600 mt-1">✓</span>
+                  <span className="text-emerald-600" style={{marginTop: '-0.1em'}}>✓</span>
                   <span><strong>{bold}</strong> {rest}</span>
                 </div>
               ))}
@@ -214,8 +218,8 @@ export default function ComplexMaterials() {
               <MaterialCard
                 key={key}
                 material={materialsData[key]}
-                expanded={expandedMaterial === key}
-                onToggle={() => setExpandedMaterial(expandedMaterial === key ? null : key)}
+                expanded={openMaterials.has(key)}
+                onToggle={() => toggleMaterial(key)}
               />
             ))}
           </div>
@@ -278,7 +282,7 @@ function MaterialCard({ material, expanded, onToggle }) {
             <ul className="space-y-1">
               {material.hazards.map((hazard, i) => (
                 <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
-                  <span className="text-orange-500 mt-1">•</span>
+                  <span className="text-orange-500" style={{marginTop: '-0.1em'}}>•</span>
                   <span>{hazard}</span>
                 </li>
               ))}

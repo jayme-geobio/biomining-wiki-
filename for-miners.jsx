@@ -167,80 +167,102 @@ export default function ForMiners() {
           expanded={expandedSection === 'modalities'}
           onToggle={() => setExpandedSection(expandedSection === 'modalities' ? null : 'modalities')}
         >
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white mb-3">
-              Classical Bioleaching & Biooxidation
-            </h3>
+          <div className="space-y-6">
+            {/* Classical Bioleaching & Biooxidation */}
+            <div className="bg-slate-800/40 rounded-xl p-5 border border-slate-500/40">
+              <h3 className="text-lg font-semibold text-white mb-4 pb-2 border-b border-slate-600/50">
+                Classical Bioleaching & Biooxidation
+              </h3>
+              <div className="space-y-4">
+                <ModalityCard
+                  title="Dump / Heap Bioleaching"
+                  description="Low-grade sulfide ores piled on pads and irrigated with acidic ferric solutions. Native or inoculated acidophiles catalyze Fe/S oxidation and metal release."
+                  applications="Common for copper, increasingly for other sulfides"
+                  parameters={[
+                    "Time: Months to years",
+                    "Temperature: Ambient to 50°C",
+                    "pH: 1.5-2.5",
+                    "Scale: Very large (Mt)"
+                  ]}
+                  integration="PLS → SX/EW → metal cathodes"
+                  challenges="Passivation layers, channeling, oxygen/nutrient limitations"
+                />
 
-            <ModalityCard
-              title="Dump / Heap Bioleaching"
-              description="Low-grade sulfide ores piled on pads and irrigated with acidic ferric solutions. Native or inoculated acidophiles catalyze Fe/S oxidation and metal release."
-              applications="Common for copper, increasingly for other sulfides"
-              parameters={[
-                "Time: Months to years",
-                "Temperature: Ambient to 50°C",
-                "pH: 1.5-2.5",
-                "Scale: Very large (Mt)"
-              ]}
-              integration="PLS → SX/EW → metal cathodes"
-              challenges="Passivation layers, channeling, oxygen/nutrient limitations"
-            />
+                <ModalityCard
+                  title="Stirred-Tank Biooxidation"
+                  description="High-grade refractory gold or polymetallic concentrates oxidized in aerated reactors prior to cyanidation or other leach."
+                  applications="Proven technology for refractory gold (BIOX®, BacTech)"
+                  parameters={[
+                    "Time: Days to weeks",
+                    "Temperature: 40-50°C (mesophile) or 65-85°C (thermophile)",
+                    "pH: 1.5-2.0",
+                    "Scale: Moderate (kt concentrate)"
+                  ]}
+                  integration="Flotation → biooxidation → cyanidation → recovery"
+                  challenges="Capital intensive, energy costs, solids loading limits"
+                />
 
-            <ModalityCard
-              title="Stirred-Tank Biooxidation"
-              description="High-grade refractory gold or polymetallic concentrates oxidized in aerated reactors prior to cyanidation or other leach."
-              applications="Proven technology for refractory gold (BIOX®, BacTech)"
-              parameters={[
-                "Time: Days to weeks",
-                "Temperature: 40-50°C (mesophile) or 65-85°C (thermophile)",
-                "pH: 1.5-2.0",
-                "Scale: Moderate (kt concentrate)"
-              ]}
-              integration="Flotation → biooxidation → cyanidation → recovery"
-              challenges="Capital intensive, energy costs, solids loading limits"
-            />
+                <ModalityCard
+                  title="In-Situ / In-Stope Bioleaching"
+                  description="Injection of lixiviants and/or microbes into permeable deposits underground or in fractured zones."
+                  applications="Attractive for low-grade or inaccessible deposits"
+                  parameters={[
+                    "Time: Years",
+                    "Temperature: Variable (geothermal gradient)",
+                    "pH: Controlled by injection",
+                    "Scale: Highly variable"
+                  ]}
+                  integration="Injection wells → collection → processing"
+                  challenges="Geotechnical risks, regulatory hurdles, containment"
+                />
+              </div>
+            </div>
 
-            <ModalityCard
-              title="In-Situ / In-Stope Bioleaching"
-              description="Injection of lixiviants and/or microbes into permeable deposits underground or in fractured zones."
-              applications="Attractive for low-grade or inaccessible deposits"
-              parameters={[
-                "Time: Years",
-                "Temperature: Variable (geothermal gradient)",
-                "pH: Controlled by injection",
-                "Scale: Highly variable"
-              ]}
-              integration="Injection wells → collection → processing"
-              challenges="Geotechnical risks, regulatory hurdles, containment"
-            />
+            {/* Bioseparations & Advanced Flowsheets */}
+            <div className="bg-slate-800/40 rounded-xl p-5 border border-slate-500/40">
+              <h3 className="text-lg font-semibold text-white mb-4 pb-2 border-b border-slate-600/50">
+                Bioseparations & Advanced Flowsheets
+              </h3>
+              <div className="bg-slate-800/30 rounded-lg p-5 border border-slate-600/50">
+              <h4 className="text-lg font-semibold text-white mb-4">Emerging Technologies for REEs & Complex Matrices</h4>
 
-            <h3 className="text-lg font-semibold text-white mb-3 mt-8">
-              Bioseparations & Advanced Flowsheets
-            </h3>
+              {/* Three mini boxes side by side */}
+              <div className="grid grid-cols-3 gap-3 mb-4">
+                <div className="bg-blue-900/30 rounded-lg p-3 border border-blue-500/30">
+                  <p className="text-blue-300 font-semibold text-xs mb-1">Protein/Peptide-Based Ligands</p>
+                  <p className="text-slate-300 text-xs">(e.g., lanmodulin) for selective REE capture</p>
+                </div>
+                <div className="bg-blue-900/30 rounded-lg p-3 border border-blue-500/30">
+                  <p className="text-blue-300 font-semibold text-xs mb-1">Hybrid Biomolecular Ligands</p>
+                  <p className="text-slate-300 text-xs">Peptides + polymers for improved manufacturability</p>
+                </div>
+                <div className="bg-blue-900/30 rounded-lg p-3 border border-blue-500/30">
+                  <p className="text-blue-300 font-semibold text-xs mb-1">Non-Chromatographic Deployments</p>
+                  <p className="text-slate-300 text-xs">Membranes, beads, structured packings for PLS polishing</p>
+                </div>
+              </div>
 
-            <div className="bg-blue-900/20 rounded-lg p-5 border border-blue-500/30">
-              <h4 className="font-semibold text-blue-300 mb-3">Emerging Technologies for REEs & Complex Matrices</h4>
-              <ul className="space-y-2 text-slate-200 text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-400 mt-1">•</span>
-                  <span><strong>Protein/peptide-based ligands</strong> (e.g., lanmodulin) for selective REE capture</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-400 mt-1">•</span>
-                  <span><strong>Hybrid biomolecular ligands</strong> – peptides + polymers for improved manufacturability</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-400 mt-1">•</span>
-                  <span><strong>Non-chromatographic deployments</strong> – membranes, beads, structured packings for PLS polishing</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-400 mt-1">•</span>
-                  <span><strong>Applications</strong>: Coal by-products, phosphogypsum, red mud, spent catalysts, magnet scrap</span>
-                </li>
-              </ul>
-              <p className="text-blue-200 text-sm mt-3 italic">
-                Challenges: Matrix effects, fouling, immobilization strategies, feed chemistry variability
-              </p>
+              <div className="grid md:grid-cols-2 gap-4 mb-3">
+                <div>
+                  <p className="text-xs font-semibold text-emerald-400 mb-1">APPLICATIONS</p>
+                  <p className="text-slate-300 text-sm">Coal by-products, phosphogypsum, red mud, spent catalysts, magnet scrap</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-blue-400 mb-1">KEY PARAMETERS</p>
+                  <ul className="text-slate-300 text-xs space-y-0.5">
+                    <li>• Time: Minutes to hours</li>
+                    <li>• Temperature: Ambient (~20–40°C)</li>
+                    <li>• pH: Typically 3–6 (feed dependent)</li>
+                    <li>• Scale: Modular (columns, membranes, contactors)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-red-900/20 rounded p-2 border border-red-700/30">
+                <p className="text-xs font-semibold text-red-400 mb-1">COMMON CHALLENGES</p>
+                <p className="text-red-200 text-xs">Matrix effects, fouling, immobilization strategies, feed chemistry variability</p>
+              </div>
+            </div>
             </div>
 
             <h3 className="text-lg font-semibold text-white mb-3 mt-8">
