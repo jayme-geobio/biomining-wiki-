@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Zap, Beaker, Droplets, Microscope, Target, Cpu } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
+import GlossaryTerm from '../components/GlossaryTerm';
+
 
 
 export default function WhatIsBiomining() {
@@ -15,6 +17,7 @@ export default function WhatIsBiomining() {
 
   return (
     <CommentableContent pageName="what-is-biomining">
+
       <div className="min-h-screen py-8 px-12 space-y-6">
 
         {/* Box 1: Header */}
@@ -22,7 +25,7 @@ export default function WhatIsBiomining() {
           <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">What Is "Biomining"?</h1>
             <p className="text-xl text-[#264563]">
-              Definitions, mechanisms, and where biotech outcompetes chemistry
+              Definitions, mechanisms, and where biotech rivals chemistry
             </p>
           </div>
           <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
@@ -128,7 +131,7 @@ export default function WhatIsBiomining() {
                 title="Chelation and Complexation"
                 items={[
                   "Metallophores, siderophore-like ligands, and engineered chelators show high affinity and selectivity",
-                  "Can operate in complex aqueous mixtures and at low metal concentrations where traditional extractants struggle"
+                  "Can operate in complex aqueous mixtures and at low metal concentrations where traditional extractants face challenges"
                 ]}
               />
               <AdvantageCard

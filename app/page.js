@@ -14,15 +14,12 @@ export default function BiominingHome() {
           <div className="mb-6">
             <div className="flex gap-6 items-stretch">
               {/* Solid card */}
-              <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
-                <h1 className="text-5xl font-bold text-[#264563] mb-3 leading-tight">
+              <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white flex flex-col justify-between">
+                <h1 className="text-4xl font-bold text-[#264563] leading-tight">
                   Biomining Wiki
                 </h1>
-                <p className="text-xl text-[#264563] mb-3">
+                <p className="text-lg text-[#264563]">
                   A bridge between biology and mining for critical mineral recovery
-                </p>
-                <p className="text-[#264563] text-base">
-                  Leveraging biological mechanisms to unlock value from complex materials where conventional chemistry is too costly, too blunt, or too risky
                 </p>
               </div>
               {/* Ghost outline box */}
@@ -30,16 +27,57 @@ export default function BiominingHome() {
             </div>
           </div>
 
+          {/* What is Biomining Definition */}
+          <div className="mb-6">
+            <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
+              <h3 className="text-xl font-bold text-[#264563] mb-3 flex items-center gap-2">
+                <GraduationCap className="w-7 h-7 text-emerald-600" />
+                What This Wiki Covers
+              </h3>
+              <div>
+                <p className="text-[#264563] mb-4">
+                  <strong>Biomining</strong> means <strong>any use of biological mechanisms</strong>—cells, enzymes,
+                  proteins, metabolites, or consortia—to aid metal recovery, mineral processing, or management of
+                  mining-related wastes and liabilities.
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 mt-6">
+                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                    <h4 className="text-[#264563] font-semibold mb-2">Mechanisms</h4>
+                    <ul className="text-[#264563] text-sm space-y-1">
+                      <li>• Bioleaching & biooxidation</li>
+                      <li>• Bioseparation & biosorption</li>
+                      <li>• Bioprecipitation</li>
+                      <li>• Monitoring & biosensing</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                    <h4 className="text-[#264563] font-semibold mb-2">Applications</h4>
+                    <ul className="text-[#264563] text-sm space-y-1">
+                      <li>• Heap & tank leaching</li>
+                      <li>• Metal separation & polishing</li>
+                      <li>• AMD treatment & closure</li>
+                      <li>• Tailings reprocessing</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="text-[#264563] mt-4 text-sm italic">
+                  Our goal: a gold-standard, technically accurate, practically oriented resource for both communities
+                  to design better projects together.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Why Now Section */}
           <div className="mb-6">
             <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
-              <h2 className="text-2xl font-bold text-[#264563] mb-4 flex items-center gap-2">
-                <TrendingUp className="w-6 h-6 text-emerald-600" />
+              <h2 className="text-xl font-bold text-[#264563] mb-4 flex items-center gap-2">
+                <TrendingUp className="w-7 h-7 text-emerald-600" />
                 Why Biomining Now?
               </h2>
               <div className="text-[#264563] space-y-3">
                 <p>
-                  Mining and critical mineral recovery face a <strong>new set of constraints</strong>: rising demand from clean energy, 
+                  Mining and critical mineral recovery face a <strong>new set of constraints</strong>: rising demand from clean energy,
                   a shift toward more complex feedstocks, and tightening limits around energy, water, tailings, and social licence.
                 </p>
                 <p>
@@ -88,13 +126,13 @@ export default function BiominingHome() {
           {/* Core Resources */}
           <div className="mt-6">
             <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
-              <h2 className="text-2xl font-bold text-[#264563] mb-6 text-center">
+              <h2 className="text-xl font-bold text-[#264563] mb-6 text-center">
                 Essential Resources
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <ResourceCard
                   title="What Is Biomining?"
-                  description="Definitions, mechanisms, and where biotech outcompetes chemistry"
+                  description="Definitions, mechanisms, and where biotech rivals chemistry"
                   icon={GraduationCap}
                   link="/what-is-biomining"
                 />
@@ -117,45 +155,6 @@ export default function BiominingHome() {
                   link="/flowsheets"
                 />
               </div>
-            </div>
-          </div>
-
-          {/* What is Biomining Definition */}
-          <div className="mt-6">
-            <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
-              <h3 className="text-xl font-semibold text-[#264563] mb-3 flex items-center gap-2">
-                <GraduationCap className="w-6 h-6 text-emerald-600" />
-                What This Wiki Covers
-              </h3>
-              <p className="text-[#264563] mb-4">
-                <strong>Biomining</strong> means <strong>any use of biological mechanisms</strong>—cells, enzymes,
-                proteins, metabolites, or consortia—to aid metal recovery, mineral processing, or management of
-                mining-related wastes and liabilities.
-              </p>
-              <div className="grid md:grid-cols-2 gap-4 mt-6">
-                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
-                  <h4 className="text-emerald-800 font-semibold mb-2">Mechanisms</h4>
-                  <ul className="text-emerald-700 text-sm space-y-1">
-                    <li>• Bioleaching & biooxidation</li>
-                    <li>• Bioseparation & biosorption</li>
-                    <li>• Bioprecipitation</li>
-                    <li>• Monitoring & biosensing</li>
-                  </ul>
-                </div>
-                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
-                  <h4 className="text-emerald-800 font-semibold mb-2">Applications</h4>
-                  <ul className="text-emerald-700 text-sm space-y-1">
-                    <li>• Heap & tank leaching</li>
-                    <li>• Metal separation & polishing</li>
-                    <li>• AMD treatment & closure</li>
-                    <li>• Tailings reprocessing</li>
-                  </ul>
-                </div>
-              </div>
-              <p className="text-[#264563] mt-4 text-sm italic">
-                Our goal: a gold-standard, technically accurate, practically oriented resource for both communities
-                to design better projects together.
-              </p>
             </div>
           </div>
 
@@ -189,7 +188,7 @@ function PathCard({ title, subtitle, icon: Icon, color, sections, link }) {
         </div>
       </div>
 
-      <div className="space-y-2 mt-5">
+      <div className="space-y-2 mt-5 pl-10">
         {sections.map((section, i) => {
           const SectionIcon = section.icon;
           return (

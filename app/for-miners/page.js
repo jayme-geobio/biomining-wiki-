@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Microscope, Zap, Beaker, Factory, FlaskConical, FileCheck } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
+import GlossaryTerm from '../components/GlossaryTerm';
+
 
 
 export default function ForMiners() {
@@ -27,6 +29,7 @@ export default function ForMiners() {
 
   return (
     <CommentableContent pageName="for-miners">
+
       <div className="min-h-screen py-8 px-12 space-y-6">
 
         {/* Box 1: Header */}
@@ -118,7 +121,7 @@ export default function ForMiners() {
 
               <MechanismCard
                 title="Biosorption & Bioaccumulation"
-                description="Metals stick to cell surfaces or EPS (biosorption), or are actively taken up and stored (bioaccumulation)"
+                description={<>Metals stick to cell surfaces or <GlossaryTerm term="Extracellular Polymeric Substances (EPS)" definition="Polymers secreted by microbes that form biofilms and modify local chemistry">EPS</GlossaryTerm> (biosorption), or are actively taken up and stored (bioaccumulation)</>}
                 application="Rapid metal capture, often independent of metabolism"
                 example="Algae and bacteria sorb heavy metals from acid mine drainage (AMD) on cell surfaces"
                 color="teal"
@@ -153,7 +156,7 @@ export default function ForMiners() {
                 <div className="space-y-4">
                   <ModalityCard
                     title="Dump & Heap Bioleaching"
-                    description="Low-grade sulfide ores piled on pads and irrigated with acidic ferric solutions. Native or inoculated acidophiles catalyze Fe & S oxidation and metal release."
+                    description={<>Low-grade sulfide <GlossaryTerm term="Ore" definition="Rock that contains a commodity (metal/mineral) in concentrations and contexts that are economically mineable">ores</GlossaryTerm> piled on pads and irrigated with acidic ferric solutions. Native or inoculated <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> catalyze Fe & S oxidation and metal release.</>}
                     applications="Common for copper sulfide ores, with growing interest for other sulfides"
                     parameters={[
                       "Time: Months to years",
@@ -171,7 +174,7 @@ export default function ForMiners() {
 
                   <ModalityCard
                     title="Stirred-Tank Biooxidation"
-                    description="Refractory gold or polymetallic sulfide concentrates oxidized in aerated reactors prior to cyanidation or other leaching."
+                    description={<>Refractory gold or polymetallic sulfide <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrates</GlossaryTerm> oxidized in aerated reactors prior to cyanidation or other leaching.</>}
                     applications="Proven technology for refractory gold (BIOX®, BacTech)"
                     parameters={[
                       "Time: Days to weeks",
@@ -222,56 +225,6 @@ export default function ForMiners() {
                   expanded={openModalities.has('bioremediation')}
                   onToggle={() => toggleModality('bioremediation')}
                 />
-              </div>
-            </div>
-          </Section>
-
-          {/* Evaluation Checklist */}
-          <Section
-            title="Evaluation Checklist for Bio-Solutions"
-            icon={FileCheck}
-            expanded={openSections.has('checklist')}
-            onToggle={() => toggleSection('checklist')}
-          >
-            <div className="bg-white rounded-lg p-6 border border-[#264563]/20">
-              <p className="text-[#264563] font-medium mb-4">
-                Before dismissing or adopting a bio-solution, ask these questions:
-              </p>
-              <div className="space-y-4">
-                {[
-                  {
-                    q: "What problem is it actually solving?",
-                    detail: "New resource access, cost reduction, impurity management, water quality, closure risk, social license?"
-                  },
-                  {
-                    q: "What is the technology-readiness level (TRL) and evidence base?",
-                    detail: "Lab vs. pilot vs. commercial references. Performance in representative feedstocks, not just synthetic solutions."
-                  },
-                  {
-                    q: "Time scales and integration",
-                    detail: "Does it fit within existing residence times? Can it run as a side-stream or bleed-stream process?"
-                  },
-                  {
-                    q: "Risk and monitoring",
-                    detail: "What monitoring (sensors, assays) is required? What happens if it fails or stops?"
-                  },
-                  {
-                    q: "Regulatory and public-perception impacts",
-                    detail: "Does it simplify permitting (less chemical transport, lower emissions)? Does it improve closure outcomes and community relations?"
-                  }
-                ].map((item, i) => (
-                  <div key={i}>
-                    <div className="flex items-start gap-3">
-                      <div className="bg-[#264563] text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-sm font-bold" style={{marginTop: '0.1em'}}>
-                        {i + 1}
-                      </div>
-                      <div>
-                        <p className="text-[#264563] font-semibold">{item.q}</p>
-                        <p className="text-[#264563] text-sm mt-1">{item.detail}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           </Section>
@@ -677,7 +630,7 @@ function BioremediationCard({ expanded, onToggle }) {
           <div className="grid grid-cols-3 gap-3 mb-7">
             <div className="bg-[#264563]/5 rounded-lg p-3 border border-[#264563]/20">
               <p className="text-[#264563] font-semibold text-xs mb-1">AMD/ARD Bioremediation</p>
-              <p className="text-[#264563]/70 text-xs">Constructed wetlands, SRB bioreactors, and algae systems that remove metals and raise pH</p>
+              <p className="text-[#264563]/70 text-xs">Constructed wetlands, <GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> bioreactors, and algae systems that remove metals and raise pH</p>
             </div>
             <div className="bg-[#264563]/5 rounded-lg p-3 border border-[#264563]/20">
               <p className="text-[#264563] font-semibold text-xs mb-1">Metal Recovery from AMD</p>
@@ -685,13 +638,13 @@ function BioremediationCard({ expanded, onToggle }) {
             </div>
             <div className="bg-[#264563]/5 rounded-lg p-3 border border-[#264563]/20">
               <p className="text-[#264563] font-semibold text-xs mb-1">E-waste & Urban Mining</p>
-              <p className="text-[#264563]/70 text-xs">Bioleaching and biosorption applied to circuit boards, magnets, and electronics</p>
+              <p className="text-[#264563]/70 text-xs"><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> and <GlossaryTerm term="Biosorption" definition="Sorption of dissolved metals onto biomass or extracellular polymeric substances (EPS)">biosorption</GlossaryTerm> applied to circuit boards, magnets, and electronics</p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4 mb-3">
             <div>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Applications</p>
-              <p className="text-[#264563] text-sm mb-7">Mine drainage treatment, tailings reprocessing, legacy site remediation, e-waste and magnet scrap</p>
+              <p className="text-[#264563] text-sm mb-7">Mine drainage treatment, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> reprocessing, legacy site remediation, e-waste and magnet scrap</p>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Integration</p>
               <p className="text-[#264563] text-sm">Parameters and integration pathways vary by technique and site conditions</p>
             </div>

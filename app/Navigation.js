@@ -13,21 +13,22 @@ export default function Navigation() {
     learn: {
       name: 'Learn',
       items: [
-        { name: 'What Is Biomining?', href: '/what-is-biomining' }
+        { name: 'What Is Biomining?', href: '/what-is-biomining' },
+        { name: 'From the Mining Perspective', href: '/for-biologists' },
+        { name: 'From the Biology Perspective', href: '/for-miners' },
+        { name: 'Complex Materials', href: '/complex-materials' },
+        { name: 'Flowsheets', href: '/flowsheets' }
       ]
     },
     professionals: {
       name: 'For Professionals',
       items: [
-        { name: 'For Biologists', href: '/for-biologists' },
-        { name: 'For Miners', href: '/for-miners' }
+        { name: 'Technology Evaluation', href: '/technology-evaluation' }
       ]
     },
     resources: {
       name: 'Resources',
       items: [
-        { name: 'Complex Materials', href: '/complex-materials' },
-        { name: 'Flowsheets', href: '/flowsheets' },
         { name: 'Research', href: '/research' },
         { name: 'Glossary', href: '/glossary' }
       ]
@@ -45,10 +46,8 @@ export default function Navigation() {
             <div className="flex items-center justify-between h-[92px]">
 
               {/* Logo */}
-              <Link href="/" className="flex items-center -space-x-5">
-                <img src="/images/homeworld-icon.png" alt="Homeworld" className="w-28 h-28" />
-                <span className="text-3xl font-bold text-[#264563] hidden sm:block">Biomining Wiki</span>
-                <span className="text-3xl font-bold text-[#264563] sm:hidden">Bio Wiki</span>
+              <Link href="/" className="flex items-center -ml-8">
+                <img src="/images/homeworld-logo-full-dark.png" alt="Homeworld Collective" className="h-36" />
               </Link>
 
               {/* Desktop links */}
@@ -68,10 +67,10 @@ export default function Navigation() {
                     </button>
 
                     {/* Vertical tick at text start */}
-                    <div className={`absolute bottom-0 left-3.5 w-px h-2 bg-[#264563]/60 transition-opacity duration-300 ${openDropdown === key ? 'opacity-100' : 'opacity-0'}`} />
+                    <div className={`absolute bottom-0 left-3.5 w-px h-2 bg-[#264563]/60 transition-opacity duration-500 ${openDropdown === key ? 'opacity-100' : 'opacity-0'}`} />
 
                     {/* Dropdown items — absolutely positioned under this button, left-aligned with its text */}
-                    <div className={`absolute top-full left-0 pt-2 transition-opacity duration-300 ${openDropdown === key ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                    <div className={`absolute top-full left-0 pt-2 transition-opacity duration-500 ${openDropdown === key ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                       <div className="flex flex-col gap-1.5">
                         {section.items.map((item) => (
                           <Link
@@ -89,7 +88,7 @@ export default function Navigation() {
                 ))}
 
                 {/* Horizontal line */}
-                <div className={`absolute bottom-0 left-0 right-0 h-px bg-[#264563]/40 transition-opacity duration-300 ${openDropdown ? 'opacity-100' : 'opacity-0'}`} />
+                <div className={`absolute bottom-0 left-0 right-0 h-px bg-[#264563]/40 transition-opacity duration-500 ${openDropdown ? 'opacity-100' : 'opacity-0'}`} />
               </div>
 
               {/* Mobile menu button */}
@@ -106,11 +105,11 @@ export default function Navigation() {
 
           {/* Expanding spacer — opens the nav box to reveal the absolutely positioned items */}
           <div
-            className={`hidden md:block transition-[max-height,opacity] duration-300 ease-out ${
-              openDropdown ? 'max-h-36 opacity-100' : 'max-h-0 opacity-0'
+            className={`hidden md:block transition-[max-height,opacity] duration-500 ease-out ${
+              openDropdown ? 'max-h-44 opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            <div className="h-28" />
+            <div className="h-36" />
           </div>
 
           {/* Mobile menu */}
@@ -131,7 +130,7 @@ export default function Navigation() {
                       className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-lg text-[#264563] hover:bg-gray-300/40 transition-colors"
                     >
                       <span>{section.name}</span>
-                      <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${mobileDropdown === key ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-5 h-5 transition-transform duration-500 ${mobileDropdown === key ? 'rotate-180' : ''}`} />
                     </button>
 
                     {mobileDropdown === key && (

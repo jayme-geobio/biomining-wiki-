@@ -6,6 +6,7 @@ import { ChevronDown, ChevronRight, FlaskConical, Database, TrendingUp, Users, M
 import CommentableContent from '../components/CommentableContent';
 
 
+
 const researchData = {
   frontiers: [
     {
@@ -218,6 +219,7 @@ export default function Research() {
 
   return (
     <CommentableContent pageName="research">
+
       <div className="min-h-screen py-8 px-12 space-y-6">
 
         {/* Box 1: Header */}

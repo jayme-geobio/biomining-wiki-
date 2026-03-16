@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
+import GlossaryTerm from '../components/GlossaryTerm';
+
 
 
 const materialsData = {
@@ -159,7 +161,7 @@ const materialsData = {
         description: "Bioremediation to clean oil/gas wastewater for reuse in arid regions while recovering dissolved metals"
       }
     ],
-    whyBiology: "Each of these wastes contains value that conventional processing can't economically extract. Biology's mild conditions and selectivity are key advantages.",
+    whyBiology: "Each of these wastes contains value where biology's mild conditions and selectivity offer a strong alternative pathway for recovery.",
     maturity: "Low-Medium - mostly at research and early pilot stage; case-by-case evaluation needed"
   }
 };
@@ -173,6 +175,7 @@ export default function ComplexMaterials() {
 
   return (
     <CommentableContent pageName="complex-materials">
+
       <div className="min-h-screen py-8 px-12 space-y-6">
 
         {/* Box 1: Header */}
@@ -191,16 +194,16 @@ export default function ComplexMaterials() {
 
           {/* Key Insight */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold text-[#264563] mb-3">When Biology Wins</h2>
+            <h2 className="text-xl font-bold text-[#264563] mb-3">Where Biology Adds Value</h2>
             <div className="text-[#264563] space-y-2">
               <p className="mb-3">
-                Biology won't replace conventional mining for high-grade ores — that's highly optimized. But for complex
-                materials where traditional methods struggle, biotechnology can shift the economics and reduce environmental impact.
+                Conventional mining is highly optimized for high-<GlossaryTerm term="Grade" definition="Concentration of a valuable element or mineral in ore">grade</GlossaryTerm> <GlossaryTerm term="Ore" definition="Rock that contains a commodity (metal/mineral) in concentrations and contexts that are economically mineable">ores</GlossaryTerm>. For complex
+                materials, biotechnology offers a complementary approach that can shift the economics and reduce environmental impact.
               </p>
               {[
                 ["Low-grade material", "where conventional processing is uneconomic"],
                 ["Complex mineralogy", "(refractory ores, polymetallic systems)"],
-                ["Environmental hazards", "(AMD, tailings, legacy sites)"],
+                ["Environmental hazards", <>(AMD, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, legacy sites)</>],
                 ["Remote locations", "where chemical transport is expensive or impossible"],
                 ["Thin margins", "where small OPEX reductions make projects viable"],
               ].map(([bold, rest], i) => (
@@ -229,8 +232,8 @@ export default function ComplexMaterials() {
             <h3 className="text-lg font-bold text-emerald-700 mb-2">The Best Opportunities</h3>
             <p className="text-[#264563] text-sm">
               The sweet spot for biomining is where you're dealing with <strong>waste, legacy sites, or materials
-              too costly to process conventionally</strong>. These are the contexts where biology's advantages
-              (lower OPEX, mild conditions, selectivity, reduced environmental impact) matter most.
+              that benefit from alternative processing approaches</strong>. These are the contexts where biology's strengths
+              (lower OPEX, mild conditions, selectivity, reduced environmental impact) are most valuable.
             </p>
           </div>
 

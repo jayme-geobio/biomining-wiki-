@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Mountain, Factory, Beaker, AlertCircle, TrendingUp, Clock, Droplets, FileCheck } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
+import GlossaryTerm from '../components/GlossaryTerm';
+
 
 
 export default function ForBiologists() {
@@ -15,6 +17,7 @@ export default function ForBiologists() {
 
   return (
     <CommentableContent pageName="for-biologists">
+
       <div className="min-h-screen py-8 px-12 space-y-6">
 
         {/* Box 1: Header */}
@@ -93,7 +96,7 @@ export default function ForBiologists() {
               <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-700">
                 <p className="text-emerald-700 text-sm">
                   <strong>Where biology plugs in:</strong> Heap/in-situ leaching, metal separation and polishing,
-                  AMD treatment and closure, tailings reprocessing
+                  AMD treatment and closure, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> reprocessing
                 </p>
               </div>
             </div>
@@ -109,7 +112,7 @@ export default function ForBiologists() {
             <div className="space-y-6">
               <StageCard
                 title="1. Exploration & Resource Definition"
-                what="Finding and characterizing ore bodies through geologic mapping, core drilling, and lab assays to measure grade and mineralogy"
+                what={<>Finding and characterizing <GlossaryTerm term="Ore" definition="Rock that contains a commodity (metal/mineral) in concentrations and contexts that are economically mineable">ore</GlossaryTerm> bodies through geologic mapping, core drilling, and lab assays to measure <GlossaryTerm term="Grade" definition="Concentration of a valuable element or mineral in ore">grade</GlossaryTerm> and mineralogy</>}
                 whyBiology={[
                   "New bio-technologies can change which parts of a deposit are considered 'ore'",
                   "Enable recovery of critical by-product elements currently ignored",
@@ -164,28 +167,28 @@ export default function ForBiologists() {
 
               <StageCard
                 title="5. Concentration & Leaching"
-                what="Metals are either concentrated using flotation, gravity, or magnetic separation, or extracted by leaching into solution. These routes produce either concentrate or a metal-bearing leach solution, often called a pregnant leach solution (PLS)"
+                what={<>Metals are either concentrated using flotation, gravity, or magnetic separation, or extracted by leaching into solution. These routes produce either <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrate</GlossaryTerm> or a metal-bearing leach solution, often called a pregnant leach solution (PLS)</>}
                 whyBiology={[
                   "Mineral surface chemistry governs flotation selectivity and leach kinetics",
                   "Biology can modify mineral surfaces to improve or suppress flotation of specific minerals",
-                  "Bioleaching can replace or supplement chemical leaching for sulfide ores"
+                  <><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> can replace or supplement chemical leaching for sulfide ores</>
                 ]}
                 whereBio={[
                   "Bio-modification of mineral surfaces to improve flotation or separation",
-                  "Bioleaching/biooxidation for direct metal extraction",
+                  <>Bioleaching/<GlossaryTerm term="Biooxidation" definition="Microbially driven oxidation of sulfides where the valuable metal remains in the solid phase">biooxidation</GlossaryTerm> for direct metal extraction</>,
                 ]}
               />
 
               <StageCard
                 title="6. Metallurgy & Refining"
-                what="Convert concentrates or metal-bearing solutions into saleable products via hydrometallurgy (precipitation, SX, IX, EW) or pyrometallurgy (smelting, refining)"
+                what={<>Convert <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrates</GlossaryTerm> or metal-bearing solutions into saleable products via hydrometallurgy (precipitation, SX, IX, EW) or pyrometallurgy (smelting, refining)</>}
                 whyBiology={[
                   "Impurities and purity thresholds are critical — small contamination can wreck downstream processes",
                   "Biology offers highly selective ligands under mild operating conditions"
                 ]}
                 whereBio={[
                   "Bioseparations for polishing and capturing critical co-products",
-                  "SRB reactors for treating bleed streams"
+                  <><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> reactors for treating bleed streams</>
                 ]}
               />
 
@@ -238,37 +241,6 @@ export default function ForBiologists() {
                 description="Water is often constrained. Reagents have costs, hazards, and permitting implications"
                 implication="Bio-solutions that reduce net reagent use, enable higher water recycling, or simplify permitting have extra strategic value"
               />
-            </div>
-          </Section>
-
-          {/* Design Checklist */}
-          <Section
-            title="Quick Design Checklist"
-            icon={FileCheck}
-            expanded={openSections.has('checklist')}
-            onToggle={() => toggleSection('checklist')}
-          >
-            <div className="bg-white rounded-lg p-6 border border-emerald-700">
-              <p className="text-emerald-700 mb-4">
-                Before investing heavily in a biomining concept, answer these questions:
-              </p>
-              <div className="space-y-4">
-                {[
-                  "Where does this sit in the mining value chain? (exploration, extraction, comminution, concentration, leaching, separation, closure)",
-                  "What is the feedstock? (ore, concentrate, tailings, AMD, e-waste, slag - mineralogy, grade, particle size)",
-                  "What is the competing conventional option? (heap leach, tank leach, SX, smelting, lime neutralization)",
-                  "What is your biological advantage? (lower cost, lower energy, higher selectivity, new resource access, better closure)",
-                  "What does success look like to the mine operator? (higher recovery, lower OPEX, unlocking new resource, reducing closure liability)",
-                  "What is your realistic first deployment? (side-stream polishing, tailings/AMD reprocessing, pilot at legacy site)"
-                ].map((q, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 text-sm font-bold" style={{marginTop: '0.1em'}}>
-                      {i + 1}
-                    </div>
-                    <p className="text-emerald-700">{q}</p>
-                  </div>
-                ))}
-              </div>
             </div>
           </Section>
 

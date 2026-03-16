@@ -97,6 +97,47 @@ body::before {
   z-index: -1;
 }
 
+body.learn-bg::before {
+  background-image: url('/images/learn-bg.png');
+  filter: none;
+}
+
+body.professionals-bg::before {
+  background-image: url('/images/professionals-bg.png');
+  filter: none;
+}
+
+body.resources-bg::before {
+  background-image: url('/images/resources-bg.png');
+  filter: none;
+}
+
+/* Page fade-in animation */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-fade-in {
+  animation: pageFadeIn 0.3s ease-in;
+}
+
+/* Glossary popup animation */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Comment form animations */
 @keyframes slideIn {
   from {

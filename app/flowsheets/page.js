@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Zap, Target, AlertCircle } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
+import GlossaryTerm from '../components/GlossaryTerm';
+
 
 const flowsheetData = [
   {
@@ -23,19 +25,19 @@ const flowsheetData = [
     bioIntegration: [
       {
         stage: "Heap Leach Pad",
-        role: "Native or inoculated acidophiles (Acidithiobacillus, Leptospirillum)",
+        role: <>Native or inoculated <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> (Acidithiobacillus, Leptospirillum)</>,
         what: "Microbes oxidize ferrous iron (Fe²⁺) to ferric iron (Fe³⁺) and produce sulfuric acid, which dissolves copper from minerals",
         control: "pH control (1.5-2.5), nutrient addition (N, P), aeration management"
       },
       {
         stage: "Side-stream Bio-polishing",
-        role: "Biosorption or bioseparation",
+        role: <><GlossaryTerm term="Biosorption" definition="Sorption of dissolved metals onto biomass or extracellular polymeric substances (EPS)">Biosorption</GlossaryTerm> or <GlossaryTerm term="Bioseparation" definition="Use of biomolecules (proteins, peptides, polymers, whole cells) as selective sorbents or separation agents">bioseparation</GlossaryTerm></>,
         what: "Remove impurities (Fe, Mn, Al) from PLS before SX to improve efficiency",
         control: "Selective biomolecules or microbial biomass; regeneration cycles"
       },
       {
         stage: "Bleed Stream Treatment",
-        role: "SRB reactors",
+        role: <><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> reactors</>,
         what: "Treat bleed streams to recover metals, manage sulfate, and reduce discharge volume",
         control: "Anaerobic conditions, organic carbon addition, sulfide precipitation"
       }
@@ -67,7 +69,7 @@ const flowsheetData = [
     bioIntegration: [
       {
         stage: "Biooxidation Tanks",
-        role: "Acidophilic Fe/S-oxidizing bacteria (mesophiles or thermophiles)",
+        role: <><GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">Acidophilic</GlossaryTerm> Fe/S-oxidizing bacteria (mesophiles or thermophiles)</>,
         what: "Oxidize sulfide minerals (pyrite, arsenopyrite) to expose encapsulated gold for cyanidation",
         control: "Temperature (40-50°C mesophile or 65-85°C thermophile), pH 1.5-2.0, air flow, retention time 4-7 days"
       },
@@ -80,7 +82,7 @@ const flowsheetData = [
       {
         stage: "Tailings & Water Treatment",
         role: "Bioremediation downstream",
-        what: "Treat process water and tailings using SRB or other microbes to remove residual metals and cyanide",
+        what: <>Treat process water and <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> using SRB or other microbes to remove residual metals and cyanide</>,
         control: "Anaerobic bioreactors, organic carbon, detention time"
       }
     ],
@@ -110,13 +112,13 @@ const flowsheetData = [
     bioIntegration: [
       {
         stage: "Bioleaching",
-        role: "Acidophiles for bulk metal solubilization",
+        role: <><GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">Acidophiles</GlossaryTerm> for bulk metal solubilization</>,
         what: "Re-leach metals left behind in original processing - Cu, Zn, Co, Ni, REEs",
         control: "Tank or heap configuration, pH, temperature, solids loading"
       },
       {
         stage: "Bioseparations",
-        role: "Selective biomolecules (proteins, peptides, siderophores)",
+        role: <>Selective biomolecules (proteins, peptides, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophores</GlossaryTerm>)</>,
         what: "Separate and concentrate specific metals from complex PLS - especially valuable for REEs and Co",
         control: "Immobilized ligands, regeneration, matrix tolerance"
       },
@@ -155,7 +157,7 @@ const flowsheetData = [
     bioIntegration: [
       {
         stage: "SRB Bioreactor",
-        role: "Sulfate-reducing bacteria (Desulfovibrio, Desulfotomaculum)",
+        role: <><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">Sulfate-reducing bacteria</GlossaryTerm> (Desulfovibrio, Desulfotomaculum)</>,
         what: "Reduce sulfate to sulfide, which precipitates metals as metal sulfides and raises pH",
         control: "Anaerobic conditions, organic carbon (e.g., ethanol, molasses), retention time"
       },
@@ -192,6 +194,7 @@ export default function Flowsheets() {
 
   return (
     <CommentableContent pageName="flowsheets">
+
       <div className="min-h-screen py-8 px-12 space-y-6">
 
         {/* Box 1: Header */}
