@@ -65,43 +65,6 @@ export default function ForBiologists() {
             </div>
           </div>
 
-          {/* The Journey */}
-          <Section
-            title="The Journey from Rock to Metal"
-            icon={Mountain}
-            expanded={openSections.has('journey')}
-            onToggle={() => toggleSection('journey')}
-          >
-            <div className="space-y-4">
-              <p className="text-emerald-700">
-                At a high level, the mining value chain looks like this:
-              </p>
-
-              <div className="bg-white rounded-lg p-6 border border-emerald-700">
-                <div className="font-mono text-sm text-emerald-700 space-y-2">
-                  <div>Rock in the ground</div>
-                  <div className="ml-4">↓ <span className="text-emerald-700">(exploration & resource modeling)</span></div>
-                  <div>Ore body defined</div>
-                  <div className="ml-4">↓ <span className="text-emerald-700">(mine planning & development)</span></div>
-                  <div>Ore and waste rock excavated</div>
-                  <div className="ml-4">↓ <span className="text-emerald-700">(crushing, grinding, concentration)</span></div>
-                  <div>Concentrate / leach solution</div>
-                  <div className="ml-4">↓ <span className="text-emerald-700">(metallurgical extraction & refining)</span></div>
-                  <div>Saleable product(s) (metal, concentrate, chemicals)</div>
-                  <div className="ml-4">↓</div>
-                  <div>Tailings, waste rock, water management and closure</div>
-                </div>
-              </div>
-
-              <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-700">
-                <p className="text-emerald-700 text-sm">
-                  <strong>Where biology plugs in:</strong> Heap/in-situ leaching, metal separation and polishing,
-                  AMD treatment and closure, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> reprocessing
-                </p>
-              </div>
-            </div>
-          </Section>
-
           {/* Value Chain Stages */}
           <Section
             title="Mining Value Chain - Stage by Stage"
@@ -111,8 +74,10 @@ export default function ForBiologists() {
           >
             <div className="space-y-6">
               <StageCard
-                title="1. Exploration & Resource Definition"
-                what={<>Finding and characterizing <GlossaryTerm term="Ore" definition="Rock that contains a commodity (metal/mineral) in concentrations and contexts that are economically mineable">ore</GlossaryTerm> bodies through geologic mapping, core drilling, and lab assays to measure <GlossaryTerm term="Grade" definition="Concentration of a valuable element or mineral in ore">grade</GlossaryTerm> and mineralogy</>}
+                number="1"
+                title="Exploration & Resource Definition"
+                color="blue"
+                what={<>Finding and characterizing ore bodies through geologic mapping, core drilling, and lab assays to measure <GlossaryTerm term="Grade" definition="Concentration of a valuable element or mineral in ore">grade</GlossaryTerm> and mineralogy</>}
                 whyBiology={[
                   "New bio-technologies can change which parts of a deposit are considered 'ore'",
                   "Enable recovery of critical by-product elements currently ignored",
@@ -125,11 +90,13 @@ export default function ForBiologists() {
               />
 
               <StageCard
-                title="2. Mine Planning & Development"
-                what="Choosing a mining method (open pit vs underground), mine layout, and routing material to ore stockpiles, low-grade stockpiles, waste dumps, or tailings"
+                number="2"
+                title="Mine Planning & Development"
+                color="amber"
+                what={<>Choosing a mining method (open pit vs underground), mine layout, and routing material to ore stockpiles, low-grade stockpiles, waste dumps, or <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm></>}
                 whyBiology={[
                   "Decisions here govern tonnage, time, and access for your process",
-                  "Long-residence-time bio-processes best suited for stockpiles, tailings, or AMD",
+                  <>Long-residence-time bio-processes best suited for stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or AMD</>,
                   "Include bio-recovery in closure plans from day one"
                 ]}
                 whereBio={[
@@ -139,25 +106,29 @@ export default function ForBiologists() {
               />
 
               <StageCard
-                title="3. Mining: Getting The Rock Out"
+                number="3"
+                title="Mining: Getting The Rock Out"
+                color="emerald"
                 what="Drill, blast, load, and haul rock. Scale: tens to hundreds of thousands of tonnes per day. Mix of ore and waste is imperfect"
                 whyBiology={[
-                  "Input material is stressed, mixed, partly oxidized rock - not pure minerals",
+                  <>Input material is stressed, mixed, partly oxidized rock - not pure <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">minerals</GlossaryTerm></>,
                   "Size distribution and surface damage from blasting affect leach kinetics",
                   "Water infiltration and oxygen diffusion are key for heaps and in-situ leaching"
                 ]}
                 whereBio={[
                   "In-stope leaching (injecting solutions into fractured zones)",
-                  "Blast patterns that favor bioleaching (fracture networks)"
+                  <>Blast patterns that favor <GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">bioleaching</GlossaryTerm> (fracture networks)</>
                 ]}
               />
 
               <StageCard
-                title="4. Comminution"
-                what="Crushing and grinding to liberate minerals and increase surface area for downstream processing"
+                number="4"
+                title="Comminution"
+                color="teal"
+                what={<>Crushing and grinding to liberate <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">minerals</GlossaryTerm> and increase surface area for downstream processing</>}
                 whyBiology={[
                   "Comminution is often the most energy-intensive step in mining",
-                  "Separation efficiency strongly depends on mineral surface chemistry and particle size",
+                  <>Separation efficiency strongly depends on <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">mineral</GlossaryTerm> surface chemistry and particle size</>,
                   "Biology that allows coarser processing without sacrificing recovery is extremely valuable"
                 ]}
                 whereBio={[
@@ -166,43 +137,49 @@ export default function ForBiologists() {
               />
 
               <StageCard
-                title="5. Concentration & Leaching"
+                number="5"
+                title="Concentration & Leaching"
+                color="sky"
                 what={<>Metals are either concentrated using flotation, gravity, or magnetic separation, or extracted by leaching into solution. These routes produce either <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrate</GlossaryTerm> or a metal-bearing leach solution, often called a pregnant leach solution (PLS)</>}
                 whyBiology={[
-                  "Mineral surface chemistry governs flotation selectivity and leach kinetics",
-                  "Biology can modify mineral surfaces to improve or suppress flotation of specific minerals",
+                  <><GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">Mineral</GlossaryTerm> surface chemistry governs flotation selectivity and leach kinetics</>,
+                  <>Biology can modify <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">mineral</GlossaryTerm> surfaces to improve or suppress flotation of specific minerals</>,
                   <><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> can replace or supplement chemical leaching for sulfide ores</>
                 ]}
                 whereBio={[
-                  "Bio-modification of mineral surfaces to improve flotation or separation",
+                  <>Bio-modification of <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">mineral</GlossaryTerm> surfaces to improve flotation or separation</>,
                   <>Bioleaching/<GlossaryTerm term="Biooxidation" definition="Microbially driven oxidation of sulfides where the valuable metal remains in the solid phase">biooxidation</GlossaryTerm> for direct metal extraction</>,
                 ]}
               />
 
               <StageCard
-                title="6. Metallurgy & Refining"
+                number="6"
+                title="Metallurgy & Refining"
+                color="violet"
                 what={<>Convert <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrates</GlossaryTerm> or metal-bearing solutions into saleable products via hydrometallurgy (precipitation, SX, IX, EW) or pyrometallurgy (smelting, refining)</>}
                 whyBiology={[
                   "Impurities and purity thresholds are critical — small contamination can wreck downstream processes",
                   "Biology offers highly selective ligands under mild operating conditions"
                 ]}
                 whereBio={[
-                  "Bioseparations for polishing and capturing critical co-products",
+                  <><GlossaryTerm term="Bioseparation" definition="Use of biomolecules (proteins, peptides, polymers, whole cells) as selective sorbents or separation agents">Bioseparations</GlossaryTerm> for polishing and capturing critical co-products</>,
                   <><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> reactors for treating bleed streams</>
                 ]}
               />
 
               <StageCard
-                title="7. Waste, Water & Closure"
-                what="Managing tailings storage, waste-rock dumps, water systems, and long-term closure obligations"
+                number="7"
+                title="Waste, Water & Closure"
+                color="rose"
+                what={<>Managing <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> storage, waste-rock dumps, water systems, and long-term closure obligations</>}
                 whyBiology={[
                   "Acid mine drainage and seepage can persist for decades",
                   "This is where liability and social license live",
                   "Most mature biological applications are in this space"
                 ]}
                 whereBio={[
-                  "Constructed wetlands and SRB reactors for AMD",
-                  "Treating AMD and tailings as a resource (recover Cu, Zn, REEs)",
+                  <>Constructed wetlands and <GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> reactors for AMD</>,
+                  <>Treating AMD and <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> as a resource (recover Cu, Zn, REEs)</>,
                   "Using former mine sites as test beds for new tech"
                 ]}
               />
@@ -221,7 +198,7 @@ export default function ForBiologists() {
                 title="Time"
                 icon={Clock}
                 description="Operations expect fast processing times - often hours to days, not months to years (except in heap or dump leaching)"
-                implication="If your process is slow, consider treating stockpiles, tailings, or AMD where slow is acceptable, or use biology to polish/condition streams"
+                implication={<>If your process is slow, consider treating stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or AMD where slow is acceptable, or use biology to polish/condition streams</>}
               />
               <ConstraintCard
                 title="Throughput & Scale"
@@ -282,34 +259,58 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
   );
 }
 
-function StageCard({ title, what, whyBiology, whereBio }) {
-  return (
-    <div className="bg-white rounded-lg p-5 border border-emerald-700">
-      <h3 className="text-lg font-bold text-emerald-700 mb-3">{title}</h3>
+function StageCard({ number, title, color, what, whyBiology, whereBio }) {
+  const colorClasses = {
+    blue:    'text-blue-600',
+    amber:   'text-amber-500',
+    emerald: 'text-emerald-500',
+    teal:    'text-teal-500',
+    sky:     'text-sky-500',
+    violet:  'text-violet-500',
+    rose:    'text-rose-500',
+  };
+  const borderClasses = {
+    blue:    'border-blue-600',
+    amber:   'border-amber-500',
+    emerald: 'border-emerald-500',
+    teal:    'border-teal-500',
+    sky:     'border-sky-500',
+    violet:  'border-violet-500',
+    rose:    'border-rose-500',
+  };
+  const colorClass = colorClasses[color] || 'text-emerald-700';
+  const borderClass = borderClasses[color] || 'border-emerald-700';
 
-      <div className="mb-4">
-        <h4 className="text-sm font-semibold text-emerald-700 mb-1">What it is:</h4>
-        <p className="text-emerald-700 text-sm">{what}</p>
+  return (
+    <div className={`bg-white rounded-lg p-5 border ${borderClass}`}>
+      <div className="flex items-center gap-2 mb-3">
+        <span className={`font-bold text-lg ${colorClass}`}>{number}.</span>
+        <h3 className={`text-lg font-bold ${colorClass}`}>{title}</h3>
       </div>
 
       <div className="mb-4">
-        <h4 className="text-sm font-semibold text-emerald-700 mb-2">Why it matters to biologists:</h4>
+        <h4 className="text-sm font-semibold text-[#264563] mb-1">What it is:</h4>
+        <p className="text-[#264563] text-sm">{what}</p>
+      </div>
+
+      <div className="mb-4">
+        <h4 className="text-sm font-semibold text-[#264563] mb-2">Why it matters to biologists:</h4>
         <ul className="space-y-1">
           {whyBiology.map((item, i) => (
-            <li key={i} className="text-emerald-700 text-sm flex items-start gap-2">
-              <span className="text-emerald-700" style={{marginTop: '-0.1em'}}>•</span>
+            <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
+              <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
               <span>{item}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="bg-emerald-700 rounded p-3">
-        <h4 className="text-sm font-semibold text-white mb-2">Where biology might plug in:</h4>
+      <div className={`bg-gray-50 rounded p-3 border ${borderClass}`}>
+        <h4 className={`text-sm font-semibold ${colorClass} mb-2`}>Where biology might plug in:</h4>
         <ul className="space-y-1">
           {whereBio.map((item, i) => (
-            <li key={i} className="text-white text-sm flex items-start gap-2">
-              <span className="text-white">→</span>
+            <li key={i} className={`${colorClass} text-sm flex items-start gap-2`}>
+              <span className={colorClass}>→</span>
               <span>{item}</span>
             </li>
           ))}

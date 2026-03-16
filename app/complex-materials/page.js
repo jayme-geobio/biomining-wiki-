@@ -212,6 +212,9 @@ export default function ComplexMaterials() {
                   <span><strong>{bold}</strong> {rest}</span>
                 </div>
               ))}
+              <p className="font-semibold">
+                Note: These materials are illustrative examples, not a comprehensive overview.
+              </p>
             </div>
           </div>
 

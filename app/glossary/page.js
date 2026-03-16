@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Search, Mountain, Microscope, BookOpen } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
@@ -24,21 +24,25 @@ export default function Glossary() {
     ...glossaryData.biology.map(t => ({ ...t, category: 'biology' }))
   ];
 
-  // Auto-open and scroll to term from URL hash
-  useState(() => {
-    if (typeof window === 'undefined') return;
-    const hash = window.location.hash.slice(1);
-    if (!hash) return;
-    const idx = allTerms.findIndex(t => termToId(t.term) === hash);
-    if (idx !== -1) {
-      const t = allTerms[idx];
-      setOpenTerms(new Set([`${t.category}-${idx}`]));
-      setTimeout(() => {
-        const el = document.getElementById(hash);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
+  // Auto-open and scroll to term from URL hash (on load and on hash change)
+  useEffect(() => {
+    function openFromHash() {
+      const hash = window.location.hash.slice(1);
+      if (!hash) return;
+      const idx = allTerms.findIndex(t => termToId(t.term) === hash);
+      if (idx !== -1) {
+        const t = allTerms[idx];
+        setOpenTerms(new Set([`${t.category}-${idx}`]));
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
     }
-  });
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+    return () => window.removeEventListener('hashchange', openFromHash);
+  }, []);
 
   const filteredTerms = allTerms.filter(term => {
     const matchesSearch = term.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
