@@ -38,40 +38,40 @@ export default function BiominingHome() {
                 <p>
                   This handbook bridges biology and mining for critical mineral recovery.
                 </p>
-                <div>
-                  <p className="font-semibold mb-2">What you'll find:</p>
+                <div className="bg-[#264563] rounded-xl p-4">
+                  <p className="font-semibold text-white mb-2">What you'll find:</p>
                   <div className="grid md:grid-cols-2 gap-x-6 gap-y-1 ml-1">
                     <div className="flex items-start gap-2">
-                      <span className="text-emerald-600" style={{marginTop: '-0.1em'}}>•</span>
-                      <span>Biomining fundamentals for both biotechnologists and mining professionals</span>
+                      <span className="text-emerald-400" style={{marginTop: '-0.1em'}}>•</span>
+                      <span className="text-white">Biomining fundamentals for both biotechnologists and mining professionals</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-emerald-600" style={{marginTop: '-0.1em'}}>•</span>
-                      <span>Real-world examples and flowsheets of biological integration</span>
+                      <span className="text-emerald-400" style={{marginTop: '-0.1em'}}>•</span>
+                      <span className="text-white">Real-world examples and flowsheets of biological integration</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-emerald-600" style={{marginTop: '-0.1em'}}>•</span>
-                      <span>Practical tools for evaluating biological solutions</span>
+                      <span className="text-emerald-400" style={{marginTop: '-0.1em'}}>•</span>
+                      <span className="text-white">Practical tools for evaluating biological solutions</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-emerald-600" style={{marginTop: '-0.1em'}}>•</span>
-                      <span>Shared vocabulary and frameworks bridging both fields</span>
+                      <span className="text-emerald-400" style={{marginTop: '-0.1em'}}>•</span>
+                      <span className="text-white">Shared vocabulary and frameworks bridging both fields</span>
                     </div>
                   </div>
+                  <p className="text-white/70 text-sm italic mt-3">
+                    Our goal: a gold-standard, technically accurate resource for both communities to design better projects together.
+                  </p>
                 </div>
-                <p className="text-sm italic">
-                  Our goal: a gold-standard, technically accurate resource for both communities to design better projects together.
-                </p>
-                <div className="bg-white rounded-xl p-4 border border-gray-200 mt-4">
+                <div className="bg-gray-100 rounded-xl p-4 border border-gray-200 mt-4">
                   <p className="font-semibold text-[#264563] mb-2 flex items-center gap-2">
                     <MessageSquare className="w-5 h-5 text-emerald-600" />
                     Contribute to This Handbook:
                   </p>
                   <p className="text-[#264563] text-sm">
-                    To keep this resource current and accurate, we've added a commenting feature. To comment, highlight the text you want to comment on and click the <MessageSquare className="w-3.5 h-3.5 inline text-emerald-600" /> comment icon that appears. Comment on sections needing updates, additions, or corrections.
+                    To keep this resource current and accurate, we've added a commenting feature. Highlight any text and click the <MessageSquare className="w-3.5 h-3.5 inline text-emerald-600" /> icon that appears to suggest updates, additions, or corrections.
                   </p>
                   <p className="text-[#264563] text-sm mt-2">
-                    If you're interested in helping author or build out a section, use the "Interested in Contributing" option in the comment form to share your contact information and we will reach out.
+                    Interested in authoring or expanding a section? Select "Interested in Contributing" in the comment form and we'll reach out.
                   </p>
                   <p className="text-[#264563]/60 text-xs mt-2 italic">
                     Note: Commenting is not available on the home page. All comments remain confidential and are reviewed by Homeworld Collective staff.

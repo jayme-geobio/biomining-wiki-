@@ -16,6 +16,7 @@ export default function CommentSystem({ pageName, contentRef }) {
   const [wantsToContribute, setWantsToContribute] = useState(false);
   const [contributorName, setContributorName] = useState('');
   const [contributorEmail, setContributorEmail] = useState('');
+  const [contributorDescription, setContributorDescription] = useState('');
 
   // Load comments on mount
   useEffect(() => {
@@ -37,7 +38,7 @@ export default function CommentSystem({ pageName, contentRef }) {
         setSelectedText(text);
         setCommentPosition({
           x: rect.right + 4,
-          y: rect.top - 36
+          y: rect.top + window.scrollY - 200
         });
 
         // Get section title
@@ -171,7 +172,8 @@ export default function CommentSystem({ pageName, contentRef }) {
           ...(wantsToContribute && {
             contributor: {
               name: contributorName,
-              email: contributorEmail
+              email: contributorEmail,
+              description: contributorDescription
             }
           })
         })
@@ -194,6 +196,7 @@ export default function CommentSystem({ pageName, contentRef }) {
         setWantsToContribute(false);
         setContributorName('');
         setContributorEmail('');
+        setContributorDescription('');
 
         // Clear message after 5 seconds
         setTimeout(() => setSubmitMessage(null), 5000);
@@ -212,7 +215,7 @@ export default function CommentSystem({ pageName, contentRef }) {
       {/* Comment Icon - appears when text is selected */}
       {selectedText && !showCommentForm && (
         <button
-          className="comment-icon-btn fixed z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-2 rounded-full shadow-lg transition-all"
+          className="comment-icon-btn absolute z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-2 rounded-full shadow-lg transition-all"
           style={{
             left: `${commentPosition.x}px`,
             top: `${commentPosition.y}px`,
@@ -271,11 +274,18 @@ export default function CommentSystem({ pageName, contentRef }) {
                   onChange={(e) => setWantsToContribute(e.target.checked)}
                   className="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
                 />
-                <span className="text-xs text-slate-600">Interested in helping build out this section?</span>
+                <span className="text-xs text-slate-600">Interested in Contributing</span>
               </label>
               {wantsToContribute && (
                 <div className="mt-2 space-y-2 p-3 bg-emerald-50 rounded-lg border border-emerald-200">
-                  <p className="text-xs text-emerald-700 font-medium">Share your contact info and we'll reach out:</p>
+                  <p className="text-xs text-emerald-700 mb-1">Whether it's adding a new section, expanding existing content, contributing real-world examples, or reviewing for accuracy — let us know what you have in mind.</p>
+                  <textarea
+                    value={contributorDescription}
+                    onChange={(e) => setContributorDescription(e.target.value)}
+                    placeholder="Briefly describe your proposed contribution..."
+                    className="w-full p-2 border border-slate-300 rounded text-sm resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-900"
+                    rows="2"
+                  />
                   <input
                     type="text"
                     value={contributorName}

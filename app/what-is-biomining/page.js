@@ -67,7 +67,7 @@ export default function WhatIsBiomining() {
             <div className="space-y-4">
               <MechanismCard
                 number="1"
-                title={<GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm>}
+                title="Bioleaching"
                 description="Extraction or liberation of metals from ores or wastes via microbial activity, moving metals into solution"
                 details="Mechanisms include acid generation, redox cycling, and ligand production"
                 icon={Droplets}
@@ -75,7 +75,7 @@ export default function WhatIsBiomining() {
               />
               <MechanismCard
                 number="2"
-                title={<GlossaryTerm term="Biooxidation" definition="Microbially driven oxidation of sulfides where the valuable metal remains in the solid phase">Biooxidation</GlossaryTerm>}
+                title="Biooxidation"
                 description="Microbial oxidation of sulfide minerals where the valuable metal remains solid but becomes accessible to downstream processing"
                 details="Classically used for refractory gold. Often deployed as a pre-treatment prior to cyanidation"
                 icon={Zap}
@@ -83,7 +83,7 @@ export default function WhatIsBiomining() {
               />
               <MechanismCard
                 number="3"
-                title={<><GlossaryTerm term="Bioseparation" definition="Use of biomolecules (proteins, peptides, polymers, whole cells) as selective sorbents or separation agents">Bioseparation</GlossaryTerm> and <GlossaryTerm term="Biosorption" definition="Sorption of dissolved metals onto biomass or extracellular polymeric substances (EPS)">Biosorption</GlossaryTerm></>}
+                title="Bioseparation and Biosorption"
                 description="Binding of metals to biomolecules, enabling separation and concentration from complex mixtures"
                 details={<>Includes <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">metallophores</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophore</GlossaryTerm>-like ligands, engineered binding proteins, cell-free proteins, peptides, polymers, phytomining, bio-based resins, and membranes</>}
                 icon={Target}
@@ -157,7 +157,7 @@ export default function WhatIsBiomining() {
               />
               <div className="bg-emerald-600 rounded-lg p-5 border border-emerald-600 mt-6">
                 <p className="text-white">
-                  <strong>Biotech's strongest foothold:</strong> <Link href="/complex-materials" className="underline hover:text-white/80">Complex materials</Link> and operating conditions
+                  <strong>Biotech's strongest foothold:</strong> <Link href="/complex-materials" className="underline decoration-dotted decoration-white/50 underline-offset-2 cursor-pointer hover:decoration-white transition-colors">Complex materials</Link> and operating conditions
                   where conventional solutions are too costly, too carbon-intensive, or too permitting-constrained to scale.
                 </p>
               </div>

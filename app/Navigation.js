@@ -29,8 +29,9 @@ export default function Navigation() {
     resources: {
       name: 'Resources',
       items: [
-        { name: 'Actionable Problems', href: '/research' },
-        { name: 'Glossary', href: '/glossary' }
+        { name: 'Frontier Challenges', href: '/research' },
+        { name: 'Glossary', href: '/glossary' },
+        { name: 'References', href: '/citations' }
       ]
     }
   };

@@ -2,310 +2,213 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ChevronDown, ChevronRight, FlaskConical, Database, TrendingUp, Users, Microscope, Target } from 'lucide-react';
+import { ChevronDown, ChevronRight } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 
+const themes = [
+  {
+    number: 1,
+    title: "Ensuring Research is Industrially Relevant",
+    summary: "Researchers currently lack access to the resources and knowledge needed to ensure their work is techno-economically competitive and applicable to real mining challenges.",
+    details: [
+      "Industrially-relevant ores and process fluids are prohibitively difficult to obtain, forcing most research to use less-relevant materials",
+      "Researchers lack access to process models, TEAs, and performance benchmarks necessary to estimate scalability",
+      "Extrapolating lab-scale performance to industrial scale is challenging without biogeometallurgical models that incorporate biology"
+    ]
+  },
+  {
+    number: 2,
+    title: "Engineering by Thinking Backwards from the Source Material",
+    summary: "Most biomining approaches start with known microbial capabilities and look for applications. We need to flip this: start with the mining challenge or environment, then work backwards to identify relevant biology. This requires better frameworks for matching geological conditions with geobiological mechanisms—thinking from the environment to predict relevant biology, and from biological capabilities to identify targetable mineralogy.",
+    details: [
+      "An 'environment-first' perspective could reveal metabolisms or organisms not otherwise considered for biomining",
+      "Frameworks that connect biological possibilities to corresponding mineralogy or geochemistry are needed",
+      "Understanding evolutionary fitness and environmental context can guide which biology to deploy where"
+    ]
+  },
+  {
+    number: 3,
+    title: "Engineering New Ways to Mine Better",
+    summary: "By rethinking how we look at biomining systems, we can identify new ways to do things better. This theme captures opportunities to continue reimagining how we use biology in mining through new sensing capabilities, measurement and control systems, engineered biological tools, and transparency standards.",
+    details: [
+      "Transparency standards like traceable datasets and provenance markers would build confidence and enable comparison across projects",
+      "Measurement and control systems including real-time monitoring and functional feedback can track whether existing technologies are effective in the field",
+      "Engineering biology for improved mining through programmable metallophores and engineered binding proteins opens new possibilities for selective metal recovery"
+    ]
+  },
+  {
+    number: 4,
+    title: "Lab Tools for Discovering and Engineering Biomining Biology",
+    summary: "Biomining research is too slow. We need better lab tools to make discovery and development faster and more effective—from standardized materials and assays to high-throughput screening platforms.",
+    details: [
+      "Shared data standards and universal synthetic feedstocks would enable researchers to compare results across labs",
+      "Tools for characterizing how microbes interact with minerals and metals in realistic conditions are underdeveloped",
+      "High-throughput screening platforms are needed to rapidly test which organisms can tolerate harsh conditions and effectively recover metals"
+    ]
+  },
+  {
+    number: 5,
+    title: "Biomining Has a Steep Learning Curve",
+    summary: "Mining struggles to attract new talent, and biomining is even harder—it requires understanding both biology and mining. Biologists find it difficult to grasp mining's scale and processes, while mining professionals struggle to understand biological constraints. The \"mining\" label also doesn't naturally attract climate-focused talent, even though biomining is relevant to sustainability.",
+    details: [
+      "Education, media, and rebranding efforts targeting students and the public",
+      "Creation of trusted knowledge hubs and accessible resources that bridge biology and mining domains",
+      "Training programs that help geomicrobiologists understand industrial scale and mining professionals understand biological systems"
+    ]
+  },
+  {
+    number: 6,
+    title: "Developing Incentives and Structures for Collaboration",
+    summary: "Biomining would benefit from better collaboration between researchers, industry, and other stakeholders—but mining's historically secretive culture and weak connections to biology create barriers. Better collaboration would reduce miscommunications and knowledge gaps during onboarding and technology transfer.",
+    details: [
+      "Cross-sector consortia that bring together mining companies, biotech firms, and researchers to align goals and share knowledge",
+      "Funding mechanisms that connect fundamental research with field pilots and industrial applications",
+      "Data-sharing frameworks that balance openness with intellectual property protection to accelerate innovation"
+    ]
+  },
+  {
+    number: 7,
+    title: "Bridging Research to Industry",
+    summary: "Academics and mines have traditionally struggled to collaborate, and there is little awareness of the actual problems the mining industry faces. Bridging this gap would accelerate the path from discovery to deployment.",
+    details: [
+      "IP navigation and translational support for biomining innovators is lacking",
+      "Shared precompetitive pipelines could cut time and cost to deployable technologies",
+      "Sharing scale-up data would help lift all boats across the field"
+    ]
+  },
+  {
+    number: 8,
+    title: "Integrating Biotech into Emerging Mining Innovations",
+    summary: "Mining rarely innovates—but when it does, biotech should be at the table. Some groups are already rethinking mining practices, and we need to identify where biotech fits into these new designs. From repurposing old mine sites to zero-waste processing, these opportunities range from immediately achievable to ambitious long-term goals.",
+    details: [
+      "Shared scale-up infrastructure and tools, including repurposing former mines and contaminated sites as testing grounds and creating standardized pilot plants",
+      "Centralized biotech facilities that process tailings and waste for small operators who can't afford their own infrastructure",
+      "Shared resources like biobanks of microbes from legacy mine sites and Superfund sites for bioprospecting"
+    ]
+  }
+];
 
+const attendees = [
+  { name: "Alan Tordoir", affiliation: "Mining3" },
+  { name: "Alex Aguilar", affiliation: "Mind the Bridge" },
+  { name: "Ariana Caiati", affiliation: "Homeworld Collective" },
+  { name: "Brian Townley", affiliation: "University of Chile" },
+  { name: "Buz Barstow", affiliation: "Cornell University" },
+  { name: "Cara Santelli", affiliation: "University of Minnesota" },
+  { name: "Cooper Yerby", affiliation: "US Department of Energy" },
+  { name: "Dani Merino-Garcia", affiliation: "Project InnerSpace" },
+  { name: "Daniel Goodwin", affiliation: "Homeworld Collective" },
+  { name: "Dave Lee", affiliation: "Booz Allen Hamilton" },
+  { name: "David Zhen Yin", affiliation: "Stanford Mineral-X" },
+  { name: "Dayal Saran", affiliation: "Allonnia" },
+  { name: "Doris Hiam-Galvez", affiliation: "Designing Sustainable Prosperity" },
+  { name: "Elze Hesse", affiliation: "University of Exeter" },
+  { name: "Erin Marshall", affiliation: "Koonkie" },
+  { name: "Felix Guettersberger", affiliation: "Forbion BioEconomy" },
+  { name: "Francisco (Frank) Roberto", affiliation: "Independent Consultant" },
+  { name: "Gerhard (Gary) Schenk", affiliation: "University of Queensland" },
+  { name: "Jason Holt", affiliation: "Orion Industrial Ventures" },
+  { name: "Jayme Feyhl-Buska", affiliation: "Homeworld Collective" },
+  { name: "Jenn Macalady", affiliation: "Penn State University" },
+  { name: "Kaila Sims-Austin", affiliation: "Homeworld Collective" },
+  { name: "Luis Valencia", affiliation: "AlkaLi Labs" },
+  { name: "Mackenzie Best", affiliation: "Sandia National Laboratories" },
+  { name: "N. Cecilia Martinez-Gomez", affiliation: "UC Berkeley" },
+  { name: "Patrick Diep", affiliation: "Lawrence Livermore National Laboratory" },
+  { name: "Paul Reginato", affiliation: "Homeworld Collective" },
+  { name: "Pranam Chatterjee", affiliation: "University of Pennsylvania" },
+  { name: "Pilar Parada", affiliation: "CSB-UNAB" },
+  { name: "Renee Hodges", affiliation: "Boson Partners" },
+  { name: "Sarah Daniels", affiliation: "Homeworld Collective" },
+  { name: "Sasha Milshteyn", affiliation: "Transition Biomining" },
+  { name: "Scott Banta", affiliation: "Columbia University" },
+  { name: "Wenying Liu", affiliation: "University of British Columbia" },
+  { name: "Yongjin Park", affiliation: "1849 Bio" },
+  { name: "Yoshiko Fujita", affiliation: "Idaho National Laboratory" },
+];
 
-const researchData = {
-  frontiers: [
-    {
-      title: "Metal-Biology Interactions in Complex Matrices",
-      icon: FlaskConical,
-      keyIssues: [
-        "Binding constants measured in simple buffers don't map cleanly to separation performance in real PLS, leachates, or tailings porewaters",
-        "Competing ions, organics, colloids, and solids all affect selectivity and capacity",
-        "Ligands for REEs, PGMs, radionuclides, and polymetallic systems remain underexplored"
-      ],
-      opportunities: [
-        {
-          title: "High-Throughput Ligand Screening",
-          description: "AI-guided design and microfluidics for rapid discovery of metallophores and binding proteins"
-        },
-        {
-          title: "Matrix-Aware Models",
-          description: "Mechanistic and ML models that translate binding data into process performance predictions in real feedstocks"
-        },
-        {
-          title: "Hybrid Biomolecular Ligands",
-          description: "Peptides + polymers or mixed-mode platforms for improved fouling resistance and manufacturability"
-        },
-        {
-          title: "Non-Chromatographic Deployment",
-          description: "Membranes, beads, structured packings functionalized with selective biomolecules for continuous PLS polishing"
-        }
-      ]
-    },
-    {
-      title: "Realistic Feedstocks, Complexity Proxies, and Benchmarks",
-      icon: Database,
-      keyIssues: [
-        "Lab studies often use synthetic solutions that don't represent real PLS complexity",
-        "No standard feedstocks for comparing technologies across labs",
-        "Hard to translate lab performance to field conditions"
-      ],
-      opportunities: [
-        {
-          title: "Standard Synthetic Feedstocks",
-          description: "Agreed recipes (chloride vs sulfate systems, light vs heavy REE mixes, e-waste leachates) for benchmarking"
-        },
-        {
-          title: "Complexity Proxies",
-          description: "Dissolved organic carbon, colloids, biomass, competing ion panels to simulate real-world conditions systematically"
-        },
-        {
-          title: "Orebank Sample Panels",
-          description: "Reference polymetallic feedstocks from actual tailings, AMD, and waste materials for real-world testing"
-        },
-        {
-          title: "Inter-Lab Round-Robins",
-          description: "Community-maintained performance baselines and data standards for cross-comparison"
-        }
-      ]
-    },
-    {
-      title: "Ecology, Evolution, and Field Persistence",
-      icon: Microscope,
-      keyIssues: [
-        "Limited understanding of in situ microbial communities (especially deep subsurface and highly acidic systems)",
-        "Poor predictive understanding of evolutionary stability of engineered traits under field conditions",
-        "Microbial consortia dynamics in heaps and reactors not well characterized"
-      ],
-      opportunities: [
-        {
-          title: "Phenotype Foundries",
-          description: "Ultra-high-throughput screening for tolerance and leaching performance under realistic stresses"
-        },
-        {
-          title: "Trait Half-Life Models",
-          description: "Assays and models for predicting how long engineered traits persist in field populations"
-        },
-        {
-          title: "Community Dynamics Modeling",
-          description: "Ecological-theory-guided understanding of consortia stability and performance in heaps, reactors, and AMD"
-        },
-        {
-          title: "Superbank for Extremophiles",
-          description: "Biobanking microbes and consortia from legacy sites for bioprospecting and comparative genomics"
-        }
-      ]
-    },
-    {
-      title: "Instrumentation, Sensing, and Modeling",
-      icon: TrendingUp,
-      keyIssues: [
-        "Lack of rugged, low-cost sensors for low-pH, high-ionic-strength environments",
-        "Bioleaching models don't adequately couple microbial kinetics with hydrology and chemical speciation",
-        "Limited real-time monitoring of biological activity in heaps and reactors"
-      ],
-      opportunities: [
-        {
-          title: "In Situ Sensors",
-          description: "Gas- and solution-phase sensors for redox, speciation, and biological activity in harsh conditions"
-        },
-        {
-          title: "Coupled Biogeochemical Models",
-          description: "Integrate microbial kinetics, reactive transport, hydrology, and heat transfer for heap and reactor optimization"
-        },
-        {
-          title: "Digital Twins for Bioleaching",
-          description: "Real-time models updated with sensor data for predictive control and optimization"
-        },
-        {
-          title: "Biogeometallurgical Resource Classification",
-          description: "Extend geological resource models to explicitly incorporate bioprocess options and economics"
-        }
-      ]
-    }
-  ],
-  ecosystem: [
-    {
-      title: "Shared Materials and Testbeds",
-      icon: Database,
-      description: "Pre-competitive infrastructure for accelerating biomining R&D",
-      initiatives: [
-        {
-          name: "Orebank",
-          description: "Shared library of well-characterized ores, tailings, and e-waste for pre-competitive research and technology benchmarking"
-        },
-        {
-          name: "Superbank",
-          description: "Biobanking microbes and consortia from legacy and Superfund sites for bioprospecting, method development, and comparative studies"
-        },
-        {
-          name: "Former Mines as Test Sites",
-          description: "Converting liabilities into experimental infrastructure for pilot trials, closure technologies, and field validation"
-        }
-      ]
-    },
-    {
-      title: "Data, Models, and Governance",
-      icon: Target,
-      description: "Open but governed data sharing to accelerate innovation while protecting IP",
-      initiatives: [
-        {
-          name: "Federated Data Models",
-          description: "Allow companies to share insights without surrendering ownership or increasing liability - focus on aggregated learnings"
-        },
-        {
-          name: "Open Process Repositories",
-          description: "Microbiome-mineral-process datasets, TEAs, and case studies with governed access and attribution"
-        },
-        {
-          name: "Performance Baselines",
-          description: "Community-maintained benchmarks for recovery rates, selectivity, and costs across different material types"
-        }
-      ]
-    },
-    {
-      title: "Funding, IP, and Translation Pathways",
-      icon: TrendingUp,
-      description: "Bridging the valley of death between lab discovery and commercial deployment",
-      initiatives: [
-        {
-          name: "TEA-Aware Academic Funding",
-          description: "Research grants that require techno-economic analysis and commercialization pathways from the start"
-        },
-        {
-          name: "IP Advocates in Universities",
-          description: "Embedded expertise to help academics navigate patents, licensing, and startup formation in biomining"
-        },
-        {
-          name: "Consortium Models with TRL Milestones",
-          description: "Industry-academic partnerships with clear technology readiness level gates and co-investment norms"
-        },
-        {
-          name: "Pilot-Plant-Scale Funding",
-          description: "Targeted programs to bridge gap between lab success and field demonstration"
-        }
-      ]
-    },
-    {
-      title: "Language, Branding, and Talent",
-      icon: Users,
-      description: "Building bridges between communities and attracting the next generation",
-      initiatives: [
-        {
-          name: "Shared Vocabulary Resources",
-          description: "This wiki and similar efforts to reduce jargon barriers between mining, biotech, investors, and regulators"
-        },
-        {
-          name: "Reframing for Students",
-          description: "'Critical minerals, circularity, and planetary remediation' messaging to attract climate-motivated talent beyond traditional 'mining' brand"
-        },
-        {
-          name: "Case Study Storybank",
-          description: "Visual flowsheets and profiles of successful projects to inspire and educate both communities"
-        },
-        {
-          name: "Cross-Training Programs",
-          description: "Biomining bootcamps, internships, and secondments between mining companies and biotech labs"
-        }
-      ]
-    }
-  ]
-};
 
 export default function Research() {
-  const [openFrontiers, setOpenFrontiers] = useState(new Set());
-  const [openEcosystems, setOpenEcosystems] = useState(new Set());
+  const [openThemes, setOpenThemes] = useState(new Set());
 
-  function toggleFrontier(i) {
-    setOpenFrontiers(prev => { const next = new Set(prev); next.has(i) ? next.delete(i) : next.add(i); return next; });
-  }
-  function toggleEcosystem(i) {
-    setOpenEcosystems(prev => { const next = new Set(prev); next.has(i) ? next.delete(i) : next.add(i); return next; });
+  function toggleTheme(i) {
+    setOpenThemes(prev => { const next = new Set(prev); next.has(i) ? next.delete(i) : next.add(i); return next; });
   }
 
   return (
     <CommentableContent pageName="research">
-
       <div className="min-h-screen py-8 px-12 space-y-6">
 
-        {/* Box 1: Header */}
+        {/* Header */}
         <div className="flex gap-6 items-stretch">
           <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
-            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Actionable Problems</h1>
+            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Frontier Challenges in Biomining</h1>
             <p className="text-xl text-[#264563]">
-              Open problems, infrastructure needs, and collaboration opportunities in biomining
+              Themes and actionable problem areas shaping the future of biotechnology in mining
             </p>
           </div>
           <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
         </div>
 
-        {/* Box 2: Cross-Cutting Technical Frontiers */}
+        {/* Context & Origin */}
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h2 className="text-2xl font-bold text-[#264563] mb-4">Building the Research Roadmap</h2>
+          <div className="text-[#264563] space-y-3">
+            <p>
+              In November 2025, Homeworld Collective convened the <strong>Biomining Under Complex Conditions</strong> workshop, bringing together researchers, mining professionals, biotechnologists, and other stakeholders to identify the most pressing challenges and opportunities in biomining. Through structured discussion and collaborative workshopping, participants generated a set of <strong>actionable problem statements</strong> spanning technical, institutional, and ecosystem challenges.
+            </p>
+            <p>
+              The themes below represent a high-level preview of the patterns that emerged from the workshop.
+            </p>
+            <p className="italic text-[#264563]/60 text-sm mt-2">
+              Detailed problem statements with full context and proposed approaches will be published soon.
+            </p>
+          </div>
+        </div>
+
+
+        {/* Themes */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
           <h2 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
-            <FlaskConical className="w-7 h-7 text-[#264563]" />
-            Cross-Cutting Technical Frontiers
+            Workshop Themes
           </h2>
           <p className="text-[#264563] mb-6">
-            These problem statements and bottlenecks represent a public R&D agenda distilled from workshops,
-            literature, and field experience. They're areas where breakthroughs would significantly advance biomining.
+            Each theme below captures a cluster of related problem statements from the workshop.
           </p>
           <div className="space-y-4">
-            {researchData.frontiers.map((frontier, i) => (
-              <FrontierCard
+            {themes.map((theme, i) => (
+              <ThemeCard
                 key={i}
-                frontier={frontier}
-                expanded={openFrontiers.has(i)}
-                onToggle={() => toggleFrontier(i)}
+                theme={theme}
+                expanded={openThemes.has(i)}
+                onToggle={() => toggleTheme(i)}
               />
             ))}
           </div>
         </div>
 
-        {/* Box 3: Ecosystem, Infrastructure & Collaboration */}
+        {/* Acknowledgment */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
-          <h2 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
-            <Users className="w-7 h-7 text-emerald-600" />
-            Ecosystem, Infrastructure & Collaboration
-          </h2>
-          <p className="text-[#264563] mb-6">
-            Biomining is a socio-technical field, not just a set of reactions. These initiatives would strengthen
-            the ecosystem and accelerate translation from lab to field.
-          </p>
-          <div className="space-y-4">
-            {researchData.ecosystem.map((item, i) => (
-              <EcosystemCard
-                key={i}
-                item={item}
-                expanded={openEcosystems.has(i)}
-                onToggle={() => toggleEcosystem(i)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Box 4: Get Involved */}
-        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
-          <h3 className="text-2xl font-bold text-[#264563] mb-4 text-center">Get Involved</h3>
+          <h2 className="text-2xl font-bold text-[#264563] mb-4 text-center">Workshop Acknowledgments</h2>
           <p className="text-[#264563] text-center mb-6 max-w-3xl mx-auto">
-            These challenges require collaboration across disciplines, sectors, and institutions. Whether you're
-            a researcher, mining professional, investor, or policymaker, there's a role for you in advancing
-            sustainable biomining technologies.
+            We are grateful to the following workshop participants whose expertise, perspectives, and collaborative spirit generated the problem statements that informed this work.
           </p>
-          <div className="grid md:grid-cols-3 gap-4 text-center">
-            <div className="bg-[#264563] rounded-lg p-4">
-              <h4 className="text-lg font-bold text-white mb-2">Researchers</h4>
-              <p className="text-white/80 text-sm">Focus on high-impact problems with clear paths to field deployment</p>
-            </div>
-            <div className="bg-[#264563] rounded-lg p-4">
-              <h4 className="text-lg font-bold text-white mb-2">Industry</h4>
-              <p className="text-white/80 text-sm">Share pre-competitive data and pilot sites to accelerate innovation</p>
-            </div>
-            <div className="bg-[#264563] rounded-lg p-4">
-              <h4 className="text-lg font-bold text-white mb-2">Funders</h4>
-              <p className="text-white/80 text-sm">Support TEA-aware research and pilot-scale demonstration projects</p>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-5xl mx-auto">
+            {attendees.map((person, i) => (
+              <div key={i} className="text-center py-2">
+                <p className="text-[#264563] text-sm font-semibold">{person.name}</p>
+                <p className="text-[#264563]/60 text-xs">{person.affiliation}</p>
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* Navigation */}
-          <div className="mt-12 text-center">
-            <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center justify-center gap-2">
-              ← Back to Home
-            </Link>
-          </div>
+        {/* Coming Soon & Navigation */}
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white text-center">
+          <h3 className="text-xl font-bold text-[#264563] mb-8">Full Problem Statements Coming Soon...</h3>
+          <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center justify-center gap-2">
+            ← Back to Home
+          </Link>
         </div>
 
       </div>
@@ -313,8 +216,8 @@ export default function Research() {
   );
 }
 
-function FrontierCard({ frontier, expanded, onToggle }) {
-  const Icon = frontier.icon;
+function ThemeCard({ theme, expanded, onToggle }) {
+  const Icon = theme.icon;
   return (
     <div className="rounded-xl border-2 border-white overflow-hidden">
       <button
@@ -322,72 +225,25 @@ function FrontierCard({ frontier, expanded, onToggle }) {
         className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
       >
         <div className="flex items-center gap-3">
-          <Icon className="w-6 h-6 text-white" />
-          <h3 className="text-xl font-bold text-white text-left">{frontier.title}</h3>
+          <span className="text-white font-bold text-lg w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">{theme.number}</span>
+          <h3 className="text-xl font-bold text-white text-left">{theme.title}</h3>
         </div>
         {expanded ? <ChevronDown className="w-6 h-6 text-white flex-shrink-0" /> : <ChevronRight className="w-6 h-6 text-white flex-shrink-0" />}
       </button>
 
       {expanded && (
-        <div className="bg-[#edede6] p-6 space-y-5">
-          {/* Key Issues */}
+        <div className="bg-white p-6 space-y-4">
+          <p className="text-[#264563]">{theme.summary}</p>
           <div>
-            <h4 className="text-lg font-bold text-[#264563] mb-3">Key Issues & Bottlenecks</h4>
-            <ul className="space-y-2">
-              {frontier.keyIssues.map((issue, i) => (
+            <h4 className="text-sm font-semibold text-[#264563] mb-2">Key areas include:</h4>
+            <ul className="space-y-1.5">
+              {theme.details.map((detail, i) => (
                 <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
-                  <span className="text-orange-500 flex-shrink-0">⚠</span>
-                  <span>{issue}</span>
+                  <span className="text-emerald-600 flex-shrink-0 mt-0.5">•</span>
+                  <span>{detail}</span>
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Opportunities */}
-          <div>
-            <h4 className="text-lg font-bold text-emerald-700 mb-3">Research Opportunities</h4>
-            <div className="space-y-3">
-              {frontier.opportunities.map((opp, i) => (
-                <div key={i} className="bg-white rounded-lg p-4 border border-emerald-700">
-                  <h5 className="text-lg font-normal text-emerald-700 mb-1">{opp.title}</h5>
-                  <p className="text-[#264563] text-sm">{opp.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function EcosystemCard({ item, expanded, onToggle }) {
-  const Icon = item.icon;
-  return (
-    <div className="rounded-xl border-2 border-white overflow-hidden">
-      <button
-        onClick={onToggle}
-        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors text-left"
-      >
-        <div className="flex items-center gap-3">
-          <Icon className="w-6 h-6 text-white flex-shrink-0" />
-          <div>
-            <h3 className="text-xl font-bold text-white">{item.title}</h3>
-            <p className="text-white/70 text-sm mt-0.5">{item.description}</p>
-          </div>
-        </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-white flex-shrink-0 ml-4" /> : <ChevronRight className="w-6 h-6 text-white flex-shrink-0 ml-4" />}
-      </button>
-
-      {expanded && (
-        <div className="bg-[#edede6] p-6">
-          <div className="space-y-4">
-            {item.initiatives.map((initiative, i) => (
-              <div key={i} className="bg-white rounded-lg p-4 border border-gray-200">
-                <h4 className="text-lg font-bold text-[#264563] mb-2">{initiative.name}</h4>
-                <p className="text-[#264563] text-sm">{initiative.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       )}

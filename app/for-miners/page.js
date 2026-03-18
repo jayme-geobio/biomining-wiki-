@@ -156,7 +156,7 @@ export default function ForMiners() {
                 <div className="space-y-4">
                   <ModalityCard
                     title="Dump & Heap Bioleaching"
-                    description={<>Low-grade sulfide ores piled on pads and irrigated with acidic ferric solutions. Native or inoculated <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> catalyze Fe & S oxidation and metal release.</>}
+                    description={<><GlossaryTerm term="Bulk Waste Rock" definition="Rock discarded prior to metallurgical extraction (overburden, low-grade, refractory, or gangue-rich material)">Low-grade sulfide ores</GlossaryTerm> piled on pads and irrigated with acidic ferric solutions. Native or inoculated <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> catalyze Fe & S oxidation and metal release.</>}
                     applications="Common for copper sulfide ores, with growing interest for other sulfides"
                     parameters={[
                       "Time: Months to years",
@@ -174,8 +174,8 @@ export default function ForMiners() {
 
                   <ModalityCard
                     title="Stirred-Tank Biooxidation"
-                    description={<>Refractory gold or polymetallic sulfide <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrates</GlossaryTerm> oxidized in aerated reactors prior to cyanidation or other leaching.</>}
-                    applications="Proven technology for refractory gold (BIOX®, BacTech)"
+                    description={<><GlossaryTerm term="Refractory Gold" definition="Heterogeneous rock with low grades and/or refractory mineralogy; can contain 'hidden' critical metals">Refractory gold</GlossaryTerm> or polymetallic sulfide <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrates</GlossaryTerm> oxidized in aerated reactors prior to cyanidation or other leaching.</>}
+                    applications={<>Proven technology for <GlossaryTerm term="Refractory Gold" definition="Heterogeneous rock with low grades and/or refractory mineralogy; can contain 'hidden' critical metals">refractory gold</GlossaryTerm> (BIOX®, BacTech)</>}
                     parameters={[
                       "Time: Days to weeks",
                       "Temperature: 40-50°C (mesophile) or 65-85°C (thermophile)",
@@ -430,7 +430,7 @@ function BiologicalSystemsSection() {
             <div className="pt-4 space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">What Phytomining Is</h4>
               <p>
-                Phytomining uses plants to extract metals from soils, mine waste, or low-grade deposits. Certain plants, known as hyperaccumulators, naturally absorb and concentrate metals in their tissues.
+                Phytomining uses plants to extract metals from soils, mine waste, or <GlossaryTerm term="Bulk Waste Rock" definition="Rock discarded prior to metallurgical extraction (overburden, low-grade, refractory, or gangue-rich material)">low-grade deposits</GlossaryTerm>. Certain plants, known as hyperaccumulators, naturally absorb and concentrate metals in their tissues.
               </p>
             </div>
 
@@ -588,7 +588,7 @@ function EmerginTechCard({ expanded, onToggle }) {
           <div className="grid grid-cols-2 gap-4 mb-3">
             <div>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Applications</p>
-              <p className="text-[#264563] text-sm mb-7">Coal by-products, phosphogypsum, red mud, spent catalysts, magnet scrap</p>
+              <p className="text-[#264563] text-sm mb-7"><GlossaryTerm term="Coal By-products" definition="Coal combustion byproducts including fly ash and bottom ash, rich in REEs and heavy metals; billions of tons stockpiled globally with limited disposal options">Coal by-products</GlossaryTerm>, <GlossaryTerm term="Phosphogypsum" definition="Radioactive waste from fertilizer production containing REEs and other critical metals">phosphogypsum</GlossaryTerm>, <GlossaryTerm term="Red Mud" definition="Caustic bauxite waste with REEs, Sc, and other metals">red mud</GlossaryTerm>, spent catalysts, magnet scrap</p>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Integration</p>
               <p className="text-[#264563] text-sm">
                 Feed stream → <strong>selective binding</strong> → elution & recovery → purified metal stream
@@ -644,7 +644,7 @@ function BioremediationCard({ expanded, onToggle }) {
           <div className="grid grid-cols-2 gap-4 mb-3">
             <div>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Applications</p>
-              <p className="text-[#264563] text-sm mb-7">Mine drainage treatment, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> reprocessing, legacy site remediation, e-waste and magnet scrap</p>
+              <p className="text-[#264563] text-sm mb-7">Mine drainage treatment, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> reprocessing, legacy site remediation, <GlossaryTerm term="E-waste" definition="Discarded electronics rich in Cu, Au, Pd, REEs, and critical metals, but with complex polymer/metal mixtures">e-waste</GlossaryTerm> and magnet scrap</p>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Integration</p>
               <p className="text-[#264563] text-sm">Parameters and integration pathways vary by technique and site conditions</p>
             </div>
