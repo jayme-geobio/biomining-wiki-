@@ -4,7 +4,7 @@ import Footer from './Footer'
 import PageTransition from './components/PageTransition'
 
 export const metadata = {
-  title: 'Biomining Wiki - Bridge Between Biology and Mining',
+  title: 'The Biomining Handbook - A Practical Guide for Biologists and Mining Professionals',
   description: 'An interactive guide to where biotechnology fits in critical mineral recovery',
 }
 

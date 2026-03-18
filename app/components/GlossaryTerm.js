@@ -2,7 +2,19 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { BookOpen, X } from 'lucide-react';
+import { BookOpen, X, Layers, Target } from 'lucide-react';
+
+// Map glossary term names (lowercase) to complex materials keys
+const termToMaterialMap = {
+  "tailings": { key: "tailings", name: "Tailings" },
+  "bulk waste rock": { key: "wasteRock", name: "Bulk Waste Rock & Refractory Ores" },
+  "acid mine drainage (amd)": { key: "ard", name: "Acid Rock Drainage (ARD) / Acid Mine Drainage (AMD)" },
+};
+
+// Map glossary term names (lowercase) to page links
+const termToPageMap = {
+  "flowsheet": { href: "/flowsheets", label: "View Example Flowsheets", icon: Target },
+};
 
 export default function GlossaryTerm({ term, definition, children }) {
   const [open, setOpen] = useState(false);
@@ -31,6 +43,9 @@ export default function GlossaryTerm({ term, definition, children }) {
     }
   }, [open]);
 
+  const material = termToMaterialMap[term.toLowerCase()];
+  const pageLink = termToPageMap[term.toLowerCase()];
+
   return (
     <span className="relative inline">
       <span
@@ -53,14 +68,36 @@ export default function GlossaryTerm({ term, definition, children }) {
             </button>
           </span>
           <span className="block text-xs text-[#264563]/80 mb-3 leading-relaxed">{definition}</span>
-          <Link
-            href={`/glossary#${term.toLowerCase().replace(/[\s\/()]+/g, '-').replace(/-+/g, '-').replace(/-$/, '')}`}
-            onClick={() => setOpen(false)}
-            className="flex items-center gap-1.5 text-xs font-medium text-emerald-700 hover:text-emerald-800 transition-colors"
-          >
-            <BookOpen className="w-3.5 h-3.5" />
-            View in Glossary
-          </Link>
+          <span className="flex flex-col gap-1.5">
+            <Link
+              href={`/glossary#${term.toLowerCase().replace(/[\s\/()]+/g, '-').replace(/-+/g, '-').replace(/-$/, '')}`}
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-1.5 text-xs font-medium text-emerald-700 hover:text-emerald-800 transition-colors"
+            >
+              <BookOpen className="w-3.5 h-3.5" />
+              View in Glossary
+            </Link>
+            {material && (
+              <Link
+                href={`/complex-materials#${material.key}`}
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-1.5 text-xs font-medium text-orange-600 hover:text-orange-700 transition-colors"
+              >
+                <Layers className="w-3.5 h-3.5" />
+                View in Complex Materials Playbook
+              </Link>
+            )}
+            {pageLink && (
+              <Link
+                href={pageLink.href}
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-1.5 text-xs font-medium text-[#264563] hover:text-[#1e3450] transition-colors"
+              >
+                <pageLink.icon className="w-3.5 h-3.5" />
+                {pageLink.label}
+              </Link>
+            )}
+          </span>
           {/* Arrow */}
           <span className="absolute top-full left-4 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-white" />
         </span>

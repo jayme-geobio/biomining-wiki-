@@ -14,22 +14,22 @@ export default function Navigation() {
       name: 'Learn',
       items: [
         { name: 'What Is Biomining?', href: '/what-is-biomining' },
-        { name: 'From the Mining Perspective', href: '/for-biologists' },
-        { name: 'From the Biology Perspective', href: '/for-miners' },
-        { name: 'Complex Materials', href: '/complex-materials' },
-        { name: 'Flowsheets', href: '/flowsheets' }
+        { name: 'Mining Fundamentals', href: '/for-biologists' },
+        { name: 'Biology Fundamentals', href: '/for-miners' },
+        { name: 'Complex Materials Playbook', href: '/complex-materials' },
+        { name: 'Example Flowsheets', href: '/flowsheets' }
       ]
     },
     professionals: {
       name: 'For Professionals',
       items: [
-        { name: 'Technology Evaluation', href: '/technology-evaluation' }
+        { name: 'Technology Assessment Checklists', href: '/technology-evaluation' }
       ]
     },
     resources: {
       name: 'Resources',
       items: [
-        { name: 'Research', href: '/research' },
+        { name: 'Actionable Problems', href: '/research' },
         { name: 'Glossary', href: '/glossary' }
       ]
     }
@@ -60,7 +60,9 @@ export default function Navigation() {
                   Home
                 </Link>
 
-                {Object.entries(navigation).map(([key, section]) => (
+                {Object.entries(navigation).map(([key, section], idx, arr) => {
+                  const isLast = idx === arr.length - 1;
+                  return (
                   <div key={key} onMouseEnter={() => setOpenDropdown(key)} className="relative">
                     <button className="flex items-center px-3.5 py-2 text-xl text-[#264563] hover:bg-gray-300/40 rounded-xl transition-colors">
                       <span>{section.name}</span>
@@ -69,9 +71,9 @@ export default function Navigation() {
                     {/* Vertical tick at text start */}
                     <div className={`absolute bottom-0 left-3.5 w-px h-2 bg-[#264563]/60 transition-opacity duration-500 ${openDropdown === key ? 'opacity-100' : 'opacity-0'}`} />
 
-                    {/* Dropdown items — absolutely positioned under this button, left-aligned with its text */}
-                    <div className={`absolute top-full left-0 pt-2 transition-opacity duration-500 ${openDropdown === key ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                      <div className="flex flex-col gap-1.5">
+                    {/* Dropdown items — last dropdown aligns right to avoid cutoff */}
+                    <div className={`absolute top-full ${isLast ? 'right-0' : 'left-0'} pt-2 transition-opacity duration-500 ${openDropdown === key ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                      <div className={`flex flex-col gap-1.5 ${isLast ? 'items-end' : ''}`}>
                         {section.items.map((item) => (
                           <Link
                             key={item.href}
@@ -85,7 +87,8 @@ export default function Navigation() {
                       </div>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
 
                 {/* Horizontal line */}
                 <div className={`absolute bottom-0 left-0 right-0 h-px bg-[#264563]/40 transition-opacity duration-500 ${openDropdown ? 'opacity-100' : 'opacity-0'}`} />

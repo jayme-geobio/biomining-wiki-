@@ -43,6 +43,13 @@ export const glossaryData = {
       forMiners: "Bio-feedstock characterization should include microbial toxicity tests and buffering capacity."
     },
     {
+      term: "Flowsheet",
+      definition: "The standard mining industry term for a diagram showing how ore is processed from feed to final product through a sequence of unit operations—including crushing, grinding, separation, leaching, and refining steps",
+      examples: "Copper heap leach flowsheet, refractory gold biooxidation flowsheet, e-waste bioleaching flowsheet",
+      forBiologists: "The flowsheet shows where your biology must fit. Understanding the upstream and downstream steps—and their constraints (chemistry, residence time, throughput)—is essential for designing a viable bio-module.",
+      forMiners: "Biological steps appear in flowsheets just like any other unit operation—with the same need for mass balance, residence time calculations, and integration with existing infrastructure."
+    },
+    {
       term: "Tailings",
       definition: "Fine-grained residues after metal extraction; typically stored in engineered impoundments",
       examples: "Post-flotation tailings, heap leach residues",
@@ -62,6 +69,13 @@ export const glossaryData = {
       examples: "Rare earth elements, Ni, Co, Li, Pt-group metals",
       forBiologists: "Often present as minor or trace elements. Selective bio-ligands can capture them as co-products.",
       forMiners: "Biology's selectivity advantage is strongest for complex, multi-metal systems with critical by-products."
+    },
+    {
+      term: "Acid Mine Drainage (AMD)",
+      definition: "Acidic, metal-rich water (~pH 2-6) produced when sulfide minerals in mine waste are exposed to air, water, and microbes. Contains elevated sulfate, iron, aluminum, and toxic metals that form rust-colored deposits and can degrade water quality and aquatic ecosystems.",
+      examples: "Drainage from waste-rock dumps, tailings seepage, pit-lake inflows",
+      forBiologists: "Iron- and sulfur-oxidizing microbes accelerate AMD generation. The same biology that creates the problem can be harnessed for treatment and metal recovery.",
+      forMiners: "Major long-term liability. Biological treatment (constructed wetlands, SRB reactors) is often the most cost-effective remediation approach, with potential for metal co-product recovery."
     },
     {
       term: "Concentrate",

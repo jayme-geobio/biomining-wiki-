@@ -99,7 +99,7 @@ const flowsheetData = [
     id: 'tailings-recovery',
     title: "Tailings Reprocessing for Critical Metals",
     type: "Emerging Bio-Application",
-    description: "Historic tailings contain metals not recovered in initial processing - bioleach without rebuilding infrastructure",
+    description: <>Historic tailings contain metals not recovered in initial processing - <GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">bioleach</GlossaryTerm> without rebuilding infrastructure</>,
     diagram: `[Historic Tailings Dam]
    ↓ tailings slurry (low-grade Cu, Co, REEs)
 [Bioleach Tanks or Heap-Style Pad] ← (acidophiles, nutrients, air)
@@ -130,7 +130,7 @@ const flowsheetData = [
       }
     ],
     reality: [
-      "Historic tailings often contain critical metals (Co, REEs, PGMs) that weren't economic to recover originally",
+      <>Historic tailings often contain <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm> (Co, REEs, PGMs) that weren't economic to recover originally</>,
       "Bioleaching avoids need to re-mine and rebuild processing infrastructure",
       "Time scale: Flexible - can be slow (years for heap-style) or moderate (weeks for tanks)",
       "Dual benefit: environmental remediation + resource recovery",
@@ -142,7 +142,7 @@ const flowsheetData = [
     id: 'amd-treatment',
     title: "AMD Treatment & Metal Recovery",
     type: "Environmental Bio-Application",
-    description: "Convert acid mine drainage from liability to resource via biological treatment and selective metal recovery",
+    description: <>Convert <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">acid mine drainage</GlossaryTerm> from liability to resource via biological treatment and selective metal recovery</>,
     diagram: `[Acid Mine Drainage Source] (pH 2-4, dissolved Fe, Cu, Zn, Mn, Al, REEs)
    ↓
 [Pre-treatment: Aeration & Settling] → Fe precipitates removed
@@ -175,7 +175,7 @@ const flowsheetData = [
       }
     ],
     reality: [
-      "AMD is both environmental hazard and metal resource - contains Cu, Zn, Mn, REEs at recoverable concentrations",
+      <><GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm> is both environmental hazard and metal resource - contains Cu, Zn, Mn, REEs at recoverable concentrations</>,
       "Passive treatment (wetlands) proven for low-flow systems; bioreactors for higher flows",
       "Time scale: Hours to days (bioreactor); weeks (wetlands)",
       "Dual benefit: regulatory compliance + revenue from recovered metals",
@@ -210,6 +210,14 @@ export default function Flowsheets() {
 
         {/* Box 2: Content */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+
+          {/* What is a Flowsheet */}
+          <div className="mb-8">
+            <h2 className="text-xl font-bold text-[#264563] mb-3">What Is a Flowsheet?</h2>
+            <p className="text-[#264563]">
+              A <GlossaryTerm term="Flowsheet" definition="The standard mining industry term for a diagram showing how ore is processed from feed to final product through a sequence of unit operations">flowsheet</GlossaryTerm> is the standard mining industry term for a diagram showing how ore moves through each processing step to become saleable metal. It reveals where biology can plug in, what constraints exist (chemistry, time, scale), and whether biological innovations fit existing operations.
+            </p>
+          </div>
 
           {/* Flowsheets */}
           <div className="space-y-4">

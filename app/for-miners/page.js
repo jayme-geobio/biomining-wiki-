@@ -59,7 +59,7 @@ export default function ForMiners() {
               </p>
               <div className="bg-[#264563]/5 rounded-lg p-4 border-l-4 border-[#264563] mt-4">
                 <p className="text-[#264563]">
-                  Think of biology not as a replacement for your flowsheet, but as a <strong>new class of reagent</strong>—one
+                  Think of biology not as a replacement for your <GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheet</GlossaryTerm>, but as a <strong>new class of reagent</strong>—one
                   that can adapt, self-regenerate, and operate selectively where conventional chemistry struggles.
                 </p>
               </div>
@@ -113,7 +113,7 @@ export default function ForMiners() {
               <MechanismCard
                 title="Complexolysis"
                 description="Production of ligands that complex (bind) metals and keep them in solution"
-                application="Metallophores, siderophores, organic acids"
+                application={<><GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">Metallophores</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophores</GlossaryTerm>, organic acids</>}
                 example="Microbes secrete organic acids that chelate rare earth elements"
                 color="emerald"
                 usedBy="Microbes, Biomolecules"
@@ -123,7 +123,7 @@ export default function ForMiners() {
                 title="Biosorption & Bioaccumulation"
                 description={<>Metals stick to cell surfaces or <GlossaryTerm term="Extracellular Polymeric Substances (EPS)" definition="Polymers secreted by microbes that form biofilms and modify local chemistry">EPS</GlossaryTerm> (biosorption), or are actively taken up and stored (bioaccumulation)</>}
                 application="Rapid metal capture, often independent of metabolism"
-                example="Algae and bacteria sorb heavy metals from acid mine drainage (AMD) on cell surfaces"
+                example={<>Algae and bacteria sorb heavy metals from <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">acid mine drainage (AMD)</GlossaryTerm> on cell surfaces</>}
                 color="teal"
                 usedBy="Microbes, Phytomining"
               />
@@ -132,7 +132,7 @@ export default function ForMiners() {
                 title="Bioprecipitation & Biomineralization"
                 description="Microbial activity alters local chemistry, causing dissolved metals to precipitate from solution"
                 application="Metal removal from solution in remediation and recovery systems"
-                example="Sulfate-reducing bacteria (SRB) produce sulfide that precipitates copper (Cu), zinc (Zn), and other metals from solution"
+                example={<><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">Sulfate-reducing bacteria (SRB)</GlossaryTerm> produce sulfide that precipitates copper (Cu), zinc (Zn), and other metals from solution</>}
                 color="sky"
                 usedBy="Microbes"
               />
@@ -149,14 +149,14 @@ export default function ForMiners() {
             <div className="space-y-6">
 
               {/* Classical Bioleaching & Biooxidation */}
-              <div className="bg-[#264563]/5 rounded-xl p-5 border border-[#264563]/20">
-                <h3 className="text-lg font-bold text-[#264563] mb-4 pb-2 border-b border-[#264563]/20">
+              <div className="bg-[#264563]/10 rounded-xl p-5 border border-[#264563]/30">
+                <h3 className="text-lg font-bold text-[#264563] mb-4 pb-2 border-b border-[#264563]/30">
                   Classical Bioleaching & Biooxidation
                 </h3>
                 <div className="space-y-4">
                   <ModalityCard
                     title="Dump & Heap Bioleaching"
-                    description={<>Low-grade sulfide <GlossaryTerm term="Ore" definition="Rock that contains a commodity (metal/mineral) in concentrations and contexts that are economically mineable">ores</GlossaryTerm> piled on pads and irrigated with acidic ferric solutions. Native or inoculated <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> catalyze Fe & S oxidation and metal release.</>}
+                    description={<>Low-grade sulfide ores piled on pads and irrigated with acidic ferric solutions. Native or inoculated <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> catalyze Fe & S oxidation and metal release.</>}
                     applications="Common for copper sulfide ores, with growing interest for other sulfides"
                     parameters={[
                       "Time: Months to years",
@@ -211,8 +211,8 @@ export default function ForMiners() {
               </div>
 
               {/* Advanced Bioseparations & Waste Recovery */}
-              <div className="bg-[#264563]/5 rounded-xl p-5 border border-[#264563]/20">
-                <h3 className="text-lg font-semibold text-[#264563] mb-4 pb-2 border-b border-[#264563]/20">
+              <div className="bg-emerald-50 rounded-xl p-5 border border-emerald-600/30">
+                <h3 className="text-lg font-bold text-emerald-700 mb-4 pb-2 border-b border-emerald-600/30">
                   Advanced Bioseparations & Waste Recovery
                 </h3>
 
@@ -314,8 +314,8 @@ function BiologicalSystemsSection() {
                 <NeedCard
                   title="Carbon Source"
                   examples={[
-                    "carbon dioxide (CO₂) (autotrophs)",
-                    "Organic carbon (heterotrophs)",
+                    <>carbon dioxide (CO₂) (<GlossaryTerm term="Autotroph" definition="Organisms that use CO₂ as their carbon source">autotrophs</GlossaryTerm>)</>,
+                    <>Organic carbon (<GlossaryTerm term="Heterotroph" definition="Organisms that rely on organic carbon">heterotrophs</GlossaryTerm>)</>,
                     "Mixed modes"
                   ]}
                 />
@@ -560,10 +560,10 @@ function MechanismCard({ title, description, application, example, color, usedBy
 
 function EmerginTechCard({ expanded, onToggle }) {
   return (
-    <div className="rounded-xl border-2 border-white overflow-hidden mt-4">
+    <div className="rounded-xl border-2 border-emerald-600/20 overflow-hidden mt-4">
       <button
         onClick={onToggle}
-        className="w-full bg-[#264563] px-6 py-4 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
+        className="w-full bg-emerald-700 px-6 py-4 flex items-center justify-between hover:bg-emerald-800 transition-colors"
       >
         <h4 className="text-base font-bold text-white">Emerging Technologies for REEs & Complex Matrices</h4>
         {expanded ? <ChevronDown className="w-5 h-5 text-white flex-shrink-0" /> : <ChevronRight className="w-5 h-5 text-white flex-shrink-0" />}
@@ -572,17 +572,17 @@ function EmerginTechCard({ expanded, onToggle }) {
         <div className="bg-white p-5">
           <p className="text-[#264563] text-sm mb-7">Biomolecular ligands and non-chromatographic formats that selectively capture and concentrate rare earth elements and critical metals from complex, dilute feed streams.</p>
           <div className="grid grid-cols-3 gap-3 mb-7">
-            <div className="bg-[#264563]/5 rounded-lg p-3 border border-[#264563]/20">
-              <p className="text-[#264563] font-semibold text-xs mb-1">Protein/Peptide-Based Ligands</p>
-              <p className="text-[#264563]/70 text-xs">(e.g., lanmodulin) for selective REE capture</p>
+            <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
+              <p className="text-emerald-800 font-semibold text-xs mb-1">Protein/Peptide-Based Ligands</p>
+              <p className="text-emerald-700/70 text-xs">(e.g., lanmodulin) for selective REE capture</p>
             </div>
-            <div className="bg-[#264563]/5 rounded-lg p-3 border border-[#264563]/20">
-              <p className="text-[#264563] font-semibold text-xs mb-1">Hybrid Biomolecular Ligands</p>
-              <p className="text-[#264563]/70 text-xs">Peptides + polymers for improved manufacturability</p>
+            <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
+              <p className="text-emerald-800 font-semibold text-xs mb-1">Hybrid Biomolecular Ligands</p>
+              <p className="text-emerald-700/70 text-xs">Peptides + polymers for improved manufacturability</p>
             </div>
-            <div className="bg-[#264563]/5 rounded-lg p-3 border border-[#264563]/20">
-              <p className="text-[#264563] font-semibold text-xs mb-1">Non-Chromatographic Deployments</p>
-              <p className="text-[#264563]/70 text-xs">Membranes, beads, structured packings for PLS polishing</p>
+            <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
+              <p className="text-emerald-800 font-semibold text-xs mb-1">Non-Chromatographic Deployments</p>
+              <p className="text-emerald-700/70 text-xs">Membranes, beads, structured packings for PLS polishing</p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4 mb-3">
@@ -616,10 +616,10 @@ function EmerginTechCard({ expanded, onToggle }) {
 
 function BioremediationCard({ expanded, onToggle }) {
   return (
-    <div className="rounded-xl border-2 border-white overflow-hidden mt-4">
+    <div className="rounded-xl border-2 border-emerald-600/20 overflow-hidden mt-4">
       <button
         onClick={onToggle}
-        className="w-full bg-[#264563] px-6 py-4 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
+        className="w-full bg-emerald-700 px-6 py-4 flex items-center justify-between hover:bg-emerald-800 transition-colors"
       >
         <h4 className="text-base font-bold text-white">Bioremediation & Recovery from Waste</h4>
         {expanded ? <ChevronDown className="w-5 h-5 text-white flex-shrink-0" /> : <ChevronRight className="w-5 h-5 text-white flex-shrink-0" />}
@@ -628,17 +628,17 @@ function BioremediationCard({ expanded, onToggle }) {
         <div className="bg-white p-5">
           <p className="text-[#264563] text-sm mb-7">Biological systems that remove or recover metals from mine drainage, waste streams, and secondary sources — converting liabilities into recoverable resources.</p>
           <div className="grid grid-cols-3 gap-3 mb-7">
-            <div className="bg-[#264563]/5 rounded-lg p-3 border border-[#264563]/20">
-              <p className="text-[#264563] font-semibold text-xs mb-1">AMD/ARD Bioremediation</p>
-              <p className="text-[#264563]/70 text-xs">Constructed wetlands, <GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> bioreactors, and algae systems that remove metals and raise pH</p>
+            <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
+              <p className="text-emerald-800 font-semibold text-xs mb-1">AMD/ARD Bioremediation</p>
+              <p className="text-emerald-700/70 text-xs">Constructed wetlands, <GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> bioreactors, and algae systems that remove metals and raise pH</p>
             </div>
-            <div className="bg-[#264563]/5 rounded-lg p-3 border border-[#264563]/20">
-              <p className="text-[#264563] font-semibold text-xs mb-1">Metal Recovery from AMD</p>
-              <p className="text-[#264563]/70 text-xs">Selective sorbents and biomineralization to recover copper (Cu), zinc (Zn), REEs, and other metals</p>
+            <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
+              <p className="text-emerald-800 font-semibold text-xs mb-1">Metal Recovery from AMD</p>
+              <p className="text-emerald-700/70 text-xs">Selective sorbents and biomineralization to recover copper (Cu), zinc (Zn), REEs, and other metals</p>
             </div>
-            <div className="bg-[#264563]/5 rounded-lg p-3 border border-[#264563]/20">
-              <p className="text-[#264563] font-semibold text-xs mb-1">E-waste & Urban Mining</p>
-              <p className="text-[#264563]/70 text-xs"><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> and <GlossaryTerm term="Biosorption" definition="Sorption of dissolved metals onto biomass or extracellular polymeric substances (EPS)">biosorption</GlossaryTerm> applied to circuit boards, magnets, and electronics</p>
+            <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
+              <p className="text-emerald-800 font-semibold text-xs mb-1">E-waste & Urban Mining</p>
+              <p className="text-emerald-700/70 text-xs"><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> and <GlossaryTerm term="Biosorption" definition="Sorption of dissolved metals onto biomass or extracellular polymeric substances (EPS)">biosorption</GlossaryTerm> applied to circuit boards, magnets, and electronics</p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4 mb-3">

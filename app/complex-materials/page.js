@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
@@ -22,7 +22,8 @@ const materialsData = {
     bioOpportunities: [
       {
         title: "Constructed Wetlands & SRB Systems",
-        description: "Passive treatment using sulfate-reducing bacteria to precipitate metals as sulfides while raising pH and removing toxins"
+        description: <><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">Sulfate-reducing bacteria</GlossaryTerm> passively precipitate metals as sulfides while raising pH and removing toxins</>
+
       },
       {
         title: "Engineered Consortia for Bio-immobilization",
@@ -53,7 +54,8 @@ const materialsData = {
     bioOpportunities: [
       {
         title: "Refractory Biooxidation",
-        description: "For gold and other metals trapped in sulfides - biooxidation breaks down sulfide matrix to release metals (BIOX®-style processing)"
+        description: <>For gold and other metals trapped in sulfides - <GlossaryTerm term="Biooxidation" definition="Microbially driven oxidation of sulfides where the valuable metal remains in the solid phase">biooxidation</GlossaryTerm> breaks down sulfide matrix to release metals (BIOX®-style processing)</>
+
       },
       {
         title: "Biogenic Lixiviants",
@@ -84,7 +86,8 @@ const materialsData = {
     bioOpportunities: [
       {
         title: "Secondary Metal Recovery",
-        description: "Bioleaching or biosorption to recover Cu, Au, REEs, and other metals left behind in initial processing"
+        description: <><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> or <GlossaryTerm term="Biosorption" definition="Sorption of dissolved metals onto biomass or extracellular polymeric substances (EPS)">biosorption</GlossaryTerm> to recover Cu, Au, REEs, and other metals left behind in initial processing</>
+
       },
       {
         title: "Biological Stabilization",
@@ -92,11 +95,13 @@ const materialsData = {
       },
       {
         title: "Tailings Revalorization",
-        description: "Historic tailings often contain critical metals that weren't extracted originally - making bioleaching possible without expensive re-mining infrastructure"
+        description: <>Historic tailings often contain <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm> that weren't extracted originally - making <GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">bioleaching</GlossaryTerm> possible without expensive re-mining infrastructure</>
+
       },
       {
         title: "Orebank Standardization",
-        description: "Tailings-derived samples as standardized test feedstocks for biotechnology benchmarking across labs"
+        description: <>Tailings-derived samples as standardized test <GlossaryTerm term="Feedstock" definition="Material fed into a process step">feedstocks</GlossaryTerm> for biotechnology benchmarking across labs</>
+
       }
     ],
     whyBiology: "Bioleaching is cheaper than rebuilding infrastructure. Biocement and stabilization avoid toxic chemical transport to remote sites.",
@@ -119,7 +124,8 @@ const materialsData = {
       },
       {
         title: "Metal-Binding Proteins",
-        description: "Bioseparation using engineered proteins to selectively grab specific metals from complex e-waste leachates"
+        description: <><GlossaryTerm term="Bioseparation" definition="Use of biomolecules (proteins, peptides, polymers, whole cells) as selective sorbents or separation agents">Bioseparation</GlossaryTerm> using engineered proteins to selectively grab specific metals from complex e-waste leachates</>
+
       },
       {
         title: "Biogenic Acids On-Site",
@@ -154,7 +160,8 @@ const materialsData = {
       },
       {
         title: "Red Mud Valorization",
-        description: "Bioleaching of Sc, REEs, and other metals from highly alkaline bauxite processing waste"
+        description: <><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> of Sc, REEs, and other metals from highly alkaline bauxite processing waste</>
+
       },
       {
         title: "Produced Water Cleanup",
@@ -173,6 +180,22 @@ export default function ComplexMaterials() {
     setOpenMaterials(prev => { const next = new Set(prev); next.has(key) ? next.delete(key) : next.add(key); return next; });
   }
 
+  // Auto-open and scroll to material from URL hash
+  useEffect(() => {
+    function openFromHash() {
+      const hash = window.location.hash.slice(1);
+      if (!hash || !materialsData[hash]) return;
+      setOpenMaterials(new Set([hash]));
+      setTimeout(() => {
+        const el = document.getElementById(`material-${hash}`);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+    return () => window.removeEventListener('hashchange', openFromHash);
+  }, []);
+
   return (
     <CommentableContent pageName="complex-materials">
 
@@ -181,7 +204,7 @@ export default function ComplexMaterials() {
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
           <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
-            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Complex Materials Guide</h1>
+            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Complex Materials Playbook</h1>
             <p className="text-xl text-[#264563]">
               Materials too mineralogically complex, contaminated, or low-grade for conventional processing
             </p>
@@ -197,13 +220,13 @@ export default function ComplexMaterials() {
             <h2 className="text-xl font-bold text-[#264563] mb-3">Where Biology Adds Value</h2>
             <div className="text-[#264563] space-y-2">
               <p className="mb-3">
-                Conventional mining is highly optimized for high-<GlossaryTerm term="Grade" definition="Concentration of a valuable element or mineral in ore">grade</GlossaryTerm> <GlossaryTerm term="Ore" definition="Rock that contains a commodity (metal/mineral) in concentrations and contexts that are economically mineable">ores</GlossaryTerm>. For complex
+                Conventional mining is highly optimized for high-<GlossaryTerm term="Grade" definition="Concentration of a valuable element or mineral in ore">grade</GlossaryTerm> ores. For complex
                 materials, biotechnology offers a complementary approach that can shift the economics and reduce environmental impact.
               </p>
               {[
                 ["Low-grade material", "where conventional processing is uneconomic"],
                 ["Complex mineralogy", "(refractory ores, polymetallic systems)"],
-                ["Environmental hazards", <>(AMD, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, legacy sites)</>],
+                ["Environmental hazards", <>(<GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm>, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, legacy sites)</>],
                 ["Remote locations", "where chemical transport is expensive or impossible"],
                 ["Thin margins", "where small OPEX reductions make projects viable"],
               ].map(([bold, rest], i) => (
@@ -223,6 +246,7 @@ export default function ComplexMaterials() {
             {Object.keys(materialsData).map(key => (
               <MaterialCard
                 key={key}
+                id={`material-${key}`}
                 material={materialsData[key]}
                 expanded={openMaterials.has(key)}
                 onToggle={() => toggleMaterial(key)}
@@ -246,7 +270,7 @@ export default function ComplexMaterials() {
               ← Back to Home
             </Link>
             <Link href="/research" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
-              Research Frontiers →
+              Actionable Problems →
             </Link>
           </div>
         </div>
@@ -256,10 +280,10 @@ export default function ComplexMaterials() {
   );
 }
 
-function MaterialCard({ material, expanded, onToggle }) {
+function MaterialCard({ id, material, expanded, onToggle }) {
   const Icon = material.icon;
   return (
-    <div className="rounded-xl border-2 border-white overflow-hidden">
+    <div id={id} className="rounded-xl border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
         className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors"

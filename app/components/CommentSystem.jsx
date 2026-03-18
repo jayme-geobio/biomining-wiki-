@@ -13,6 +13,9 @@ export default function CommentSystem({ pageName, contentRef }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState(null);
   const [showComments, setShowComments] = useState(false);
+  const [wantsToContribute, setWantsToContribute] = useState(false);
+  const [contributorName, setContributorName] = useState('');
+  const [contributorEmail, setContributorEmail] = useState('');
 
   // Load comments on mount
   useEffect(() => {
@@ -27,14 +30,14 @@ export default function CommentSystem({ pageName, contentRef }) {
       const selection = window.getSelection();
       const text = selection.toString().trim();
 
-      if (text.length >= 10) {
+      if (text.length >= 5) {
         const range = selection.getRangeAt(0);
         const rect = range.getBoundingClientRect();
 
         setSelectedText(text);
         setCommentPosition({
-          x: rect.right + 10,
-          y: rect.top
+          x: rect.right + 4,
+          y: rect.top - 36
         });
 
         // Get section title
@@ -143,8 +146,8 @@ export default function CommentSystem({ pageName, contentRef }) {
   const handleSubmitComment = async (e) => {
     e.preventDefault();
 
-    if (commentText.trim().length < 10) {
-      setSubmitMessage({ type: 'error', text: 'Comment must be at least 10 characters long.' });
+    if (commentText.trim().length < 5) {
+      setSubmitMessage({ type: 'error', text: 'Comment must be at least 5 characters long.' });
       return;
     }
 
@@ -164,7 +167,13 @@ export default function CommentSystem({ pageName, contentRef }) {
           context: {
             sectionTitle: sectionTitle || 'Main Content',
             selectedText
-          }
+          },
+          ...(wantsToContribute && {
+            contributor: {
+              name: contributorName,
+              email: contributorEmail
+            }
+          })
         })
       });
 
@@ -182,6 +191,9 @@ export default function CommentSystem({ pageName, contentRef }) {
         setCommentText('');
         setShowCommentForm(false);
         setSelectedText('');
+        setWantsToContribute(false);
+        setContributorName('');
+        setContributorEmail('');
 
         // Clear message after 5 seconds
         setTimeout(() => setSubmitMessage(null), 5000);
@@ -250,6 +262,38 @@ export default function CommentSystem({ pageName, contentRef }) {
               maxLength="500"
               required
             />
+            {/* Contribute toggle */}
+            <div className="mt-3">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={wantsToContribute}
+                  onChange={(e) => setWantsToContribute(e.target.checked)}
+                  className="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                />
+                <span className="text-xs text-slate-600">Interested in helping build out this section?</span>
+              </label>
+              {wantsToContribute && (
+                <div className="mt-2 space-y-2 p-3 bg-emerald-50 rounded-lg border border-emerald-200">
+                  <p className="text-xs text-emerald-700 font-medium">Share your contact info and we'll reach out:</p>
+                  <input
+                    type="text"
+                    value={contributorName}
+                    onChange={(e) => setContributorName(e.target.value)}
+                    placeholder="Your name"
+                    className="w-full p-2 border border-slate-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-900"
+                  />
+                  <input
+                    type="email"
+                    value={contributorEmail}
+                    onChange={(e) => setContributorEmail(e.target.value)}
+                    placeholder="Your email"
+                    className="w-full p-2 border border-slate-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-900"
+                  />
+                </div>
+              )}
+            </div>
+
             <div className="flex items-center justify-between mt-3">
               <span className="text-xs text-slate-500">
                 {commentText.length}/500 characters

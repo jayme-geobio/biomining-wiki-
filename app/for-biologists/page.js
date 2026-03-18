@@ -96,7 +96,7 @@ export default function ForBiologists() {
                 what={<>Choosing a mining method (open pit vs underground), mine layout, and routing material to ore stockpiles, low-grade stockpiles, waste dumps, or <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm></>}
                 whyBiology={[
                   "Decisions here govern tonnage, time, and access for your process",
-                  <>Long-residence-time bio-processes best suited for stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or AMD</>,
+                  <>Long-residence-time bio-processes best suited for stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm></>,
                   "Include bio-recovery in closure plans from day one"
                 ]}
                 whereBio={[
@@ -111,7 +111,7 @@ export default function ForBiologists() {
                 color="emerald"
                 what="Drill, blast, load, and haul rock. Scale: tens to hundreds of thousands of tonnes per day. Mix of ore and waste is imperfect"
                 whyBiology={[
-                  <>Input material is stressed, mixed, partly oxidized rock - not pure <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">minerals</GlossaryTerm></>,
+                  "Input material is stressed, mixed, partly oxidized rock - not pure minerals",
                   "Size distribution and surface damage from blasting affect leach kinetics",
                   "Water infiltration and oxygen diffusion are key for heaps and in-situ leaching"
                 ]}
@@ -125,10 +125,10 @@ export default function ForBiologists() {
                 number="4"
                 title="Comminution"
                 color="teal"
-                what={<>Crushing and grinding to liberate <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">minerals</GlossaryTerm> and increase surface area for downstream processing</>}
+                what="Crushing and grinding to liberate minerals and increase surface area for downstream processing"
                 whyBiology={[
                   "Comminution is often the most energy-intensive step in mining",
-                  <>Separation efficiency strongly depends on <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">mineral</GlossaryTerm> surface chemistry and particle size</>,
+                  "Separation efficiency strongly depends on mineral surface chemistry and particle size",
                   "Biology that allows coarser processing without sacrificing recovery is extremely valuable"
                 ]}
                 whereBio={[
@@ -142,12 +142,12 @@ export default function ForBiologists() {
                 color="sky"
                 what={<>Metals are either concentrated using flotation, gravity, or magnetic separation, or extracted by leaching into solution. These routes produce either <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrate</GlossaryTerm> or a metal-bearing leach solution, often called a pregnant leach solution (PLS)</>}
                 whyBiology={[
-                  <><GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">Mineral</GlossaryTerm> surface chemistry governs flotation selectivity and leach kinetics</>,
-                  <>Biology can modify <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">mineral</GlossaryTerm> surfaces to improve or suppress flotation of specific minerals</>,
+                  "Mineral surface chemistry governs flotation selectivity and leach kinetics",
+                  "Biology can modify mineral surfaces to improve or suppress flotation of specific minerals",
                   <><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> can replace or supplement chemical leaching for sulfide ores</>
                 ]}
                 whereBio={[
-                  <>Bio-modification of <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">mineral</GlossaryTerm> surfaces to improve flotation or separation</>,
+                  "Bio-modification of mineral surfaces to improve flotation or separation",
                   <>Bioleaching/<GlossaryTerm term="Biooxidation" definition="Microbially driven oxidation of sulfides where the valuable metal remains in the solid phase">biooxidation</GlossaryTerm> for direct metal extraction</>,
                 ]}
               />
@@ -173,13 +173,13 @@ export default function ForBiologists() {
                 color="rose"
                 what={<>Managing <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> storage, waste-rock dumps, water systems, and long-term closure obligations</>}
                 whyBiology={[
-                  "Acid mine drainage and seepage can persist for decades",
+                  <><GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">Acid mine drainage</GlossaryTerm> and seepage can persist for decades</>,
                   "This is where liability and social license live",
                   "Most mature biological applications are in this space"
                 ]}
                 whereBio={[
-                  <>Constructed wetlands and <GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> reactors for AMD</>,
-                  <>Treating AMD and <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> as a resource (recover Cu, Zn, REEs)</>,
+                  <>Constructed wetlands and <GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> reactors for <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm></>,
+                  <>Treating <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm> and <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> as a resource (recover Cu, Zn, REEs)</>,
                   "Using former mine sites as test beds for new tech"
                 ]}
               />
@@ -198,7 +198,7 @@ export default function ForBiologists() {
                 title="Time"
                 icon={Clock}
                 description="Operations expect fast processing times - often hours to days, not months to years (except in heap or dump leaching)"
-                implication={<>If your process is slow, consider treating stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or AMD where slow is acceptable, or use biology to polish/condition streams</>}
+                implication={<>If your process is slow, consider treating stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm> where slow is acceptable, or use biology to polish/condition streams</>}
               />
               <ConstraintCard
                 title="Throughput & Scale"

@@ -52,7 +52,7 @@ export default function WhatIsBiomining() {
               <p className="mt-4">
                 That definition includes <strong>cell-free proteins and separation modules</strong> as well as
                 whole-cell systems. A viable industrial pathway will often combine several mechanisms in
-                <strong> hybrid </strong><Link href="/flowsheets" className="font-bold underline hover:text-[#264563]/70 transition-colors">flowsheets</Link>.
+                <strong> hybrid </strong><GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheets</GlossaryTerm>.
               </p>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function WhatIsBiomining() {
               <MechanismCard
                 number="2"
                 title={<GlossaryTerm term="Biooxidation" definition="Microbially driven oxidation of sulfides where the valuable metal remains in the solid phase">Biooxidation</GlossaryTerm>}
-                description={<>Microbial oxidation of sulfide <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">minerals</GlossaryTerm> where the valuable metal remains solid but becomes accessible to downstream processing</>}
+                description="Microbial oxidation of sulfide minerals where the valuable metal remains solid but becomes accessible to downstream processing"
                 details="Classically used for refractory gold. Often deployed as a pre-treatment prior to cyanidation"
                 icon={Zap}
                 color="amber"
@@ -92,7 +92,7 @@ export default function WhatIsBiomining() {
               <MechanismCard
                 number="4"
                 title="Bioprecipitation and Controlled Mineral Formation"
-                description={<>Microbially driven precipitation of <GlossaryTerm term="Mineral" definition="Naturally occurring, inorganic solid substance with a defined chemical composition and crystalline structure">minerals</GlossaryTerm> that concentrate or immobilize metals, enabling their recovery or stabilization</>}
+                description="Microbially driven precipitation of minerals that concentrate or immobilize metals, enabling their recovery or stabilization"
                 details="Includes biomineralization, biocement, and microbially induced mineral formation (e.g., metal sulfides, carbonates, phosphates)"
                 icon={Beaker}
                 color="teal"
@@ -171,7 +171,7 @@ export default function WhatIsBiomining() {
           <div className="text-[#264563] space-y-3">
             <p>
               Biomining is <strong>not a replacement for mines</strong>. It's a <strong>toolkit of modules</strong> that
-              can plug into existing <Link href="/flowsheets" className="underline hover:text-[#264563]/70 transition-colors">flowsheets</Link> where:
+              can plug into existing <GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheets</GlossaryTerm> where:
             </p>
             <ul className="ml-6 space-y-2">
               <li className="flex items-start gap-2">

@@ -225,7 +225,7 @@ export default function Research() {
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
           <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
-            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Research Frontiers & Collaboration</h1>
+            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Actionable Problems</h1>
             <p className="text-xl text-[#264563]">
               Open problems, infrastructure needs, and collaboration opportunities in biomining
             </p>

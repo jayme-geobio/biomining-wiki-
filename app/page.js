@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, GraduationCap, Factory, AlertTriangle, Target, TrendingUp } from 'lucide-react';
+import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, GraduationCap, Factory, AlertTriangle, Target, TrendingUp, MessageSquare, HelpCircle } from 'lucide-react';
 
 export default function BiominingHome() {
   return (
@@ -16,10 +16,10 @@ export default function BiominingHome() {
               {/* Solid card */}
               <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white flex flex-col justify-between">
                 <h1 className="text-4xl font-bold text-[#264563] leading-tight">
-                  Biomining Wiki
+                  The Biomining Handbook
                 </h1>
                 <p className="text-lg text-[#264563]">
-                  A bridge between biology and mining for critical mineral recovery
+                  A practical guide for biologists and mining professionals
                 </p>
               </div>
               {/* Ghost outline box */}
@@ -27,12 +27,66 @@ export default function BiominingHome() {
             </div>
           </div>
 
-          {/* What is Biomining Definition */}
+          {/* About This Handbook */}
           <div className="mb-6">
             <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
               <h3 className="text-xl font-bold text-[#264563] mb-3 flex items-center gap-2">
                 <GraduationCap className="w-7 h-7 text-emerald-600" />
-                What This Wiki Covers
+                About This Handbook
+              </h3>
+              <div className="text-[#264563] space-y-3">
+                <p>
+                  This handbook bridges biology and mining for critical mineral recovery.
+                </p>
+                <div>
+                  <p className="font-semibold mb-2">What you'll find:</p>
+                  <div className="grid md:grid-cols-2 gap-x-6 gap-y-1 ml-1">
+                    <div className="flex items-start gap-2">
+                      <span className="text-emerald-600" style={{marginTop: '-0.1em'}}>•</span>
+                      <span>Biomining fundamentals for both biotechnologists and mining professionals</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-emerald-600" style={{marginTop: '-0.1em'}}>•</span>
+                      <span>Real-world examples and flowsheets of biological integration</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-emerald-600" style={{marginTop: '-0.1em'}}>•</span>
+                      <span>Practical tools for evaluating biological solutions</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-emerald-600" style={{marginTop: '-0.1em'}}>•</span>
+                      <span>Shared vocabulary and frameworks bridging both fields</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-sm italic">
+                  Our goal: a gold-standard, technically accurate resource for both communities to design better projects together.
+                </p>
+                <div className="bg-white rounded-xl p-4 border border-gray-200 mt-4">
+                  <p className="font-semibold text-[#264563] mb-2 flex items-center gap-2">
+                    <MessageSquare className="w-5 h-5 text-emerald-600" />
+                    Contribute to This Handbook:
+                  </p>
+                  <p className="text-[#264563] text-sm">
+                    To keep this resource current and accurate, we've added a commenting feature. To comment, highlight the text you want to comment on and click the <MessageSquare className="w-3.5 h-3.5 inline text-emerald-600" /> comment icon that appears. Comment on sections needing updates, additions, or corrections.
+                  </p>
+                  <p className="text-[#264563] text-sm mt-2">
+                    If you're interested in helping author or build out a section, use the "Interested in Contributing" option in the comment form to share your contact information and we will reach out.
+                  </p>
+                  <p className="text-[#264563]/60 text-xs mt-2 italic">
+                    Note: Commenting is not available on the home page. All comments remain confidential and are reviewed by Homeworld Collective staff.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* What is Biomining */}
+          <div className="mb-6">
+            <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
+              <h3 className="text-xl font-bold text-[#264563] mb-3 flex items-center gap-2">
+                <HelpCircle className="w-7 h-7 text-emerald-600" />
+                What is Biomining?
               </h3>
               <div>
                 <p className="text-[#264563] mb-4">
@@ -60,10 +114,11 @@ export default function BiominingHome() {
                     </ul>
                   </div>
                 </div>
-                <p className="text-[#264563] mt-4 text-sm italic">
-                  Our goal: a gold-standard, technically accurate, practically oriented resource for both communities
-                  to design better projects together.
-                </p>
+                <div className="flex justify-end mt-4">
+                  <Link href="/what-is-biomining" className="inline-flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-medium text-sm transition-colors">
+                    Learn more about biomining →
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -100,10 +155,8 @@ export default function BiominingHome() {
               icon={Microscope}
               color="emerald"
               sections={[
-                { title: "The Mining Value Chain", icon: Factory },
-                { title: "Example Flowsheets", icon: Target },
-                { title: "Key Constraints", icon: AlertTriangle },
-                { title: "Design Checklist", icon: BookOpen }
+                { title: "Mining Value Chain - Stage by Stage", icon: Factory },
+                { title: "Constraints That Shape Bio-Adoption", icon: AlertTriangle }
               ]}
               link="/for-biologists"
             />
@@ -114,10 +167,9 @@ export default function BiominingHome() {
               icon={Mountain}
               color="blue"
               sections={[
-                { title: "Microbial Energy & Metabolism", icon: Microscope },
-                { title: "Mechanisms of Metal Mobilization", icon: Beaker },
-                { title: "Biomining Modalities", icon: Factory },
-                { title: "Evaluation Checklist", icon: BookOpen }
+                { title: "Biological Systems in Mining", icon: Microscope },
+                { title: "Mechanisms of Metal Mobilization & Capture", icon: Beaker },
+                { title: "Biomining Modalities & Flowsheets", icon: Factory }
               ]}
               link="/for-miners"
             />
@@ -143,13 +195,13 @@ export default function BiominingHome() {
                   link="/glossary"
                 />
                 <ResourceCard
-                  title="Complex Materials"
+                  title="Complex Materials Playbook"
                   description="Tailings, AMD, e-waste, and where biology helps most"
                   icon={Droplets}
                   link="/complex-materials"
                 />
                 <ResourceCard
-                  title="Flowsheets"
+                  title="Example Flowsheets"
                   description="Real-world integration examples and bio-modules"
                   icon={Target}
                   link="/flowsheets"

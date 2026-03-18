@@ -21,7 +21,7 @@ export default function TechnologyEvaluation() {
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
           <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
-            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Technology Evaluation</h1>
+            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Technology Assessment Checklists</h1>
             <p className="text-xl text-[#264563]">
               Checklists for evaluating biomining concepts and bio-solutions
             </p>
@@ -32,9 +32,16 @@ export default function TechnologyEvaluation() {
         {/* Box 2: Content */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
 
+          {/* Intro */}
+          <div className="mb-8">
+            <p className="text-[#264563]">
+              Bridging biology and mining requires asking the right questions upfront. These checklists help biologists prepare robust proposals that address mining realities, and help mining professionals evaluate whether a bio-technology is technically sound and economically viable for their operation.
+            </p>
+          </div>
+
           {/* Quick Design Checklist (from Biology perspective) */}
           <Section
-            title="For Biologists"
+            title="For Biologists: Preparing Your Mining Pitch"
             icon={FileCheck}
             expanded={openSections.has('design')}
             onToggle={() => toggleSection('design')}
@@ -88,7 +95,7 @@ export default function TechnologyEvaluation() {
 
           {/* Evaluation Checklist for Bio-Solutions (from Mining perspective) */}
           <Section
-            title="For Miners"
+            title="For Miners: Evaluating Bio-Technologies"
             icon={FileCheck}
             expanded={openSections.has('evaluation')}
             onToggle={() => toggleSection('evaluation')}
