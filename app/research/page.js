@@ -158,7 +158,7 @@ export default function Research() {
               In November 2025, Homeworld Collective convened the <strong>Biomining Under Complex Conditions</strong> workshop, bringing together researchers, mining professionals, biotechnologists, and other stakeholders to identify the most pressing challenges and opportunities in biomining. Through structured discussion and collaborative workshopping, participants generated a set of <strong>actionable problem statements</strong> spanning technical, institutional, and ecosystem challenges.
             </p>
             <p>
-              The themes below represent a high-level preview of the patterns that emerged from the workshop.
+              The themes below capture key patterns from the workshop, helping accelerate innovation and align stakeholders around critical barriers in biomining.
             </p>
             <p className="italic text-[#264563]/60 text-sm mt-2">
               Detailed problem statements with full context and proposed approaches will be published soon.
@@ -175,15 +175,27 @@ export default function Research() {
           <p className="text-[#264563] mb-6">
             Each theme below captures a cluster of related problem statements from the workshop.
           </p>
-          <div className="space-y-4">
-            {themes.map((theme, i) => (
-              <ThemeCard
-                key={i}
-                theme={theme}
-                expanded={openThemes.has(i)}
-                onToggle={() => toggleTheme(i)}
-              />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-4">
+              {themes.slice(0, 4).map((theme, i) => (
+                <ThemeCard
+                  key={i}
+                  theme={theme}
+                  expanded={openThemes.has(i)}
+                  onToggle={() => toggleTheme(i)}
+                />
+              ))}
+            </div>
+            <div className="space-y-4">
+              {themes.slice(4, 8).map((theme, i) => (
+                <ThemeCard
+                  key={i + 4}
+                  theme={theme}
+                  expanded={openThemes.has(i + 4)}
+                  onToggle={() => toggleTheme(i + 4)}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
