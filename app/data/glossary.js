@@ -356,6 +356,34 @@ export const glossaryData = {
       examples: "Deep gold mines (South Africa), block caving copper mines",
       forBiologists: "Underground environments host unique microbial communities adapted to extreme conditions — potential sources of novel biomining organisms.",
       forMiners: "In-stope bioleaching in fractured underground zones is an emerging concept that could reduce material handling costs."
+    },
+    {
+      term: "Cyanidation",
+      definition: "A hydrometallurgical process that uses cyanide solutions to dissolve and extract gold and silver from ores and concentrates",
+      examples: "Carbon-in-leach (CIL), carbon-in-pulp (CIP), heap leach cyanidation",
+      forBiologists: "Cyanidation is the dominant gold recovery method. Biooxidation is used as a pre-treatment to expose gold locked in sulfides before cyanidation.",
+      forMiners: "Standard gold extraction chemistry. Biology plugs in upstream (biooxidation to liberate refractory gold) and downstream (cyanide destruction)."
+    },
+    {
+      term: "Smelting",
+      definition: "A pyrometallurgical process that uses high temperatures to melt and chemically reduce ore or concentrate to separate the metal from its ore minerals",
+      examples: "Copper smelting, lead smelting, iron blast furnace",
+      forBiologists: "Smelting is energy-intensive and generates emissions. Biological alternatives operate under mild conditions and may complement or reduce the need for smelting.",
+      forMiners: "Standard downstream process for concentrates. Biology is most relevant as an alternative pathway for materials where smelting is too costly or carbon-intensive."
+    },
+    {
+      term: "Roasting",
+      definition: "A pyrometallurgical process that heats ore or concentrate in the presence of air to oxidize sulfide minerals, drive off volatile impurities, or convert sulfides to oxides prior to further processing",
+      examples: "Roasting of refractory gold ores, zinc sulfide roasting",
+      forBiologists: "Roasting is an alternative to biooxidation for refractory ores. Both break down sulfide matrices, but biology does so under mild conditions.",
+      forMiners: "Proven technology for sulfide ores. Biooxidation (e.g., BIOX®) is a competitive alternative with lower energy and emissions."
+    },
+    {
+      term: "Fouling",
+      definition: "The unwanted accumulation of material on equipment surfaces — such as mineral precipitates, biological growth, or organic deposits — that reduces process efficiency",
+      examples: "Scale buildup in pipes, biofilm fouling of membranes, precipitate fouling of IX resins",
+      forBiologists: "Biofouling can reduce bioseparation performance. Design for regeneration and cleaning cycles.",
+      forMiners: "A common operational issue. Biological systems can both cause fouling (biofilms) and help prevent it (enzymatic cleaning)."
     }
   ],
   biology: [
@@ -406,7 +434,7 @@ export const glossaryData = {
       definition: "The use of biomolecules in the separation or concentration of metals or interfering elements in a mining process",
       examples: "Lanmodulin for REE separation, peptide-functionalized resins",
       forBiologists: "Emerging field. Combines selectivity of biology with engineering of deployable systems.",
-      forMiners: "Most relevant for high-value, hard-to-separate metals (REEs, PGMs). Still early-stage but promising."
+      forMiners: "Most relevant for high-value, hard-to-separate metals (REEs, platinum group metals (PGMs)). Still early-stage but promising."
     },
     {
       term: "Biosorption",
@@ -470,6 +498,111 @@ export const glossaryData = {
       examples: "Desulfovibrio, Desulfotomaculum",
       forBiologists: "Opposite of sulfur-oxidizers. Lower redox potential, raise pH, precipitate metals.",
       forMiners: "Core organisms for AMD treatment. Convert dissolved metals to insoluble metal sulfides."
+    },
+    {
+      term: "Cell-Free Proteins",
+      definition: "A protein synthesized in vitro using extracted cellular machinery, without the use of intact living cells",
+      examples: "Lanmodulin produced cell-free for REE separation, engineered metal-binding proteins",
+      forBiologists: "Cell-free systems bypass the need to keep organisms alive in harsh mining conditions. Focus shifts to protein stability and regeneration.",
+      forMiners: "Think of these as biological reagents — selective metal-binding chemicals produced from biology but deployed like any other process chemical."
+    },
+    {
+      term: "Consortia",
+      definition: "Mixed communities of microorganisms working together to perform chemical transformations that individual species cannot achieve alone",
+      examples: "Iron- and sulfur-oxidizing communities in heap leach operations, SRB communities in AMD treatment wetlands",
+      forBiologists: "Most biomining environments rely on consortia, not monocultures. Community dynamics affect stability and performance.",
+      forMiners: "Rather than a single organism, biomining typically uses teams of microbes that divide labor — some generate acid, others oxidize iron, others scavenge nutrients."
+    },
+    {
+      term: "Metabolite",
+      definition: "A small molecule produced or consumed during metabolism — including organic acids, siderophores, and other compounds that can mobilize or bind metals",
+      examples: "Organic acids (citric, oxalic), siderophores, amino acids",
+      forBiologists: "Metabolites are the chemical tools microbes use to interact with minerals. Identifying key metabolites helps optimize bio-processes.",
+      forMiners: "The chemicals that microbes produce as part of their normal life processes — some of these dissolve metals, bind them, or change solution chemistry."
+    },
+    {
+      term: "Enzyme",
+      definition: "A biological catalyst — a protein that accelerates specific chemical reactions without being consumed in the process",
+      examples: "Oxidases, reductases, rusticyanin in iron oxidation",
+      forBiologists: "Enzymes drive the specific reactions that make biomining work. Understanding the key enzymes helps with strain engineering and optimization.",
+      forMiners: "Think of enzymes as highly selective catalysts that microbes use to drive the chemical reactions that dissolve or bind metals."
+    },
+    {
+      term: "Peptide",
+      definition: "A short chain of amino acids — smaller than a protein — that can be engineered to selectively bind specific metals",
+      examples: "Metal-binding peptides for REE capture, peptide-functionalized resins and membranes",
+      forBiologists: "Peptides offer a middle ground between small-molecule ligands and full proteins — tunable selectivity with easier manufacturing.",
+      forMiners: "Small biological molecules that can be attached to resins or membranes to selectively grab target metals from complex solutions."
+    },
+    {
+      term: "Polysaccharide",
+      definition: "A large carbohydrate molecule made of repeating sugar units, often produced by microbes as part of extracellular polymeric substances (EPS) that can bind metals",
+      examples: "Bacterial EPS polysaccharides, alginate, xanthan",
+      forBiologists: "Polysaccharides in EPS contribute to biofilm structure and metal binding. Their composition affects selectivity.",
+      forMiners: "Sticky sugar-based molecules that microbes secrete — they can trap metals on surfaces and play a role in both bioleaching and biosorption."
+    },
+    {
+      term: "Biofilm",
+      definition: "A structured community of microorganisms attached to a surface and embedded in a self-produced matrix of extracellular polymeric substances (EPS)",
+      examples: "Biofilms on mineral surfaces in heap leach pads, biofilms in bioreactors",
+      forBiologists: "Biofilms are the natural state of most biomining microbes. They concentrate cells at mineral surfaces and create local microenvironments.",
+      forMiners: "A living coating of microbes on rock or equipment surfaces. In heaps, biofilms on mineral surfaces are where most of the leaching chemistry happens."
+    },
+    {
+      term: "Mesophile",
+      definition: "An organism that grows best at moderate temperatures, typically between 20-45°C",
+      examples: "Acidithiobacillus ferrooxidans, Leptospirillum ferrooxidans",
+      forBiologists: "Most well-studied bioleaching organisms are mesophiles. They're easier to work with in the lab but may limit performance in hot heaps.",
+      forMiners: "The 'room temperature' bioleaching organisms. Used in most commercial heap and tank operations where temperatures stay below ~45°C."
+    },
+    {
+      term: "Thermophile",
+      definition: "An organism that thrives at elevated temperatures, typically between 45-80°C",
+      examples: "Sulfolobus, Acidianus — used in high-temperature biooxidation tanks",
+      forBiologists: "Thermophiles enable faster reaction kinetics and can handle the heat generated in large heaps and stirred tanks.",
+      forMiners: "Heat-loving organisms used in high-temperature biooxidation tanks (65-85°C). Faster kinetics but more demanding operating conditions."
+    },
+    {
+      term: "Extremophile",
+      definition: "An organism adapted to thrive in environmental conditions considered extreme — such as high temperature, low pH, high salinity, or high pressure",
+      examples: "Thermophiles, acidophiles, halophiles, radiation-resistant organisms from legacy mine sites",
+      forBiologists: "Extremophiles from mining environments are a rich source of novel enzymes and metabolic capabilities for biomining.",
+      forMiners: "Organisms that thrive in the harsh conditions found in mines — exactly the kind of biology that can work in real mining environments."
+    },
+    {
+      term: "Bioaccumulation",
+      definition: "The active uptake and intracellular storage of metals by living organisms, driven by metabolic processes",
+      examples: "Algae accumulating heavy metals, bacteria concentrating uranium intracellularly",
+      forBiologists: "Distinct from biosorption (passive surface binding). Bioaccumulation requires living, metabolically active cells.",
+      forMiners: "Organisms actively absorb and store metals inside their cells — like a biological sponge that can be harvested to recover the accumulated metals."
+    },
+    {
+      term: "Chelation",
+      definition: "The formation of a stable ring-shaped complex between a metal ion and an organic molecule (chelator/ligand) that binds the metal at multiple points, keeping it soluble and available for recovery",
+      examples: "Siderophore-iron chelation, EDTA-metal complexes, organic acid-REE chelation",
+      forBiologists: "A key mechanism for biological metal mobilization. Chelation strength and selectivity determine which metals can be targeted.",
+      forMiners: "A chemical 'claw' that grabs and holds metal ions in solution. Microbes produce natural chelators (siderophores) that are often more selective than synthetic ones."
+    },
+    {
+      term: "Ligand",
+      definition: "A molecule that binds to a metal ion to form a complex. In biomining, ligands include siderophores, organic acids, peptides, and engineered proteins used to selectively capture or mobilize metals",
+      examples: "Siderophores, citric acid, lanmodulin, peptide-based ligands",
+      forBiologists: "Biological ligands offer tuneable selectivity for target metals. Engineering better ligands is a major research frontier.",
+      forMiners: "A chemical that grabs onto a specific metal. Biological ligands can be far more selective than conventional extractants, especially for separating similar metals like REEs."
+    },
+    {
+      term: "Bioprospecting",
+      definition: "The systematic search for useful organisms, genes, or biomolecules from natural environments — particularly extreme or underexplored habitats like mine sites",
+      examples: "Sampling acidophiles from legacy mine drainage, screening thermophiles from hot springs",
+      forBiologists: "Mine sites and legacy wastes are rich sources of organisms pre-adapted to metal-rich, extreme conditions.",
+      forMiners: "Searching nature for organisms that already know how to handle mining conditions — legacy mine sites are prime hunting grounds."
+    },
+    {
+      term: "Redox Cycling",
+      definition: "The repeated oxidation and reduction of chemical species (especially iron and sulfur) that drives metal dissolution in bioleaching systems",
+      examples: "Fe²⁺ → Fe³⁺ → Fe²⁺ cycling in heap leach solutions, sulfur oxidation-reduction cycles",
+      forBiologists: "Microbes catalyze redox cycling to obtain energy. The regenerated oxidant (e.g., Fe³⁺) then attacks mineral surfaces.",
+      forMiners: "The engine of bioleaching — microbes continuously regenerate the chemical oxidants that dissolve metals, reducing the need for external reagent addition."
     }
   ]
 };

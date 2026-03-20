@@ -54,7 +54,7 @@ const flowsheetData = [
     id: 'refractory-gold',
     title: "Refractory Gold with Tank Biooxidation",
     type: "Proven Bio-Technology",
-    description: <>Gold encapsulated in sulfides (pyrite, arsenopyrite) treated via <GlossaryTerm term="Biooxidation" definition="Microbial oxidation of sulfide minerals to liberate encapsulated metals, typically in stirred tanks">biooxidation</GlossaryTerm> before cyanidation</>,
+    description: <>Gold encapsulated in sulfides (pyrite, arsenopyrite) treated via <GlossaryTerm term="Biooxidation" definition="Microbial oxidation of sulfide minerals to liberate encapsulated metals, typically in stirred tanks">biooxidation</GlossaryTerm> before <GlossaryTerm term="Cyanidation" definition="A process using cyanide solutions to dissolve and extract gold and silver">cyanidation</GlossaryTerm></>,
     diagram: `[Ore - Underground or Open Pit]
    ↓ ore (refractory gold in sulfides)
 [Crushing & Grinding]
@@ -69,7 +69,7 @@ const flowsheetData = [
     bioIntegration: [
       {
         stage: "Biooxidation Tanks",
-        role: <><GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">Acidophilic</GlossaryTerm> Fe/S-oxidizing bacteria (mesophiles or thermophiles)</>,
+        role: <><GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">Acidophilic</GlossaryTerm> Fe/S-oxidizing bacteria (<GlossaryTerm term="Mesophile" definition="An organism that grows best at moderate temperatures, typically 20-45°C">mesophiles</GlossaryTerm> or <GlossaryTerm term="Thermophile" definition="An organism that thrives at elevated temperatures, typically 45-80°C">thermophiles</GlossaryTerm>)</>,
         what: "Oxidize sulfide minerals (pyrite, arsenopyrite) to expose encapsulated gold for cyanidation",
         control: "Temperature (40-50°C mesophile or 65-85°C thermophile), pH 1.5-2.0, air flow, retention time 4-7 days"
       },
@@ -118,9 +118,9 @@ const flowsheetData = [
       },
       {
         stage: "Bioseparations",
-        role: <>Selective biomolecules (proteins, peptides, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophores</GlossaryTerm>)</>,
+        role: <>Selective biomolecules (proteins, <GlossaryTerm term="Peptide" definition="A short chain of amino acids that can bind metals">peptides</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophores</GlossaryTerm>)</>,
         what: <>Separate and concentrate specific metals from complex <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after lixiviant percolates through ore">PLS</GlossaryTerm> - especially valuable for <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm> and Co</>,
-        control: "Immobilized ligands, regeneration, matrix tolerance"
+        control: <>{`Immobilized `}<GlossaryTerm term="Ligand" definition="A molecule that binds to a metal ion to form a complex">ligands</GlossaryTerm>{`, regeneration, matrix tolerance`}</>
       },
       {
         stage: "Tailings Stabilization",
@@ -130,7 +130,7 @@ const flowsheetData = [
       }
     ],
     reality: [
-      <>Historic tailings often contain <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm> (Co, REEs, PGMs) that weren't economic to recover originally</>,
+      <>Historic tailings often contain <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm> (Co, REEs, platinum group metals (PGMs)) that weren't economic to recover originally</>,
       <><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> avoids need to re-mine and rebuild processing infrastructure</>,
       "Time scale: Flexible - can be slow (years for heap-style) or moderate (weeks for tanks)",
       "Dual benefit: environmental remediation + resource recovery",
@@ -165,7 +165,7 @@ const flowsheetData = [
         stage: "Selective Metal Recovery",
         role: <><GlossaryTerm term="Bioseparation" definition="Use of biomolecules (proteins, peptides, polymers, whole cells) as selective sorbents or separation agents">Bioseparation</GlossaryTerm> or staged precipitation</>,
         what: "Selectively recover high-value metals (Cu, Zn, REEs) before bulk treatment",
-        control: "pH control for staged precipitation, biomolecular ligands for selectivity"
+        control: <>{`pH control for staged precipitation, biomolecular `}<GlossaryTerm term="Ligand" definition="A molecule that binds to a metal ion to form a complex">ligands</GlossaryTerm>{` for selectivity`}</>
       },
       {
         stage: "Constructed Wetland",

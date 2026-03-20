@@ -45,12 +45,12 @@ export default function WhatIsBiomining() {
                   For this wiki, <strong>biomining</strong> means:
                 </p>
                 <p className="text-[#264563] mt-2 text-lg italic">
-                  Any use of biological mechanisms—cells, enzymes, proteins, plants, metabolites, or consortia—to aid
+                  Any use of biological mechanisms—cells, <GlossaryTerm term="Enzyme" definition="A biological catalyst that accelerates specific chemical reactions">enzymes</GlossaryTerm>, proteins, plants, <GlossaryTerm term="Metabolite" definition="A small molecule produced or consumed during metabolism">metabolites</GlossaryTerm>, or <GlossaryTerm term="Consortia" definition="Mixed communities of microorganisms working together">consortia</GlossaryTerm>—to aid
                   metal recovery, mineral processing, or the management of mining-related wastes and liabilities.
                 </p>
               </div>
               <p className="mt-4">
-                That definition includes <strong>cell-free proteins and separation modules</strong> as well as
+                That definition includes <strong><GlossaryTerm term="Cell-Free Proteins" definition="A protein synthesized in vitro using extracted cellular machinery, without intact living cells">cell-free proteins</GlossaryTerm> and separation modules</strong> as well as
                 whole-cell systems. A viable industrial pathway will often combine several mechanisms in
                 <strong> hybrid </strong><GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheets</GlossaryTerm>.
               </p>
@@ -69,7 +69,7 @@ export default function WhatIsBiomining() {
                 number="1"
                 title="Bioleaching"
                 description="Extraction or liberation of metals from ores or wastes via microbial activity, moving metals into solution"
-                details="Mechanisms include acid generation, redox cycling, and ligand production"
+                details={<>Mechanisms include acid generation, <GlossaryTerm term="Redox Cycling" definition="Repeated oxidation and reduction of chemical species that drives metal dissolution">redox cycling</GlossaryTerm>, and <GlossaryTerm term="Ligand" definition="A molecule that binds to a metal ion to form a complex">ligand</GlossaryTerm> production</>}
                 icon={Droplets}
                 color="blue"
               />
@@ -77,7 +77,7 @@ export default function WhatIsBiomining() {
                 number="2"
                 title="Biooxidation"
                 description="Microbial oxidation of sulfide minerals where the valuable metal remains solid but becomes accessible to downstream processing"
-                details="Classically used for refractory gold. Often deployed as a pre-treatment prior to cyanidation"
+                details={<>Classically used for refractory gold. Often deployed as a pre-treatment prior to <GlossaryTerm term="Cyanidation" definition="A process using cyanide solutions to dissolve and extract gold and silver">cyanidation</GlossaryTerm></>}
                 icon={Zap}
                 color="amber"
               />
@@ -138,7 +138,7 @@ export default function WhatIsBiomining() {
                 title="Binding Selectivity"
                 items={[
                   "Proteins and biopolymers act as 'molecular coin sorters', discriminating between metals with similar chemistry",
-                  <>Critical for <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">rare earth elements</GlossaryTerm>, PGMs, and complex polymetallic streams</>
+                  <>Critical for <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">rare earth elements</GlossaryTerm>, platinum group metals (PGMs), and complex polymetallic streams</>
                 ]}
               />
               <AdvantageCard

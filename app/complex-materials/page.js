@@ -35,7 +35,8 @@ const materialsData = {
       },
       {
         title: "Extremophile Biobanking",
-        description: "'Superbank' concept: biobanking extremophiles from legacy sites for bioprospecting and method development"
+        description: <>'Superbank' concept: biobanking <GlossaryTerm term="Extremophile" definition="An organism adapted to thrive in extreme environmental conditions">extremophiles</GlossaryTerm> from legacy sites for <GlossaryTerm term="Bioprospecting" definition="Systematic search for useful organisms from natural environments">bioprospecting</GlossaryTerm> and method development</>
+
       }
     ],
     whyBiology: "Microbes cause AMD but can also help solve it. Biology offers passive, low-cost treatment that can simultaneously recover value.",
@@ -120,7 +121,8 @@ const materialsData = {
     bioOpportunities: [
       {
         title: "Bioleaching Circuit Boards",
-        description: "Microbes dissolve Cu, Au, Ag, Pd from printed circuit boards - potentially safer and cheaper than smelting"
+        description: <>Microbes dissolve Cu, Au, Ag, Pd from printed circuit boards - potentially safer and cheaper than <GlossaryTerm term="Smelting" definition="A pyrometallurgical process using high temperatures to separate metal from ore">smelting</GlossaryTerm></>
+
       },
       {
         title: "Metal-Binding Proteins",
@@ -144,7 +146,7 @@ const materialsData = {
     icon: Beaker,
     definition: <><GlossaryTerm term="Slag" definition="Glassy byproduct of smelting, containing metal oxides and silicates">Slag</GlossaryTerm>, <GlossaryTerm term="Fly Ash" definition="Fine particulate residue from coal combustion; can contain REEs and heavy metals">fly ash</GlossaryTerm>, phosphogypsum, red mud, <GlossaryTerm term="Produced Water" definition="Water extracted alongside oil and gas, often containing dissolved metals and salts">produced waters</GlossaryTerm>, and <GlossaryTerm term="Geothermal Brine" definition="Hot, mineral-rich water from geothermal reservoirs; can contain lithium and other valuable elements">geothermal brines</GlossaryTerm></>,
     hazards: [
-      <><GlossaryTerm term="Slag" definition="Glassy byproduct of smelting, containing metal oxides and silicates">Slag</GlossaryTerm>: Metal oxides from smelting; heavy metals leach into groundwater over decades if untreated</>,
+      <><GlossaryTerm term="Slag" definition="Glassy byproduct of smelting, containing metal oxides and silicates">Slag</GlossaryTerm>: Metal oxides from <GlossaryTerm term="Smelting" definition="A pyrometallurgical process using high temperatures to separate metal from ore">smelting</GlossaryTerm>; heavy metals leach into groundwater over decades if untreated</>,
       <><GlossaryTerm term="Fly Ash" definition="Fine particulate residue from coal combustion; can contain REEs and heavy metals">Fly ash</GlossaryTerm>: Coal combustion byproduct with <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm> and heavy metals; billions of tons stockpiled globally with limited disposal options</>,
       "Phosphogypsum: Radioactive waste from fertilizer production",
       "Red mud: Caustic bauxite waste with REEs, Sc, and other metals"

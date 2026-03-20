@@ -12,7 +12,7 @@ const themes = [
     summary: "Researchers currently lack access to the resources and knowledge needed to ensure their work is techno-economically competitive and applicable to real mining challenges.",
     details: [
       "Industrially-relevant ores and process fluids are prohibitively difficult to obtain, forcing most research to use less-relevant materials",
-      "Researchers lack access to process models, TEAs, and performance benchmarks necessary to estimate scalability",
+      "Researchers lack access to process models, techno-economic analyses (TEAs), and performance benchmarks necessary to estimate scalability",
       "Extrapolating lab-scale performance to industrial scale is challenging without biogeometallurgical models that incorporate biology"
     ]
   },
