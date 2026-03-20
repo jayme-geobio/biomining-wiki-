@@ -22,7 +22,7 @@ export default function WhatIsBiomining() {
           <h2 className="text-xl font-bold text-white mb-3">Our Definition</h2>
           <div className="text-white space-y-3">
             <p className="text-lg">
-              "Biomining" is often shorthand for "bugs in heaps." That definition is <strong>too narrow</strong>.
+              "Biomining" is often shorthand for "microbes in heaps." That definition is <strong>too narrow</strong>.
             </p>
             <div className="bg-blue-900/30 rounded-lg p-4 border-l-4 border-white/40 mt-4">
               <p className="text-white font-semibold">

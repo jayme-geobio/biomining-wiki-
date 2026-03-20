@@ -12,7 +12,7 @@ const flowsheetData = [
     id: 'copper-heap',
     title: "Copper Heap Leach Operation",
     type: "Classical Bio-Application",
-    description: "Low-grade copper oxide/sulfide ore processed via heap leaching with biological oxidation assistance",
+    description: <>Low-grade copper oxide/sulfide ore processed via <GlossaryTerm term="Heap Leaching" definition="Leaching method where crushed ore is stacked on a lined pad and irrigated with lixiviant that percolates through the heap">heap leaching</GlossaryTerm> with biological oxidation assistance</>,
     diagram: `[Mine - Open Pit]
    ↓ ore (0.3-1% Cu)
 [Crushing to ~2-5 cm]
@@ -25,20 +25,20 @@ const flowsheetData = [
     bioIntegration: [
       {
         stage: "Heap Leach Pad",
-        role: <>Native or inoculated <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> (Acidithiobacillus, Leptospirillum)</>,
+        role: <>Native or <GlossaryTerm term="Inoculum" definition="A preparation of microorganisms introduced to a system to establish a desired microbial community">inoculated</GlossaryTerm> <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> (Acidithiobacillus, Leptospirillum)</>,
         what: "Microbes oxidize ferrous iron (Fe²⁺) to ferric iron (Fe³⁺) and produce sulfuric acid, which dissolves copper from minerals",
         control: "pH control (1.5-2.5), nutrient addition (N, P), aeration management"
       },
       {
         stage: "Side-stream Bio-polishing",
         role: <><GlossaryTerm term="Biosorption" definition="Sorption of dissolved metals onto biomass or extracellular polymeric substances (EPS)">Biosorption</GlossaryTerm> or <GlossaryTerm term="Bioseparation" definition="Use of biomolecules (proteins, peptides, polymers, whole cells) as selective sorbents or separation agents">bioseparation</GlossaryTerm></>,
-        what: "Remove impurities (Fe, Mn, Al) from PLS before SX to improve efficiency",
+        what: <>Remove impurities (Fe, Mn, Al) from <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after lixiviant percolates through ore">PLS</GlossaryTerm> before <GlossaryTerm term="Solvent Extraction (SX)" definition="Liquid-liquid separation process that selectively transfers target metal ions from PLS into an organic phase">SX</GlossaryTerm> to improve efficiency</>,
         control: "Selective biomolecules or microbial biomass; regeneration cycles"
       },
       {
         stage: "Bleed Stream Treatment",
         role: <><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> reactors</>,
-        what: "Treat bleed streams to recover metals, manage sulfate, and reduce discharge volume",
+        what: <>Treat <GlossaryTerm term="Bleed Stream" definition="A portion of circulating process solution diverted for treatment or disposal to control impurity buildup">bleed streams</GlossaryTerm> to recover metals, manage sulfate, and reduce discharge volume</>,
         control: "Anaerobic conditions, organic carbon addition, sulfide precipitation"
       }
     ],
@@ -46,7 +46,7 @@ const flowsheetData = [
       "Many 'non-biological' heaps already rely on native acidophiles - intentional bio-management improves performance",
       "Time scale: Months to years for full heap cycle",
       "Scale: Very large - tens of millions of tonnes per year",
-      "Economics favor biology when ore grade is too low for conventional milling/flotation"
+      <>Economics favor biology when ore <GlossaryTerm term="Grade" definition="The concentration of a target metal or mineral in ore, typically expressed as a percentage or grams per tonne">grade</GlossaryTerm> is too low for conventional <GlossaryTerm term="Milling" definition="Size reduction of ore by grinding in rotating drums with steel balls or rods">milling</GlossaryTerm>/<GlossaryTerm term="Froth Flotation" definition="Separation process that uses air bubbles and chemical reagents to selectively float target mineral particles to the surface">flotation</GlossaryTerm></>
     ],
     maturity: "Commercial - proven at major operations worldwide"
   },
@@ -54,7 +54,7 @@ const flowsheetData = [
     id: 'refractory-gold',
     title: "Refractory Gold with Tank Biooxidation",
     type: "Proven Bio-Technology",
-    description: "Gold encapsulated in sulfides (pyrite, arsenopyrite) treated via biooxidation before cyanidation",
+    description: <>Gold encapsulated in sulfides (pyrite, arsenopyrite) treated via <GlossaryTerm term="Biooxidation" definition="Microbial oxidation of sulfide minerals to liberate encapsulated metals, typically in stirred tanks">biooxidation</GlossaryTerm> before cyanidation</>,
     diagram: `[Ore - Underground or Open Pit]
    ↓ ore (refractory gold in sulfides)
 [Crushing & Grinding]
@@ -89,7 +89,7 @@ const flowsheetData = [
     reality: [
       "Core biooxidation step is already fully biological - proven technology (BIOX®, BacTech)",
       "Time scale: Days to weeks (tank residence)",
-      "Scale: Moderate - thousands of tonnes of concentrate per year",
+      <>Scale: Moderate - thousands of tonnes of <GlossaryTerm term="Concentrate" definition="The enriched product of mineral processing, containing a high proportion of the target mineral">concentrate</GlossaryTerm> per year</>,
       "Enables processing of refractory ores that would otherwise be uneconomic",
       "Capital intensive but OPEX-competitive with alternatives like roasting or pressure oxidation"
     ],
@@ -119,7 +119,7 @@ const flowsheetData = [
       {
         stage: "Bioseparations",
         role: <>Selective biomolecules (proteins, peptides, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophores</GlossaryTerm>)</>,
-        what: "Separate and concentrate specific metals from complex PLS - especially valuable for REEs and Co",
+        what: <>Separate and concentrate specific metals from complex <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after lixiviant percolates through ore">PLS</GlossaryTerm> - especially valuable for <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm> and Co</>,
         control: "Immobilized ligands, regeneration, matrix tolerance"
       },
       {
@@ -131,7 +131,7 @@ const flowsheetData = [
     ],
     reality: [
       <>Historic tailings often contain <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm> (Co, REEs, PGMs) that weren't economic to recover originally</>,
-      "Bioleaching avoids need to re-mine and rebuild processing infrastructure",
+      <><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> avoids need to re-mine and rebuild processing infrastructure</>,
       "Time scale: Flexible - can be slow (years for heap-style) or moderate (weeks for tanks)",
       "Dual benefit: environmental remediation + resource recovery",
       "Regulatory advantage: improves closure outcomes while generating revenue"
@@ -163,7 +163,7 @@ const flowsheetData = [
       },
       {
         stage: "Selective Metal Recovery",
-        role: "Bioseparation or staged precipitation",
+        role: <><GlossaryTerm term="Bioseparation" definition="Use of biomolecules (proteins, peptides, polymers, whole cells) as selective sorbents or separation agents">Bioseparation</GlossaryTerm> or staged precipitation</>,
         what: "Selectively recover high-value metals (Cu, Zn, REEs) before bulk treatment",
         control: "pH control for staged precipitation, biomolecular ligands for selectivity"
       },

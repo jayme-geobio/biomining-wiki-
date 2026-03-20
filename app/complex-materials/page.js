@@ -31,7 +31,7 @@ const materialsData = {
       },
       {
         title: "AMD as Resource",
-        description: "Recovery of Cu, Zn, REEs, and other metals from drainage - treating liability as opportunity"
+        description: <>Recovery of Cu, Zn, <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm>, and other metals from <GlossaryTerm term="Drainage" definition="Water that flows through or out of a mine site, potentially carrying dissolved metals and acidity">drainage</GlossaryTerm> - treating liability as opportunity</>
       },
       {
         title: "Extremophile Biobanking",
@@ -59,7 +59,7 @@ const materialsData = {
       },
       {
         title: "Biogenic Lixiviants",
-        description: "Microbes produce organic acids, ferric iron, iodide, or cyanide locally to reduce chemical transport costs and enable site-specific leaching"
+        description: <>Microbes produce organic acids, ferric iron, iodide, or cyanide locally to reduce chemical transport costs and enable site-specific <GlossaryTerm term="Leach" definition="Dissolving metals from solid material using a chemical solution (lixiviant)">leaching</GlossaryTerm></>
       },
       {
         title: "Hidden Critical Metals",
@@ -110,7 +110,7 @@ const materialsData = {
   ewaste: {
     name: "Electronic Waste (E-waste)",
     icon: Cpu,
-    definition: "Discarded electronics rich in Cu, Au, Pd, REEs, and critical metals, but with complex polymer/metal mixtures",
+    definition: <>Discarded electronics rich in Cu, Au, Pd, <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm>, and critical metals, but with complex polymer/metal mixtures</>,
     hazards: [
       "World's fastest growing waste stream (74.7M tons by 2030)",
       "Complex mix of metals, plastics, glass - hard to separate",
@@ -142,21 +142,21 @@ const materialsData = {
   other: {
     name: "Other Secondary Resources",
     icon: Beaker,
-    definition: "Slag, fly ash, phosphogypsum, red mud, produced waters, and geothermal brines",
+    definition: <><GlossaryTerm term="Slag" definition="Glassy byproduct of smelting, containing metal oxides and silicates">Slag</GlossaryTerm>, <GlossaryTerm term="Fly Ash" definition="Fine particulate residue from coal combustion; can contain REEs and heavy metals">fly ash</GlossaryTerm>, phosphogypsum, red mud, <GlossaryTerm term="Produced Water" definition="Water extracted alongside oil and gas, often containing dissolved metals and salts">produced waters</GlossaryTerm>, and <GlossaryTerm term="Geothermal Brine" definition="Hot, mineral-rich water from geothermal reservoirs; can contain lithium and other valuable elements">geothermal brines</GlossaryTerm></>,
     hazards: [
-      "Slag: Metal oxides from smelting; heavy metals leach into groundwater over decades if untreated",
-      "Fly ash: Coal combustion byproduct with REEs and heavy metals; billions of tons stockpiled globally with limited disposal options",
+      <><GlossaryTerm term="Slag" definition="Glassy byproduct of smelting, containing metal oxides and silicates">Slag</GlossaryTerm>: Metal oxides from smelting; heavy metals leach into groundwater over decades if untreated</>,
+      <><GlossaryTerm term="Fly Ash" definition="Fine particulate residue from coal combustion; can contain REEs and heavy metals">Fly ash</GlossaryTerm>: Coal combustion byproduct with <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm> and heavy metals; billions of tons stockpiled globally with limited disposal options</>,
       "Phosphogypsum: Radioactive waste from fertilizer production",
       "Red mud: Caustic bauxite waste with REEs, Sc, and other metals"
     ],
     bioOpportunities: [
       {
         title: "Slag Processing",
-        description: "Biotech may extract residual critical minerals that are too expensive for traditional pyrometallurgical methods"
+        description: <>Biotech may extract residual <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical minerals</GlossaryTerm> that are too expensive for traditional <GlossaryTerm term="Pyrometallurgy" definition="Extraction and refining of metals using high-temperature processes such as smelting and roasting">pyrometallurgical</GlossaryTerm> methods</>
       },
       {
         title: "REE from Fly Ash",
-        description: "Microbial or biomolecular extraction of rare earth elements from coal power plant waste"
+        description: <>Microbial or biomolecular extraction of <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">rare earth elements</GlossaryTerm> from coal power plant waste</>
       },
       {
         title: "Red Mud Valorization",
@@ -165,7 +165,7 @@ const materialsData = {
       },
       {
         title: "Produced Water Cleanup",
-        description: "Bioremediation to clean oil/gas wastewater for reuse in arid regions while recovering dissolved metals"
+        description: <>Bioremediation to clean oil/gas <GlossaryTerm term="Produced Water" definition="Water extracted alongside oil and gas, often containing dissolved metals and salts">produced water</GlossaryTerm> for reuse in arid regions while recovering dissolved metals</>
       }
     ],
     whyBiology: "Each of these wastes contains value where biology's mild conditions and selectivity offer a strong alternative pathway for recovery.",

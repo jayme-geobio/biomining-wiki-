@@ -156,7 +156,7 @@ export default function ForMiners() {
                 <div className="space-y-4">
                   <ModalityCard
                     title="Dump & Heap Bioleaching"
-                    description={<><GlossaryTerm term="Bulk Waste Rock" definition="Rock discarded prior to metallurgical extraction (overburden, low-grade, refractory, or gangue-rich material)">Low-grade sulfide ores</GlossaryTerm> piled on pads and irrigated with acidic ferric solutions. Native or inoculated <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> catalyze Fe & S oxidation and metal release.</>}
+                    description={<><GlossaryTerm term="Bulk Waste Rock" definition="Rock discarded prior to metallurgical extraction (overburden, low-grade, refractory, or gangue-rich material)">Low-grade sulfide ores</GlossaryTerm> piled on pads and irrigated with acidic ferric solutions. Native or <GlossaryTerm term="Inoculum" definition="A prepared microbial culture introduced to initiate or enhance biological activity in a process">inoculated</GlossaryTerm> <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> catalyze Fe & S oxidation and metal release.</>}
                     applications="Common for copper sulfide ores, with growing interest for other sulfides"
                     parameters={[
                       "Time: Months to years",
@@ -165,9 +165,9 @@ export default function ForMiners() {
                       "Scale: Very large (Mt)"
                     ]}
                     integration={
-                      <> Comminution → <strong>Bioleaching</strong> → PLS → SX/EW → metal cathodes </>
+                      <> <GlossaryTerm term="Comminution" definition="Size reduction of ore through crushing and grinding to liberate valuable minerals">Comminution</GlossaryTerm> → <strong>Bioleaching</strong> → <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after leaching ore or concentrate">PLS</GlossaryTerm> → <GlossaryTerm term="Solvent Extraction (SX)" definition="Liquid–liquid extraction process that selectively transfers dissolved metals between immiscible phases">SX</GlossaryTerm>/<GlossaryTerm term="Electrowinning (EW)" definition="Electrochemical process that deposits metal from solution onto a cathode">EW</GlossaryTerm> → metal cathodes </>
                     }
-                    challenges="Passivation layers, channeling, oxygen/nutrient limitations"
+                    challenges={<><GlossaryTerm term="Passivation" definition="Formation of a surface layer on ore particles that inhibits further leaching">Passivation</GlossaryTerm> layers, channeling, oxygen/nutrient limitations</>}
                     expanded={openModalities.has('dump')}
                     onToggle={() => toggleModality('dump')}
                   />
@@ -183,7 +183,7 @@ export default function ForMiners() {
                       "Scale: Moderate (kt concentrate)"
                     ]}
                     integration={
-                       <>Flotation → <strong>biooxidation</strong> → cyanidation → recovery</>
+                       <><GlossaryTerm term="Froth Flotation" definition="A process that separates hydrophobic valuable minerals from hydrophilic gangue by attaching them to air bubbles in a slurry">Flotation</GlossaryTerm> → <strong>biooxidation</strong> → cyanidation → recovery</>
                     }
                     challenges="Capital intensive, energy costs, solids loading limits"
                     expanded={openModalities.has('stirred')}
@@ -192,7 +192,7 @@ export default function ForMiners() {
 
                   <ModalityCard
                     title="In-Situ & In-Stope Bioleaching"
-                    description="Injection of lixiviants and/or microbes into permeable deposits underground or in fractured zones."
+                    description={<>Injection of <GlossaryTerm term="Lixiviant" definition="A liquid medium used to selectively extract metals from ore through leaching">lixiviants</GlossaryTerm> and/or microbes into permeable deposits underground or in fractured zones.</>}
                     applications="Attractive for low-grade or inaccessible deposits"
                     parameters={[
                       "Time: Years",
@@ -430,7 +430,7 @@ function BiologicalSystemsSection() {
             <div className="pt-4 space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">What Phytomining Is</h4>
               <p>
-                Phytomining uses plants to extract metals from soils, mine waste, or <GlossaryTerm term="Bulk Waste Rock" definition="Rock discarded prior to metallurgical extraction (overburden, low-grade, refractory, or gangue-rich material)">low-grade deposits</GlossaryTerm>. Certain plants, known as hyperaccumulators, naturally absorb and concentrate metals in their tissues.
+                Phytomining uses plants to extract metals from soils, <GlossaryTerm term="Mine Waste" definition="All solid and liquid waste produced during mineral extraction and processing, including tailings, waste rock, and process water">mine waste</GlossaryTerm>, or <GlossaryTerm term="Bulk Waste Rock" definition="Rock discarded prior to metallurgical extraction (overburden, low-grade, refractory, or gangue-rich material)">low-grade deposits</GlossaryTerm>. Certain plants, known as hyperaccumulators, naturally absorb and concentrate metals in their tissues.
               </p>
             </div>
 
@@ -570,7 +570,7 @@ function EmerginTechCard({ expanded, onToggle }) {
       </button>
       {expanded && (
         <div className="bg-white p-5">
-          <p className="text-[#264563] text-sm mb-7">Biomolecular ligands and non-chromatographic formats that selectively capture and concentrate rare earth elements and critical metals from complex, dilute feed streams.</p>
+          <p className="text-[#264563] text-sm mb-7">Biomolecular ligands and non-chromatographic formats that selectively capture and concentrate <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements (lanthanides plus scandium and yttrium) critical for electronics, magnets, and clean energy">rare earth elements</GlossaryTerm> and <GlossaryTerm term="Critical Minerals" definition="Minerals essential to economic or national security with supply chains vulnerable to disruption">critical metals</GlossaryTerm> from complex, dilute feed streams.</p>
           <div className="grid grid-cols-3 gap-3 mb-7">
             <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
               <p className="text-emerald-800 font-semibold text-xs mb-1">Protein/Peptide-Based Ligands</p>
@@ -582,7 +582,7 @@ function EmerginTechCard({ expanded, onToggle }) {
             </div>
             <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
               <p className="text-emerald-800 font-semibold text-xs mb-1">Non-Chromatographic Deployments</p>
-              <p className="text-emerald-700/70 text-xs">Membranes, beads, structured packings for PLS polishing</p>
+              <p className="text-emerald-700/70 text-xs">Membranes, beads, structured packings for <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after leaching ore or concentrate">PLS</GlossaryTerm> polishing</p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4 mb-3">

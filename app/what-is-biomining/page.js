@@ -38,7 +38,7 @@ export default function WhatIsBiomining() {
             <h2 className="text-xl font-bold text-[#264563] mb-3">Our Definition</h2>
             <div className="text-[#264563] space-y-3">
               <p className="text-lg">
-                "Biomining" is often shorthand for "bugs in heaps." That definition is <strong>too narrow</strong>.
+                "Biomining" is often shorthand for "microbes in heaps." That definition is <strong>too narrow</strong>.
               </p>
               <div className="rounded-lg p-4 border-l-4 border-[#264563] mt-4" style={{backgroundColor: 'rgba(255,255,255,0.5)'}}>
                 <p className="text-[#264563] font-semibold">
@@ -84,7 +84,7 @@ export default function WhatIsBiomining() {
               <MechanismCard
                 number="3"
                 title="Bioseparation and Biosorption"
-                description="Binding of metals to biomolecules, enabling separation and concentration from complex mixtures"
+                description={<>Binding of metals to biomolecules, enabling separation and <GlossaryTerm term="Concentration" definition="The process of increasing the proportion of valuable mineral or metal in a given mass of material">concentration</GlossaryTerm> from complex mixtures</>}
                 details={<>Includes <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">metallophores</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophore</GlossaryTerm>-like ligands, engineered binding proteins, cell-free proteins, peptides, polymers, phytomining, bio-based resins, and membranes</>}
                 icon={Target}
                 color="emerald"
@@ -100,7 +100,7 @@ export default function WhatIsBiomining() {
               <MechanismCard
                 number="5"
                 title="Monitoring and Control (Biosensing)"
-                description="Biological tools for sensing metals, redox state, or specific analytes to monitor mining systems and inform process control"
+                description={<>Biological tools for sensing metals, <GlossaryTerm term="Redox Control" definition="Management of oxidation-reduction conditions in a leaching or processing system to optimize metal dissolution or precipitation">redox</GlossaryTerm> state, or specific analytes to monitor mining systems and inform process control</>}
                 details="Functional community metrics and molecular assays that serve as early-warning indicators and inform process control"
                 icon={Cpu}
                 color="sky"
@@ -131,21 +131,21 @@ export default function WhatIsBiomining() {
                 title="Chelation and Complexation"
                 items={[
                   <><GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">Metallophores</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophore</GlossaryTerm>-like ligands, and engineered chelators show high affinity and selectivity</>,
-                  "Can operate in complex aqueous mixtures and at low metal concentrations where traditional extractants face challenges"
+                  <>Can operate in complex aqueous mixtures and at low metal concentrations where traditional <GlossaryTerm term="Solvent Extraction (SX)" definition="A hydrometallurgical process that uses organic solvents to selectively transfer metals from one aqueous solution to another">extractants</GlossaryTerm> face challenges</>
                 ]}
               />
               <AdvantageCard
                 title="Binding Selectivity"
                 items={[
                   "Proteins and biopolymers act as 'molecular coin sorters', discriminating between metals with similar chemistry",
-                  "Critical for rare earth elements, PGMs, and complex polymetallic streams"
+                  <>Critical for <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">rare earth elements</GlossaryTerm>, PGMs, and complex polymetallic streams</>
                 ]}
               />
               <AdvantageCard
                 title="Mineral Transformation and Precipitation"
                 items={[
                   "Biomineralization and biocement enable controlled precipitation of metal sulfides and carbonates",
-                  "Useful for both recovery and stabilization of wastes"
+                  <>Useful for both recovery and stabilization of <GlossaryTerm term="Mine Waste" definition="Any material removed or displaced during mining that has no current economic value, including tailings, waste rock, and slag">wastes</GlossaryTerm></>
                 ]}
               />
               <AdvantageCard

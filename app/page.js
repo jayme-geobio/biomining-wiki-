@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, GraduationCap, Factory, AlertTriangle, Target, TrendingUp, MessageSquare, HelpCircle } from 'lucide-react';
+import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, GraduationCap, Factory, AlertTriangle, Target, TrendingUp, MessageSquare, HelpCircle, ArrowRight } from 'lucide-react';
 
 export default function BiominingHome() {
   return (
@@ -94,19 +94,20 @@ export default function BiominingHome() {
                   proteins, metabolites, or consortia—to aid metal recovery, mineral processing, or management of
                   mining-related wastes and liabilities.
                 </p>
-                <div className="grid md:grid-cols-2 gap-4 mt-6">
-                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                <div className="flex items-center justify-center gap-4 mt-6">
+                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 w-52 aspect-square flex flex-col justify-center">
                     <h4 className="text-[#264563] font-semibold mb-2">Mechanisms</h4>
-                    <ul className="text-[#264563] text-sm space-y-1">
+                    <ul className="text-[#264563] text-xs space-y-1">
                       <li>• Bioleaching & biooxidation</li>
                       <li>• Bioseparation & biosorption</li>
                       <li>• Bioprecipitation</li>
                       <li>• Monitoring & biosensing</li>
                     </ul>
                   </div>
-                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                  <ArrowRight className="w-10 h-10 text-[#264563] flex-shrink-0" />
+                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 w-52 aspect-square flex flex-col justify-center">
                     <h4 className="text-[#264563] font-semibold mb-2">Applications</h4>
-                    <ul className="text-[#264563] text-sm space-y-1">
+                    <ul className="text-[#264563] text-xs space-y-1">
                       <li>• Heap & tank leaching</li>
                       <li>• Metal separation & polishing</li>
                       <li>• AMD treatment & closure</li>

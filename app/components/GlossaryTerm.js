@@ -24,6 +24,10 @@ const termToMaterialMap = {
   "phosphogypsum": { key: "other", name: "Other Secondary Resources" },
   "red mud": { key: "other", name: "Other Secondary Resources" },
   "coal by-products": { key: "other", name: "Other Secondary Resources" },
+  "fly ash": { key: "other", name: "Other Secondary Resources" },
+  "slag": { key: "other", name: "Other Secondary Resources" },
+  "produced water": { key: "other", name: "Other Secondary Resources" },
+  "geothermal brine": { key: "other", name: "Other Secondary Resources" },
 };
 
 // Map glossary term names (lowercase) to page links
