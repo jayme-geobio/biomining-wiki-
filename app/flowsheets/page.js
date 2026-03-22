@@ -199,7 +199,7 @@ export default function Flowsheets() {
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Example Flowsheets</h1>
             <p className="text-xl text-[#264563]">
               See how biology integrates into real mining operations — from proven commercial processes to emerging applications
@@ -259,11 +259,11 @@ export default function Flowsheets() {
 
           {/* Navigation */}
           <div className="mt-12 flex justify-between">
-            <Link href="/for-biologists" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
-              ← Back to Mining 101
-            </Link>
             <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
-              Home
+              ← Back to Home
+            </Link>
+            <Link href="/technology-evaluation" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
+              Technology Assessment Checklists →
             </Link>
           </div>
         </div>
@@ -299,7 +299,10 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
           <h2 className="text-2xl font-bold text-white mb-1">{flowsheet.title}</h2>
           <p className="text-white/80 text-sm">{flowsheet.description}</p>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-white flex-shrink-0 ml-4" /> : <ChevronRight className="w-6 h-6 text-white flex-shrink-0 ml-4" />}
+        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0 ml-4">
+          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        </div>
       </button>
 
       {expanded && (

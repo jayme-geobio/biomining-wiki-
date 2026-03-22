@@ -22,7 +22,7 @@ export default function WhatIsBiomining() {
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">What Is "Biomining"?</h1>
             <p className="text-xl text-[#264563]">
               Definitions, mechanisms, and where biotech rivals chemistry
@@ -198,8 +198,8 @@ export default function WhatIsBiomining() {
             <Link href="/" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
               ← Back to Home
             </Link>
-            <Link href="/glossary" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
-              Glossary →
+            <Link href="/for-biologists" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
+              Mining Fundamentals →
             </Link>
           </div>
         </div>
@@ -220,7 +220,10 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
           <Icon className="w-6 h-6 text-white" />
           <h2 className="text-xl font-bold text-white">{title}</h2>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-white" /> : <ChevronRight className="w-6 h-6 text-white" />}
+        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
+          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        </div>
       </button>
       {expanded && (
         <div className="bg-[#edede6] p-6 border-t border-white/20">

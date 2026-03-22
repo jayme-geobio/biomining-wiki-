@@ -14,8 +14,8 @@ export default function Navigation() {
       name: 'Learn',
       items: [
         { name: 'What Is Biomining?', href: '/what-is-biomining' },
-        { name: 'Mining Fundamentals', href: '/for-biologists' },
-        { name: 'Biology Fundamentals', href: '/for-miners' },
+        { name: 'Mining 101', href: '/for-biologists' },
+        { name: 'Biology 101', href: '/for-miners' },
         { name: 'Complex Materials Playbook', href: '/complex-materials' },
         { name: 'Example Flowsheets', href: '/flowsheets' }
       ]

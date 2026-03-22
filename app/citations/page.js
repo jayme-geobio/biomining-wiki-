@@ -102,8 +102,9 @@ export default function Citations() {
                   className="w-full bg-[#264563] p-4 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
                 >
                   <h2 className="text-lg font-bold text-white">{categoryLabels[cat]}</h2>
-                  <div className="flex items-center gap-2">
-                    <span className="text-white/60 text-sm">{refs.length} reference{refs.length !== 1 ? 's' : ''}</span>
+                  <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
+                    <span className="text-white/60">{refs.length} reference{refs.length !== 1 ? 's' : ''}</span>
+                    <span>{openCategories.has(cat) ? 'Click to collapse' : 'Click to expand'}</span>
                     {openCategories.has(cat) ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
                   </div>
                 </button>
@@ -143,9 +144,6 @@ export default function Citations() {
           <div className="mt-12 flex justify-between">
             <Link href="/" className="text-[#264563] hover:text-[#264563]/70 flex items-center gap-2">
               ← Back to Home
-            </Link>
-            <Link href="/glossary" className="text-[#264563] hover:text-[#264563]/70 flex items-center gap-2">
-              ← Glossary
             </Link>
           </div>
         </div>

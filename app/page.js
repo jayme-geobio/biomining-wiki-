@@ -14,7 +14,7 @@ export default function BiominingHome() {
           <div className="mb-6">
             <div className="flex gap-6 items-stretch">
               {/* Solid card */}
-              <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white flex flex-col justify-between">
+              <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white flex flex-col justify-between">
                 <h1 className="text-4xl font-bold text-[#264563] leading-tight">
                   The Biomining Handbook
                 </h1>
@@ -36,7 +36,7 @@ export default function BiominingHome() {
               </h3>
               <div className="text-[#264563] space-y-3">
                 <p>
-                  This handbook bridges biology and mining for critical mineral recovery.
+                  This handbook bridges biology and mining for critical mineral recovery. Our goal is a gold-standard, technically accurate resource for both communities to design better projects together.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-[#264563] rounded-xl p-4">
@@ -44,7 +44,7 @@ export default function BiominingHome() {
                     <div className="space-y-1 ml-1">
                       <div className="flex items-start gap-2">
                         <span className="text-emerald-400" style={{marginTop: '-0.1em'}}>•</span>
-                        <span className="text-white text-sm">Biomining fundamentals for both biotechnologists and mining professionals</span>
+                        <span className="text-white text-sm">Key biomining concepts for biotechnologists and mining professionals</span>
                       </div>
                       <div className="flex items-start gap-2">
                         <span className="text-emerald-400" style={{marginTop: '-0.1em'}}>•</span>
@@ -59,9 +59,6 @@ export default function BiominingHome() {
                         <span className="text-white text-sm">Shared vocabulary and frameworks bridging both fields</span>
                       </div>
                     </div>
-                    <p className="text-white/70 text-xs italic mt-3">
-                      Our goal: a gold-standard, technically accurate resource for both communities to design better projects together.
-                    </p>
                   </div>
                   <div className="rounded-xl p-4 border-2 border-[#264563]">
                     <p className="font-semibold text-[#264563] mb-2">
@@ -73,7 +70,7 @@ export default function BiominingHome() {
                     <p className="text-[#264563] text-sm mt-2">
                       Interested in authoring or expanding a section? Select "Interested in Contributing" in the comment form and we'll reach out.
                     </p>
-                    <p className="text-[#264563]/60 text-xs mt-2 italic">
+                    <p className="text-[#264563] text-xs mt-2 italic">
                       Note: Commenting is not available on the home page. All comments remain confidential and are reviewed by Homeworld Collective staff.
                     </p>
                   </div>
@@ -116,11 +113,6 @@ export default function BiominingHome() {
                     </ul>
                   </div>
                 </div>
-                <div className="flex justify-end mt-4">
-                  <Link href="/what-is-biomining" className="inline-flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-medium text-sm transition-colors">
-                    Learn more about biomining →
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
@@ -142,8 +134,7 @@ export default function BiominingHome() {
                   polymetallic ores, process waters with diverse co-metals, legacy wastes, and tight operational constraints.
                 </p>
                 <p className="text-emerald-700 font-semibold">
-                  Biomining's niche is precisely where this complexity makes conventional chemistry expensive, blunt, or risky—and
-                  where biology can couple selectivity with adaptation to unlock value.
+                  This complexity makes conventional chemistry expensive, blunt, or risky. Biology can couple selectivity with adaptation to unlock value.
                 </p>
               </div>
             </div>
@@ -151,18 +142,6 @@ export default function BiominingHome() {
 
           {/* Dual Path Selection */}
           <div className="grid md:grid-cols-2 gap-8 mt-6">
-            <PathCard
-              title="For Biologists"
-              subtitle="Learn how your biology fits into mining operations"
-              icon={Microscope}
-              color="emerald"
-              sections={[
-                { title: "Mining Value Chain - Stage by Stage", icon: Factory },
-                { title: "Constraints That Shape Bio-Adoption", icon: AlertTriangle }
-              ]}
-              link="/for-biologists"
-            />
-
             <PathCard
               title="For Mining Professionals"
               subtitle="Understand how biology can enhance your operations"
@@ -174,6 +153,18 @@ export default function BiominingHome() {
                 { title: "Biomining Modalities & Flowsheets", icon: Factory }
               ]}
               link="/for-miners"
+            />
+
+            <PathCard
+              title="For Biologists"
+              subtitle="Learn how your biology fits into mining operations"
+              icon={Microscope}
+              color="emerald"
+              sections={[
+                { title: "Mining Value Chain - Stage by Stage", icon: Factory },
+                { title: "Constraints That Shape Bio-Adoption", icon: AlertTriangle }
+              ]}
+              link="/for-biologists"
             />
           </div>
 
@@ -209,6 +200,11 @@ export default function BiominingHome() {
                   link="/flowsheets"
                 />
               </div>
+              <div className="flex justify-end mt-4">
+                <Link href="/what-is-biomining" className="inline-flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-medium text-sm transition-colors">
+                  Learn more about biomining →
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -233,7 +229,7 @@ function PathCard({ title, subtitle, icon: Icon, color, sections, link }) {
   const colors = colorClasses[color];
 
   return (
-    <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white hover:shadow-2xl transition-all duration-300">
+    <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white hover:shadow-2xl transition-all duration-300 flex flex-col">
       <div className="flex items-center gap-3 mb-4">
         <Icon className={`w-7 h-7 ${colors.iconColor}`} />
         <div>
@@ -242,7 +238,7 @@ function PathCard({ title, subtitle, icon: Icon, color, sections, link }) {
         </div>
       </div>
 
-      <div className="space-y-2 mt-5 pl-10">
+      <div className="space-y-2 mt-5 pl-10 flex-grow">
         {sections.map((section, i) => {
           const SectionIcon = section.icon;
           return (

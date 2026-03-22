@@ -205,7 +205,7 @@ export default function ComplexMaterials() {
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Complex Materials Playbook</h1>
             <p className="text-xl text-[#264563]">
               Materials too mineralogically complex, contaminated, or low-grade for conventional processing
@@ -271,8 +271,8 @@ export default function ComplexMaterials() {
             <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
               ← Back to Home
             </Link>
-            <Link href="/research" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
-              Actionable Problems →
+            <Link href="/flowsheets" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
+              Example Flowsheets →
             </Link>
           </div>
         </div>
@@ -297,7 +297,10 @@ function MaterialCard({ id, material, expanded, onToggle }) {
             <p className="text-white/60 text-xs mt-0.5">Maturity: {material.maturity}</p>
           </div>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-white flex-shrink-0" /> : <ChevronRight className="w-6 h-6 text-white flex-shrink-0" />}
+        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
+          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        </div>
       </button>
 
       {expanded && (

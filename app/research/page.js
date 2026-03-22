@@ -141,7 +141,7 @@ export default function Research() {
 
         {/* Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Frontier Challenges in Biomining</h1>
             <p className="text-xl text-[#264563]">
               Themes and actionable problem areas shaping the future of biotechnology in mining
@@ -218,8 +218,15 @@ export default function Research() {
         {/* Coming Soon & Navigation */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white text-center">
           <h3 className="text-xl font-bold text-[#264563] mb-8">Full Problem Statements Coming Soon...</h3>
-          <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center justify-center gap-2">
+        </div>
+
+        {/* Navigation */}
+        <div className="mt-12 flex justify-between">
+          <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
             ← Back to Home
+          </Link>
+          <Link href="/glossary" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
+            Glossary →
           </Link>
         </div>
 
@@ -240,7 +247,10 @@ function ThemeCard({ theme, expanded, onToggle }) {
           <span className="text-white font-bold text-lg w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">{theme.number}</span>
           <h3 className="text-xl font-bold text-white text-left">{theme.title}</h3>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-white flex-shrink-0" /> : <ChevronRight className="w-6 h-6 text-white flex-shrink-0" />}
+        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
+          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        </div>
       </button>
 
       {expanded && (

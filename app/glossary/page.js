@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Search, Mountain, Microscope, BookOpen } from 'lucide-react';
+import { Search, Mountain, Microscope, BookOpen, ChevronDown, ChevronRight } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 import { glossaryData } from '../data/glossary';
 
@@ -144,8 +144,8 @@ export default function Glossary() {
             <Link href="/" className="text-[#264563] hover:text-[#264563]/70 flex items-center gap-2">
               ← Back to Home
             </Link>
-            <Link href="/what-is-biomining" className="text-[#264563] hover:text-[#264563]/70 flex items-center gap-2">
-              ← What Is Biomining?
+            <Link href="/citations" className="text-[#264563] hover:text-[#264563]/70 flex items-center gap-2">
+              References →
             </Link>
           </div>
         </div>
@@ -184,7 +184,10 @@ function TermCard({ term, id, expanded, onToggle }) {
           </span>
           <span className="text-lg font-bold text-[#264563]">{term.term}</span>
         </div>
-        <span className="text-[#264563]/50 text-2xl">{expanded ? '−' : '+'}</span>
+        <div className="flex items-center gap-2 text-[#264563]/50 text-sm shrink-0">
+          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-4 h-4 text-[#264563]" /> : <ChevronRight className="w-4 h-4 text-[#264563]" />}
+        </div>
       </button>
 
       {expanded && (

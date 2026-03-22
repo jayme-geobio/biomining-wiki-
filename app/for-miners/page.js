@@ -34,7 +34,7 @@ export default function ForMiners() {
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl p-10 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Biology 101 for Mining Professionals</h1>
             <p className="text-xl text-[#264563]">
               If mining is going to use biology, you need to understand how biological systems interact with metals and minerals
@@ -235,7 +235,7 @@ export default function ForMiners() {
               ← Back to Home
             </Link>
             <Link href="/complex-materials" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
-              Explore Complex Materials →
+              Complex Materials Playbook →
             </Link>
           </div>
         </div>
@@ -269,11 +269,10 @@ function BiologicalSystemsSection() {
           <h3 className="text-lg font-semibold text-[#264563]">
             Microbial Systems
           </h3>
-          {openSubsections.has('living') ? (
-            <ChevronDown className="w-5 h-5 text-[#264563]" />
-          ) : (
-            <ChevronRight className="w-5 h-5 text-[#264563]" />
-          )}
+          <div className="flex items-center gap-2 text-[#264563]/50 text-sm shrink-0">
+            <span>{openSubsections.has('living') ? 'Click to collapse' : 'Click to expand'}</span>
+            {openSubsections.has('living') ? <ChevronDown className="w-4 h-4 text-[#264563]" /> : <ChevronRight className="w-4 h-4 text-[#264563]" />}
+          </div>
         </button>
 
         {openSubsections.has('living') && (
@@ -344,11 +343,10 @@ function BiologicalSystemsSection() {
           <h3 className="text-lg font-semibold text-[#264563]">
             Biomolecular Systems
           </h3>
-          {openSubsections.has('nonliving') ? (
-            <ChevronDown className="w-5 h-5 text-[#264563]" />
-          ) : (
-            <ChevronRight className="w-5 h-5 text-[#264563]" />
-          )}
+          <div className="flex items-center gap-2 text-[#264563]/50 text-sm shrink-0">
+            <span>{openSubsections.has('nonliving') ? 'Click to collapse' : 'Click to expand'}</span>
+            {openSubsections.has('nonliving') ? <ChevronDown className="w-4 h-4 text-[#264563]" /> : <ChevronRight className="w-4 h-4 text-[#264563]" />}
+          </div>
         </button>
 
         {openSubsections.has('nonliving') && (
@@ -418,11 +416,10 @@ function BiologicalSystemsSection() {
           <h3 className="text-lg font-semibold text-[#264563]">
             Phytomining
           </h3>
-          {openSubsections.has('phyto') ? (
-            <ChevronDown className="w-5 h-5 text-[#264563]" />
-          ) : (
-            <ChevronRight className="w-5 h-5 text-[#264563]" />
-          )}
+          <div className="flex items-center gap-2 text-[#264563]/50 text-sm shrink-0">
+            <span>{openSubsections.has('phyto') ? 'Click to collapse' : 'Click to expand'}</span>
+            {openSubsections.has('phyto') ? <ChevronDown className="w-4 h-4 text-[#264563]" /> : <ChevronRight className="w-4 h-4 text-[#264563]" />}
+          </div>
         </button>
 
         {openSubsections.has('phyto') && (
@@ -495,7 +492,10 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
           <Icon className="w-6 h-6 text-white" />
           <h2 className="text-xl font-bold text-white">{title}</h2>
         </div>
-        {expanded ? <ChevronDown className="w-6 h-6 text-white" /> : <ChevronRight className="w-6 h-6 text-white" />}
+        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
+          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        </div>
       </button>
       {expanded && <div className="bg-[#edede6] p-6 border-t border-white/20">{children}</div>}
     </div>
