@@ -32,10 +32,11 @@ export default function TechnologyEvaluation() {
         {/* Box 2: Content */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
 
-          {/* Intro */}
+          {/* Why These Questions Matter */}
           <div className="mb-8">
+            <h2 className="text-2xl font-bold text-[#264563] mb-3">Why These Questions Matter</h2>
             <p className="text-[#264563]">
-              Bridging biology and mining requires asking the right questions upfront. These checklists help biologists prepare robust proposals that address mining realities, and help mining professionals evaluate whether a bio-technology is technically sound and economically viable for their operation.
+              Most biomining concepts fail not because the biology doesn't work, but because they don't address the operational, economic, and regulatory realities of a mine site. Asking the right questions upfront saves years of misaligned development. These checklists help biologists prepare robust proposals that address mining realities, and help mining professionals evaluate whether a bio-technology is technically sound and economically viable for their operation.
             </p>
           </div>
 
@@ -168,7 +169,7 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
       >
         <div className="flex items-center gap-3">
           <Icon className="w-6 h-6 text-white" />
-          <h2 className="text-xl font-bold text-white">{title}</h2>
+          <h2 className="text-lg font-bold text-white">{title}</h2>
         </div>
         <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
           <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>

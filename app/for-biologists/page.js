@@ -23,8 +23,8 @@ export default function ForBiologists() {
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
           <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
-            <h1 className="text-4xl font-bold text-emerald-700 mb-3 leading-tight">Mining 101 for Biologists</h1>
-            <p className="text-xl text-emerald-700">
+            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Mining 101</h1>
+            <p className="text-xl text-[#264563]">
             If biology is going to matter in mining, you need to know where it lives in a flowsheet
             </p>
           </div>
@@ -36,26 +36,25 @@ export default function ForBiologists() {
 
           {/* Why This Matters */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold text-emerald-700 mb-3 flex items-center gap-2">
-              <AlertCircle className="w-6 h-6 text-emerald-700" />
+            <h2 className="text-2xl font-bold text-[#264563] mb-3">
               Why Biologists Need to Understand Mining
             </h2>
-            <div className="text-emerald-700 space-y-3">
+            <div className="text-[#264563] space-y-3">
               <p>
                 From the mining side, <strong>"biomining" is not a magical stand-alone box</strong>. It's a candidate
                 step in a tightly constrained value chain where:
               </p>
               <ul className="ml-6 space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-700" style={{marginTop: '-0.1em'}}>•</span>
+                  <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
                   Rock is moved at a scale of <strong>billions of tonnes per year</strong>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-700" style={{marginTop: '-0.1em'}}>•</span>
+                  <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
                   Margins can be thin and metal prices are volatile
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-emerald-700" style={{marginTop: '-0.1em'}}>•</span>
+                  <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
                   Timelines, water availability, and permitting often matter as much as chemistry
                 </li>
               </ul>
@@ -223,11 +222,11 @@ export default function ForBiologists() {
 
           {/* Navigation */}
           <div className="mt-12 flex justify-between">
-            <Link href="/" className="text-emerald-700 hover:text-emerald-700 flex items-center gap-2">
+            <Link href="/" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
               ← Back to Home
             </Link>
-            <Link href="/for-miners" className="text-emerald-700 hover:text-emerald-700 flex items-center gap-2">
-              Biology 101 for Mining Professionals →
+            <Link href="/for-miners" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
+              Biology 101 →
             </Link>
           </div>
         </div>
@@ -242,11 +241,11 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
     <div className="rounded-xl mb-4 border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full bg-emerald-700 p-6 flex items-center justify-between hover:bg-emerald-800 transition-colors"
+        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
       >
         <div className="flex items-center gap-3">
           <Icon className="w-6 h-6 text-white" />
-          <h2 className="text-xl font-bold text-white">{title}</h2>
+          <h2 className="text-lg font-bold text-white">{title}</h2>
         </div>
         <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
           <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
@@ -281,7 +280,7 @@ function StageCard({ number, title, color, what, whyBiology, whereBio }) {
     violet:  'border-violet-500',
     rose:    'border-rose-500',
   };
-  const colorClass = colorClasses[color] || 'text-emerald-700';
+  const colorClass = colorClasses[color] || 'text-[#264563]';
   const borderClass = borderClasses[color] || 'border-emerald-700';
 
   return (
@@ -327,12 +326,12 @@ function ConstraintCard({ title, icon: Icon, description, implication }) {
   return (
     <div className="bg-white rounded-lg p-5 border border-emerald-700">
       <div className="flex items-center gap-2 mb-2">
-        <Icon className="w-5 h-5 text-emerald-700" />
-        <h3 className="text-lg font-bold text-emerald-700">{title}</h3>
+        <Icon className="w-5 h-5 text-[#264563]" />
+        <h3 className="text-lg font-bold text-[#264563]">{title}</h3>
       </div>
-      <p className="text-emerald-700 text-sm mb-3">{description}</p>
+      <p className="text-[#264563] text-sm mb-3">{description}</p>
       <div className="bg-emerald-50 rounded p-3 border-l-4 border-emerald-600">
-        <p className="text-emerald-700 text-sm">
+        <p className="text-[#264563] text-sm">
           <strong>Implication:</strong> {implication}
         </p>
       </div>

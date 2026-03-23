@@ -152,10 +152,10 @@ export default function Research() {
 
         {/* Context & Origin */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
-          <h2 className="text-2xl font-bold text-[#264563] mb-4">Building the Research Roadmap</h2>
+          <h2 id="building-the-research-roadmap" className="text-2xl font-bold text-[#264563] mb-4">Building the Research Roadmap</h2>
           <div className="text-[#264563] space-y-3">
             <p>
-              In November 2025, Homeworld Collective convened the <strong>Biomining Under Complex Conditions</strong> workshop, bringing together researchers, mining professionals, biotechnologists, and other stakeholders to identify the most pressing challenges and opportunities in biomining. Through structured discussion and collaborative workshopping, participants generated a set of <strong>actionable problem statements</strong> spanning technical, institutional, and ecosystem challenges.
+              In November 2025, Homeworld Collective convened the <strong>Biomining Under Complex Conditions Workshop</strong>, bringing together researchers, mining professionals, biotechnologists, and other stakeholders to identify the most pressing challenges and opportunities in biomining. Through structured discussion and collaborative workshopping, participants generated a set of <strong>actionable problem statements</strong> spanning technical, institutional, and ecosystem challenges.
             </p>
             <p>
               The themes below capture key patterns from the workshop, helping accelerate innovation and align stakeholders around critical barriers in biomining.
@@ -217,7 +217,7 @@ export default function Research() {
 
         {/* Coming Soon & Navigation */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white text-center">
-          <h3 className="text-xl font-bold text-[#264563] mb-8">Full Problem Statements Coming Soon...</h3>
+          <h3 className="text-2xl font-bold text-[#264563] mb-8">Full Problem Statements Coming Soon...</h3>
         </div>
 
         {/* Navigation */}
@@ -245,7 +245,7 @@ function ThemeCard({ theme, expanded, onToggle }) {
       >
         <div className="flex items-center gap-3">
           <span className="text-white font-bold text-lg w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">{theme.number}</span>
-          <h3 className="text-xl font-bold text-white text-left">{theme.title}</h3>
+          <h3 className="text-lg font-bold text-white text-left">{theme.title}</h3>
         </div>
         <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
           <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>

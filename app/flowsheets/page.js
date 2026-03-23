@@ -208,18 +208,43 @@ export default function Flowsheets() {
           <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
         </div>
 
-        {/* Box 2: Content */}
+        {/* Box 2: Integration Patterns */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h2 className="text-2xl font-bold text-[#264563] mb-3">Integration Patterns</h2>
+          <p className="text-[#264563] mb-3">
+            Key patterns to look for across these flowsheets:
+          </p>
+          <ul className="text-[#264563] space-y-2">
+            <li className="flex items-start gap-2">
+              <span className="text-[#264563]">•</span>
+              <span><strong>Biology as a unit operation</strong> — integrated into larger flowsheets, not standalone</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#264563]">•</span>
+              <span><strong>Control parameters matter</strong> — pH, temperature, residence time, nutrients are critical</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#264563]">•</span>
+              <span><strong>Side-stream applications</strong> — polishing, impurity removal, water treatment add value without replacing main process</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#264563]">•</span>
+              <span><strong>Dual benefits</strong> — best cases combine economic value with environmental improvement</span>
+            </li>
+          </ul>
+        </div>
 
-          {/* What is a Flowsheet */}
-          <div className="mb-8">
-            <h2 className="text-xl font-bold text-[#264563] mb-3">What Is a Flowsheet?</h2>
-            <p className="text-[#264563]">
-              A <GlossaryTerm term="Flowsheet" definition="The standard mining industry term for a diagram showing how ore is processed from feed to final product through a sequence of unit operations">flowsheet</GlossaryTerm> is the standard mining industry term for a diagram showing how ore moves through each processing step to become saleable metal. It reveals where biology can plug in, what constraints exist (chemistry, time, scale), and whether biological innovations fit existing operations.
-            </p>
-          </div>
+        {/* Box 3: What Is a Flowsheet */}
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h2 className="text-2xl font-bold text-[#264563] mb-3">What Is a Flowsheet?</h2>
+          <p className="text-[#264563]">
+            A <GlossaryTerm term="Flowsheet" definition="The standard mining industry term for a diagram showing how ore is processed from feed to final product through a sequence of unit operations">flowsheet</GlossaryTerm> is the standard mining industry term for a diagram showing how ore moves through each processing step to become saleable metal. It reveals where biology can plug in, what constraints exist (chemistry, time, scale), and whether biological innovations fit existing operations.
+          </p>
+        </div>
 
-          {/* Flowsheets */}
+        {/* Box 4: Example Flowsheets */}
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h2 className="text-2xl font-bold text-[#264563] mb-6">Example Flowsheets</h2>
           <div className="space-y-4">
             {flowsheetData.map(flowsheet => (
               <FlowsheetCard
@@ -229,32 +254,6 @@ export default function Flowsheets() {
                 onToggle={() => toggleFlowsheet(flowsheet.id)}
               />
             ))}
-          </div>
-
-          {/* Key Takeaway */}
-          <div className="mt-8 bg-white rounded-xl p-6 border border-emerald-700">
-            <h3 className="text-lg font-bold text-emerald-700 mb-2">Integration Patterns</h3>
-            <p className="text-[#264563] text-sm mb-3">
-              Notice the common patterns across these flowsheets:
-            </p>
-            <ul className="text-[#264563] text-sm space-y-2">
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-600">•</span>
-                <span><strong>Biology as a unit operation</strong> — integrated into larger flowsheets, not standalone</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-600">•</span>
-                <span><strong>Control parameters matter</strong> — pH, temperature, residence time, nutrients are critical</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-600">•</span>
-                <span><strong>Side-stream applications</strong> — polishing, impurity removal, water treatment add value without replacing main process</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-600">•</span>
-                <span><strong>Dual benefits</strong> — best cases combine economic value with environmental improvement</span>
-              </li>
-            </ul>
           </div>
 
           {/* Navigation */}
@@ -296,7 +295,7 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
               {flowsheet.maturity}
             </span>
           </div>
-          <h2 className="text-2xl font-bold text-white mb-1">{flowsheet.title}</h2>
+          <h2 className="text-lg font-bold text-white mb-1">{flowsheet.title}</h2>
           <p className="text-white/80 text-sm">{flowsheet.description}</p>
         </div>
         <div className="flex items-center gap-2 text-white/70 text-sm shrink-0 ml-4">

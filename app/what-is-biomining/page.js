@@ -35,28 +35,54 @@ export default function WhatIsBiomining() {
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
           {/* Definition */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold text-[#264563] mb-3">Our Definition</h2>
+            <h2 className="text-2xl font-bold text-[#264563] mb-3">Our Definition</h2>
             <div className="text-[#264563] space-y-3">
-              <p className="text-lg">
-                "Biomining" is often shorthand for "microbes in heaps." That definition is <strong>too narrow</strong>.
+              <p>
+                "Biomining" is often shorthand for "microbes in heaps." <strong>That definition is too narrow.</strong> For this handbook, biomining means:
               </p>
-              <div className="rounded-lg p-4 border-l-4 border-[#264563] mt-4" style={{backgroundColor: 'rgba(255,255,255,0.5)'}}>
-                <p className="text-[#264563] font-semibold">
-                  For this wiki, <strong>biomining</strong> means:
-                </p>
-                <p className="text-[#264563] mt-2 text-lg italic">
-                  Any use of biological mechanisms—cells, <GlossaryTerm term="Enzyme" definition="A biological catalyst that accelerates specific chemical reactions">enzymes</GlossaryTerm>, proteins, plants, <GlossaryTerm term="Metabolite" definition="A small molecule produced or consumed during metabolism">metabolites</GlossaryTerm>, or <GlossaryTerm term="Consortia" definition="Mixed communities of microorganisms working together">consortia</GlossaryTerm>—to aid
-                  metal recovery, mineral processing, or the management of mining-related wastes and liabilities.
+              <div className="rounded-lg p-4 border-l-4 border-[#264563] mt-2" style={{backgroundColor: 'rgba(255,255,255,0.5)'}}>
+                <p className="text-[#264563]">
+                  Any biological mechanisms—cells, <GlossaryTerm term="Enzyme" definition="A biological catalyst that accelerates specific chemical reactions">enzymes</GlossaryTerm>, proteins, plants, <GlossaryTerm term="Metabolite" definition="A small molecule produced or consumed during metabolism">metabolites</GlossaryTerm>, or <GlossaryTerm term="Consortia" definition="Mixed communities of microorganisms working together">consortia</GlossaryTerm>—used to aid metal recovery, mineral processing, or the management of mining-related wastes and liabilities. This includes <GlossaryTerm term="Cell-Free Proteins" definition="A protein synthesized in vitro using extracted cellular machinery, without intact living cells">cell-free proteins</GlossaryTerm> and separation modules as well as whole-cell systems.
                 </p>
               </div>
-              <p className="mt-4">
-                That definition includes <strong><GlossaryTerm term="Cell-Free Proteins" definition="A protein synthesized in vitro using extracted cellular machinery, without intact living cells">cell-free proteins</GlossaryTerm> and separation modules</strong> as well as
-                whole-cell systems. A viable industrial pathway will often combine several mechanisms in
-                <strong> hybrid </strong><GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheets</GlossaryTerm>.
-              </p>
             </div>
           </div>
 
+        </div>
+
+        {/* Box 3: The Bottom Line */}
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h2 className="text-2xl font-bold text-[#264563] mb-3">The Bottom Line</h2>
+          <div className="text-[#264563] space-y-3">
+            <p>
+              Biomining is <strong>not a replacement for mines</strong>. It's a <strong>toolkit of modules</strong> that
+              can plug into existing <GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheets</GlossaryTerm> where:
+            </p>
+            <ul className="ml-6 space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-600 mt-1">•</span>
+                <span>Complexity makes conventional chemistry expensive, blunt, or risky</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-600 mt-1">•</span>
+                <span>Selectivity, adaptation, or operation under milder conditions offer strategic advantages</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-emerald-600 mt-1">•</span>
+                <span>Environmental outcomes (closure, water quality, social licence) add value beyond metal recovery</span>
+              </li>
+            </ul>
+            <p className="mt-4 font-semibold text-[#264563]">
+              These modules are judged on the same metrics as any other process: $/tonne, % recovery, impurity removal,
+              risk, permitting footprint, and closure outcomes.
+            </p>
+          </div>
+
+        </div>
+
+        {/* Box 4: Mechanisms & Competitive Edge */}
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h2 className="text-2xl font-bold text-[#264563] mb-6">Mechanisms & Competitive Edge</h2>
           {/* Mechanisms */}
           <Section
             title="1. Biological Mechanisms in Mining"
@@ -64,6 +90,10 @@ export default function WhatIsBiomining() {
             expanded={openSections.has('mechanisms')}
             onToggle={() => toggleSection('mechanisms')}
           >
+            <p className="text-[#264563] mb-4">
+              A viable industrial pathway will often combine several mechanisms in
+              <strong> hybrid </strong><GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheets</GlossaryTerm>.
+            </p>
             <div className="space-y-4">
               <MechanismCard
                 number="1"
@@ -132,6 +162,7 @@ export default function WhatIsBiomining() {
                   "Microbes drive oxidation-reduction cycles (e.g., Fe²⁺ ↔ Fe³⁺, S⁰ ↔ sulfate) efficiently and regeneratively",
                   "Potential to reduce the amount of external oxidant-reductant required"
                 ]}
+                valueTo="Cuts reagent cost by continuously regenerating oxidants on-site rather than purchasing and trucking them in."
               />
               <AdvantageCard
                 title="Chelation and Complexation"
@@ -139,6 +170,7 @@ export default function WhatIsBiomining() {
                   <><GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">Metallophores</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophore</GlossaryTerm>-like ligands, and engineered chelators show high affinity and selectivity</>,
                   <>Can operate in complex aqueous mixtures and at low metal concentrations where traditional <GlossaryTerm term="Solvent Extraction (SX)" definition="A hydrometallurgical process that uses organic solvents to selectively transfer metals from one aqueous solution to another">extractants</GlossaryTerm> face challenges</>
                 ]}
+                valueTo="Makes otherwise uneconomic ores and waste streams worth processing by recovering metals that conventional chemistry leaves behind."
               />
               <AdvantageCard
                 title="Binding Selectivity"
@@ -146,52 +178,26 @@ export default function WhatIsBiomining() {
                   "Proteins and biopolymers act as 'molecular coin sorters', discriminating between metals with similar chemistry",
                   <>Critical for <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">rare earth elements</GlossaryTerm>, platinum group metals (PGMs), and complex polymetallic streams</>
                 ]}
+                valueTo="Produces higher-purity products with fewer processing steps, meaning better off-take pricing and less downstream rework."
               />
               <AdvantageCard
                 title="Mineral Transformation and Precipitation"
                 items={[
                   "Biomineralization and biocement enable controlled precipitation of metal sulfides and carbonates",
-                  <>Useful for both recovery and stabilization of <GlossaryTerm term="Mine Waste" definition="Any material removed or displaced during mining that has no current economic value, including tailings, waste rock, and slag">wastes</GlossaryTerm></>
+                  <>Useful for both recovery and stabilization of <GlossaryTerm term="Mine Waste" definition="Any material removed or displaced during mining that has no current economic value, including tailings, waste rock, and slag">wastes</GlossaryTerm> — waste management is a major burden on mining OPEX and carries significant environmental liability</>
                 ]}
+                valueTo="Reduces closure liability by stabilizing problematic metals in waste, turning a long-term cost into a manageable one."
               />
               <AdvantageCard
                 title="Adaptation"
                 items={[
                   "Systems that can evolve toward function—design the ecosystem, not just the strain",
-                  "Adaptive communities can tune performance over time within an operating envelope"
+                  "Adaptive communities can tune metal recovery rates and tolerance to changing feed chemistry over time, maintaining throughput as conditions evolve"
                 ]}
+                valueTo="Less re-engineering as ore grades shift over the life of mine — the biology adjusts, so the process keeps running without costly shutdowns or redesigns."
               />
             </div>
           </Section>
-        </div>
-
-        {/* Box 3: The Bottom Line */}
-        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
-          <h2 className="text-xl font-bold text-[#264563] mb-3">The Bottom Line</h2>
-          <div className="text-[#264563] space-y-3">
-            <p>
-              Biomining is <strong>not a replacement for mines</strong>. It's a <strong>toolkit of modules</strong> that
-              can plug into existing <GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheets</GlossaryTerm> where:
-            </p>
-            <ul className="ml-6 space-y-2">
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-600 mt-1">•</span>
-                <span>Complexity makes conventional chemistry expensive, blunt, or risky</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-600 mt-1">•</span>
-                <span>Selectivity, adaptation, or operation under milder conditions offer strategic advantages</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-emerald-600 mt-1">•</span>
-                <span>Environmental outcomes (closure, water quality, social licence) add value beyond metal recovery</span>
-              </li>
-            </ul>
-            <p className="mt-4 font-semibold text-[#264563]">
-              These modules are judged on the same metrics as any other process: $/tonne, % recovery, impurity removal,
-              risk, permitting footprint, and closure outcomes.
-            </p>
-          </div>
 
           {/* Navigation */}
           <div className="mt-12 flex justify-between">
@@ -199,7 +205,7 @@ export default function WhatIsBiomining() {
               ← Back to Home
             </Link>
             <Link href="/for-biologists" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
-              Mining 101 for Biologists →
+              Mining 101 →
             </Link>
           </div>
         </div>
@@ -218,7 +224,7 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
       >
         <div className="flex items-center gap-3">
           <Icon className="w-6 h-6 text-white" />
-          <h2 className="text-xl font-bold text-white">{title}</h2>
+          <h2 className="text-lg font-bold text-white">{title}</h2>
         </div>
         <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
           <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
@@ -260,7 +266,7 @@ function MechanismCard({ number, title, description, details, icon: Icon, color 
   );
 }
 
-function AdvantageCard({ title, items }) {
+function AdvantageCard({ title, items, valueTo }) {
   return (
     <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
       <h4 className="text-lg font-bold text-[#264563] mb-2">{title}</h4>
@@ -272,6 +278,11 @@ function AdvantageCard({ title, items }) {
           </li>
         ))}
       </ul>
+      {valueTo && (
+        <p className="text-[#264563] text-sm mt-3">
+          <strong>Value to mining:</strong> {valueTo}
+        </p>
+      )}
     </div>
   );
 }

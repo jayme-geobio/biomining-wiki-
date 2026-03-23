@@ -18,7 +18,7 @@ export default function BiominingHome() {
                 <h1 className="text-4xl font-bold text-[#264563] leading-tight">
                   The Biomining Handbook
                 </h1>
-                <p className="text-lg text-[#264563]">
+                <p className="text-xl text-[#264563]">
                   A practical guide for biologists and mining professionals
                 </p>
               </div>
@@ -30,13 +30,16 @@ export default function BiominingHome() {
           {/* About This Handbook */}
           <div className="mb-6">
             <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
-              <h3 className="text-xl font-bold text-[#264563] mb-3 flex items-center gap-2">
+              <h3 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
                 <GraduationCap className="w-7 h-7 text-emerald-600" />
                 About This Handbook
               </h3>
               <div className="text-[#264563] space-y-3">
                 <p>
-                  This handbook bridges biology and mining for critical mineral recovery. Our goal is a gold-standard, technically accurate resource for both communities to design better projects together.
+                  Biomining holds enormous potential for critical mineral recovery, but the field lacks a centralized resource bridging biological solutions and mining challenges. This handbook aims to address that gap.
+                </p>
+                <p>
+                  Born from Homeworld's <Link href="/research#building-the-research-roadmap" className="underline text-emerald-700 hover:text-emerald-900">Biomining Under Complex Conditions Workshop</Link>, our goal is a gold-standard, technically accurate resource for both communities to design better projects together.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-[#264563] rounded-xl p-4">
@@ -82,14 +85,13 @@ export default function BiominingHome() {
           {/* What is Biomining */}
           <div className="mb-6">
             <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
-              <h3 className="text-xl font-bold text-[#264563] mb-3 flex items-center gap-2">
+              <h3 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
                 <HelpCircle className="w-7 h-7 text-emerald-600" />
                 What is Biomining?
               </h3>
               <div>
                 <p className="text-[#264563] mb-4">
-                  <strong>Biomining</strong> means <strong>any use of biological mechanisms</strong>—cells, enzymes,
-                  proteins, metabolites, or consortia—to aid metal recovery, mineral processing, or management of
+                  Any biological mechanism used to aid metal recovery, mineral processing, or the management of
                   mining-related wastes and liabilities.
                 </p>
                 <div className="flex items-center justify-center gap-4 mt-6">
@@ -120,7 +122,7 @@ export default function BiominingHome() {
           {/* Why Now Section */}
           <div className="mb-6">
             <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
-              <h2 className="text-xl font-bold text-[#264563] mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-[#264563] mb-4 flex items-center gap-2">
                 <TrendingUp className="w-7 h-7 text-emerald-600" />
                 Why Biomining Now?
               </h2>
@@ -143,7 +145,7 @@ export default function BiominingHome() {
           {/* Dual Path Selection */}
           <div className="grid md:grid-cols-2 gap-8 mt-6">
             <PathCard
-              title="For Mining Professionals"
+              title="Biology 101"
               subtitle="Understand how biology can enhance your operations"
               icon={Mountain}
               color="blue"
@@ -156,7 +158,7 @@ export default function BiominingHome() {
             />
 
             <PathCard
-              title="For Biologists"
+              title="Mining 101"
               subtitle="Learn how your biology fits into mining operations"
               icon={Microscope}
               color="emerald"
@@ -171,10 +173,10 @@ export default function BiominingHome() {
           {/* Core Resources */}
           <div className="mt-6">
             <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
-              <h2 className="text-xl font-bold text-[#264563] mb-6 text-center">
+              <h2 className="text-2xl font-bold text-[#264563] mb-6 text-center">
                 Essential Resources
               </h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
                 <ResourceCard
                   title="What Is Biomining?"
                   description="Definitions, mechanisms, and where biotech rivals chemistry"
@@ -182,13 +184,7 @@ export default function BiominingHome() {
                   link="/what-is-biomining"
                 />
                 <ResourceCard
-                  title="Glossary"
-                  description="Shared vocabulary bridging mining and biology"
-                  icon={BookOpen}
-                  link="/glossary"
-                />
-                <ResourceCard
-                  title="Complex Materials Playbook"
+                  title="Complex Materials"
                   description="Tailings, AMD, e-waste, and where biology helps most"
                   icon={Droplets}
                   link="/complex-materials"
@@ -198,6 +194,18 @@ export default function BiominingHome() {
                   description="Real-world integration examples and bio-modules"
                   icon={Target}
                   link="/flowsheets"
+                />
+                <ResourceCard
+                  title="Technology Assessment Checklist"
+                  description="Evaluate biomining technologies against mining requirements"
+                  icon={BookOpen}
+                  link="/technology-evaluation"
+                />
+                <ResourceCard
+                  title="Frontier Challenges"
+                  description="Key research gaps and the roadmap ahead for biomining"
+                  icon={Mountain}
+                  link="/research"
                 />
               </div>
               <div className="flex justify-end mt-4">
@@ -233,7 +241,7 @@ function PathCard({ title, subtitle, icon: Icon, color, sections, link }) {
       <div className="flex items-center gap-3 mb-4">
         <Icon className={`w-7 h-7 ${colors.iconColor}`} />
         <div>
-          <h2 className="text-xl font-bold text-[#264563]">{title}</h2>
+          <h2 className="text-2xl font-bold text-[#264563]">{title}</h2>
           <p className="text-[#264563] text-sm">{subtitle}</p>
         </div>
       </div>

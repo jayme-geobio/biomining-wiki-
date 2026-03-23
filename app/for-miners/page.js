@@ -35,9 +35,9 @@ export default function ForMiners() {
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
           <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
-            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Biology 101 for Mining Professionals</h1>
-            <p className="text-lg text-[#264563]">
-              If mining is going to use biology to improve effectiveness and economics, you need to understand how biological systems interact with metals and minerals
+            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Biology 101</h1>
+            <p className="text-xl text-[#264563]">
+              If mining is going to use biology to improve effectiveness and economics, you need to understand how biological systems interact with metals
             </p>
           </div>
           <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
@@ -48,7 +48,7 @@ export default function ForMiners() {
 
           {/* Key Insight */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold text-[#264563] mb-3">
+            <h2 className="text-2xl font-bold text-[#264563] mb-3">
               Biology as Switchable, Selective Chemistry
             </h2>
             <div className="text-[#264563] space-y-3">
@@ -489,7 +489,7 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
       >
         <div className="flex items-center gap-3">
           <Icon className="w-6 h-6 text-white" />
-          <h2 className="text-xl font-bold text-white">{title}</h2>
+          <h2 className="text-lg font-bold text-white">{title}</h2>
         </div>
         <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
           <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>

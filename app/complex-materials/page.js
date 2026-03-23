@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle } from 'lucide-react';
+import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle, TrendingUp } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 import GlossaryTerm from '../components/GlossaryTerm';
 
@@ -40,7 +40,8 @@ const materialsData = {
       }
     ],
     whyBiology: "Microbes cause AMD but can also help solve it. Biology offers passive, low-cost treatment that can simultaneously recover value.",
-    maturity: "High - proven in constructed wetlands and pilot-scale SRB reactors"
+    maturityLevel: "High",
+    maturityDetail: "Proven in constructed wetlands and pilot-scale SRB reactors"
   },
   wasteRock: {
     name: "Bulk Waste Rock & Refractory Ores",
@@ -72,7 +73,8 @@ const materialsData = {
       }
     ],
     whyBiology: "Biology can unlock value from material too expensive to process conventionally - turning waste into revenue at lower operating costs.",
-    maturity: "Medium-High - proven for refractory gold; emerging for low-grade stockpiles and critical metal co-products"
+    maturityLevel: "Medium-High",
+    maturityDetail: "Proven for refractory gold; emerging for low-grade stockpiles and critical metal co-products"
   },
   tailings: {
     name: "Tailings",
@@ -106,7 +108,8 @@ const materialsData = {
       }
     ],
     whyBiology: "Bioleaching is cheaper than rebuilding infrastructure. Biocement and stabilization avoid toxic chemical transport to remote sites.",
-    maturity: "Medium - proven for some metals; emerging for REEs and biological stabilization"
+    maturityLevel: "Medium",
+    maturityDetail: "Proven for some metals; emerging for REEs and biological stabilization"
   },
   ewaste: {
     name: "Electronic Waste (E-waste)",
@@ -139,7 +142,8 @@ const materialsData = {
       }
     ],
     whyBiology: "E-waste is metal-rich but expensive to recycle. Biotech could shift economics while reducing worker health risks and environmental impact.",
-    maturity: "Low-Medium - lab-proven, early pilots; significant commercialization challenges remain"
+    maturityLevel: "Low-Medium",
+    maturityDetail: "Lab-proven, early pilots; significant commercialization challenges remain"
   },
   other: {
     name: "Other Secondary Resources",
@@ -171,7 +175,8 @@ const materialsData = {
       }
     ],
     whyBiology: "Each of these wastes contains value where biology's mild conditions and selectivity offer a strong alternative pathway for recovery.",
-    maturity: "Low-Medium - mostly at research and early pilot stage; case-by-case evaluation needed"
+    maturityLevel: "Low-Medium",
+    maturityDetail: "Mostly at research and early pilot stage; case-by-case evaluation needed"
   }
 };
 
@@ -214,36 +219,46 @@ export default function ComplexMaterials() {
           <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
         </div>
 
-        {/* Box 2: Content */}
+        {/* Box 2: Best Opportunities */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h2 className="text-2xl font-bold text-[#264563] mb-3">The Best Opportunities</h2>
+          <p className="text-[#264563]">
+            The sweet spot for biomining is where you're dealing with <strong>waste, legacy sites, or materials
+            that benefit from alternative processing approaches</strong>. These are the contexts where biology's strengths
+            (lower OPEX, mild conditions, selectivity, reduced environmental impact) are most valuable.
+          </p>
+        </div>
 
-          {/* Key Insight */}
-          <div className="mb-8">
-            <h2 className="text-xl font-bold text-[#264563] mb-3">Where Biology Adds Value</h2>
-            <div className="text-[#264563] space-y-2">
-              <p className="mb-3">
-                Conventional mining is highly optimized for high-<GlossaryTerm term="Grade" definition="Concentration of a valuable element or mineral in ore">grade</GlossaryTerm> ores. For complex
-                materials, biotechnology offers a complementary approach that can shift the economics and reduce environmental impact.
-              </p>
-              {[
-                ["Low-grade material", "where conventional processing is uneconomic"],
-                ["Complex mineralogy", "(refractory ores, polymetallic systems)"],
-                ["Environmental hazards", <>(<GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm>, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, legacy sites)</>],
-                ["Remote locations", "where chemical transport is expensive or impossible"],
-                ["Thin margins", "where small OPEX reductions make projects viable"],
-              ].map(([bold, rest], i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span className="text-emerald-600" style={{marginTop: '-0.1em'}}>✓</span>
-                  <span><strong>{bold}</strong> {rest}</span>
-                </div>
-              ))}
-              <p className="font-semibold">
-                Note: These materials are illustrative examples, not a comprehensive overview.
-              </p>
-            </div>
+        {/* Box 3: Where Biology Adds Value */}
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h2 className="text-2xl font-bold text-[#264563] mb-3">Where Biology Adds Value</h2>
+          <div className="text-[#264563] space-y-2">
+            <p className="mb-3">
+              Conventional mining is highly optimized for high-<GlossaryTerm term="Grade" definition="Concentration of a valuable element or mineral in ore">grade</GlossaryTerm> ores. For complex
+              materials, biotechnology offers a complementary approach that can shift the economics and reduce environmental impact.
+            </p>
+            {[
+              ["Low-grade material", "where conventional processing is uneconomic"],
+              ["Complex mineralogy", "(refractory ores, polymetallic systems)"],
+              ["Environmental hazards", <>(<GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm>, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, legacy sites)</>],
+              ["Remote locations", "where chemical transport is expensive or impossible"],
+              ["Thin margins", "where small OPEX reductions make projects viable"],
+            ].map(([bold, rest], i) => (
+              <div key={i} className="flex items-start gap-2">
+                <span className="text-emerald-600" style={{marginTop: '-0.1em'}}>✓</span>
+                <span><strong>{bold}</strong> {rest}</span>
+              </div>
+            ))}
           </div>
 
-          {/* Materials */}
+        </div>
+
+        {/* Box 4: Materials */}
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h2 className="text-2xl font-bold text-[#264563] mb-2">Complex Materials</h2>
+          <p className="font-semibold text-[#264563] mb-6">
+            Note: These materials are illustrative examples, not a comprehensive overview.
+          </p>
           <div className="space-y-4">
             {Object.keys(materialsData).map(key => (
               <MaterialCard
@@ -254,16 +269,6 @@ export default function ComplexMaterials() {
                 onToggle={() => toggleMaterial(key)}
               />
             ))}
-          </div>
-
-          {/* Bottom Insight */}
-          <div className="mt-8 bg-white rounded-xl p-6 border border-emerald-700">
-            <h3 className="text-lg font-bold text-emerald-700 mb-2">The Best Opportunities</h3>
-            <p className="text-[#264563] text-sm">
-              The sweet spot for biomining is where you're dealing with <strong>waste, legacy sites, or materials
-              that benefit from alternative processing approaches</strong>. These are the contexts where biology's strengths
-              (lower OPEX, mild conditions, selectivity, reduced environmental impact) are most valuable.
-            </p>
           </div>
 
           {/* Navigation */}
@@ -292,10 +297,7 @@ function MaterialCard({ id, material, expanded, onToggle }) {
       >
         <div className="flex items-center gap-3 text-left">
           <Icon className="w-6 h-6 text-white flex-shrink-0" />
-          <div>
-            <h2 className="text-xl font-bold text-white">{material.name}</h2>
-            <p className="text-white/60 text-xs mt-0.5">Maturity: {material.maturity}</p>
-          </div>
+          <h2 className="text-lg font-bold text-white">{material.name}</h2>
         </div>
         <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
           <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
@@ -308,7 +310,32 @@ function MaterialCard({ id, material, expanded, onToggle }) {
           {/* Definition */}
           <p className="text-[#264563] italic">{material.definition}</p>
 
-          {/* Hazards */}
+          {/* Why Biology Works Here */}
+          <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-700">
+            <h3 className="text-lg font-bold text-emerald-700 mb-2">Why Biology Works Here</h3>
+            <p className="text-emerald-900 text-sm">{material.whyBiology}</p>
+          </div>
+
+          {/* Maturity Level */}
+          <div>
+            <h3 className="text-lg font-bold text-[#264563] mb-2 flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-[#264563]" />
+              Maturity Level: <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-sm font-bold ${
+                material.maturityLevel === 'High' ? 'bg-emerald-100 text-emerald-800' :
+                material.maturityLevel === 'Medium-High' ? 'bg-teal-100 text-teal-800' :
+                material.maturityLevel === 'Medium' ? 'bg-amber-100 text-amber-800' :
+                'bg-orange-100 text-orange-800'
+              }`}>{material.maturityLevel}</span>
+            </h3>
+            <ul className="space-y-1">
+              <li className="text-[#264563] text-sm flex items-start gap-2">
+                <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
+                <span>{material.maturityDetail}</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Key Hazards & Challenges */}
           <div>
             <h3 className="text-lg font-bold text-[#264563] mb-2 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-orange-500" />
@@ -324,7 +351,7 @@ function MaterialCard({ id, material, expanded, onToggle }) {
             </ul>
           </div>
 
-          {/* Bio Opportunities */}
+          {/* Where Biology Can Help */}
           <div>
             <h3 className="text-lg font-bold text-[#264563] mb-3 flex items-center gap-2">
               <Beaker className="w-5 h-5 text-emerald-600" />
@@ -338,12 +365,6 @@ function MaterialCard({ id, material, expanded, onToggle }) {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Why Biology */}
-          <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-700">
-            <h3 className="text-lg font-bold text-emerald-700 mb-2">Why Biology Works Here</h3>
-            <p className="text-emerald-900 text-sm">{material.whyBiology}</p>
           </div>
         </div>
       )}
