@@ -22,7 +22,7 @@ export default function WhatIsBiomining() {
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">What Is "Biomining"?</h1>
             <p className="text-xl text-[#264563]">
               Definitions, mechanisms, and where biotech rivals chemistry
@@ -120,6 +120,12 @@ export default function WhatIsBiomining() {
                 Biotech's value proposition is not that biology can do everything. It is that biology does certain
                 things <strong>exceptionally well under complex constraints</strong>:
               </p>
+              <div className="bg-emerald-600 rounded-lg p-5 border border-emerald-600 mt-6">
+                <p className="text-white">
+                  <strong>Biotech's strongest foothold:</strong> <Link href="/complex-materials" className="underline decoration-dotted decoration-white/50 underline-offset-2 cursor-pointer hover:decoration-white transition-colors">Complex materials</Link> and operating conditions
+                  where conventional solutions are too costly, too carbon-intensive, or too permitting-constrained to scale.
+                </p>
+              </div>
               <AdvantageCard
                 title="Redox Catalysis"
                 items={[
@@ -155,12 +161,6 @@ export default function WhatIsBiomining() {
                   "Adaptive communities can tune performance over time within an operating envelope"
                 ]}
               />
-              <div className="bg-emerald-600 rounded-lg p-5 border border-emerald-600 mt-6">
-                <p className="text-white">
-                  <strong>Biotech's strongest foothold:</strong> <Link href="/complex-materials" className="underline decoration-dotted decoration-white/50 underline-offset-2 cursor-pointer hover:decoration-white transition-colors">Complex materials</Link> and operating conditions
-                  where conventional solutions are too costly, too carbon-intensive, or too permitting-constrained to scale.
-                </p>
-              </div>
             </div>
           </Section>
         </div>
@@ -199,7 +199,7 @@ export default function WhatIsBiomining() {
               ← Back to Home
             </Link>
             <Link href="/for-biologists" className="text-[#264563] hover:text-[#264563] flex items-center gap-2">
-              Mining Fundamentals →
+              Mining 101 for Biologists →
             </Link>
           </div>
         </div>

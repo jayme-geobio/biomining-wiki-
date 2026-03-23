@@ -34,10 +34,10 @@ export default function ForMiners() {
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Biology 101 for Mining Professionals</h1>
-            <p className="text-xl text-[#264563]">
-              If mining is going to use biology, you need to understand how biological systems interact with metals and minerals
+            <p className="text-lg text-[#264563]">
+              If mining is going to use biology to improve effectiveness and economics, you need to understand how biological systems interact with metals and minerals
             </p>
           </div>
           <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
@@ -55,8 +55,7 @@ export default function ForMiners() {
               <p>
                 Biology provides <strong>switchable, selective chemistry</strong> for metal extraction and management.
                 Like reagents and catalysts, biological systems are constrained by temperature, pH, ionic strength, inhibitors, and
-                substrate availability. Understanding these constraints is key to successful integration.
-              </p>
+                substrate availability. Understanding these constraints is key to successful integration.              </p>
               <div className="bg-[#264563]/5 rounded-lg p-4 border-l-4 border-[#264563] mt-4">
                 <p className="text-[#264563]">
                   Think of biology not as a replacement for your <GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheet</GlossaryTerm>, but as a <strong>new class of reagent</strong>—one
@@ -258,7 +257,7 @@ function BiologicalSystemsSection() {
   return (
     <div className="space-y-6">
       <p className="text-[#264563]">
-        Biology enters mining in three main forms: 
+        Biology's superpower is its high degree of customizability, enabling tunable interactions with metals and minerals across three main forms: 
       </p>
 
       <div className="rounded-xl border border-[#264563]/20 overflow-hidden bg-white">
@@ -287,7 +286,7 @@ function BiologicalSystemsSection() {
             <div className="space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">How Microbes Work</h4>
               <p>
-                Microorganisms operate by carrying out chemical reactions to obtain energy from their environment. These reactions allow them to power their metabolism, maintain cellular processes, and produce new cells.
+                Think of microbes as <strong>tiny, tunable chemical factories</strong> — not just organisms that eat and grow, but programmable systems with customizable inputs and outputs. Microorganisms operate by carrying out chemical reactions to obtain energy from their environment. These reactions allow them to power their metabolism, maintain cellular processes, and produce new cells.
               </p>
               <p>
                 At a high level, microbes need three things to survive and do work:

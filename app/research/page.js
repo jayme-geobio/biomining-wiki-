@@ -141,7 +141,7 @@ export default function Research() {
 
         {/* Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Frontier Challenges in Biomining</h1>
             <p className="text-xl text-[#264563]">
               Themes and actionable problem areas shaping the future of biotechnology in mining

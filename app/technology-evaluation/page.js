@@ -20,7 +20,7 @@ export default function TechnologyEvaluation() {
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Technology Assessment Checklists</h1>
             <p className="text-xl text-[#264563]">
               Checklists for evaluating biomining concepts and bio-solutions
@@ -149,7 +149,7 @@ export default function TechnologyEvaluation() {
               ← Back to Home
             </Link>
             <Link href="/research" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
-              Frontier Challenges →
+              Frontier Challenges in Biomining →
             </Link>
           </div>
         </div>

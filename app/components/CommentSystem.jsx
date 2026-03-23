@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { MessageSquare, X, Send, AlertCircle } from 'lucide-react';
 
 export default function CommentSystem({ pageName, contentRef }) {
-  const [comments, setComments] = useState([]);
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [selectedText, setSelectedText] = useState('');
   const [commentPosition, setCommentPosition] = useState({ x: 0, y: 0 });
@@ -12,16 +11,11 @@ export default function CommentSystem({ pageName, contentRef }) {
   const [sectionTitle, setSectionTitle] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState(null);
-  const [showComments, setShowComments] = useState(false);
+
   const [wantsToContribute, setWantsToContribute] = useState(false);
   const [contributorName, setContributorName] = useState('');
   const [contributorEmail, setContributorEmail] = useState('');
   const [contributorDescription, setContributorDescription] = useState('');
-
-  // Load comments on mount
-  useEffect(() => {
-    loadComments();
-  }, [pageName]);
 
   // Add text selection listener
   useEffect(() => {
@@ -71,74 +65,6 @@ export default function CommentSystem({ pageName, contentRef }) {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [contentRef]);
-
-  const loadComments = async () => {
-    try {
-      const response = await fetch(`/api/comments?page=${encodeURIComponent(pageName)}`);
-      if (response.ok) {
-        const data = await response.json();
-        setComments(data);
-        highlightComments(data);
-      }
-    } catch (error) {
-      // Error loading comments silently handled
-    }
-  };
-
-  const highlightComments = (commentsData) => {
-    if (!contentRef?.current) return;
-
-    commentsData.forEach(comment => {
-      highlightTextInElement(contentRef.current, comment.selectedText, comment.id);
-    });
-  };
-
-  const highlightTextInElement = (element, textToHighlight, commentId) => {
-    const walker = document.createTreeWalker(
-      element,
-      NodeFilter.SHOW_TEXT,
-      null,
-      false
-    );
-
-    const nodes = [];
-    let node;
-    while (node = walker.nextNode()) {
-      nodes.push(node);
-    }
-
-    for (const textNode of nodes) {
-      const text = textNode.textContent;
-      const index = text.indexOf(textToHighlight);
-
-      if (index !== -1) {
-        const range = document.createRange();
-        range.setStart(textNode, index);
-        range.setEnd(textNode, index + textToHighlight.length);
-
-        const span = document.createElement('span');
-        span.className = 'commented-text';
-        span.dataset.commentId = commentId;
-        span.style.cssText = `
-          background-color: rgba(34, 197, 94, 0.2);
-          border-bottom: 2px solid rgba(34, 197, 94, 0.5);
-          cursor: pointer;
-          transition: all 0.2s;
-        `;
-
-        span.addEventListener('mouseenter', () => {
-          span.style.backgroundColor = 'rgba(34, 197, 94, 0.3)';
-        });
-
-        span.addEventListener('mouseleave', () => {
-          span.style.backgroundColor = 'rgba(34, 197, 94, 0.2)';
-        });
-
-        range.surroundContents(span);
-        break;
-      }
-    }
-  };
 
   const handleCommentClick = () => {
     setShowCommentForm(true);
@@ -337,57 +263,6 @@ export default function CommentSystem({ pageName, contentRef }) {
         </div>
       )}
 
-      {/* View Comments Button */}
-      <button
-        onClick={() => setShowComments(!showComments)}
-        className="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-full shadow-lg transition-all flex items-center gap-2"
-      >
-        <MessageSquare className="w-5 h-5" />
-        <span className="font-medium">Comments ({comments.length})</span>
-      </button>
-
-      {/* Comments Sidebar */}
-      {showComments && (
-        <div className="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl z-50 overflow-y-auto border-l border-slate-200">
-          <div className="sticky top-0 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white p-4 flex items-center justify-between">
-            <h2 className="text-xl font-bold">Comments</h2>
-            <button
-              onClick={() => setShowComments(false)}
-              className="text-white hover:text-emerald-100"
-            >
-              <X className="w-6 h-6" />
-            </button>
-          </div>
-
-          <div className="p-4 space-y-4">
-            {comments.length === 0 ? (
-              <p className="text-slate-500 text-center py-8">
-                No comments yet. Select text to add the first comment!
-              </p>
-            ) : (
-              comments.map(comment => (
-                <div
-                  key={comment.id}
-                  className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow"
-                >
-                  <div className="mb-2">
-                    <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-1 rounded">
-                      {comment.context.sectionTitle}
-                    </span>
-                  </div>
-                  <div className="mb-2 p-2 bg-slate-50 rounded text-sm text-slate-600 italic border-l-2 border-emerald-500">
-                    "{comment.selectedText}"
-                  </div>
-                  <p className="text-slate-800">{comment.comment}</p>
-                  <p className="text-xs text-slate-400 mt-2">
-                    {new Date(comment.timestamp).toLocaleDateString()}
-                  </p>
-                </div>
-              ))
-            )}
-          </div>
-        </div>
-      )}
     </>
   );
 }

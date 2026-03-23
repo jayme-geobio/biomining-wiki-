@@ -205,7 +205,7 @@ export default function ComplexMaterials() {
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Complex Materials Playbook</h1>
             <p className="text-xl text-[#264563]">
               Materials too mineralogically complex, contaminated, or low-grade for conventional processing

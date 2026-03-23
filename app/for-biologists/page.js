@@ -22,7 +22,7 @@ export default function ForBiologists() {
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
             <h1 className="text-4xl font-bold text-emerald-700 mb-3 leading-tight">Mining 101 for Biologists</h1>
             <p className="text-xl text-emerald-700">
             If biology is going to matter in mining, you need to know where it lives in a flowsheet
@@ -48,7 +48,7 @@ export default function ForBiologists() {
               <ul className="ml-6 space-y-2">
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-700" style={{marginTop: '-0.1em'}}>•</span>
-                  Rock is moved at a scale of<strong>millions of tonnes per year</strong>
+                  Rock is moved at a scale of <strong>billions of tonnes per year</strong>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-700" style={{marginTop: '-0.1em'}}>•</span>
@@ -56,7 +56,7 @@ export default function ForBiologists() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-700" style={{marginTop: '-0.1em'}}>•</span>
-                  Time scales, water availability, and permitting often matter as much as chemistry
+                  Timelines, water availability, and permitting often matter as much as chemistry
                 </li>
               </ul>
               <p className="mt-4 font-semibold">
@@ -227,7 +227,7 @@ export default function ForBiologists() {
               ← Back to Home
             </Link>
             <Link href="/for-miners" className="text-emerald-700 hover:text-emerald-700 flex items-center gap-2">
-              Biology Fundamentals →
+              Biology 101 for Mining Professionals →
             </Link>
           </div>
         </div>

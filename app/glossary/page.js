@@ -22,7 +22,7 @@ export default function Glossary() {
   const allTerms = [
     ...glossaryData.mining.map(t => ({ ...t, category: 'mining' })),
     ...glossaryData.biology.map(t => ({ ...t, category: 'biology' }))
-  ];
+  ].sort((a, b) => a.term.localeCompare(b.term));
 
   // Auto-open and scroll to term from URL hash (on load and on hash change)
   useEffect(() => {
@@ -59,7 +59,7 @@ export default function Glossary() {
         {/* Header */}
         <div className="text-center mb-8">
           <BookOpen className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-[#264563] mb-3">Core Glossary</h1>
+          <h1 className="text-4xl font-bold text-[#264563] mb-3">Glossary</h1>
           <p className="text-xl text-[#264563] max-w-3xl mx-auto">
             Canonical definitions bridging mining and biology terminology
           </p>

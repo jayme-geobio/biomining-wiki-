@@ -182,7 +182,7 @@ export default function BiominingHome() {
                   link="/what-is-biomining"
                 />
                 <ResourceCard
-                  title="Core Glossary"
+                  title="Glossary"
                   description="Shared vocabulary bridging mining and biology"
                   icon={BookOpen}
                   link="/glossary"

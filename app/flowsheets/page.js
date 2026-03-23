@@ -13,15 +13,15 @@ const flowsheetData = [
     title: "Copper Heap Leach Operation",
     type: "Classical Bio-Application",
     description: <>Low-grade copper oxide/sulfide ore processed via <GlossaryTerm term="Heap Leaching" definition="Leaching method where crushed ore is stacked on a lined pad and irrigated with lixiviant that percolates through the heap">heap leaching</GlossaryTerm> with biological oxidation assistance</>,
-    diagram: `[Mine - Open Pit]
+    diagram: <>{`[Mine - Open Pit]
    ↓ ore (0.3-1% Cu)
 [Crushing to ~2-5 cm]
    ↓ crushed ore
-[Heap Leach Pad] ← (irrigation: acidic ferric sulfate + microbes)
+[Heap Leach Pad] `}<span className="text-emerald-600 font-bold">← (irrigation: acidic ferric sulfate + microbes)</span>{`
    ↓ PLS (Cu²⁺ solution)
 [Solvent Extraction (SX)] → [Electrowinning (EW)] → Cu cathodes (99.99% Cu)
    ↑                              ↓
-   └──── raffinate (recycled) ────┘`,
+   └──── raffinate (recycled) ────┘`}</>,
     bioIntegration: [
       {
         stage: "Heap Leach Pad",
@@ -55,17 +55,17 @@ const flowsheetData = [
     title: "Refractory Gold with Tank Biooxidation",
     type: "Proven Bio-Technology",
     description: <>Gold encapsulated in sulfides (pyrite, arsenopyrite) treated via <GlossaryTerm term="Biooxidation" definition="Microbial oxidation of sulfide minerals to liberate encapsulated metals, typically in stirred tanks">biooxidation</GlossaryTerm> before <GlossaryTerm term="Cyanidation" definition="A process using cyanide solutions to dissolve and extract gold and silver">cyanidation</GlossaryTerm></>,
-    diagram: `[Ore - Underground or Open Pit]
+    diagram: <>{`[Ore - Underground or Open Pit]
    ↓ ore (refractory gold in sulfides)
 [Crushing & Grinding]
    ↓ ground ore
 [Flotation]
    ↓ sulfide concentrate (10-40% solids)
-[Biooxidation Tanks] ← (air, nutrients, microbes at 40-50°C or 65-85°C)
+[Biooxidation Tanks] `}<span className="text-emerald-600 font-bold">← (air, nutrients, microbes at 40-50°C or 65-85°C)</span>{`
    ↓ oxidized residue (gold exposed)
 [Cyanidation] ← (NaCN solution)
    ↓ Au-rich solution
-[Carbon Adsorption → Stripping → Electrowinning] → Gold doré`,
+[Carbon Adsorption → Stripping → Electrowinning] → Gold doré`}</>,
     bioIntegration: [
       {
         stage: "Biooxidation Tanks",
@@ -100,15 +100,15 @@ const flowsheetData = [
     title: "Tailings Reprocessing for Critical Metals",
     type: "Emerging Bio-Application",
     description: <>Historic tailings contain metals not recovered in initial processing - <GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">bioleach</GlossaryTerm> without rebuilding infrastructure</>,
-    diagram: `[Historic Tailings Dam]
+    diagram: <>{`[Historic Tailings Dam]
    ↓ tailings slurry (low-grade Cu, Co, REEs)
-[Bioleach Tanks or Heap-Style Pad] ← (acidophiles, nutrients, air)
+[Bioleach Tanks or Heap-Style Pad] `}<span className="text-emerald-600 font-bold">← (acidophiles, nutrients, air)</span>{`
    ↓ PLS (polymetallic solution)
-[Bioseparation / Selective Recovery]
+[`}<span className="text-emerald-600 font-bold">Bioseparation</span>{` / Selective Recovery]
    ├→ [Cu Recovery] → SX/EW → Cu cathodes
-   ├→ [Co Recovery] → Ion exchange or bioseparation → Co product
-   └→ [REE Recovery] → Biomolecular ligands or IX → REE concentrate
-[Treated Tailings] → Stabilization & Closure`,
+   ├→ [Co Recovery] → Ion exchange or `}<span className="text-emerald-600 font-bold">bioseparation</span>{` → Co product
+   └→ [REE Recovery] → `}<span className="text-emerald-600 font-bold">Biomolecular ligands</span>{` or IX → REE concentrate
+[Treated Tailings] → Stabilization & Closure`}</>,
     bioIntegration: [
       {
         stage: "Bioleaching",
@@ -143,17 +143,17 @@ const flowsheetData = [
     title: "AMD Treatment & Metal Recovery",
     type: "Environmental Bio-Application",
     description: <>Convert <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">acid mine drainage</GlossaryTerm> from liability to resource via biological treatment and selective metal recovery</>,
-    diagram: `[Acid Mine Drainage Source] (pH 2-4, dissolved Fe, Cu, Zn, Mn, Al, REEs)
+    diagram: <>{`[Acid Mine Drainage Source] (pH 2-4, dissolved Fe, Cu, Zn, Mn, Al, REEs)
    ↓
 [Pre-treatment: Aeration & Settling] → Fe precipitates removed
    ↓
-[SRB Bioreactor] ← (organic carbon, SRB inoculum)
+[SRB Bioreactor] `}<span className="text-emerald-600 font-bold">← (organic carbon, SRB inoculum)</span>{`
    ↓ sulfide production raises pH, precipitates metals
 [Metal Sulfide Recovery]
    ├→ [Cu/Zn Sulfide Precipitate] → Smelter feedstock
    ├→ [Bioseparation for REEs] → REE concentrate
    └→ [Polishing] → Discharge or reuse
-[Constructed Wetland (Optional)] → Final polishing, ecological habitat`,
+[Constructed Wetland (Optional)] → Final polishing, ecological habitat`}</>,
     bioIntegration: [
       {
         stage: "SRB Bioreactor",
@@ -199,7 +199,7 @@ export default function Flowsheets() {
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white">
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Example Flowsheets</h1>
             <p className="text-xl text-[#264563]">
               See how biology integrates into real mining operations — from proven commercial processes to emerging applications
