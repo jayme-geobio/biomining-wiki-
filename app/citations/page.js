@@ -34,14 +34,14 @@ export default function Citations() {
 
   return (
     <CommentableContent pageName="citations">
-      <div className="min-h-screen py-8 px-12">
+      <div className="min-h-screen pt-4 pb-6 px-28">
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
           {/* Header */}
           <div className="text-center mb-8">
             <BookOpen className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
             <h1 className="text-4xl font-bold text-[#264563] mb-3">References</h1>
-            <p className="text-xl text-[#264563] max-w-3xl mx-auto">
-              Key literature referenced throughout this handbook
+            <p className="text-base text-[#264563] max-w-3xl mx-auto">
+              In addition to the literature referenced throughout this handbook, we would like to acknowledge key workshop attendees whose insights inspired this resource: <strong>Dani Merino</strong>, <strong>Paul Reginato</strong>, <strong>Luis Valencia</strong>, <strong>Wenying Liu</strong>, and <strong>Sasha Milshteyn</strong>. We also thank <strong>Ariana Caiati</strong>, <strong>Jayme Feyhl-Buska</strong>, <strong>Colbey Derwin</strong>, and the Homeworld team for bringing this handbook to life.
             </p>
           </div>
 

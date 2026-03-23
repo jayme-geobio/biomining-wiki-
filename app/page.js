@@ -9,16 +9,16 @@ export default function BiominingHome() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="px-12 pt-6 pb-6">
+        <div className="px-28 pt-4 pb-6">
           {/* Hero Card + Ghost Box */}
           <div className="mb-6">
             <div className="flex gap-6 items-stretch">
               {/* Solid card */}
-              <div className="flex-1 bg-[#edede6] rounded-3xl px-10 py-32 shadow-xl border border-white flex flex-col justify-between">
-                <h1 className="text-4xl font-bold text-[#264563] leading-tight">
+              <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
+                <h1 className="text-5xl font-bold text-[#264563] leading-tight">
                   The Biomining Handbook
                 </h1>
-                <p className="text-xl text-[#264563]">
+                <p className="text-base text-[#264563]">
                   A practical guide for biologists and mining professionals
                 </p>
               </div>
@@ -30,8 +30,7 @@ export default function BiominingHome() {
           {/* About This Handbook */}
           <div className="mb-6">
             <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
-              <h3 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
-                <GraduationCap className="w-7 h-7 text-emerald-600" />
+              <h3 className="text-2xl font-bold text-[#264563] mb-3">
                 About This Handbook
               </h3>
               <div className="text-[#264563] space-y-3">
@@ -39,7 +38,7 @@ export default function BiominingHome() {
                   Biomining holds enormous potential for critical mineral recovery, but the field lacks a centralized resource bridging biological solutions and mining challenges. This handbook aims to address that gap.
                 </p>
                 <p>
-                  Born from Homeworld's <Link href="/research#building-the-research-roadmap" className="underline text-emerald-700 hover:text-emerald-900">Biomining Under Complex Conditions Workshop</Link>, our goal is a gold-standard, technically accurate resource for both communities to design better projects together.
+                  Born from Homeworld's <Link href="/research#building-the-research-roadmap" className="underline decoration-dotted decoration-emerald-600/50 underline-offset-2 cursor-pointer hover:decoration-emerald-600 transition-colors">Biomining Under Complex Conditions Workshop</Link>, <strong>our goal is a gold-standard, technically accurate resource for both communities to design better projects together.</strong>
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-[#264563] rounded-xl p-4">
@@ -85,8 +84,7 @@ export default function BiominingHome() {
           {/* What is Biomining */}
           <div className="mb-6">
             <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
-              <h3 className="text-2xl font-bold text-[#264563] mb-3 flex items-center gap-2">
-                <HelpCircle className="w-7 h-7 text-emerald-600" />
+              <h3 className="text-2xl font-bold text-[#264563] mb-3">
                 What is Biomining?
               </h3>
               <div>
@@ -95,9 +93,9 @@ export default function BiominingHome() {
                   mining-related wastes and liabilities.
                 </p>
                 <div className="flex items-center justify-center gap-4 mt-6">
-                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 w-52 aspect-square flex flex-col justify-center">
+                  <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 w-64 flex flex-col justify-center">
                     <h4 className="text-[#264563] font-semibold mb-2">Mechanisms</h4>
-                    <ul className="text-[#264563] text-xs space-y-1">
+                    <ul className="text-[#264563] text-sm space-y-1">
                       <li>• Bioleaching & biooxidation</li>
                       <li>• Bioseparation & biosorption</li>
                       <li>• Bioprecipitation</li>
@@ -105,9 +103,9 @@ export default function BiominingHome() {
                     </ul>
                   </div>
                   <ArrowRight className="w-10 h-10 text-[#264563] flex-shrink-0" />
-                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 w-52 aspect-square flex flex-col justify-center">
+                  <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 w-64 flex flex-col justify-center">
                     <h4 className="text-[#264563] font-semibold mb-2">Applications</h4>
-                    <ul className="text-[#264563] text-xs space-y-1">
+                    <ul className="text-[#264563] text-sm space-y-1">
                       <li>• Heap & tank leaching</li>
                       <li>• Metal separation & polishing</li>
                       <li>• AMD treatment & closure</li>
@@ -122,8 +120,7 @@ export default function BiominingHome() {
           {/* Why Now Section */}
           <div className="mb-6">
             <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
-              <h2 className="text-2xl font-bold text-[#264563] mb-4 flex items-center gap-2">
-                <TrendingUp className="w-7 h-7 text-emerald-600" />
+              <h2 className="text-2xl font-bold text-[#264563] mb-4">
                 Why Biomining Now?
               </h2>
               <div className="text-[#264563] space-y-3">
@@ -173,7 +170,7 @@ export default function BiominingHome() {
           {/* Core Resources */}
           <div className="mt-6">
             <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
-              <h2 className="text-2xl font-bold text-[#264563] mb-6 text-center">
+              <h2 className="text-2xl font-bold text-[#264563] mb-6 text-left">
                 Essential Resources
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -204,12 +201,12 @@ export default function BiominingHome() {
                 <ResourceCard
                   title="Frontier Challenges"
                   description="Key research gaps and the roadmap ahead for biomining"
-                  icon={Mountain}
+                  icon={TrendingUp}
                   link="/research"
                 />
               </div>
-              <div className="flex justify-end mt-4">
-                <Link href="/what-is-biomining" className="inline-flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-medium text-sm transition-colors">
+              <div className="flex justify-end mt-12">
+                <Link href="/what-is-biomining" className="inline-flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-medium text-base transition-colors">
                   Learn more about biomining →
                 </Link>
               </div>

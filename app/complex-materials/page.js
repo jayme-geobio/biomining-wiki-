@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle, TrendingUp } from 'lucide-react';
+import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle, TrendingUp, Microscope } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 import GlossaryTerm from '../components/GlossaryTerm';
 
@@ -206,13 +206,13 @@ export default function ComplexMaterials() {
   return (
     <CommentableContent pageName="complex-materials">
 
-      <div className="min-h-screen py-8 px-12 space-y-6">
+      <div className="min-h-screen pt-4 pb-6 px-28 space-y-6">
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
           <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Complex Materials Playbook</h1>
-            <p className="text-xl text-[#264563]">
+            <p className="text-base text-[#264563]">
               Materials too mineralogically complex, contaminated, or low-grade for conventional processing
             </p>
           </div>
@@ -311,15 +311,23 @@ function MaterialCard({ id, material, expanded, onToggle }) {
           <p className="text-[#264563] italic">{material.definition}</p>
 
           {/* Why Biology Works Here */}
-          <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-700">
-            <h3 className="text-lg font-bold text-emerald-700 mb-2">Why Biology Works Here</h3>
-            <p className="text-emerald-900 text-sm">{material.whyBiology}</p>
+          <div>
+            <h3 className="text-lg font-bold text-[#264563] mb-2 flex items-center gap-2">
+              <Beaker className="w-5 h-5 text-teal-600" />
+              Why Biology Works Here
+            </h3>
+            <ul className="space-y-1">
+              <li className="text-[#264563] text-sm flex items-start gap-2">
+                <span className="text-teal-600" style={{marginTop: '-0.1em'}}>•</span>
+                <span>{material.whyBiology}</span>
+              </li>
+            </ul>
           </div>
 
           {/* Maturity Level */}
           <div>
             <h3 className="text-lg font-bold text-[#264563] mb-2 flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-[#264563]" />
+              <TrendingUp className="w-5 h-5 text-sky-500" />
               Maturity Level: <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-sm font-bold ${
                 material.maturityLevel === 'High' ? 'bg-emerald-100 text-emerald-800' :
                 material.maturityLevel === 'Medium-High' ? 'bg-teal-100 text-teal-800' :
@@ -329,7 +337,7 @@ function MaterialCard({ id, material, expanded, onToggle }) {
             </h3>
             <ul className="space-y-1">
               <li className="text-[#264563] text-sm flex items-start gap-2">
-                <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
+                <span className="text-sky-500" style={{marginTop: '-0.1em'}}>•</span>
                 <span>{material.maturityDetail}</span>
               </li>
             </ul>
@@ -354,13 +362,13 @@ function MaterialCard({ id, material, expanded, onToggle }) {
           {/* Where Biology Can Help */}
           <div>
             <h3 className="text-lg font-bold text-[#264563] mb-3 flex items-center gap-2">
-              <Beaker className="w-5 h-5 text-emerald-600" />
+              <Microscope className="w-5 h-5 text-emerald-600" />
               Where Biology Can Help
             </h3>
             <div className="space-y-3">
               {material.bioOpportunities.map((opp, i) => (
                 <div key={i} className="bg-white rounded-lg p-4 border border-gray-200">
-                  <h4 className="text-lg font-normal text-emerald-700 mb-1">{opp.title}</h4>
+                  <h4 className="text-sm font-semibold text-emerald-700 mb-1">{opp.title}</h4>
                   <p className="text-[#264563] text-sm">{opp.description}</p>
                 </div>
               ))}

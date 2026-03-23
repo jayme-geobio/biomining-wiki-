@@ -54,13 +54,13 @@ export default function Glossary() {
   return (
     <CommentableContent pageName="glossary">
 
-      <div className="min-h-screen py-8 px-12">
+      <div className="min-h-screen pt-4 pb-6 px-28">
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
         {/* Header */}
         <div className="text-center mb-8">
           <BookOpen className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold text-[#264563] mb-3">Glossary</h1>
-          <p className="text-xl text-[#264563] max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-[#264563] mb-3">Core Glossary</h1>
+          <p className="text-base text-[#264563] max-w-3xl mx-auto">
             Canonical definitions bridging mining and biology terminology
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function Glossary() {
                 onClick={() => setSelectedCategory('all')}
                 className={`px-4 py-3 rounded-lg font-medium transition-colors ${
                   selectedCategory === 'all'
-                    ? 'bg-emerald-600 text-white'
+                    ? 'bg-transparent text-[#264563] border-2 border-[#264563]'
                     : 'bg-gray-100 text-[#264563] hover:bg-gray-200'
                 }`}
               >
@@ -93,8 +93,8 @@ export default function Glossary() {
                 onClick={() => setSelectedCategory('mining')}
                 className={`px-4 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                   selectedCategory === 'mining'
-                    ? 'bg-[#264563] text-white'
-                    : 'bg-gray-100 text-[#264563] hover:bg-gray-200'
+                    ? 'bg-[#264563] text-white ring-2 ring-[#264563] ring-offset-2'
+                    : 'bg-[#264563] text-white hover:bg-[#1e3450]'
                 }`}
               >
                 <Mountain className="w-4 h-4" />
@@ -104,8 +104,8 @@ export default function Glossary() {
                 onClick={() => setSelectedCategory('biology')}
                 className={`px-4 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                   selectedCategory === 'biology'
-                    ? 'bg-emerald-600 text-white'
-                    : 'bg-gray-100 text-[#264563] hover:bg-gray-200'
+                    ? 'bg-emerald-600 text-white ring-2 ring-emerald-600 ring-offset-2'
+                    : 'bg-emerald-600 text-white hover:bg-emerald-700'
                 }`}
               >
                 <Microscope className="w-4 h-4" />

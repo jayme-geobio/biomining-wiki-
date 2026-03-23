@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import ContributeModal from './components/ContributeModal';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileDropdown, setMobileDropdown] = useState(null);
+  const [showContribute, setShowContribute] = useState(false);
 
   const navigation = {
     learn: {
@@ -30,14 +32,14 @@ export default function Navigation() {
       name: 'Resources',
       items: [
         { name: 'Frontier Challenges', href: '/research' },
-        { name: 'Glossary', href: '/glossary' },
+        { name: 'Core Glossary', href: '/glossary' },
         { name: 'References', href: '/citations' }
       ]
     }
   };
 
   return (
-    <div className="flex justify-center px-12 pt-10 pb-2">
+    <div className="flex justify-center px-28 pt-6 pb-2">
       <div className="w-full">
         <nav
           className="bg-[#f9f7f1] border border-[#264563] shadow-lg rounded-2xl overflow-hidden"
@@ -48,14 +50,14 @@ export default function Navigation() {
 
               {/* Logo */}
               <Link href="/" className="flex items-center -ml-8">
-                <img src="/images/homeworld-logo-full-dark.png" alt="Homeworld Collective" className="h-36" />
+                <img src="/images/homeworld-logo-full-dark.png" alt="Homeworld Collective" className="h-[7.5rem]" />
               </Link>
 
               {/* Desktop links */}
               <div className="hidden md:flex md:items-center md:space-x-0.5 relative">
                 <Link
                   href="/"
-                  className="px-3.5 py-2 text-xl text-[#264563] hover:bg-gray-300/40 rounded-xl transition-colors"
+                  className="px-3.5 py-2 text-lg text-[#264563] hover:bg-gray-300/40 rounded-xl transition-colors"
                   onMouseEnter={() => setOpenDropdown(null)}
                 >
                   Home
@@ -65,7 +67,7 @@ export default function Navigation() {
                   const isLast = idx === arr.length - 1;
                   return (
                   <div key={key} onMouseEnter={() => setOpenDropdown(key)} className="relative">
-                    <button className="flex items-center px-3.5 py-2 text-xl text-[#264563] hover:bg-gray-300/40 rounded-xl transition-colors">
+                    <button className="flex items-center px-3.5 py-2 text-lg text-[#264563] hover:bg-gray-300/40 rounded-xl transition-colors">
                       <span>{section.name}</span>
                     </button>
 
@@ -90,6 +92,14 @@ export default function Navigation() {
                   </div>
                   );
                 })}
+
+                <button
+                  onClick={() => setShowContribute(true)}
+                  onMouseEnter={() => setOpenDropdown(null)}
+                  className="!ml-4 px-3 py-1 text-lg font-medium text-white bg-[#264563] rounded-lg hover:bg-[#1e3450] transition-colors"
+                >
+                  Contribute
+                </button>
 
                 {/* Horizontal line */}
                 <div className={`absolute bottom-0 left-0 right-0 h-px bg-[#264563]/40 transition-opacity duration-500 ${openDropdown ? 'opacity-100' : 'opacity-0'}`} />
@@ -153,10 +163,19 @@ export default function Navigation() {
                   </div>
                 ))}
               </div>
+
+                <button
+                  onClick={() => { setShowContribute(true); setIsOpen(false); }}
+                  className="w-full px-3 py-2 rounded-xl text-lg text-white bg-[#264563] hover:bg-[#1e3450] transition-colors text-center"
+                >
+                  Contribute
+                </button>
             </div>
           )}
         </nav>
       </div>
+
+      <ContributeModal isOpen={showContribute} onClose={() => setShowContribute(false)} />
     </div>
   );
 }

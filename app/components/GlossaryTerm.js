@@ -123,7 +123,7 @@ export default function GlossaryTerm({ term, definition, children }) {
             className="flex items-center gap-1.5 text-xs font-medium text-emerald-700 hover:text-emerald-800 transition-colors"
           >
             <BookOpen className="w-3.5 h-3.5" />
-            View in Glossary
+            View in Core Glossary
           </Link>
         )}
         {material && (

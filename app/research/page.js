@@ -137,13 +137,13 @@ export default function Research() {
 
   return (
     <CommentableContent pageName="research">
-      <div className="min-h-screen py-8 px-12 space-y-6">
+      <div className="min-h-screen pt-4 pb-6 px-28 space-y-6">
 
         {/* Header */}
         <div className="flex gap-6 items-stretch">
           <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Frontier Challenges in Biomining</h1>
-            <p className="text-xl text-[#264563]">
+            <p className="text-base text-[#264563]">
               Themes and actionable problem areas shaping the future of biotechnology in mining
             </p>
           </div>
@@ -160,7 +160,7 @@ export default function Research() {
             <p>
               The themes below capture key patterns from the workshop, helping accelerate innovation and align stakeholders around critical barriers in biomining.
             </p>
-            <p className="italic text-[#264563]/60 text-sm mt-2">
+            <p className="italic text-[#264563] text-sm mt-2">
               Detailed problem statements with full context and proposed approaches will be published soon.
             </p>
           </div>
@@ -175,7 +175,7 @@ export default function Research() {
           <p className="text-[#264563] mb-6">
             Each theme below captures a cluster of related problem statements from the workshop.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
             <div className="space-y-4">
               {themes.slice(0, 4).map((theme, i) => (
                 <ThemeCard
@@ -202,6 +202,9 @@ export default function Research() {
         {/* Acknowledgment */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
           <h2 className="text-2xl font-bold text-[#264563] mb-4 text-center">Workshop Acknowledgments</h2>
+          <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 mb-6 text-center">
+            <p className="text-orange-700 text-sm italic">Affiliations of workshop attendees are hidden pending approval and will be added prior to publication.</p>
+          </div>
           <p className="text-[#264563] text-center mb-6 max-w-3xl mx-auto">
             We are grateful to the following workshop participants whose expertise, perspectives, and collaborative spirit generated the problem statements that informed this work.
           </p>
@@ -209,25 +212,24 @@ export default function Research() {
             {attendees.map((person, i) => (
               <div key={i} className="text-center py-2">
                 <p className="text-[#264563] text-sm font-semibold">{person.name}</p>
-                <p className="text-[#264563]/60 text-xs">{person.affiliation}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Coming Soon & Navigation */}
-        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white text-center">
-          <h3 className="text-2xl font-bold text-[#264563] mb-8">Full Problem Statements Coming Soon...</h3>
-        </div>
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+          <h3 className="text-2xl font-bold text-[#264563] mb-8 text-center">Full Problem Statements Coming Soon...</h3>
 
-        {/* Navigation */}
-        <div className="mt-12 flex justify-between">
-          <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
-            ← Back to Home
-          </Link>
-          <Link href="/glossary" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
-            Glossary →
-          </Link>
+          {/* Navigation */}
+          <div className="mt-12 flex justify-between">
+            <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
+              ← Back to Home
+            </Link>
+            <Link href="/glossary" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
+              Core Glossary →
+            </Link>
+          </div>
         </div>
 
       </div>
@@ -241,7 +243,7 @@ function ThemeCard({ theme, expanded, onToggle }) {
     <div className="rounded-xl border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
+        className="w-full bg-[#264563] p-6 h-24 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
       >
         <div className="flex items-center gap-3">
           <span className="text-white font-bold text-lg w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">{theme.number}</span>

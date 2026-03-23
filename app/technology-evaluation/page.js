@@ -16,13 +16,13 @@ export default function TechnologyEvaluation() {
   return (
     <CommentableContent pageName="technology-evaluation">
 
-      <div className="min-h-screen py-8 px-12 space-y-6">
+      <div className="min-h-screen pt-4 pb-6 px-28 space-y-6">
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
           <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Technology Assessment Checklists</h1>
-            <p className="text-xl text-[#264563]">
+            <p className="text-base text-[#264563]">
               Checklists for evaluating biomining concepts and bio-solutions
             </p>
           </div>
@@ -36,7 +36,7 @@ export default function TechnologyEvaluation() {
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-[#264563] mb-3">Why These Questions Matter</h2>
             <p className="text-[#264563]">
-              Most biomining concepts fail not because the biology doesn't work, but because they don't address the operational, economic, and regulatory realities of a mine site. Asking the right questions upfront saves years of misaligned development. These checklists help biologists prepare robust proposals that address mining realities, and help mining professionals evaluate whether a bio-technology is technically sound and economically viable for their operation.
+              Most biomining concepts fail not because the biology doesn't work, but because they don't address the operational, economic, and regulatory realities of a mine site. <strong>Asking the right questions upfront saves years of misaligned development.</strong> These checklists help biologists prepare robust proposals that address mining realities, and help mining professionals evaluate whether a bio-technology is technically sound and economically viable for their operation.
             </p>
           </div>
 

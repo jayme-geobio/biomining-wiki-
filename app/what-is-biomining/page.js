@@ -18,13 +18,13 @@ export default function WhatIsBiomining() {
   return (
     <CommentableContent pageName="what-is-biomining">
 
-      <div className="min-h-screen py-8 px-12 space-y-6">
+      <div className="min-h-screen pt-4 pb-6 px-28 space-y-6">
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
           <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
             <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">What Is "Biomining"?</h1>
-            <p className="text-xl text-[#264563]">
+            <p className="text-base text-[#264563]">
               Definitions, mechanisms, and where biotech rivals chemistry
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function WhatIsBiomining() {
             <h2 className="text-2xl font-bold text-[#264563] mb-3">Our Definition</h2>
             <div className="text-[#264563] space-y-3">
               <p>
-                "Biomining" is often shorthand for "microbes in heaps." <strong>That definition is too narrow.</strong> For this handbook, biomining means:
+                "Biomining" is often shorthand for "microbes in heaps." That definition is too narrow. <strong>For this handbook, biomining means:</strong>
               </p>
               <div className="rounded-lg p-4 border-l-4 border-[#264563] mt-2" style={{backgroundColor: 'rgba(255,255,255,0.5)'}}>
                 <p className="text-[#264563]">

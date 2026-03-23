@@ -1,9 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import ContributeModal from './components/ContributeModal';
 
 export default function Footer() {
+  const [showContribute, setShowContribute] = useState(false);
   const sections = {
     learn: {
       name: 'Learn',
@@ -25,28 +27,28 @@ export default function Footer() {
       name: 'Resources',
       items: [
         { name: 'Frontier Challenges', href: '/research' },
-        { name: 'Glossary', href: '/glossary' },
+        { name: 'Core Glossary', href: '/glossary' },
         { name: 'References', href: '/citations' },
       ],
     },
   };
 
   return (
-    <div className="flex justify-center px-12 py-6 mt-10">
+    <div className="flex justify-center px-28 pb-6">
       <div className="w-full">
         <footer className="bg-[#0a3954] text-white rounded-2xl shadow-2xl px-12 py-8 border border-white">
 
           {/* Logo left, links right */}
-          <div className="flex flex-col md:flex-row md:items-start gap-8 mb-6">
+          <div className="flex flex-col md:flex-row items-start gap-8 mb-6">
             {/* Logo */}
             <img
               src="/images/homeworld-logo-full.png"
               alt="Homeworld Logo"
-              className="h-14 shrink-0"
+              className="h-14 shrink-0 -mt-1"
             />
 
             {/* Nav sections — pushed right, evenly spaced */}
-            <div className="ml-auto grid gap-16" style={{gridTemplateColumns: 'repeat(4, 11rem)'}}>
+            <div className="ml-auto flex gap-12">
               {/* Home column */}
               <div>
                 <h4 className="text-sm font-semibold text-white mb-3">Home</h4>
@@ -79,6 +81,21 @@ export default function Footer() {
                   </ul>
                 </div>
               ))}
+
+              {/* Contribute column */}
+              <div>
+                <h4 className="text-sm font-semibold text-white mb-3">Contribute</h4>
+                <ul className="space-y-2">
+                  <li>
+                    <button
+                      onClick={() => setShowContribute(true)}
+                      className="text-sm text-gray-300 hover:text-white transition-colors"
+                    >
+                      Contribute
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -88,11 +105,13 @@ export default function Footer() {
           {/* Bottom row */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-sm text-gray-500">
             <span>© Homeworld Collective Inc {new Date().getFullYear()}</span>
-            <span>Bridging biology and mining for critical mineral recovery</span>
+            <span>Bridging biology and mining for critical mineral recovery.</span>
           </div>
 
         </footer>
       </div>
+
+      <ContributeModal isOpen={showContribute} onClose={() => setShowContribute(false)} />
     </div>
   );
 }
