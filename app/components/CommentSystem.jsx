@@ -94,7 +94,7 @@ export default function CommentSystem({ pageName, contentRef }) {
         },
         body: JSON.stringify({
           selectedText,
-          comment: wantsToContribute && !commentText.trim() ? contributorDescription : commentText,
+          comment: commentText.trim() || (wantsToContribute ? 'Contribution request' : ''),
           pageName,
           context: {
             sectionTitle: sectionTitle || 'Main Content',

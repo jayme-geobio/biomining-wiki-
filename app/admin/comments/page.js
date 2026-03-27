@@ -296,10 +296,12 @@ export default function AdminCommentsPage() {
                         <p className="text-slate-200 italic">"{comment.selectedText}"</p>
                       </div>
 
-                      <div>
-                        <p className="text-xs text-slate-400 mb-1">Comment:</p>
-                        <p className="text-white">{comment.comment}</p>
-                      </div>
+                      {comment.comment && (
+                        <div>
+                          <p className="text-xs text-slate-400 mb-1">Comment:</p>
+                          <p className="text-white">{comment.comment}</p>
+                        </div>
+                      )}
 
                       {comment.contributor && (
                         <div className="mt-3 p-3 bg-emerald-900/30 rounded border-l-4 border-emerald-400">
