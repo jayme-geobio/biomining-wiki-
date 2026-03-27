@@ -59,10 +59,12 @@ export async function PATCH(request) {
     if (action === 'approve') {
       success = await updateComment(page, commentId, { approved: true });
     } else if (action === 'reject') {
+      success = await updateComment(page, commentId, { rejected: true });
+    } else if (action === 'delete') {
       success = await deleteComment(page, commentId);
     } else {
       return NextResponse.json(
-        { error: 'Invalid action. Use "approve" or "reject"' },
+        { error: 'Invalid action. Use "approve", "reject", or "delete"' },
         { status: 400 }
       );
     }

@@ -73,8 +73,13 @@ export default function CommentSystem({ pageName, contentRef }) {
   const handleSubmitComment = async (e) => {
     e.preventDefault();
 
-    if (commentText.trim().length < 5) {
+    if (!wantsToContribute && commentText.trim().length < 5) {
       setSubmitMessage({ type: 'error', text: 'Comment must be at least 5 characters long.' });
+      return;
+    }
+
+    if (wantsToContribute && contributorDescription.trim().length < 5) {
+      setSubmitMessage({ type: 'error', text: 'Please describe your proposed contribution (at least 5 characters).' });
       return;
     }
 
@@ -89,7 +94,7 @@ export default function CommentSystem({ pageName, contentRef }) {
         },
         body: JSON.stringify({
           selectedText,
-          comment: commentText,
+          comment: wantsToContribute && !commentText.trim() ? contributorDescription : commentText,
           pageName,
           context: {
             sectionTitle: sectionTitle || 'Main Content',
@@ -189,7 +194,7 @@ export default function CommentSystem({ pageName, contentRef }) {
               className="w-full p-3 border border-slate-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-900"
               rows="4"
               maxLength="500"
-              required
+              required={!wantsToContribute}
             />
             {/* Contribute toggle */}
             <div className="mt-3">

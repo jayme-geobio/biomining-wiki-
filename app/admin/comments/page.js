@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { CheckCircle, XCircle, Clock, AlertTriangle, Loader } from 'lucide-react';
+import { CheckCircle, XCircle, Clock, AlertTriangle, Loader, Trash2 } from 'lucide-react';
 
 export default function AdminCommentsPage() {
   const [comments, setComments] = useState([]);
@@ -85,8 +85,9 @@ export default function AdminCommentsPage() {
     return comments.map(pageData => ({
       ...pageData,
       comments: pageData.comments.filter(comment => {
-        if (filter === 'pending') return !comment.approved;
+        if (filter === 'pending') return !comment.approved && !comment.rejected;
         if (filter === 'approved') return comment.approved;
+        if (filter === 'rejected') return comment.rejected;
         return true; // all
       })
     })).filter(pageData => pageData.comments.length > 0);
@@ -142,7 +143,7 @@ export default function AdminCommentsPage() {
 
   const filteredComments = getFilteredComments();
   const pendingCount = comments.reduce((sum, page) =>
-    sum + page.comments.filter(c => !c.approved).length, 0
+    sum + page.comments.filter(c => !c.approved && !c.rejected).length, 0
   );
 
   return (
@@ -187,6 +188,16 @@ export default function AdminCommentsPage() {
             Approved
           </button>
           <button
+            onClick={() => setFilter('rejected')}
+            className={`px-4 py-2 rounded-lg transition-colors ${
+              filter === 'rejected'
+                ? 'bg-emerald-600 text-white'
+                : 'bg-white/10 text-slate-300 hover:bg-white/20'
+            }`}
+          >
+            Rejected
+          </button>
+          <button
             onClick={() => setFilter('all')}
             className={`px-4 py-2 rounded-lg transition-colors ${
               filter === 'all'
@@ -229,9 +240,11 @@ export default function AdminCommentsPage() {
                             <span className={`px-2 py-1 rounded text-xs font-semibold ${
                               comment.approved
                                 ? 'bg-green-900/50 text-green-300'
-                                : 'bg-yellow-900/50 text-yellow-300'
+                                : comment.rejected
+                                  ? 'bg-red-900/50 text-red-300'
+                                  : 'bg-yellow-900/50 text-yellow-300'
                             }`}>
-                              {comment.approved ? 'Approved' : 'Pending'}
+                              {comment.approved ? 'Approved' : comment.rejected ? 'Rejected' : 'Pending'}
                             </span>
                             <span className="text-xs text-slate-400">
                               {new Date(comment.timestamp).toLocaleString()}
@@ -245,24 +258,37 @@ export default function AdminCommentsPage() {
                           </div>
                         </div>
 
-                        {!comment.approved && (
-                          <div className="flex gap-2">
-                            <button
-                              onClick={() => handleModerate(pageData.page, comment.id, 'approve')}
-                              className="bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg transition-colors"
-                              title="Approve"
-                            >
-                              <CheckCircle className="w-5 h-5" />
-                            </button>
-                            <button
-                              onClick={() => handleModerate(pageData.page, comment.id, 'reject')}
-                              className="bg-red-600 hover:bg-red-700 text-white p-2 rounded-lg transition-colors"
-                              title="Reject"
-                            >
-                              <XCircle className="w-5 h-5" />
-                            </button>
-                          </div>
-                        )}
+                        <div className="flex gap-2">
+                          {!comment.approved && !comment.rejected && (
+                            <>
+                              <button
+                                onClick={() => handleModerate(pageData.page, comment.id, 'approve')}
+                                className="bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg transition-colors"
+                                title="Approve"
+                              >
+                                <CheckCircle className="w-5 h-5" />
+                              </button>
+                              <button
+                                onClick={() => handleModerate(pageData.page, comment.id, 'reject')}
+                                className="bg-red-600 hover:bg-red-700 text-white p-2 rounded-lg transition-colors"
+                                title="Reject"
+                              >
+                                <XCircle className="w-5 h-5" />
+                              </button>
+                            </>
+                          )}
+                          <button
+                            onClick={() => {
+                              if (window.confirm('Permanently delete this comment?')) {
+                                handleModerate(pageData.page, comment.id, 'delete');
+                              }
+                            }}
+                            className="bg-slate-600 hover:bg-slate-700 text-white p-2 rounded-lg transition-colors"
+                            title="Delete permanently"
+                          >
+                            <Trash2 className="w-5 h-5" />
+                          </button>
+                        </div>
                       </div>
 
                       <div className="mb-3 p-3 bg-slate-700/50 rounded border-l-4 border-emerald-500">
@@ -274,6 +300,21 @@ export default function AdminCommentsPage() {
                         <p className="text-xs text-slate-400 mb-1">Comment:</p>
                         <p className="text-white">{comment.comment}</p>
                       </div>
+
+                      {comment.contributor && (
+                        <div className="mt-3 p-3 bg-emerald-900/30 rounded border-l-4 border-emerald-400">
+                          <p className="text-xs text-emerald-300 font-semibold mb-2">Contributor Interest</p>
+                          {comment.contributor.name && (
+                            <p className="text-sm text-slate-200"><span className="text-slate-400">Name:</span> {comment.contributor.name}</p>
+                          )}
+                          {comment.contributor.email && (
+                            <p className="text-sm text-slate-200"><span className="text-slate-400">Email:</span> {comment.contributor.email}</p>
+                          )}
+                          {comment.contributor.description && (
+                            <p className="text-sm text-slate-200 mt-1"><span className="text-slate-400">Proposed contribution:</span> {comment.contributor.description}</p>
+                          )}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

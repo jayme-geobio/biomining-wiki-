@@ -5,34 +5,6 @@ import { getComments, addComment, hashIP } from '../lib/storage';
 const MAX_COMMENTS_PER_HOUR = parseInt(process.env.MAX_COMMENTS_PER_HOUR || '3');
 const COMMENT_MAX_LENGTH = parseInt(process.env.COMMENT_MAX_LENGTH || '500');
 
-// GET - Retrieve comments for a specific page
-export async function GET(request) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const page = searchParams.get('page');
-
-    if (!page) {
-      return NextResponse.json(
-        { error: 'Page parameter is required' },
-        { status: 400 }
-      );
-    }
-
-    // Filter only approved comments
-    const allPageComments = await getComments(page);
-    const pageComments = allPageComments.filter(
-      comment => comment.approved === true
-    );
-
-    return NextResponse.json(pageComments);
-  } catch (error) {
-    return NextResponse.json(
-      { error: 'Failed to fetch comments' },
-      { status: 500 }
-    );
-  }
-}
-
 // POST - Submit a new comment
 export async function POST(request) {
   try {
@@ -89,7 +61,7 @@ function validateComment(comment) {
 }
 
 function sanitizeComment(comment, clientIp) {
-  return {
+  const sanitized = {
     id: Date.now() + Math.floor(Math.random() * 1000),
     selectedText: String(comment.selectedText).trim().slice(0, COMMENT_MAX_LENGTH),
     comment: String(comment.comment).trim().slice(0, COMMENT_MAX_LENGTH),
@@ -102,6 +74,16 @@ function sanitizeComment(comment, clientIp) {
     approved: false,
     ip: clientIp
   };
+
+  if (comment.contributor) {
+    sanitized.contributor = {
+      name: String(comment.contributor.name || '').trim().slice(0, 200),
+      email: String(comment.contributor.email || '').trim().slice(0, 200),
+      description: String(comment.contributor.description || '').trim().slice(0, COMMENT_MAX_LENGTH)
+    };
+  }
+
+  return sanitized;
 }
 
 function checkRateLimit(pageComments, clientIp) {
