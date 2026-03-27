@@ -25,7 +25,7 @@ export default function CommentSystem({ pageName, contentRef }) {
       const selection = window.getSelection();
       const text = selection.toString().trim();
 
-      if (text.length >= 5) {
+      if (text.length >= 3) {
         const range = selection.getRangeAt(0);
         const rect = range.getBoundingClientRect();
 
@@ -73,13 +73,13 @@ export default function CommentSystem({ pageName, contentRef }) {
   const handleSubmitComment = async (e) => {
     e.preventDefault();
 
-    if (!wantsToContribute && commentText.trim().length < 5) {
-      setSubmitMessage({ type: 'error', text: 'Comment must be at least 5 characters long.' });
+    if (!wantsToContribute && commentText.trim().length < 3) {
+      setSubmitMessage({ type: 'error', text: 'Comment must be at least 3 characters long.' });
       return;
     }
 
-    if (wantsToContribute && contributorDescription.trim().length < 5) {
-      setSubmitMessage({ type: 'error', text: 'Please describe your proposed contribution (at least 5 characters).' });
+    if (wantsToContribute && contributorDescription.trim().length < 3) {
+      setSubmitMessage({ type: 'error', text: 'Please describe your proposed contribution (at least 3 characters).' });
       return;
     }
 
@@ -120,17 +120,19 @@ export default function CommentSystem({ pageName, contentRef }) {
       }
 
       if (response.ok) {
-        setSubmitMessage({ type: 'success', text: data.message || 'Comment submitted!' });
+        setSubmitMessage({ type: 'success', text: 'Submitted!' });
         setCommentText('');
-        setShowCommentForm(false);
-        setSelectedText('');
         setWantsToContribute(false);
         setContributorName('');
         setContributorEmail('');
         setContributorDescription('');
 
-        // Clear message after 5 seconds
-        setTimeout(() => setSubmitMessage(null), 5000);
+        // Keep form open briefly so user sees success, then close
+        setTimeout(() => {
+          setShowCommentForm(false);
+          setSelectedText('');
+          setSubmitMessage(null);
+        }, 2000);
       } else {
         setSubmitMessage({ type: 'error', text: data.error || 'Failed to submit comment.' });
       }
@@ -235,36 +237,34 @@ export default function CommentSystem({ pageName, contentRef }) {
               )}
             </div>
 
+            {submitMessage && (
+              <div className={`mt-2 p-2 rounded text-sm ${
+                submitMessage.type === 'success'
+                  ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                  : 'bg-red-50 text-red-700 border border-red-200'
+              }`}>
+                {submitMessage.text}
+              </div>
+            )}
+
             <div className="flex items-center justify-between mt-3">
               <span className="text-xs text-slate-500">
                 {commentText.length}/500 characters
               </span>
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-400 text-white px-4 py-2 rounded-lg transition-colors"
+                disabled={isSubmitting || submitMessage?.type === 'success'}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors text-white ${
+                  submitMessage?.type === 'success'
+                    ? 'bg-emerald-500'
+                    : 'bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-400'
+                }`}
               >
-                {isSubmitting ? 'Submitting...' : 'Submit'}
+                {submitMessage?.type === 'success' ? 'Submitted!' : isSubmitting ? 'Submitting...' : 'Submit'}
                 <Send className="w-4 h-4" />
               </button>
             </div>
           </form>
-        </div>
-      )}
-
-      {/* Submit Message */}
-      {submitMessage && (
-        <div
-          className={`fixed bottom-6 right-6 z-50 p-4 rounded-lg shadow-lg max-w-md ${
-            submitMessage.type === 'success'
-              ? 'bg-emerald-100 border border-emerald-300 text-emerald-800'
-              : 'bg-red-100 border border-red-300 text-red-800'
-          }`}
-        >
-          <div className="flex items-start gap-2">
-            <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-            <p>{submitMessage.text}</p>
-          </div>
         </div>
       )}
 

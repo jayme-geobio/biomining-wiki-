@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
-import { getComments, addComment, hashIP } from '../lib/storage';
+import { addComment } from '../lib/storage';
 
 // Configuration
-const MAX_COMMENTS_PER_HOUR = parseInt(process.env.MAX_COMMENTS_PER_HOUR || '3');
 const COMMENT_MAX_LENGTH = parseInt(process.env.COMMENT_MAX_LENGTH || '500');
 
 // POST - Submit a new comment
@@ -26,15 +25,6 @@ export async function POST(request) {
     const sanitizedComment = sanitizeComment(body, clientIp);
 
     const page = sanitizedComment.pageName;
-    const pageComments = await getComments(page);
-
-    // Check rate limiting
-    if (checkRateLimit(pageComments, clientIp)) {
-      return NextResponse.json(
-        { error: `Too many comments. Please wait before commenting again. (Limit: ${MAX_COMMENTS_PER_HOUR} per hour)` },
-        { status: 429 }
-      );
-    }
 
     // Add comment
     await addComment(page, sanitizedComment);
@@ -86,17 +76,3 @@ function sanitizeComment(comment, clientIp) {
   return sanitized;
 }
 
-function checkRateLimit(pageComments, clientIp) {
-  if (!clientIp || clientIp === 'unknown') {
-    return false;
-  }
-
-  // Hash the IP to match stored format
-  const hashedIp = hashIP(clientIp);
-  const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
-  const recentComments = pageComments.filter(
-    c => c.ip === hashedIp && new Date(c.timestamp) > oneHourAgo
-  );
-
-  return recentComments.length >= MAX_COMMENTS_PER_HOUR;
-}
