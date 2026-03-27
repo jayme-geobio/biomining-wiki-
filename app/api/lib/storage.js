@@ -29,7 +29,7 @@ export async function getAllComments() {
   let cursor = 0;
   do {
     const [nextCursor, keys] = await redis.scan(cursor, { match: `${KEY_PREFIX}*`, count: 100 });
-    cursor = nextCursor;
+    cursor = Number(nextCursor);
     for (const key of keys) {
       const pageName = key.replace(KEY_PREFIX, '');
       result[pageName] = await redis.get(key) || [];
