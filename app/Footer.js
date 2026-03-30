@@ -34,12 +34,12 @@ export default function Footer() {
   };
 
   return (
-    <div className="flex justify-center px-28 pb-6">
+    <div className="flex justify-center max-w-7xl mx-auto px-6 pb-6">
       <div className="w-full">
-        <footer className="bg-[#0a3954] text-white rounded-2xl shadow-2xl px-12 py-8 border border-white">
+        <footer className="bg-[#0a3954] text-white rounded-2xl shadow-2xl px-6 sm:px-12 py-8 border border-white overflow-hidden">
 
           {/* Logo left, links right */}
-          <div className="flex flex-col md:flex-row items-start gap-8 mb-6">
+          <div className="flex flex-col lg:flex-row items-start gap-8 mb-6">
             {/* Logo */}
             <img
               src="/images/homeworld-logo-full.png"
@@ -47,19 +47,14 @@ export default function Footer() {
               className="h-14 shrink-0 -mt-1"
             />
 
-            {/* Nav sections — pushed right, evenly spaced */}
-            <div className="ml-auto flex gap-12">
+            {/* Nav sections — 2-col on small, full row on large */}
+            <div className="lg:ml-auto grid grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-6">
               {/* Home column */}
               <div>
                 <h4 className="text-sm font-semibold text-white mb-3">Home</h4>
                 <ul className="space-y-2">
                   <li>
-                    <Link
-                      href="/"
-                      className="text-sm text-gray-300 hover:text-white transition-colors"
-                    >
-                      Home
-                    </Link>
+                    <Link href="/" className="text-sm text-gray-300 hover:text-white transition-colors">Home</Link>
                   </li>
                 </ul>
               </div>
@@ -70,12 +65,7 @@ export default function Footer() {
                   <ul className="space-y-2">
                     {section.items.map((item) => (
                       <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="text-sm text-gray-300 hover:text-white transition-colors"
-                        >
-                          {item.name}
-                        </Link>
+                        <Link href={item.href} className="text-sm text-gray-300 hover:text-white transition-colors">{item.name}</Link>
                       </li>
                     ))}
                   </ul>
@@ -87,12 +77,7 @@ export default function Footer() {
                 <h4 className="text-sm font-semibold text-white mb-3">Contribute</h4>
                 <ul className="space-y-2">
                   <li>
-                    <button
-                      onClick={() => setShowContribute(true)}
-                      className="text-sm text-gray-300 hover:text-white transition-colors"
-                    >
-                      Contribute
-                    </button>
+                    <button onClick={() => setShowContribute(true)} className="text-sm text-gray-300 hover:text-white transition-colors">Contribute</button>
                   </li>
                 </ul>
               </div>

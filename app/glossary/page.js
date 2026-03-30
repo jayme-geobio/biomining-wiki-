@@ -54,8 +54,8 @@ export default function Glossary() {
   return (
     <CommentableContent pageName="glossary">
 
-      <div className="min-h-screen pt-4 pb-6 px-28">
-        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+      <div className="min-h-screen pt-4 pb-6 max-w-7xl mx-auto px-6">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
         {/* Header */}
         <div className="text-center mb-8">
           <BookOpen className="w-12 h-12 text-emerald-600 mx-auto mb-4" />

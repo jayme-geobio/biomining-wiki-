@@ -9,13 +9,13 @@ export default function BiominingHome() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="px-28 pt-4 pb-6">
+        <div className="max-w-7xl mx-auto px-6 pt-4 pb-6">
           {/* Hero Card + Ghost Box */}
           <div className="mb-6">
             <div className="flex gap-6 items-stretch">
               {/* Solid card */}
-              <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
-                <h1 className="text-5xl font-bold text-[#264563] leading-tight">
+              <div className="flex-1 bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center h-auto py-10 sm:h-80">
+                <h1 className="text-3xl sm:text-5xl font-bold text-[#264563] leading-tight">
                   The Biomining Handbook
                 </h1>
                 <p className="text-base text-[#264563]">
@@ -23,13 +23,13 @@ export default function BiominingHome() {
                 </p>
               </div>
               {/* Ghost outline box */}
-              <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
+              <div className="hidden sm:block flex-1 rounded-3xl border-2 border-white shadow-xl" />
             </div>
           </div>
 
           {/* About This Handbook */}
           <div className="mb-6">
-            <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
+            <div className="bg-[#edede6] rounded-3xl p-5 sm:p-8 shadow-xl border border-white">
               <h3 className="text-2xl font-bold text-[#264563] mb-3">
                 About This Handbook
               </h3>
@@ -83,7 +83,7 @@ export default function BiominingHome() {
 
           {/* What is Biomining */}
           <div className="mb-6">
-            <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
+            <div className="bg-[#edede6] rounded-3xl p-5 sm:p-8 shadow-xl border border-white">
               <h3 className="text-2xl font-bold text-[#264563] mb-3">
                 What is Biomining?
               </h3>
@@ -92,8 +92,8 @@ export default function BiominingHome() {
                   Any biological mechanism used to aid metal recovery, mineral processing, or the management of
                   mining-related wastes and liabilities.
                 </p>
-                <div className="flex items-center justify-center gap-4 mt-6">
-                  <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 w-64 flex flex-col justify-center">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+                  <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 w-full sm:w-64 flex flex-col justify-center">
                     <h4 className="text-[#264563] font-semibold mb-2">Mechanisms</h4>
                     <ul className="text-[#264563] text-sm space-y-1">
                       <li>• Bioleaching & biooxidation</li>
@@ -102,8 +102,8 @@ export default function BiominingHome() {
                       <li>• Monitoring & biosensing</li>
                     </ul>
                   </div>
-                  <ArrowRight className="w-10 h-10 text-[#264563] flex-shrink-0" />
-                  <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 w-64 flex flex-col justify-center">
+                  <ArrowRight className="w-10 h-10 text-[#264563] flex-shrink-0 rotate-90 sm:rotate-0" />
+                  <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 w-full sm:w-64 flex flex-col justify-center">
                     <h4 className="text-[#264563] font-semibold mb-2">Applications</h4>
                     <ul className="text-[#264563] text-sm space-y-1">
                       <li>• Heap & tank leaching</li>
@@ -119,7 +119,7 @@ export default function BiominingHome() {
 
           {/* Why Now Section */}
           <div className="mb-6">
-            <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
+            <div className="bg-[#edede6] rounded-3xl p-5 sm:p-8 shadow-xl border border-white">
               <h2 className="text-2xl font-bold text-[#264563] mb-4">
                 Why Biomining Now?
               </h2>
@@ -169,7 +169,7 @@ export default function BiominingHome() {
 
           {/* Core Resources */}
           <div className="mt-6">
-            <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white">
+            <div className="bg-[#edede6] rounded-3xl p-5 sm:p-8 shadow-xl border border-white">
               <h2 className="text-2xl font-bold text-[#264563] mb-6 text-left">
                 Essential Resources
               </h2>
@@ -234,7 +234,7 @@ function PathCard({ title, subtitle, icon: Icon, color, sections, link }) {
   const colors = colorClasses[color];
 
   return (
-    <div className="bg-[#edede6] rounded-3xl p-8 shadow-xl border border-white hover:shadow-2xl transition-all duration-300 flex flex-col">
+    <div className="bg-[#edede6] rounded-3xl p-5 sm:p-8 shadow-xl border border-white hover:shadow-2xl transition-all duration-300 flex flex-col">
       <div className="flex items-center gap-3 mb-4">
         <Icon className={`w-7 h-7 ${colors.iconColor}`} />
         <div>

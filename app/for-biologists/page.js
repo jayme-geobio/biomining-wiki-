@@ -18,21 +18,21 @@ export default function ForBiologists() {
   return (
     <CommentableContent pageName="for-biologists">
 
-      <div className="min-h-screen pt-4 pb-6 px-28 space-y-6">
+      <div className="min-h-screen pt-4 pb-6 max-w-7xl mx-auto px-6 space-y-6">
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
-            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Mining 101</h1>
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center h-auto py-10 sm:h-80">
+            <h1 className="text-2xl sm:text-4xl font-bold text-[#264563] mb-3 leading-tight">Mining 101</h1>
             <p className="text-base text-[#264563]">
             To deploy biology in mining, you need to understand where it fits in a mining flowsheet
             </p>
           </div>
-          <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
+          <div className="hidden sm:block flex-1 rounded-3xl border-2 border-white shadow-xl" />
         </div>
 
         {/* Box 2: Definition + Sections */}
-        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
 
           {/* Why This Matters */}
           <div className="mb-8">
@@ -67,7 +67,7 @@ export default function ForBiologists() {
         </div>
 
         {/* Sections */}
-        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
           <h2 className="text-2xl font-bold text-[#264563] mb-6">Mining Operations & Constraints</h2>
           <Section
             title="Mining Value Chain - Stage by Stage"

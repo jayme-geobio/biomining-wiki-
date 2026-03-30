@@ -195,21 +195,21 @@ export default function Flowsheets() {
   return (
     <CommentableContent pageName="flowsheets">
 
-      <div className="min-h-screen pt-4 pb-6 px-28 space-y-6">
+      <div className="min-h-screen pt-4 pb-6 max-w-7xl mx-auto px-6 space-y-6">
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl px-10 shadow-xl border border-white flex flex-col justify-center h-80">
-            <h1 className="text-4xl font-bold text-[#264563] mb-3 leading-tight">Example Flowsheets</h1>
+          <div className="flex-1 bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center h-auto py-10 sm:h-80">
+            <h1 className="text-2xl sm:text-4xl font-bold text-[#264563] mb-3 leading-tight">Example Flowsheets</h1>
             <p className="text-base text-[#264563]">
               See how biology integrates into real mining operations — from proven commercial processes to emerging applications
             </p>
           </div>
-          <div className="flex-1 rounded-3xl border-2 border-white shadow-xl" />
+          <div className="hidden sm:block flex-1 rounded-3xl border-2 border-white shadow-xl" />
         </div>
 
         {/* Box 2: Integration Patterns */}
-        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
           <h2 className="text-2xl font-bold text-[#264563] mb-3">Integration Patterns</h2>
           <p className="text-[#264563] mb-3">
             Key patterns to look for across these flowsheets:
@@ -235,7 +235,7 @@ export default function Flowsheets() {
         </div>
 
         {/* Box 3: What Is a Flowsheet */}
-        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
           <h2 className="text-2xl font-bold text-[#264563] mb-3">What Is a Flowsheet?</h2>
           <p className="text-[#264563]">
             A <GlossaryTerm term="Flowsheet" definition="The standard mining industry term for a diagram showing how ore is processed from feed to final product through a sequence of unit operations">flowsheet</GlossaryTerm> is the standard mining industry term for <strong>a diagram showing how ore moves through each processing step</strong> to become saleable metal. It reveals <strong>where biology can plug in</strong>, what <strong>constraints</strong> exist (chemistry, time, scale), and whether biological innovations fit <strong>existing operations</strong>.
@@ -243,7 +243,7 @@ export default function Flowsheets() {
         </div>
 
         {/* Box 4: Example Flowsheets */}
-        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-8 md:p-12 border border-white">
+        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
           <h2 className="text-2xl font-bold text-[#264563] mb-6">Example Flowsheets</h2>
           <div className="space-y-4">
             {flowsheetData.map(flowsheet => (
