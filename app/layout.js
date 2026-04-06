@@ -2,6 +2,7 @@ import './globals.css'
 import Navigation from './Navigation'
 import Footer from './Footer'
 import PageTransition from './components/PageTransition'
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
   title: 'The Biomining Handbook - A Practical Guide for Biologists and Mining Professionals',
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <Navigation />
         <PageTransition>{children}</PageTransition>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )

@@ -41,7 +41,7 @@ export default function Citations() {
             <BookOpen className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
             <h1 className="text-4xl font-bold text-[#264563] mb-3">References</h1>
             <p className="text-base text-[#264563] max-w-3xl mx-auto">
-              In addition to the literature referenced throughout this handbook, we would like to acknowledge key workshop attendees whose insights inspired this resource: <strong>Dani Merino</strong>, <strong>Gerhard (Gary) Schenk</strong>, <strong>Luis Valencia</strong>, <strong>Mackenzie Best</strong>, <strong>Paul Reginato</strong>, <strong>Sasha Milshteyn</strong>, and <strong>Wenying Liu</strong>. We also thank <strong>Ariana Caiati</strong>, <strong>Colbey Derwin</strong>, <strong>Jayme Feyhl-Buska</strong>, and the Homeworld team for bringing this handbook to life.
+              In addition to the literature referenced throughout this handbook, we would like to acknowledge key workshop attendees whose insights inspired this resource: <strong>Mackenzie Best</strong>, <strong>Wenying Liu</strong>, <strong>Daniel Merino-Garcia</strong>, <strong>Sasha Milshteyn</strong>, <strong>Paul Reginato</strong>, <strong>Gerhard (Gary) Schenk</strong>, and <strong>Luis Valencia</strong>. We also thank <strong>Ariana Caiati</strong>, <strong>Colbey Derwin</strong>, <strong>Jayme Feyhl-Buska</strong>, and the Homeworld team for bringing this handbook to life.
 
             </p>
           </div>

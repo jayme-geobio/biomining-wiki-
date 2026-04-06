@@ -88,44 +88,6 @@ const themes = [
   }
 ];
 
-const attendees = [
-  { name: "Alan Tordoir", affiliation: "Mining3" },
-  { name: "Alex Aguilar", affiliation: "Mind the Bridge" },
-  { name: "Ariana Caiati", affiliation: "Homeworld Collective" },
-  { name: "Brian Townley", affiliation: "University of Chile" },
-  { name: "Buz Barstow", affiliation: "Cornell University" },
-  { name: "Cara Santelli", affiliation: "University of Minnesota" },
-  { name: "Cooper Yerby", affiliation: "US Department of Energy" },
-  { name: "Dani Merino-Garcia", affiliation: "Project InnerSpace" },
-  { name: "Daniel Goodwin", affiliation: "Homeworld Collective" },
-  { name: "Dave Lee", affiliation: "Booz Allen Hamilton" },
-  { name: "David Zhen Yin", affiliation: "Stanford Mineral-X" },
-  { name: "Dayal Saran", affiliation: "Allonnia" },
-  { name: "Doris Hiam-Galvez", affiliation: "Designing Sustainable Prosperity" },
-  { name: "Elze Hesse", affiliation: "University of Exeter" },
-  { name: "Erin Marshall", affiliation: "Koonkie" },
-  { name: "Felix Guettersberger", affiliation: "Forbion BioEconomy" },
-  { name: "Francisco (Frank) Roberto", affiliation: "Independent Consultant" },
-  { name: "Gerhard (Gary) Schenk", affiliation: "University of Queensland" },
-  { name: "Jason Holt", affiliation: "Orion Industrial Ventures" },
-  { name: "Jayme Feyhl-Buska", affiliation: "Homeworld Collective" },
-  { name: "Jenn Macalady", affiliation: "Penn State University" },
-  { name: "Kaila Sims-Austin", affiliation: "Homeworld Collective" },
-  { name: "Luis Valencia", affiliation: "AlkaLi Labs" },
-  { name: "Mackenzie Best", affiliation: "Sandia National Laboratories" },
-  { name: "N. Cecilia Martinez-Gomez", affiliation: "UC Berkeley" },
-  { name: "Patrick Diep", affiliation: "Lawrence Livermore National Laboratory" },
-  { name: "Paul Reginato", affiliation: "Homeworld Collective" },
-  { name: "Pranam Chatterjee", affiliation: "University of Pennsylvania" },
-  { name: "Pilar Parada", affiliation: "CSB-UNAB" },
-  { name: "Renee Hodges", affiliation: "Boson Partners" },
-  { name: "Sarah Daniels", affiliation: "Homeworld Collective" },
-  { name: "Sasha Milshteyn", affiliation: "Transition Biomining" },
-  { name: "Scott Banta", affiliation: "Columbia University" },
-  { name: "Wenying Liu", affiliation: "University of British Columbia" },
-  { name: "Yongjin Park", affiliation: "1849 Bio" },
-  { name: "Yoshiko Fujita", affiliation: "Idaho National Laboratory" },
-];
 
 
 export default function Research() {
@@ -160,9 +122,9 @@ export default function Research() {
             <p>
               The themes below capture key patterns from the workshop, helping accelerate innovation and align stakeholders around critical barriers in biomining.
             </p>
-            <p className="italic text-[#264563] text-sm mt-2">
-              Detailed problem statements with full context and proposed approaches will be published soon.
-            </p>
+            <div className="bg-white rounded-lg border border-gray-200 p-4 mt-4 text-[#264563]">
+              Detailed problem statements with full context, proposed approaches, and contributor attribution will be published soon. We thank the workshop participants whose input made this work possible.
+            </div>
           </div>
         </div>
 
@@ -199,23 +161,6 @@ export default function Research() {
           </div>
         </div>
 
-        {/* Acknowledgment */}
-        <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
-          <h2 className="text-2xl font-bold text-[#264563] mb-4 text-center">Workshop Acknowledgments</h2>
-          <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 mb-6 text-center">
-            <p className="text-orange-700 text-sm italic">Affiliations of workshop attendees are hidden pending approval and will be added prior to publication.</p>
-          </div>
-          <p className="text-[#264563] text-center mb-6 max-w-3xl mx-auto">
-            We are grateful to the following workshop participants whose expertise, perspectives, and collaborative spirit generated the problem statements that informed this work.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-5xl mx-auto">
-            {attendees.map((person, i) => (
-              <div key={i} className="text-center py-2">
-                <p className="text-[#264563] text-sm font-semibold">{person.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Coming Soon & Navigation */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
