@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { X, Send, AlertCircle } from 'lucide-react';
+import { track } from '@vercel/analytics';
 
 export default function ContributeModal({ isOpen, onClose }) {
   const [contributorName, setContributorName] = useState('');
@@ -49,6 +50,7 @@ export default function ContributeModal({ isOpen, onClose }) {
       }
 
       if (response.ok) {
+        track('Contributor Signup', { source: 'modal' });
         setSubmitMessage({ type: 'success', text: data.message || 'Thank you! We\'ll be in touch.' });
         setContributorName('');
         setContributorEmail('');

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { MessageSquare, X, Send, AlertCircle } from 'lucide-react';
+import { track } from '@vercel/analytics';
 
 export default function CommentSystem({ pageName, contentRef }) {
   const [showCommentForm, setShowCommentForm] = useState(false);
@@ -120,6 +121,7 @@ export default function CommentSystem({ pageName, contentRef }) {
       }
 
       if (response.ok) {
+        track(wantsToContribute ? 'Contributor Signup' : 'Comment Submitted', { page: pageName });
         setSubmitMessage({ type: 'success', text: 'Submitted!' });
         setCommentText('');
         setWantsToContribute(false);
