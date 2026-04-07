@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
+import TableOfContents from '../components/TableOfContents';
+import PageNavigation from '../components/PageNavigation';
 
 const themes = [
   {
@@ -99,17 +101,17 @@ export default function Research() {
 
   return (
     <CommentableContent pageName="research">
-      <div className="min-h-screen pt-4 pb-6 max-w-7xl mx-auto px-6 space-y-6">
+      <div className="min-h-screen pt-4 pb-6 max-w-5xl mx-auto px-6 space-y-6">
 
         {/* Header */}
         <div className="flex gap-6 items-stretch">
-          <div className="flex-1 bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center h-auto py-10 sm:h-80">
+          <div className="flex-[2] bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center py-10">
             <h1 className="text-2xl sm:text-4xl font-bold text-[#264563] mb-3 leading-tight">Frontier Challenges in Biomining</h1>
             <p className="text-base text-[#264563]">
               Themes and actionable problem areas shaping the future of biotechnology in mining
             </p>
           </div>
-          <div className="hidden sm:block flex-1 rounded-3xl border-2 border-white shadow-xl" />
+          <TableOfContents />
         </div>
 
         {/* Context & Origin */}
@@ -137,27 +139,15 @@ export default function Research() {
           <p className="text-[#264563] mb-6">
             Each theme below captures a cluster of related problem statements from the workshop.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-            <div className="space-y-4">
-              {themes.slice(0, 4).map((theme, i) => (
-                <ThemeCard
-                  key={i}
-                  theme={theme}
-                  expanded={openThemes.has(i)}
-                  onToggle={() => toggleTheme(i)}
-                />
-              ))}
-            </div>
-            <div className="space-y-4">
-              {themes.slice(4, 8).map((theme, i) => (
-                <ThemeCard
-                  key={i + 4}
-                  theme={theme}
-                  expanded={openThemes.has(i + 4)}
-                  onToggle={() => toggleTheme(i + 4)}
-                />
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {themes.map((theme, i) => (
+              <ThemeCard
+                key={i}
+                theme={theme}
+                expanded={openThemes.has(i)}
+                onToggle={() => toggleTheme(i)}
+              />
+            ))}
           </div>
         </div>
 
@@ -167,14 +157,7 @@ export default function Research() {
           <h3 className="text-2xl font-bold text-[#264563] mb-8 text-center">Full Problem Statements Coming Soon...</h3>
 
           {/* Navigation */}
-          <div className="mt-12 flex justify-between">
-            <Link href="/" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
-              ← Back to Home
-            </Link>
-            <Link href="/glossary" className="text-[#264563] hover:text-[#1e3450] flex items-center gap-2">
-              Core Glossary →
-            </Link>
-          </div>
+          <PageNavigation />
         </div>
 
       </div>
@@ -188,7 +171,7 @@ function ThemeCard({ theme, expanded, onToggle }) {
     <div className="rounded-xl border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full bg-[#264563] p-6 h-24 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
+        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors h-full"
       >
         <div className="flex items-center gap-3">
           <span className="text-white font-bold text-lg w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">{theme.number}</span>

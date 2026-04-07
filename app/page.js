@@ -3,18 +3,19 @@
 import React from 'react';
 import Link from 'next/link';
 import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, GraduationCap, Factory, AlertTriangle, Target, TrendingUp, MessageSquare, HelpCircle, ArrowRight } from 'lucide-react';
+import TableOfContents from './components/TableOfContents';
 
 export default function BiominingHome() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 pt-4 pb-6">
+        <div className="max-w-5xl mx-auto px-6 pt-4 pb-6">
           {/* Hero Card + Ghost Box */}
           <div className="mb-6">
             <div className="flex gap-6 items-stretch">
               {/* Solid card */}
-              <div className="flex-1 bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center h-auto py-10 sm:h-80">
+              <div className="flex-[2] bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center py-10">
                 <h1 className="text-3xl sm:text-5xl font-bold text-[#264563] leading-tight">
                   The Biomining Handbook
                 </h1>
@@ -22,8 +23,8 @@ export default function BiominingHome() {
                   A practical guide for biologists and mining professionals
                 </p>
               </div>
-              {/* Ghost outline box */}
-              <div className="hidden sm:block flex-1 rounded-3xl border-2 border-white shadow-xl" />
+              {/* Table of Contents */}
+              <TableOfContents />
             </div>
           </div>
 
@@ -206,8 +207,9 @@ export default function BiominingHome() {
                 />
               </div>
               <div className="flex justify-end mt-12">
-                <Link href="/what-is-biomining" className="inline-flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-medium text-base transition-colors">
-                  Learn more about biomining →
+                <Link href="/what-is-biomining" className="group flex flex-col items-end text-[#264563] hover:text-[#1e3450] transition-colors">
+                  <span className="text-xs text-[#264563]/50 mb-1">Start reading →</span>
+                  <span className="text-base font-medium group-hover:underline">What Is Biomining?</span>
                 </Link>
               </div>
             </div>

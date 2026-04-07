@@ -4,12 +4,14 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import ContributeModal from './components/ContributeModal';
+import NewsletterModal from './components/NewsletterModal';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const [showContribute, setShowContribute] = useState(false);
+  const [showNewsletter, setShowNewsletter] = useState(false);
 
   const navigation = {
     learn: {
@@ -39,7 +41,7 @@ export default function Navigation() {
   };
 
   return (
-    <div className="flex justify-center max-w-7xl mx-auto px-6 pt-6 pb-2">
+    <div className="flex justify-center max-w-5xl mx-auto px-6 pt-6 pb-2">
       <div className="w-full">
         <nav
           className="bg-[#f9f7f1] border border-[#264563] shadow-lg rounded-2xl overflow-hidden"
@@ -49,9 +51,9 @@ export default function Navigation() {
             <div className="flex items-center justify-between h-[92px]">
 
               {/* Logo */}
-              <Link href="/" className="flex items-center -ml-8 shrink-0">
+              <a href="https://www.homeworld.bio" className="flex items-center -ml-8 shrink-0">
                 <img src="/images/homeworld-logo-full-dark.png" alt="Homeworld Collective" className="h-[7.5rem]" />
-              </Link>
+              </a>
 
               {/* Desktop links */}
               <div className="hidden lg:flex lg:items-center lg:space-x-0.5 relative">
@@ -93,13 +95,30 @@ export default function Navigation() {
                   );
                 })}
 
-                <button
-                  onClick={() => setShowContribute(true)}
-                  onMouseEnter={() => setOpenDropdown(null)}
-                  className="!ml-4 px-3 py-1 text-lg font-medium text-white bg-[#264563] rounded-lg hover:bg-[#1e3450] transition-colors"
-                >
-                  Contribute
-                </button>
+                <div onMouseEnter={() => setOpenDropdown('getInvolved')} className="relative !ml-4">
+                  <button className="px-3 py-1 text-lg font-medium text-white bg-[#264563] rounded-lg hover:bg-[#1e3450] transition-colors">
+                    Get Involved
+                  </button>
+
+                  <div className={`absolute bottom-0 left-3.5 w-px h-2 bg-[#264563]/60 transition-opacity duration-500 ${openDropdown === 'getInvolved' ? 'opacity-100' : 'opacity-0'}`} />
+
+                  <div className={`absolute top-full right-0 pt-2 transition-opacity duration-500 ${openDropdown === 'getInvolved' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                    <div className="flex flex-col gap-1.5 items-end">
+                      <button
+                        onClick={() => { setShowContribute(true); setOpenDropdown(null); }}
+                        className="text-base text-[#264563] hover:underline transition-colors whitespace-nowrap"
+                      >
+                        Contribute
+                      </button>
+                      <button
+                        onClick={() => { setShowNewsletter(true); setOpenDropdown(null); }}
+                        className="text-base text-[#264563] hover:underline transition-colors whitespace-nowrap"
+                      >
+                        Newsletter Sign Up
+                      </button>
+                    </div>
+                  </div>
+                </div>
 
                 {/* Horizontal line */}
                 <div className={`absolute bottom-0 left-0 right-0 h-px bg-[#264563]/40 transition-opacity duration-500 ${openDropdown ? 'opacity-100' : 'opacity-0'}`} />
@@ -164,18 +183,38 @@ export default function Navigation() {
                 ))}
               </div>
 
-                <button
-                  onClick={() => { setShowContribute(true); setIsOpen(false); }}
-                  className="w-full px-3 py-2 rounded-xl text-lg text-white bg-[#264563] hover:bg-[#1e3450] transition-colors text-center"
-                >
-                  Contribute
-                </button>
+                <div className="space-y-1">
+                  <button
+                    onClick={() => setMobileDropdown(mobileDropdown === 'getInvolved' ? null : 'getInvolved')}
+                    className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-lg text-white bg-[#264563] hover:bg-[#1e3450] transition-colors"
+                  >
+                    <span>Get Involved</span>
+                    <ChevronDown className={`w-5 h-5 transition-transform duration-500 ${mobileDropdown === 'getInvolved' ? 'rotate-180' : ''}`} />
+                  </button>
+                  {mobileDropdown === 'getInvolved' && (
+                    <div className="ml-4 space-y-1">
+                      <button
+                        onClick={() => { setShowContribute(true); setIsOpen(false); }}
+                        className="block w-full text-left px-3 py-2 rounded-xl text-lg text-[#264563] hover:bg-gray-300/40 transition-colors"
+                      >
+                        Contribute
+                      </button>
+                      <button
+                        onClick={() => { setShowNewsletter(true); setIsOpen(false); }}
+                        className="block w-full text-left px-3 py-2 rounded-xl text-lg text-[#264563] hover:bg-gray-300/40 transition-colors"
+                      >
+                        Newsletter Sign Up
+                      </button>
+                    </div>
+                  )}
+                </div>
             </div>
           )}
         </nav>
       </div>
 
       <ContributeModal isOpen={showContribute} onClose={() => setShowContribute(false)} />
+      <NewsletterModal isOpen={showNewsletter} onClose={() => setShowNewsletter(false)} />
     </div>
   );
 }

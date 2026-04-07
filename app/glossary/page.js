@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Search, Mountain, Microscope, BookOpen, ChevronDown, ChevronRight } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
+import PageNavigation from '../components/PageNavigation';
 import { glossaryData } from '../data/glossary';
 
 function termToId(termName) {
@@ -54,7 +55,7 @@ export default function Glossary() {
   return (
     <CommentableContent pageName="glossary">
 
-      <div className="min-h-screen pt-4 pb-6 max-w-7xl mx-auto px-6">
+      <div className="min-h-screen pt-4 pb-6 max-w-5xl mx-auto px-6">
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
         {/* Header */}
         <div className="text-center mb-8">
@@ -140,14 +141,7 @@ export default function Glossary() {
         )}
 
           {/* Navigation */}
-          <div className="mt-12 flex justify-between">
-            <Link href="/" className="text-[#264563] hover:text-[#264563]/70 flex items-center gap-2">
-              ← Back to Home
-            </Link>
-            <Link href="/citations" className="text-[#264563] hover:text-[#264563]/70 flex items-center gap-2">
-              References →
-            </Link>
-          </div>
+          <PageNavigation />
         </div>
       </div>
     </CommentableContent>

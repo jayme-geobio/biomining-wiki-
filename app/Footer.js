@@ -3,9 +3,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import ContributeModal from './components/ContributeModal';
+import NewsletterModal from './components/NewsletterModal';
 
 export default function Footer() {
   const [showContribute, setShowContribute] = useState(false);
+  const [showNewsletter, setShowNewsletter] = useState(false);
   const sections = {
     learn: {
       name: 'Learn',
@@ -34,18 +36,20 @@ export default function Footer() {
   };
 
   return (
-    <div className="flex justify-center max-w-7xl mx-auto px-6 pb-6">
+    <div className="flex justify-center max-w-5xl mx-auto px-6 pb-6">
       <div className="w-full">
         <footer className="bg-[#0a3954] text-white rounded-2xl shadow-2xl px-6 sm:px-12 py-8 border border-white overflow-hidden">
 
           {/* Logo left, links right */}
           <div className="flex flex-col lg:flex-row items-start gap-8 mb-6">
             {/* Logo */}
-            <img
-              src="/images/homeworld-logo-full.png"
-              alt="Homeworld Logo"
-              className="h-14 shrink-0 -mt-1"
-            />
+            <a href="https://www.homeworld.bio" className="shrink-0">
+              <img
+                src="/images/homeworld-logo-full.png"
+                alt="Homeworld Logo"
+                className="h-14 -mt-1"
+              />
+            </a>
 
             {/* Nav sections — 2-col on small, full row on large */}
             <div className="lg:ml-auto grid grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-6">
@@ -72,12 +76,15 @@ export default function Footer() {
                 </div>
               ))}
 
-              {/* Contribute column */}
+              {/* Get Involved column */}
               <div>
-                <h4 className="text-sm font-semibold text-white mb-3">Contribute</h4>
+                <h4 className="text-sm font-semibold text-white mb-3">Get Involved</h4>
                 <ul className="space-y-2">
                   <li>
                     <button onClick={() => setShowContribute(true)} className="text-sm text-gray-300 hover:text-white transition-colors">Contribute</button>
+                  </li>
+                  <li>
+                    <button onClick={() => setShowNewsletter(true)} className="text-sm text-gray-300 hover:text-white transition-colors">Newsletter Sign Up</button>
                   </li>
                 </ul>
               </div>
@@ -89,7 +96,7 @@ export default function Footer() {
 
           {/* Bottom row */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-sm text-gray-500">
-            <span>© Homeworld Collective Inc {new Date().getFullYear()}</span>
+            <span>© Homeworld Collective Inc {new Date().getFullYear()}  |  <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></span>
             <span>Bridging biology and mining for critical mineral recovery.</span>
           </div>
 
@@ -97,6 +104,7 @@ export default function Footer() {
       </div>
 
       <ContributeModal isOpen={showContribute} onClose={() => setShowContribute(false)} />
+      <NewsletterModal isOpen={showNewsletter} onClose={() => setShowNewsletter(false)} />
     </div>
   );
 }
