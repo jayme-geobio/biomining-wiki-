@@ -17,7 +17,7 @@ export default function NewsletterModal({ isOpen, onClose }) {
     setSubmitMessage(null);
 
     try {
-      const response = await fetch('https://api.homeworld.bio/api/forms/send', {
+      const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, Address: '' })

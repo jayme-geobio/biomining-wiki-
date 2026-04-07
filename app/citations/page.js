@@ -35,7 +35,7 @@ export default function Citations() {
 
   return (
     <CommentableContent pageName="citations">
-      <div className="min-h-screen pt-4 pb-6 max-w-5xl mx-auto px-6">
+      <div className="min-h-screen pt-4 pb-6 max-w-6xl mx-auto px-4">
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
           {/* Header */}
           <div className="text-center mb-8">

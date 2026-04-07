@@ -6,9 +6,9 @@ import { usePathname } from 'next/navigation';
 const chapters = [
   {
     number: 1,
-    name: 'Home',
+    name: 'Introduction',
     pages: [
-      { name: 'Home', href: '/' },
+      { name: 'The Biomining Handbook', href: '/' },
     ],
   },
   {
@@ -50,7 +50,7 @@ export default function TableOfContents() {
 
   return (
     <div className="hidden sm:flex flex-[1] rounded-3xl border-2 border-white shadow-xl flex-col justify-center px-6 py-6 bg-[#264563]/95">
-      <p className="text-sm font-semibold text-white/50 uppercase tracking-wider mb-3">Navigation Guide</p>
+      <p className="text-sm font-semibold text-white uppercase tracking-wider mb-3">Handbook Roadmap</p>
       <nav className="space-y-2.5">
         {chapters.map((chapter) => (
           <div key={chapter.number}>

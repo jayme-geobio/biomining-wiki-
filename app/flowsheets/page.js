@@ -197,7 +197,7 @@ export default function Flowsheets() {
   return (
     <CommentableContent pageName="flowsheets">
 
-      <div className="min-h-screen pt-4 pb-6 max-w-5xl mx-auto px-6 space-y-6">
+      <div className="min-h-screen pt-4 pb-6 max-w-6xl mx-auto px-4 space-y-6">
 
         {/* Box 1: Header */}
         <div className="flex gap-6 items-stretch">

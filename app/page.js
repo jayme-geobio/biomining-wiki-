@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, GraduationCap, Factory, AlertTriangle, Target, TrendingUp, MessageSquare, HelpCircle, ArrowRight } from 'lucide-react';
+import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, GraduationCap, Factory, AlertTriangle, Target, TrendingUp, MessageSquare, HelpCircle, ArrowRight, Atom, Hammer } from 'lucide-react';
 import TableOfContents from './components/TableOfContents';
 
 export default function BiominingHome() {
@@ -10,7 +10,7 @@ export default function BiominingHome() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 pt-4 pb-6">
+        <div className="max-w-6xl mx-auto px-4 pt-4 pb-6">
           {/* Hero Card + Ghost Box */}
           <div className="mb-6">
             <div className="flex gap-6 items-stretch">
@@ -93,24 +93,30 @@ export default function BiominingHome() {
                   Any biological mechanism used to aid metal recovery, mineral processing, or the management of
                   mining-related wastes and liabilities.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
-                  <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 w-full sm:w-64 flex flex-col justify-center">
-                    <h4 className="text-[#264563] font-semibold mb-2">Mechanisms</h4>
-                    <ul className="text-[#264563] text-sm space-y-1">
-                      <li>• Bioleaching & biooxidation</li>
-                      <li>• Bioseparation & biosorption</li>
-                      <li>• Bioprecipitation</li>
-                      <li>• Monitoring & biosensing</li>
+                <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
+                  <div className="bg-gray-50 rounded-xl p-5 border-2 border-[#264563]/20 flex-1 w-full">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Atom className="w-5 h-5 text-emerald-600" />
+                      <h4 className="text-[#264563] font-semibold">Mechanisms</h4>
+                    </div>
+                    <ul className="text-[#264563] text-sm space-y-1.5 ml-1">
+                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Bioleaching & biooxidation</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Bioseparation & biosorption</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Bioprecipitation</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Monitoring & biosensing</li>
                     </ul>
                   </div>
                   <ArrowRight className="w-10 h-10 text-[#264563] flex-shrink-0 rotate-90 sm:rotate-0" />
-                  <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 w-full sm:w-64 flex flex-col justify-center">
-                    <h4 className="text-[#264563] font-semibold mb-2">Applications</h4>
-                    <ul className="text-[#264563] text-sm space-y-1">
-                      <li>• Heap & tank leaching</li>
-                      <li>• Metal separation & polishing</li>
-                      <li>• AMD treatment & closure</li>
-                      <li>• Tailings reprocessing</li>
+                  <div className="bg-gray-50 rounded-xl p-5 border-2 border-[#264563]/20 flex-1 w-full">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Hammer className="w-5 h-5 text-emerald-600" />
+                      <h4 className="text-[#264563] font-semibold">Applications</h4>
+                    </div>
+                    <ul className="text-[#264563] text-sm space-y-1.5 ml-1">
+                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Heap & tank leaching</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Metal separation & polishing</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>AMD treatment & closure</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Tailings reprocessing</li>
                     </ul>
                   </div>
                 </div>
@@ -208,7 +214,7 @@ export default function BiominingHome() {
               </div>
               <div className="flex justify-end mt-12">
                 <Link href="/what-is-biomining" className="group flex flex-col items-end text-[#264563] hover:text-[#1e3450] transition-colors">
-                  <span className="text-xs text-[#264563]/50 mb-1">Start reading →</span>
+                  <span className="text-xs text-[#264563]/50 mb-1">Start learning →</span>
                   <span className="text-base font-medium group-hover:underline">What Is Biomining?</span>
                 </Link>
               </div>

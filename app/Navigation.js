@@ -41,7 +41,7 @@ export default function Navigation() {
   };
 
   return (
-    <div className="flex justify-center max-w-5xl mx-auto px-6 pt-6 pb-2">
+    <div className="flex justify-center max-w-6xl mx-auto px-4 pt-10 pb-2">
       <div className="w-full">
         <nav
           className="bg-[#f9f7f1] border border-[#264563] shadow-lg rounded-2xl overflow-hidden"
@@ -50,26 +50,22 @@ export default function Navigation() {
           <div className="pl-0 pr-5 sm:pr-7">
             <div className="flex items-center justify-between h-[92px]">
 
-              {/* Logo */}
-              <a href="https://www.homeworld.bio" className="flex items-center -ml-8 shrink-0">
-                <img src="/images/homeworld-logo-full-dark.png" alt="Homeworld Collective" className="h-[7.5rem]" />
-              </a>
+              {/* Logo + Handbook label */}
+              <div className="flex items-center shrink-0">
+                <a href="https://www.homeworld.bio" target="_blank" rel="noopener noreferrer" className="flex items-center -ml-8">
+                  <img src="/images/homeworld-logo-full-dark.png" alt="Homeworld Collective" className="h-[7.5rem]" />
+                </a>
+                <div className="h-10 w-px bg-[#264563]/30 -ml-7 mr-2" />
+                <Link href="/" className="text-lg font-light tracking-wide text-[#264563]/70 uppercase hover:text-[#264563] transition-colors">Biomining Handbook</Link>
+              </div>
 
               {/* Desktop links */}
               <div className="hidden lg:flex lg:items-center lg:space-x-0.5 relative">
-                <Link
-                  href="/"
-                  className="px-3.5 py-2 text-lg text-[#264563] hover:bg-gray-300/40 rounded-xl transition-colors"
-                  onMouseEnter={() => setOpenDropdown(null)}
-                >
-                  Home
-                </Link>
-
                 {Object.entries(navigation).map(([key, section], idx, arr) => {
                   const isLast = idx === arr.length - 1;
                   return (
                   <div key={key} onMouseEnter={() => setOpenDropdown(key)} className="relative">
-                    <button className="flex items-center px-3.5 py-2 text-lg text-[#264563] hover:bg-gray-300/40 rounded-xl transition-colors">
+                    <button className="flex items-center px-3.5 py-2 text-xl text-[#264563] hover:bg-gray-300/40 rounded-xl transition-colors">
                       <span>{section.name}</span>
                     </button>
 
@@ -96,7 +92,7 @@ export default function Navigation() {
                 })}
 
                 <div onMouseEnter={() => setOpenDropdown('getInvolved')} className="relative !ml-4">
-                  <button className="px-3 py-1 text-lg font-medium text-white bg-[#264563] rounded-lg hover:bg-[#1e3450] transition-colors">
+                  <button className="px-3 py-1 text-xl font-medium text-white bg-[#264563] rounded-lg hover:bg-[#1e3450] transition-colors">
                     Get Involved
                   </button>
 
@@ -149,13 +145,6 @@ export default function Navigation() {
           {isOpen && (
             <div className="lg:hidden border-t border-[#264563]/30">
               <div className="px-3 pt-2 pb-3 space-y-1">
-                <Link
-                  href="/"
-                  className="block px-3 py-2 rounded-xl text-lg text-[#264563] hover:bg-gray-300/40 transition-colors"
-                >
-                  Home
-                </Link>
-
                 {Object.entries(navigation).map(([key, section]) => (
                   <div key={key} className="space-y-1">
                     <button

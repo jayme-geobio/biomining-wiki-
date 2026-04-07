@@ -77,7 +77,6 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-  font-size: 18px;
 }
 
 /* Full-page background image */
@@ -85,6 +84,7 @@ body {
   position: relative;
   min-height: 100vh;
   color: #264563;
+  font-size: 18px;
 }
 
 body::before {

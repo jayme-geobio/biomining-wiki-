@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const pages = [
-  { name: 'Home', href: '/' },
+  { name: 'About', href: '/' },
   { name: 'What Is Biomining?', href: '/what-is-biomining' },
   { name: 'Mining 101', href: '/for-biologists' },
   { name: 'Biology 101', href: '/for-miners' },
