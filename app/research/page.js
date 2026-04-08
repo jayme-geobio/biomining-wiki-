@@ -140,53 +140,39 @@ export default function Research() {
             Each theme below captures a cluster of related problem statements from the workshop.
           </p>
           <div className="space-y-4">
-            {Array.from({ length: Math.ceil(themes.length / 2) }, (_, row) => {
-              const pair = themes.slice(row * 2, row * 2 + 2);
-              return (
-                <div key={row}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {pair.map((theme, col) => {
-                      const idx = row * 2 + col;
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => toggleTheme(idx)}
-                          className={`rounded-xl border-2 ${openThemes.has(idx) ? 'border-[#264563]/40' : 'border-white'} bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors h-24`}
-                        >
-                          <div className="flex items-center gap-3">
-                            <span className="text-white font-bold text-lg w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">{theme.number}</span>
-                            <h3 className="text-lg font-bold text-white text-left">{theme.title}</h3>
-                          </div>
-                          <div className="flex items-center gap-2 text-white/70 text-sm shrink-0 ml-2">
-                            {openThemes.has(idx) ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
-                          </div>
-                        </button>
-                      );
-                    })}
+            {themes.map((theme, idx) => (
+              <div key={idx}>
+                <button
+                  onClick={() => toggleTheme(idx)}
+                  className={`w-full rounded-xl border-2 ${openThemes.has(idx) ? 'border-[#264563]/40' : 'border-white'} bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors h-24`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-white font-bold text-lg w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">{theme.number}</span>
+                    <h3 className="text-lg font-bold text-white text-left">{theme.title}</h3>
                   </div>
-                  {pair.map((theme, col) => {
-                    const idx = row * 2 + col;
-                    return openThemes.has(idx) ? (
-                      <div key={idx} className="bg-white rounded-xl p-6 space-y-4 border-2 border-[#264563]/20 mt-4">
-                        <h4 className="text-lg font-bold text-[#264563]">{theme.title}</h4>
-                        <p className="text-[#264563]">{theme.summary}</p>
-                        <div>
-                          <h4 className="text-sm font-semibold text-[#264563] mb-2">Key areas include:</h4>
-                          <ul className="space-y-1.5">
-                            {theme.details.map((detail, j) => (
-                              <li key={j} className="text-[#264563] text-sm flex items-start gap-2">
-                                <span className="text-emerald-600 flex-shrink-0 mt-0.5">•</span>
-                                <span>{detail}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    ) : null;
-                  })}
-                </div>
-              );
-            })}
+                  <div className="flex items-center gap-2 text-white/70 text-sm shrink-0 ml-2">
+                    {openThemes.has(idx) ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+                  </div>
+                </button>
+                {openThemes.has(idx) && (
+                  <div className="bg-white rounded-xl p-6 space-y-4 border-2 border-[#264563]/20 mt-4">
+                    <h4 className="text-lg font-bold text-[#264563]">{theme.title}</h4>
+                    <p className="text-[#264563]">{theme.summary}</p>
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#264563] mb-2">Key areas include:</h4>
+                      <ul className="space-y-1.5">
+                        {theme.details.map((detail, j) => (
+                          <li key={j} className="text-[#264563] text-sm flex items-start gap-2">
+                            <span className="text-emerald-600 flex-shrink-0 mt-0.5">•</span>
+                            <span>{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
