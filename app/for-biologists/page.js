@@ -82,7 +82,7 @@ export default function ForBiologists() {
                 number="1"
                 title="Exploration & Resource Definition"
                 color="blue"
-                what={<>Finding and characterizing ore bodies through geologic mapping, core drilling, and lab assays to measure <GlossaryTerm term="Grade" definition="Concentration of a valuable element or mineral in ore">grade</GlossaryTerm> and mineralogy</>}
+                what={<>Geologists find and characterize ore bodies through geologic mapping, core drilling, and lab assays to measure <GlossaryTerm term="Grade" definition="Concentration of a valuable element or mineral in ore">grade</GlossaryTerm> and mineralogy.</>}
                 whyBiology={[
                   "New bio-technologies can change which parts of a deposit are considered 'ore'",
                   "Enable recovery of critical by-product elements currently ignored",
@@ -98,7 +98,7 @@ export default function ForBiologists() {
                 number="2"
                 title="Mine Planning & Development"
                 color="amber"
-                what={<>Choosing a mining method (<GlossaryTerm term="Open Pit Mine" definition="A surface mining method where ore is extracted from a large, open excavation on the earth's surface">open pit</GlossaryTerm> vs <GlossaryTerm term="Underground Mine" definition="A mining method where ore is extracted through tunnels and shafts beneath the earth's surface">underground</GlossaryTerm>), mine layout, and routing material to ore stockpiles, low-grade stockpiles, waste dumps, or <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm></>}
+                what={<>Planners choose a mining method (<GlossaryTerm term="Open Pit Mine" definition="A surface mining method where ore is extracted from a large, open excavation on the earth's surface">open pit</GlossaryTerm> vs <GlossaryTerm term="Underground Mine" definition="A mining method where ore is extracted through tunnels and shafts beneath the earth's surface">underground</GlossaryTerm> — based on ore body depth, shape, and grade), mine layout, and material routing to ore stockpiles, low-grade stockpiles, waste dumps, or <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>.</>}
                 whyBiology={[
                   "Decisions here govern tonnage, time, and access for your process",
                   <>Long-residence-time bio-processes best suited for stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm></>,
@@ -114,10 +114,10 @@ export default function ForBiologists() {
                 number="3"
                 title="Mining: Getting The Rock Out"
                 color="emerald"
-                what="Drill, blast, load, and haul rock. Scale: tens to hundreds of thousands of tonnes per day. Mix of ore and waste is imperfect"
+                what="Crews drill, blast, load, and haul rock at a scale of tens to hundreds of thousands of tonnes per day. The mix of ore and waste is imperfect."
                 whyBiology={[
                   "Input material is stressed, mixed, partly oxidized rock - not pure minerals",
-                  "Size distribution and surface damage from blasting affect leach kinetics",
+                  "Particle size distribution and surface damage from blasting affect leach kinetics",
                   <>Water infiltration and oxygen diffusion are key for <GlossaryTerm term="Heap Leaching" definition="A process where crushed ore is stacked on a lined pad and irrigated with a lixiviant to dissolve and collect target metals">heaps</GlossaryTerm> and <GlossaryTerm term="In Situ Leach (ISL)" definition="A mining method that dissolves metals underground by injecting lixiviant into the ore body and pumping the metal-bearing solution to the surface">in-situ leaching</GlossaryTerm></>
                 ]}
                 whereBio={[
@@ -130,7 +130,7 @@ export default function ForBiologists() {
                 number="4"
                 title="Comminution"
                 color="teal"
-                what="Crushing and grinding to liberate minerals and increase surface area for downstream processing"
+                what="Rock is crushed and ground to liberate minerals and increase surface area for downstream processing."
                 whyBiology={[
                   <><GlossaryTerm term="Comminution" definition="The process of crushing and grinding ore to reduce particle size and liberate valuable minerals">Comminution</GlossaryTerm> is often the most energy-intensive step in mining</>,
                   "Separation efficiency strongly depends on mineral surface chemistry and particle size",
@@ -145,7 +145,8 @@ export default function ForBiologists() {
                 number="5"
                 title="Concentration & Leaching"
                 color="sky"
-                what={<>Metals are either concentrated using flotation, gravity, or magnetic separation, or extracted by leaching into solution. These routes produce either <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrate</GlossaryTerm> or a metal-bearing leach solution, often called a <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="The metal-bearing solution produced when a lixiviant dissolves target metals from ore during leaching">pregnant leach solution (PLS)</GlossaryTerm></>}
+                footerNote={<>Stages 5 &amp; 6 are sometimes collectively called <strong>&apos;mineral processing&apos;</strong></>}
+                what={<>Metals are either concentrated using flotation, gravity, or magnetic separation, or extracted by leaching into solution. These routes produce either <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrate</GlossaryTerm> or a metal-bearing leach solution, often called a <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="The metal-bearing solution produced when a lixiviant dissolves target metals from ore during leaching">pregnant leach solution (PLS)</GlossaryTerm>.</>}
                 whyBiology={[
                   <>Mineral surface chemistry governs <GlossaryTerm term="Froth Flotation" definition="A separation process that uses air bubbles and chemical reagents to selectively float target minerals to the surface for collection">flotation</GlossaryTerm> selectivity and <GlossaryTerm term="Leach" definition="The process of dissolving metals or minerals from ore using a chemical solution (lixiviant)">leach</GlossaryTerm> kinetics</>,
                   "Biology can modify mineral surfaces to improve or suppress flotation of specific minerals",
@@ -161,7 +162,8 @@ export default function ForBiologists() {
                 number="6"
                 title="Metallurgy & Refining"
                 color="violet"
-                what={<>Convert <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrates</GlossaryTerm> or metal-bearing solutions into saleable products via <GlossaryTerm term="Hydrometallurgy" definition="Metal extraction and recovery using aqueous (water-based) chemistry, including leaching, solvent extraction, and electrowinning">hydrometallurgy</GlossaryTerm> (precipitation, <GlossaryTerm term="Solvent Extraction (SX)" definition="A hydrometallurgical process that uses organic solvents to selectively transfer target metal ions from a leach solution into a separate phase for purification and concentration">SX</GlossaryTerm>, <GlossaryTerm term="Ion Exchange (IX)" definition="A process using resin beads to selectively capture and release metal ions from solution for purification or concentration">IX</GlossaryTerm>, <GlossaryTerm term="Electrowinning (EW)" definition="Electrochemical process that plates dissolved metal ions onto cathodes to produce pure metal">EW</GlossaryTerm>) or <GlossaryTerm term="Pyrometallurgy" definition="Metal extraction and refining using high-temperature processes such as smelting, roasting, and converting">pyrometallurgy</GlossaryTerm> (<GlossaryTerm term="Smelting" definition="A pyrometallurgical process using high temperatures to separate metal from ore">smelting</GlossaryTerm>, refining)</>}
+                footerNote={<>Stages 5 &amp; 6 are sometimes collectively called <strong>&apos;mineral processing&apos;</strong></>}
+                what={<><GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">Concentrates</GlossaryTerm> or metal-bearing solutions are converted into saleable products via <GlossaryTerm term="Hydrometallurgy" definition="Metal extraction and recovery using aqueous (water-based) chemistry, including leaching, solvent extraction, and electrowinning">hydrometallurgy</GlossaryTerm> (precipitation, <GlossaryTerm term="Solvent Extraction (SX)" definition="A hydrometallurgical process that uses organic solvents to selectively transfer target metal ions from a leach solution into a separate phase for purification and concentration">SX</GlossaryTerm>, <GlossaryTerm term="Ion Exchange (IX)" definition="A process using resin beads to selectively capture and release metal ions from solution for purification or concentration">IX</GlossaryTerm>, <GlossaryTerm term="Electrowinning (EW)" definition="Electrochemical process that plates dissolved metal ions onto cathodes to produce pure metal">EW</GlossaryTerm>) or <GlossaryTerm term="Pyrometallurgy" definition="Metal extraction and refining using high-temperature processes such as smelting, roasting, and converting">pyrometallurgy</GlossaryTerm> (<GlossaryTerm term="Smelting" definition="A pyrometallurgical process using high temperatures to separate metal from ore">smelting</GlossaryTerm>, refining).</>}
                 whyBiology={[
                   "Impurities and purity thresholds are critical — small contamination can wreck downstream processes",
                   <>Biology offers highly selective <GlossaryTerm term="Ligand" definition="A molecule that binds to a metal ion to form a complex">ligands</GlossaryTerm> under mild operating conditions</>
@@ -176,7 +178,7 @@ export default function ForBiologists() {
                 number="7"
                 title="Waste, Water & Closure"
                 color="rose"
-                what={<>Managing <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> storage, <GlossaryTerm term="Mine Waste" definition="All non-valuable material removed during mining, including waste rock, overburden, and tailings">waste-rock dumps</GlossaryTerm>, water systems, and long-term closure obligations</>}
+                what={<>Operators manage <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> storage, <GlossaryTerm term="Mine Waste" definition="All non-valuable material removed during mining, including waste rock, overburden, and tailings">waste-rock dumps</GlossaryTerm>, water systems, and long-term closure obligations.</>}
                 whyBiology={[
                   <><GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">Acid mine drainage</GlossaryTerm> and seepage can persist for decades</>,
                   "This is where liability and social license live",
@@ -259,7 +261,7 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
   );
 }
 
-function StageCard({ number, title, color, what, whyBiology, whereBio }) {
+function StageCard({ number, title, subtitle, footerNote, color, what, whyBiology, whereBio }) {
   const colorClasses = {
     blue:    'text-blue-600',
     amber:   'text-amber-500',
@@ -282,10 +284,15 @@ function StageCard({ number, title, color, what, whyBiology, whereBio }) {
   const borderClass = borderClasses[color] || 'border-emerald-700';
 
   return (
-    <div className={`bg-white rounded-lg p-5 border ${borderClass}`}>
-      <div className="flex items-center gap-2 mb-3">
-        <span className={`font-bold text-lg ${colorClass}`}>{number}.</span>
-        <h3 className={`text-lg font-bold ${colorClass}`}>{title}</h3>
+    <div className={`relative bg-white rounded-lg p-5 border ${borderClass}`}>
+      <div className="mb-3">
+        <div className="flex items-center gap-2">
+          <span className={`font-bold text-lg ${colorClass}`}>{number}.</span>
+          <h3 className={`text-lg font-bold ${colorClass}`}>{title}</h3>
+        </div>
+        {subtitle && (
+          <p className="text-xs italic text-[#264563]/70 mt-0.5">{subtitle}</p>
+        )}
       </div>
 
       <div className="mb-4">
@@ -316,6 +323,9 @@ function StageCard({ number, title, color, what, whyBiology, whereBio }) {
           ))}
         </ul>
       </div>
+      {footerNote && (
+        <p className="mt-4 text-right text-sm text-[#264563]/60">{footerNote}</p>
+      )}
     </div>
   );
 }

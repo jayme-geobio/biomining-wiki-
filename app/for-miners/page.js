@@ -61,7 +61,7 @@ export default function ForMiners() {
               <div className="bg-[#264563]/5 rounded-lg p-4 border-l-4 border-[#264563] mt-4">
                 <p className="text-[#264563]">
                   Think of biology not as a replacement for your <GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheet</GlossaryTerm>, but as a <strong>new class of reagent</strong>—one
-                  that can adapt, self-regenerate, and operate selectively where conventional chemistry struggles.
+                  that can adapt, self-regenerate, and operate selectively where conventional chemistry and mineral processing may struggle.
                 </p>
               </div>
               <p className="mt-4 font-semibold">
@@ -221,6 +221,7 @@ function BiologicalSystemsSection() {
               <div className="grid md:grid-cols-3 gap-4">
                 <NeedCard
                   title="Energy Source"
+                  showExamplesLabel
                   examples={[
                     "Light (not relevant here)",
                     "Oxidation of ferrous iron (Fe²⁺)",
@@ -230,6 +231,7 @@ function BiologicalSystemsSection() {
                 />
                 <NeedCard
                   title="Electron Donors/Acceptors"
+                  showExamplesLabel
                   examples={[
                     "ferrous iron (Fe²⁺) / ferric iron (Fe³⁺)",
                     "Reduced/oxidized sulfur",
@@ -238,6 +240,7 @@ function BiologicalSystemsSection() {
                 />
                 <NeedCard
                   title="Carbon Source"
+                  showExamplesLabel
                   examples={[
                     <>carbon dioxide (CO₂) (<GlossaryTerm term="Autotroph" definition="Organisms that use CO₂ as their carbon source">autotrophs</GlossaryTerm>)</>,
                     <>Organic carbon (<GlossaryTerm term="Heterotroph" definition="Organisms that rely on organic carbon">heterotrophs</GlossaryTerm>)</>,
@@ -246,8 +249,8 @@ function BiologicalSystemsSection() {
                 />
               
               </div>
-              <p className="italic">
-              In practice, some substances serve multiple functions depending on the organism and metabolism.
+              <p className="italic text-[#264563]/50">
+              A single microbe doesn&apos;t need each arrow point in a given list, and some substances can even serve multiple functions depending on the organism and metabolism.
               </p>
               </div>  
             <div className="space-y-3 text-[#264563]">
@@ -303,29 +306,32 @@ function BiologicalSystemsSection() {
                 <div className="grid md:grid-cols-3 gap-4">
                   <NeedCard
                     title="Selective Binding"
+                    showExamplesLabel
                     examples={[
-                      "Biomolecules bind specific metals",
-                      "Binding can be highly selective",
-                      "Enables capture of metals from complex mixtures"
+                      "Biomolecules bind specific metals.",
+                      "Binding can be highly selective.",
+                      "Enables capture of metals from complex mixtures."
                     ]}
                   />
                   <NeedCard
                     title="Seperation"
+                    showExamplesLabel
                     examples={[
-                      "Bound metals stay on the biomolecule",
-                      "Target metal concentrates"
+                      "Bound metals stay on the biomolecule.",
+                      "Target metal concentrates."
                     ]}
                   />
                   <NeedCard
                     title="Release & Recovery"
+                    showExamplesLabel
                     examples={[
-                      "Conditions are adjusted to release the bound metal",
-                      "Metal is recovered in a concentrated stream",
-                      "Biomolecules can often be reused"
+                      "Conditions are adjusted to release the bound metal.",
+                      "Metal is recovered in a concentrated stream.",
+                      "Biomolecules can often be reused."
                     ]}
                   />
                   </div>
-                  <p className="italic">
+                  <p className="italic text-[#264563]/50">
                   In practice, performance depends not just on binding strength, but also on selectivity, stability, and the ability to regenerate the material.
                   </p>
               
@@ -353,7 +359,7 @@ function BiologicalSystemsSection() {
             <div className="pt-4 space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">What Phytomining Is</h4>
               <p>
-                Phytomining uses plants to extract metals from soils, <GlossaryTerm term="Mine Waste" definition="All solid and liquid waste produced during mineral extraction and processing, including tailings, waste rock, and process water">mine waste</GlossaryTerm>, or <GlossaryTerm term="Bulk Waste Rock" definition="Rock discarded prior to metallurgical extraction (overburden, low-grade, refractory, or gangue-rich material)">low-grade deposits</GlossaryTerm>. Certain plants, known as hyperaccumulators, naturally absorb and concentrate metals in their tissues.
+                Phytomining uses plants to extract metals from soils, <GlossaryTerm term="Mine Waste" definition="All solid and liquid waste produced during mineral extraction and processing, including tailings, waste rock, and process water">mine waste</GlossaryTerm>, or <GlossaryTerm term="Bulk Waste Rock" definition="Rock discarded prior to metallurgical extraction (overburden, low-grade, refractory, or gangue-rich material)">low-grade ores</GlossaryTerm>. Certain plants, known as hyperaccumulators, naturally absorb and concentrate metals in their tissues.
               </p>
             </div>
 
@@ -369,28 +375,31 @@ function BiologicalSystemsSection() {
               <div className="grid md:grid-cols-3 gap-4">
                 <NeedCard
                   title="Uptake"
+                  showExamplesLabel
                   examples={[
-                    "Plant roots absorb dissolved metals from soil or water",
-                    "Metals enter the plant through normal nutrient transport pathways"
+                    "Plant roots absorb dissolved metals from soil or water.",
+                    "Metals enter the plant through normal nutrient transport pathways."
                   ]}
                 />
                 <NeedCard
                   title="Transport & Accumulation"
+                  showExamplesLabel
                   examples={[
-                    "Metals move through the plants vascular system",
-                    "Some species concentrate metals in leaves, stems, or other tissues"
+                    "Metals move through the plants vascular system.",
+                    "Some species concentrate metals in leaves, stems, or other tissues."
                   ]}
                 />
                 <NeedCard
                   title="Stable & Reusable Material"
+                  showExamplesLabel
                   examples={[
-                    "Metal-rich biomass is harvested",
-                    "Metals are recovered from the plant material through processing"
+                    "Metal-rich biomass is harvested.",
+                    "Metals are recovered from the plant material through processing."
                   ]}
                 />
               </div>
 
-              <p className="italic">
+              <p className="italic text-[#264563]/50">
                 The most widely used application is the bioremediation of metal-contaminated soils.
               </p>
             </div>
@@ -429,7 +438,7 @@ function BiologicalSystemsSection() {
               title="Acidolysis"
               description="Production of acids (organic or inorganic) that break down, dissolve, or alter minerals"
               application="Important for carbonates and some sulfide minerals"
-              example="Microbes oxidize sulfur to sulfuric acid (H₂SO₄), which attacks chalcopyrite (CuFeS₂)"
+              example="Microbes oxidize sulfur to sulfuric acid (H₂SO₄), which attacks chalcopyrite (CuFeS₂)."
               color="amber"
               usedBy="Microbes"
             />
@@ -438,7 +447,7 @@ function BiologicalSystemsSection() {
               title="Redoxolysis"
               description={<>Oxidation or reduction of metals or <GlossaryTerm term="Ligand" definition="A molecule that binds to a metal ion to form a complex">ligands</GlossaryTerm> that controls solubility</>}
               application="ferrous iron (Fe²⁺) → ferric iron (Fe³⁺) oxidation, hexavalent uranium (U(VI)) → tetravalent uranium (U(IV)) reduction"
-              example="Ferric iron (Fe³⁺) generated by microbes acts as an oxidant to leach copper from sulfides"
+              example="Ferric iron (Fe³⁺) generated by microbes acts as an oxidant to leach copper from sulfides."
               color="blue"
               usedBy="Microbes"
             />
@@ -447,7 +456,7 @@ function BiologicalSystemsSection() {
               title="Complexolysis"
               description="Production of ligands that complex (bind) metals and keep them in solution"
               application={<><GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">Metallophores</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophores</GlossaryTerm>, organic acids</>}
-              example={<>Microbes secrete organic acids that <GlossaryTerm term="Chelation" definition="Formation of a stable complex between a metal ion and an organic molecule">chelate</GlossaryTerm> rare earth elements</>}
+              example={<>Microbes secrete organic acids that <GlossaryTerm term="Chelation" definition="Formation of a stable complex between a metal ion and an organic molecule">chelate</GlossaryTerm> rare earth elements.</>}
               color="emerald"
               usedBy="Microbes, Biomolecules"
             />
@@ -456,7 +465,7 @@ function BiologicalSystemsSection() {
               title="Biosorption & Bioaccumulation"
               description={<>Metals stick to cell surfaces or <GlossaryTerm term="Extracellular Polymeric Substances (EPS)" definition="Polymers secreted by microbes that form biofilms and modify local chemistry">EPS</GlossaryTerm> (biosorption), or are actively taken up and stored (<GlossaryTerm term="Bioaccumulation" definition="Active uptake and intracellular storage of metals by living organisms">bioaccumulation</GlossaryTerm>)</>}
               application="Rapid metal capture, often independent of metabolism"
-              example={<>Algae and bacteria sorb heavy metals from <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">acid mine drainage (AMD)</GlossaryTerm> on cell surfaces</>}
+              example={<>Algae and bacteria sorb heavy metals from <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">acid mine drainage (AMD)</GlossaryTerm> on cell surfaces.</>}
               color="teal"
               usedBy="Microbes, Phytomining"
             />
@@ -465,7 +474,7 @@ function BiologicalSystemsSection() {
               title="Bioprecipitation & Biomineralization"
               description="Microbial activity alters local chemistry, causing dissolved metals to precipitate from solution"
               application="Metal removal from solution in remediation and recovery systems"
-              example={<><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">Sulfate-reducing bacteria (SRB)</GlossaryTerm> produce sulfide that precipitates copper (Cu), zinc (Zn), and other metals from solution</>}
+              example={<><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">Sulfate-reducing bacteria (SRB)</GlossaryTerm> produce sulfide that precipitates copper (Cu), zinc (Zn), and other metals from solution.</>}
               color="sky"
               usedBy="Microbes"
             />
@@ -496,10 +505,13 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
   );
 }
 
-function NeedCard({ title, examples }) {
+function NeedCard({ title, examples, showExamplesLabel }) {
   return (
     <div className="bg-white rounded-lg p-4 border border-[#264563]/20">
       <h3 className="text-lg font-bold text-[#264563] mb-2">{title}</h3>
+      {showExamplesLabel && (
+        <p className="text-xs uppercase tracking-wider text-[#264563]/60 mb-1">Examples</p>
+      )}
       <ul className="space-y-1">
         {examples.map((ex, i) => (
           <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
@@ -568,7 +580,7 @@ function EmerginTechCard({ expanded, onToggle }) {
       {expanded && (
         <div className="bg-white p-5">
           <p className="text-[#264563] text-sm mb-7">Biomolecular ligands and non-chromatographic formats that selectively capture and concentrate <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements (lanthanides plus scandium and yttrium) critical for electronics, magnets, and clean energy">rare earth elements</GlossaryTerm> and <GlossaryTerm term="Critical Minerals" definition="Minerals essential to economic or national security with supply chains vulnerable to disruption">critical metals</GlossaryTerm> from complex, dilute feed streams.</p>
-          <div className="grid grid-cols-3 gap-3 mb-7">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-7">
             <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
               <p className="text-emerald-800 font-semibold text-xs mb-1">Protein/Peptide-Based Ligands</p>
               <p className="text-emerald-700/70 text-xs">(e.g., lanmodulin) for selective REE capture</p>
@@ -582,7 +594,7 @@ function EmerginTechCard({ expanded, onToggle }) {
               <p className="text-emerald-700/70 text-xs">Membranes, beads, structured packings for <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after leaching ore or concentrate">PLS</GlossaryTerm> polishing</p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4 mb-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
             <div>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Applications</p>
               <p className="text-[#264563] text-sm mb-7"><GlossaryTerm term="Coal By-products" definition="Coal combustion byproducts including fly ash and bottom ash, rich in REEs and heavy metals; billions of tons stockpiled globally with limited disposal options">Coal by-products</GlossaryTerm>, <GlossaryTerm term="Phosphogypsum" definition="Radioactive waste from fertilizer production containing REEs and other critical metals">phosphogypsum</GlossaryTerm>, <GlossaryTerm term="Red Mud" definition="Caustic bauxite waste with REEs, Sc, and other metals">red mud</GlossaryTerm>, spent catalysts, magnet scrap</p>
@@ -591,7 +603,7 @@ function EmerginTechCard({ expanded, onToggle }) {
                 Feed stream → <strong>selective binding</strong> → elution & recovery → purified metal stream
               </p>
             </div>
-            <div className="pl-16">
+            <div className="sm:pl-16">
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Key Parameters</p>
               <ul className="text-[#264563] text-sm space-y-1">
                 <li>• Time: Minutes to hours</li>
@@ -601,7 +613,7 @@ function EmerginTechCard({ expanded, onToggle }) {
               </ul>
             </div>
           </div>
-          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-1/2">
+          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-full sm:w-1/2">
             <p className="text-xs font-semibold text-orange-500 mb-1">Common Challenges</p>
             <p className="text-orange-600 text-sm">Matrix effects, <GlossaryTerm term="Fouling" definition="Unwanted accumulation of material on equipment surfaces that reduces efficiency">fouling</GlossaryTerm>, immobilization strategies, feed chemistry variability</p>
           </div>
@@ -627,7 +639,7 @@ function BioremediationCard({ expanded, onToggle }) {
       {expanded && (
         <div className="bg-white p-5">
           <p className="text-[#264563] text-sm mb-7">Biological systems that remove or recover metals from mine drainage, waste streams, and secondary sources — converting liabilities into recoverable resources.</p>
-          <div className="grid grid-cols-3 gap-3 mb-7">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-7">
             <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
               <p className="text-emerald-800 font-semibold text-xs mb-1">AMD/ARD Bioremediation</p>
               <p className="text-emerald-700/70 text-xs">Constructed wetlands, <GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> bioreactors, and algae systems that remove metals and raise pH</p>
@@ -641,19 +653,19 @@ function BioremediationCard({ expanded, onToggle }) {
               <p className="text-emerald-700/70 text-xs"><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> and <GlossaryTerm term="Biosorption" definition="Sorption of dissolved metals onto biomass or extracellular polymeric substances (EPS)">biosorption</GlossaryTerm> applied to circuit boards, magnets, and electronics</p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4 mb-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
             <div>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Applications</p>
               <p className="text-[#264563] text-sm mb-7">Mine drainage treatment, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> reprocessing, legacy site remediation, <GlossaryTerm term="E-waste" definition="Discarded electronics rich in Cu, Au, Pd, REEs, and critical metals, but with complex polymer/metal mixtures">e-waste</GlossaryTerm> and magnet scrap</p>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Integration</p>
               <p className="text-[#264563] text-sm">Parameters and integration pathways vary by technique and site conditions</p>
             </div>
-            <div className="pl-16">
+            <div className="sm:pl-16">
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Key Parameters</p>
               <p className="text-[#264563] text-sm">• Highly site- and technique-dependent</p>
             </div>
           </div>
-          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-1/2">
+          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-full sm:w-1/2">
             <p className="text-xs font-semibold text-orange-500 mb-1">Common Challenges</p>
             <p className="text-orange-600 text-sm">Long treatment timescales, regulatory and discharge compliance</p>
           </div>
@@ -680,14 +692,14 @@ function ModalityCard({ title, description, applications, parameters, integratio
         <div className="bg-white p-5 border-t border-white/20">
           <p className="text-[#264563] text-sm mb-7">{description}</p>
 
-          <div className="grid grid-cols-2 gap-4 mb-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
             <div>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Applications</p>
               <p className="text-[#264563] text-sm mb-7">{applications}</p>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Integration</p>
               <p className="text-[#264563] text-sm">{integration}</p>
             </div>
-            <div className="pl-16">
+            <div className="sm:pl-16">
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Key Parameters</p>
               <ul className="text-[#264563] text-sm space-y-1">
                 {parameters.map((p, i) => <li key={i}>• {p}</li>)}
@@ -695,7 +707,7 @@ function ModalityCard({ title, description, applications, parameters, integratio
             </div>
           </div>
 
-          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-1/2">
+          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-full sm:w-1/2">
             <p className="text-xs font-semibold text-orange-500 mb-1">Common Challenges</p>
             <p className="text-orange-600 text-sm">{challenges}</p>
           </div>

@@ -63,20 +63,20 @@ export default function WhatIsBiomining() {
             <ul className="ml-6 space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-emerald-600 mt-1">•</span>
-                <span>Complexity makes conventional chemistry expensive, blunt, or risky</span>
+                <span>Complexity makes conventional chemistry expensive, blunt, or risky.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-emerald-600 mt-1">•</span>
-                <span>Selectivity, adaptation, or operation under milder conditions offer strategic advantages</span>
+                <span>Selectivity, adaptation, or operation under milder conditions offer strategic advantages.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-emerald-600 mt-1">•</span>
-                <span>Environmental outcomes (closure, water quality, social licence) add value beyond metal recovery</span>
+                <span>Environmental outcomes (closure, water quality, social licence) add value beyond metal recovery.</span>
               </li>
             </ul>
-            <p className="mt-4 font-semibold text-[#264563]">
-              These modules are judged on the same metrics as any other process: $/tonne, % recovery, impurity removal,
-              risk, permitting footprint, and closure outcomes.
+            <p className="mt-4 text-[#264563]">
+              <span className="font-semibold">These modules are judged on the same metrics as any other process:</span> $/tonne, % recovery, impurity removal,
+              risk, permitting, footprint, and closure outcomes.
             </p>
           </div>
 
@@ -101,7 +101,7 @@ export default function WhatIsBiomining() {
                 number="1"
                 title="Bioleaching"
                 description="Extraction or liberation of metals from ores or wastes via microbial activity, moving metals into solution"
-                details={<>Mechanisms include acid generation, <GlossaryTerm term="Redox Cycling" definition="Repeated oxidation and reduction of chemical species that drives metal dissolution">redox cycling</GlossaryTerm>, and <GlossaryTerm term="Ligand" definition="A molecule that binds to a metal ion to form a complex">ligand</GlossaryTerm> production</>}
+                details={<>Mechanisms include acid generation, <GlossaryTerm term="Redox Cycling" definition="Repeated oxidation and reduction of chemical species that drives metal dissolution">redox cycling</GlossaryTerm>, and <GlossaryTerm term="Ligand" definition="A molecule that binds to a metal ion to form a complex">ligand</GlossaryTerm> production.</>}
                 icon={Droplets}
                 color="blue"
               />
@@ -109,7 +109,7 @@ export default function WhatIsBiomining() {
                 number="2"
                 title="Biooxidation"
                 description="Microbial oxidation of sulfide minerals where the valuable metal remains solid but becomes accessible to downstream processing"
-                details={<>Classically used for refractory gold. Often deployed as a pre-treatment prior to <GlossaryTerm term="Cyanidation" definition="A process using cyanide solutions to dissolve and extract gold and silver">cyanidation</GlossaryTerm></>}
+                details={<>Classically used for refractory gold. Often deployed as a pre-treatment prior to <GlossaryTerm term="Cyanidation" definition="A process using cyanide solutions to dissolve and extract gold and silver">cyanidation</GlossaryTerm>.</>}
                 icon={Zap}
                 color="amber"
               />
@@ -117,7 +117,7 @@ export default function WhatIsBiomining() {
                 number="3"
                 title="Bioseparation and Biosorption"
                 description={<>Binding of metals to biomolecules, enabling separation and <GlossaryTerm term="Concentration" definition="The process of increasing the proportion of valuable mineral or metal in a given mass of material">concentration</GlossaryTerm> from complex mixtures</>}
-                details={<>Includes <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">metallophores</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophore</GlossaryTerm>-like ligands, engineered binding proteins, cell-free proteins, peptides, polymers, phytomining, bio-based resins, and membranes</>}
+                details={<>Includes <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">metallophores</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophore</GlossaryTerm>-like ligands, engineered binding proteins, cell-free proteins, peptides, polymers, phytomining, bio-based resins, and membranes.</>}
                 icon={Target}
                 color="emerald"
               />
@@ -125,7 +125,7 @@ export default function WhatIsBiomining() {
                 number="4"
                 title="Bioprecipitation and Controlled Mineral Formation"
                 description="Microbially driven precipitation of minerals that concentrate or immobilize metals, enabling their recovery or stabilization"
-                details="Includes biomineralization, biocement, and microbially induced mineral formation (e.g., metal sulfides, carbonates, phosphates)"
+                details="Includes biomineralization, biocement, and microbially induced mineral formation (e.g., metal sulfides, carbonates, phosphates)."
                 icon={Beaker}
                 color="teal"
               />
@@ -133,7 +133,7 @@ export default function WhatIsBiomining() {
                 number="5"
                 title="Monitoring and Control (Biosensing)"
                 description={<>Biological tools for sensing metals, <GlossaryTerm term="Redox Control" definition="Management of oxidation-reduction conditions in a leaching or processing system to optimize metal dissolution or precipitation">redox</GlossaryTerm> state, or specific analytes to monitor mining systems and inform process control</>}
-                details="Functional community metrics and molecular assays that serve as early-warning indicators and inform process control"
+                details="Functional community metrics and molecular assays that serve as early-warning indicators and inform process control."
                 icon={Cpu}
                 color="sky"
               />
@@ -161,40 +161,40 @@ export default function WhatIsBiomining() {
               <AdvantageCard
                 title="Redox Catalysis"
                 items={[
-                  "Microbes drive oxidation-reduction cycles (e.g., Fe²⁺ ↔ Fe³⁺, S⁰ ↔ sulfate) efficiently and regeneratively",
-                  "Potential to reduce the amount of external oxidant-reductant required"
+                  "Microbes drive oxidation-reduction cycles (e.g., Fe²⁺ ↔ Fe³⁺, S⁰ ↔ sulfate) efficiently and regeneratively.",
+                  "Potential to reduce the amount of external oxidant-reductant required."
                 ]}
                 valueTo="Cuts reagent cost by continuously regenerating oxidants on-site rather than purchasing and trucking them in."
               />
               <AdvantageCard
                 title="Chelation and Complexation"
                 items={[
-                  <><GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">Metallophores</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophore</GlossaryTerm>-like ligands, and engineered chelators show high affinity and selectivity</>,
-                  <>Can operate in complex aqueous mixtures and at low metal concentrations where traditional <GlossaryTerm term="Solvent Extraction (SX)" definition="A hydrometallurgical process that uses organic solvents to selectively transfer metals from one aqueous solution to another">extractants</GlossaryTerm> face challenges</>
+                  <><GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">Metallophores</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophore</GlossaryTerm>-like ligands, and engineered chelators show high affinity and selectivity.</>,
+                  <>Can operate in complex aqueous mixtures and at low metal concentrations where traditional <GlossaryTerm term="Solvent Extraction (SX)" definition="A hydrometallurgical process that uses organic solvents to selectively transfer metals from one aqueous solution to another">extractants</GlossaryTerm> face challenges.</>
                 ]}
                 valueTo="Makes otherwise uneconomic ores and waste streams worth processing by recovering metals that conventional chemistry leaves behind."
               />
               <AdvantageCard
                 title="Binding Selectivity"
                 items={[
-                  "Proteins and biopolymers act as 'molecular coin sorters', discriminating between metals with similar chemistry",
-                  <>Critical for <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">rare earth elements</GlossaryTerm>, platinum group metals (PGMs), and complex polymetallic streams</>
+                  "Proteins and biopolymers act as 'molecular coin sorters', discriminating between metals with similar chemistry.",
+                  <>Critical for <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">rare earth elements</GlossaryTerm>, platinum group metals (PGMs), and complex polymetallic streams.</>
                 ]}
                 valueTo="Produces higher-purity products with fewer processing steps, meaning better off-take pricing and less downstream rework."
               />
               <AdvantageCard
                 title="Mineral Transformation and Precipitation"
                 items={[
-                  "Biomineralization and biocement enable controlled precipitation of metal sulfides and carbonates",
-                  <>Useful for both recovery and stabilization of <GlossaryTerm term="Mine Waste" definition="Any material removed or displaced during mining that has no current economic value, including tailings, waste rock, and slag">wastes</GlossaryTerm> — waste management is a major burden on mining OPEX and carries significant environmental liability</>
+                  "Biomineralization and biocement enable controlled precipitation of metal sulfides and carbonates.",
+                  <>Useful for both recovery and stabilization of <GlossaryTerm term="Mine Waste" definition="Any material removed or displaced during mining that has no current economic value, including tailings, waste rock, and slag">wastes</GlossaryTerm> — waste management is a major burden on mining OPEX and carries significant environmental liability.</>
                 ]}
                 valueTo="Reduces closure liability by stabilizing problematic metals in waste, turning a long-term cost into a manageable one."
               />
               <AdvantageCard
                 title="Adaptation"
                 items={[
-                  "Systems that can evolve toward function—design the ecosystem, not just the strain",
-                  "Adaptive communities can tune metal recovery rates and tolerance to changing feed chemistry over time, maintaining throughput as conditions evolve"
+                  "Systems that can evolve toward function—design the ecosystem, not just the strain.",
+                  "Adaptive communities can tune metal recovery rates and tolerance to changing feed chemistry over time, maintaining throughput as conditions evolve."
                 ]}
                 valueTo="Less re-engineering as ore grades shift over the life of mine — the biology adjusts, so the process keeps running without costly shutdowns or redesigns."
               />

@@ -46,8 +46,9 @@ export default function Glossary() {
   }, []);
 
   const filteredTerms = allTerms.filter(term => {
+    const defText = typeof term.definition === 'string' ? term.definition : '';
     const matchesSearch = term.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         term.definition.toLowerCase().includes(searchTerm.toLowerCase());
+                         defText.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'all' || term.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });

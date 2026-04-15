@@ -36,14 +36,41 @@ export default function CommentSystem({ pageName, contentRef }) {
           y: rect.top + window.scrollY - 200
         });
 
-        // Get section title
-        let element = selection.anchorNode;
-        while (element && element !== contentRef.current) {
-          if (element.tagName && /^H[1-6]$/.test(element.tagName)) {
-            setSectionTitle(element.textContent);
+        // Build section breadcrumb by finding nearest preceding heading
+        // and its ancestor headings of lower level (e.g., H3 under H2 under H1)
+        const selNode = selection.anchorNode;
+        const headings = Array.from(
+          contentRef.current.querySelectorAll('h1, h2, h3, h4, h5, h6')
+        );
+        let currentHeading = null;
+        for (const h of headings) {
+          if (h === selNode || h.contains(selNode)) {
+            currentHeading = h;
+            continue;
+          }
+          const pos = h.compareDocumentPosition(selNode);
+          if (pos & Node.DOCUMENT_POSITION_FOLLOWING) {
+            currentHeading = h;
+          } else {
             break;
           }
-          element = element.parentElement;
+        }
+        if (currentHeading) {
+          const idx = headings.indexOf(currentHeading);
+          const trail = [currentHeading];
+          let level = parseInt(currentHeading.tagName[1], 10);
+          for (let i = idx - 1; i >= 0 && level > 1; i--) {
+            const l = parseInt(headings[i].tagName[1], 10);
+            if (l < level) {
+              trail.unshift(headings[i]);
+              level = l;
+            }
+          }
+          setSectionTitle(
+            trail.map((h) => h.textContent.trim().replace(/\s+/g, ' ')).join(' › ')
+          );
+        } else {
+          setSectionTitle('');
         }
       } else {
         setSelectedText('');

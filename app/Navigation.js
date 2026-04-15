@@ -47,16 +47,16 @@ export default function Navigation() {
           className="bg-[#f9f7f1] border border-[#264563] shadow-lg rounded-2xl overflow-hidden"
           onMouseLeave={() => setOpenDropdown(null)}
         >
-          <div className="pl-0 pr-5 sm:pr-7">
-            <div className="flex items-center justify-between h-[92px]">
+          <div className="pl-2 sm:pl-0 pr-3 sm:pr-7">
+            <div className="flex items-center justify-between h-[72px] sm:h-[92px] gap-2">
 
               {/* Logo + Handbook label */}
-              <div className="flex items-center shrink-0">
-                <a href="https://www.homeworld.bio" target="_blank" rel="noopener noreferrer" className="flex items-center -ml-8">
-                  <img src="/images/homeworld-logo-full-dark.png" alt="Homeworld Collective" className="h-[7.5rem]" />
+              <div className="flex items-center min-w-0 flex-1">
+                <a href="https://www.homeworld.bio" target="_blank" rel="noopener noreferrer" className="flex items-center sm:-ml-8 shrink-0">
+                  <img src="/images/homeworld-logo-full-dark.png" alt="Homeworld Collective" className="h-14 sm:h-[7.5rem]" />
                 </a>
-                <div className="h-10 w-px bg-[#264563]/30 -ml-7 mr-2" />
-                <Link href="/" className="text-lg font-light tracking-wide text-[#264563]/70 uppercase hover:text-[#264563] transition-colors">Biomining Handbook</Link>
+                <div className="hidden sm:block h-10 w-px bg-[#264563]/30 -ml-7 mr-2" />
+                <Link href="/" className="text-sm sm:text-lg font-light tracking-wide text-[#264563]/70 uppercase hover:text-[#264563] transition-colors truncate ml-2 sm:ml-0">Biomining Handbook</Link>
               </div>
 
               {/* Desktop links */}

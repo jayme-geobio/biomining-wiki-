@@ -3,6 +3,22 @@
 import React, { useState, useEffect } from 'react';
 import { CheckCircle, XCircle, Clock, AlertTriangle, Loader, Trash2 } from 'lucide-react';
 
+const PAGE_DISPLAY_NAMES = {
+  'for-biologists': 'Mining 101',
+  'for-miners': 'Biology 101',
+  'what-is-biomining': 'What Is Biomining?',
+  'complex-materials': 'Complex Materials Playbook',
+  'flowsheets': 'Example Flowsheets',
+  'technology-evaluation': 'Technology Assessment Checklists',
+  'research': 'Frontier Challenges',
+  'glossary': 'Core Glossary',
+  'citations': 'References',
+  'contribute-modal': 'Contribute Modal',
+};
+
+const displayPageName = (slug) =>
+  PAGE_DISPLAY_NAMES[slug] || slug;
+
 export default function AdminCommentsPage() {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -221,8 +237,9 @@ export default function AdminCommentsPage() {
               <div key={pageData.page} className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 overflow-hidden">
                 <div className="bg-emerald-900/30 px-6 py-4 border-b border-white/10">
                   <h2 className="text-xl font-bold text-white">
-                    {pageData.page}
+                    {displayPageName(pageData.page)}
                   </h2>
+                  <p className="text-xs text-slate-400 font-mono">/{pageData.page}</p>
                   <p className="text-sm text-slate-300">
                     {pageData.comments.length} comment{pageData.comments.length !== 1 ? 's' : ''}
                   </p>

@@ -27,7 +27,7 @@ const flowsheetData = [
     bioIntegration: [
       {
         stage: "Heap Leach Pad",
-        role: <>Native or <GlossaryTerm term="Inoculum" definition="A preparation of microorganisms introduced to a system to establish a desired microbial community">inoculated</GlossaryTerm> <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> (Acidithiobacillus, Leptospirillum)</>,
+        role: <>Native or <GlossaryTerm term="Inoculum" definition="A preparation of microorganisms introduced to a system to establish a desired microbial community">inoculated</GlossaryTerm> <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> (<em>Acidithiobacillus</em>, <em>Leptospirillum</em>)</>,
         what: "Microbes oxidize ferrous iron (Fe²⁺) to ferric iron (Fe³⁺) and produce sulfuric acid, which dissolves copper from minerals",
         control: "pH control (1.5-2.5), nutrient addition (N, P), aeration management"
       },
@@ -159,7 +159,7 @@ const flowsheetData = [
     bioIntegration: [
       {
         stage: "SRB Bioreactor",
-        role: <><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">Sulfate-reducing bacteria</GlossaryTerm> (Desulfovibrio, Desulfotomaculum)</>,
+        role: <><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">Sulfate-reducing bacteria</GlossaryTerm> (<em>Desulfovibrio</em>, <em>Desulfotomaculum</em>)</>,
         what: "Reduce sulfate to sulfide, which precipitates metals as metal sulfides and raises pH",
         control: "Anaerobic conditions, organic carbon (e.g., ethanol, molasses), retention time"
       },
