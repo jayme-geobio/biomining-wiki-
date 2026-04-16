@@ -43,18 +43,22 @@ const chapters = [
 // Flat list of all page hrefs for "up next" logic
 const allPages = chapters.flatMap((ch) => ch.pages);
 
-export default function TableOfContents() {
+export default function TableOfContents({ bare = false }) {
   const pathname = usePathname();
   const flatIndex = allPages.findIndex((p) => p.href === pathname);
   const nextHref = flatIndex >= 0 && flatIndex < allPages.length - 1 ? allPages[flatIndex + 1].href : null;
 
+  const containerClass = bare
+    ? 'w-full h-full flex flex-col justify-center px-6 py-6'
+    : 'hidden sm:flex flex-[1] rounded-3xl border-2 border-white shadow-xl flex-col justify-center px-6 py-6 bg-[#264563]/95';
+
   return (
-    <div className="hidden sm:flex flex-[1] rounded-3xl border-2 border-white shadow-xl flex-col justify-center px-6 py-6 bg-[#264563]/95">
-      <p className="text-sm font-semibold text-white uppercase tracking-wider mb-3">Handbook Roadmap</p>
+    <div className={containerClass}>
+      <p className="text-base font-semibold text-white uppercase tracking-wider mb-3">Handbook Roadmap</p>
       <nav className="space-y-2.5">
         {chapters.map((chapter) => (
           <div key={chapter.number}>
-            <p className="text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">
+            <p className="text-sm font-normal text-white/50 uppercase tracking-wider mb-1">
               {chapter.number}. {chapter.name}
             </p>
             <div className="ml-3 space-y-0.5">
@@ -65,14 +69,14 @@ export default function TableOfContents() {
                   <Link
                     key={page.href}
                     href={page.href}
-                    className={`flex items-center text-sm transition-colors ${
+                    className={`flex items-center text-base transition-colors ${
                       isCurrent
                         ? 'text-white font-bold'
-                        : 'text-white/70 hover:text-white'
+                        : 'text-white/70 font-extralight hover:text-white'
                     }`}
                   >
                     <span>{page.name}</span>
-                    {isCurrent && <span className="ml-auto">←</span>}
+                    {isCurrent && <span className={`ml-auto font-bold ${bare ? '-mr-20' : ''}`}>←</span>}
                   </Link>
                 );
               })}

@@ -38,7 +38,7 @@ export default function ForMiners() {
         <div className="flex gap-6 items-stretch">
           <div className="flex-[2] bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center py-10">
             <h1 className="text-2xl sm:text-4xl font-bold text-[#264563] mb-3 leading-tight">Biology 101</h1>
-            <p className="text-base text-[#264563]">
+            <p className="text-base font-extralight text-[#264563]">
               If mining is going to use biology to improve effectiveness and economics, you need to understand how biological systems interact with metals
             </p>
           </div>
@@ -56,11 +56,11 @@ export default function ForMiners() {
             <div className="text-[#264563] space-y-3">
               <p>
                 Biology provides <strong>switchable, selective chemistry</strong> for metal extraction and management.
-                Like reagents and catalysts, biological systems are constrained by temperature, pH, ionic strength, inhibitors, and
-                substrate availability. Understanding these constraints is key to successful integration.              </p>
+                Like <GlossaryTerm term="Reagent" definition="A substance that acts on another in a chemical reaction">reagents</GlossaryTerm> and <GlossaryTerm term="Catalyst" definition="A substance that speeds up a chemical reaction without being consumed">catalysts</GlossaryTerm>, biological systems are constrained by temperature, pH, <GlossaryTerm term="Ionic Strength" definition="A measure of the total concentration of ions in a solution">ionic strength</GlossaryTerm>, inhibitors, and{' '}
+                <GlossaryTerm term="Substrate" definition="In biology, the material a microbe consumes or acts upon to obtain energy, carbon, or electrons">substrate</GlossaryTerm> availability. Understanding these constraints is key to successful integration.              </p>
               <div className="bg-[#264563]/5 rounded-lg p-4 border-l-4 border-[#264563] mt-4">
                 <p className="text-[#264563]">
-                  Think of biology not as a replacement for your <GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheet</GlossaryTerm>, but as a <strong>new class of reagent</strong>—one
+                  Think of biology not as a replacement for your <GlossaryTerm term="Flowsheet" definition="A diagram or sequence of unit operations showing how ore is processed from feed to final product">flowsheet</GlossaryTerm>, but as a <strong>new class of <GlossaryTerm term="Reagent" definition="A substance that acts on another in a chemical reaction">reagent</GlossaryTerm></strong>—one
                   that can adapt, self-regenerate, and operate selectively where conventional chemistry and mineral processing may struggle.
                 </p>
               </div>
@@ -101,7 +101,7 @@ export default function ForMiners() {
                     integration={
                       <> <GlossaryTerm term="Comminution" definition="Size reduction of ore through crushing and grinding to liberate valuable minerals">Comminution</GlossaryTerm> → <strong>Bioleaching</strong> → <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after leaching ore or concentrate">PLS</GlossaryTerm> → <GlossaryTerm term="Solvent Extraction (SX)" definition="Liquid–liquid extraction process that selectively transfers dissolved metals between immiscible phases">SX</GlossaryTerm>/<GlossaryTerm term="Electrowinning (EW)" definition="Electrochemical process that deposits metal from solution onto a cathode">EW</GlossaryTerm> → metal cathodes </>
                     }
-                    challenges={<><GlossaryTerm term="Passivation" definition="Formation of a surface layer on ore particles that inhibits further leaching">Passivation</GlossaryTerm> layers, channeling, oxygen/nutrient limitations</>}
+                    challenges={<><GlossaryTerm term="Passivation" definition="Formation of a surface layer on ore particles that inhibits further leaching">Passivation</GlossaryTerm> layers, channeling, oxygen/nutrient limitations, large footprint, heavy earth-moving</>}
                     expanded={openModalities.has('dump')}
                     onToggle={() => toggleModality('dump')}
                   />
@@ -137,7 +137,7 @@ export default function ForMiners() {
                     integration={
                       <>Injection wells → <strong>bioleaching</strong> → collection → processing</>
                     }
-                    challenges="Geotechnical risks, regulatory hurdles, containment"
+                    challenges="Fracture propagation, fluid containment, hydrogeological impact, regulatory hurdles"
                     expanded={openModalities.has('insitu')}
                     onToggle={() => toggleModality('insitu')}
                   />
@@ -206,14 +206,14 @@ function BiologicalSystemsSection() {
             <div className="pt-4 space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">What Microbes Are</h4>
               <p>
-                Microorganisms (microbes) are microscopic living organisms such as bacteria, archaea, and fungi. Unlike chemical reagents or materials, they are living systems that grow, reproduce, and actively respond to their environment.
+                Microorganisms (microbes) are microscopic living organisms such as bacteria, archaea, and fungi. Unlike chemical <GlossaryTerm term="Reagent" definition="A substance that acts on another in a chemical reaction">reagents</GlossaryTerm> or materials, they are living systems that grow, reproduce, and actively respond to their environment.
               </p>
             </div>
 
             <div className="space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">How Microbes Work</h4>
               <p>
-                Think of microbes as <strong>tiny, tunable chemical factories</strong> — not just organisms that eat and grow, but programmable systems with customizable inputs and outputs. Microorganisms operate by carrying out chemical reactions to obtain energy from their environment. These reactions allow them to power their metabolism, maintain cellular processes, and produce new cells.
+                Think of microbes as <strong>tiny, tunable chemical factories</strong> — not just organisms that eat and grow, but programmable systems with customizable inputs and outputs. Microorganisms operate by carrying out chemical reactions to obtain energy from their environment. These <GlossaryTerm term="Metabolism" definition="The complete set of chemical reactions a cell carries out, split into catabolism (energy release) and anabolism (biosynthesis)">metabolic</GlossaryTerm> reactions generate energy, build cellular components (<GlossaryTerm term="Extracellular Polymeric Substances (EPS)" definition="Polymers secreted by microbes that form biofilms and modify local chemistry">EPS</GlossaryTerm>, <GlossaryTerm term="Biofilm" definition="Structured microbial communities embedded in self-produced EPS, often attached to surfaces">biofilms</GlossaryTerm>, <GlossaryTerm term="Protein" definition="A large biological molecule made of chains of amino acids; proteins carry out most biological functions">proteins</GlossaryTerm>), and produce new cells.
               </p>
               <p>
                 At a high level, microbes need three things to survive and do work:
@@ -250,13 +250,13 @@ function BiologicalSystemsSection() {
               
               </div>
               <p className="italic text-[#264563]/50">
-              A single microbe doesn&apos;t need each arrow point in a given list, and some substances can even serve multiple functions depending on the organism and metabolism.
+              A single microbe doesn&apos;t need each example in a given list, and some substances can even serve multiple functions depending on the organism and <GlossaryTerm term="Metabolism" definition="The full set of chemical reactions that keep a cell alive — energy generation, growth, and reproduction">metabolism</GlossaryTerm>.
               </p>
               </div>  
             <div className="space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">How Microbes Interact With Minerals</h4>
               <p>
-              Microbes influence how metals move because their metabolism changes the chemistry of minerals and surrounding fluids. These changes can dissolve minerals, expose valuable metals for recovery, or form new minerals that capture or stabilize metals.
+              Microbes influence how metals move because their <GlossaryTerm term="Metabolism" definition="The full set of chemical reactions that keep a cell alive — energy generation, growth, and reproduction">metabolism</GlossaryTerm> changes the chemistry of minerals and surrounding fluids. These changes can dissolve minerals, expose valuable metals for recovery, or form new minerals that capture or stabilize metals.
               Think of familiar processes such as baking bread or turning milk into cheese — microbes drive reactions that gradually alter materials and their environment to produce valuable products.
               </p>
             </div>
@@ -283,7 +283,7 @@ function BiologicalSystemsSection() {
             <div className="pt-4 space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">What Biomolecules Are</h4>
               <p>
-                Biomolecular systems use biological molecules such as proteins, <GlossaryTerm term="Peptide" definition="A short chain of amino acids that can be engineered to selectively bind metals">peptides</GlossaryTerm>, <GlossaryTerm term="Polysaccharide" definition="A large carbohydrate molecule made of repeating sugar units, often produced by microbes as part of EPS">polysaccharides</GlossaryTerm>, or other bio-derived materials to interact with metals. Unlike microbes, these are not living systems — they do not grow, reproduce, or metabolize.
+                Biomolecular systems use biological molecules such as <GlossaryTerm term="Protein" definition="A large biological molecule made of chains of amino acids; proteins carry out most biological functions">proteins</GlossaryTerm>, <GlossaryTerm term="Peptide" definition="A short chain of amino acids that can be engineered to selectively bind metals">peptides</GlossaryTerm>, <GlossaryTerm term="Polysaccharide" definition="A large carbohydrate molecule made of repeating sugar units, often produced by microbes as part of EPS">polysaccharides</GlossaryTerm>, or other bio-derived materials to interact with metals. Unlike microbes, these are not living systems — they do not grow, reproduce, or <GlossaryTerm term="Metabolism" definition="The full set of chemical reactions that keep a cell alive — energy generation, growth, and reproduction">metabolize</GlossaryTerm>.
               </p>
             </div>
 
@@ -359,7 +359,7 @@ function BiologicalSystemsSection() {
             <div className="pt-4 space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">What Phytomining Is</h4>
               <p>
-                Phytomining uses plants to extract metals from soils, <GlossaryTerm term="Mine Waste" definition="All solid and liquid waste produced during mineral extraction and processing, including tailings, waste rock, and process water">mine waste</GlossaryTerm>, or <GlossaryTerm term="Bulk Waste Rock" definition="Rock discarded prior to metallurgical extraction (overburden, low-grade, refractory, or gangue-rich material)">low-grade ores</GlossaryTerm>. Certain plants, known as hyperaccumulators, naturally absorb and concentrate metals in their tissues.
+                Phytomining uses plants to extract metals from soils, <GlossaryTerm term="Mine Waste" definition="All solid and liquid waste produced during mineral extraction and processing, including tailings, waste rock, and process water">mine waste</GlossaryTerm>, or <GlossaryTerm term="Bulk Waste Rock" definition="Rock discarded prior to metallurgical extraction (overburden, low-grade, refractory, or gangue-rich material)">low-grade ores</GlossaryTerm>. Certain plants, known as <GlossaryTerm term="Hyperaccumulator" definition="A plant species capable of absorbing and storing unusually high concentrations of metals in its tissues">hyperaccumulators</GlossaryTerm>, naturally absorb and concentrate metals in their leaves and stems.
               </p>
             </div>
 
@@ -438,7 +438,7 @@ function BiologicalSystemsSection() {
               title="Acidolysis"
               description="Production of acids (organic or inorganic) that break down, dissolve, or alter minerals"
               application="Important for carbonates and some sulfide minerals"
-              example="Microbes oxidize sulfur to sulfuric acid (H₂SO₄), which attacks chalcopyrite (CuFeS₂)."
+              example="Microbes oxidize sulfur to sulfuric acid (H₂SO₄), which attacks chalcopyrite (CuFeS₂), unlocking copper and upgrading it into a recoverable leach solution."
               color="amber"
               usedBy="Microbes"
             />
@@ -447,16 +447,16 @@ function BiologicalSystemsSection() {
               title="Redoxolysis"
               description={<>Oxidation or reduction of metals or <GlossaryTerm term="Ligand" definition="A molecule that binds to a metal ion to form a complex">ligands</GlossaryTerm> that controls solubility</>}
               application="ferrous iron (Fe²⁺) → ferric iron (Fe³⁺) oxidation, hexavalent uranium (U(VI)) → tetravalent uranium (U(IV)) reduction"
-              example="Ferric iron (Fe³⁺) generated by microbes acts as an oxidant to leach copper from sulfides."
+              example="Ferric iron (Fe³⁺) generated by microbes acts as an oxidant to leach copper from sulfides, unlocking it into solution for downstream recovery."
               color="blue"
               usedBy="Microbes"
             />
 
             <MechanismCard
               title="Complexolysis"
-              description="Production of ligands that complex (bind) metals and keep them in solution"
+              description={<>Production of ligands for metal <GlossaryTerm term="Complexation" definition="The process of forming a stable complex between two or more compounds">complexation</GlossaryTerm>, keeping metals in solution</>}
               application={<><GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">Metallophores</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophores</GlossaryTerm>, organic acids</>}
-              example={<>Microbes secrete organic acids that <GlossaryTerm term="Chelation" definition="Formation of a stable complex between a metal ion and an organic molecule">chelate</GlossaryTerm> rare earth elements.</>}
+              example={<>Microbes secrete organic acids that <GlossaryTerm term="Chelation" definition="Formation of a stable complex between a metal ion and an organic molecule">chelate</GlossaryTerm> rare earth elements, capturing them from dilute streams and enabling selective separation of individual REEs.</>}
               color="emerald"
               usedBy="Microbes, Biomolecules"
             />
@@ -464,8 +464,8 @@ function BiologicalSystemsSection() {
             <MechanismCard
               title="Biosorption & Bioaccumulation"
               description={<>Metals stick to cell surfaces or <GlossaryTerm term="Extracellular Polymeric Substances (EPS)" definition="Polymers secreted by microbes that form biofilms and modify local chemistry">EPS</GlossaryTerm> (biosorption), or are actively taken up and stored (<GlossaryTerm term="Bioaccumulation" definition="Active uptake and intracellular storage of metals by living organisms">bioaccumulation</GlossaryTerm>)</>}
-              application="Rapid metal capture, often independent of metabolism"
-              example={<>Algae and bacteria sorb heavy metals from <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">acid mine drainage (AMD)</GlossaryTerm> on cell surfaces.</>}
+              application={<>Passive metal capture, independent of microbial <GlossaryTerm term="Metabolism" definition="The full set of chemical reactions that keep a cell alive — energy generation, growth, and reproduction">metabolism</GlossaryTerm></>}
+              example={<>Algae and bacteria adsorb heavy metals from <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">acid mine drainage (AMD)</GlossaryTerm> onto cell surfaces, concentrating dilute metals onto recoverable biomass while reducing dissolved metal loads in the water.</>}
               color="teal"
               usedBy="Microbes, Phytomining"
             />
@@ -474,7 +474,7 @@ function BiologicalSystemsSection() {
               title="Bioprecipitation & Biomineralization"
               description="Microbial activity alters local chemistry, causing dissolved metals to precipitate from solution"
               application="Metal removal from solution in remediation and recovery systems"
-              example={<><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">Sulfate-reducing bacteria (SRB)</GlossaryTerm> produce sulfide that precipitates copper (Cu), zinc (Zn), and other metals from solution.</>}
+              example={<><GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">Sulfate-reducing bacteria (SRB)</GlossaryTerm> produce sulfide that precipitates copper (Cu), zinc (Zn), and other metals from solution as recoverable metal sulfide concentrates, simultaneously cleaning the effluent.</>}
               color="sky"
               usedBy="Microbes"
             />
@@ -597,7 +597,7 @@ function EmerginTechCard({ expanded, onToggle }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
             <div>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Applications</p>
-              <p className="text-[#264563] text-sm mb-7"><GlossaryTerm term="Coal By-products" definition="Coal combustion byproducts including fly ash and bottom ash, rich in REEs and heavy metals; billions of tons stockpiled globally with limited disposal options">Coal by-products</GlossaryTerm>, <GlossaryTerm term="Phosphogypsum" definition="Radioactive waste from fertilizer production containing REEs and other critical metals">phosphogypsum</GlossaryTerm>, <GlossaryTerm term="Red Mud" definition="Caustic bauxite waste with REEs, Sc, and other metals">red mud</GlossaryTerm>, spent catalysts, magnet scrap</p>
+              <p className="text-[#264563] text-sm mb-7"><GlossaryTerm term="Coal By-products" definition="Coal combustion byproducts including fly ash and bottom ash, rich in REEs and heavy metals; billions of tons stockpiled globally with limited disposal options">Coal by-products</GlossaryTerm>, <GlossaryTerm term="Phosphogypsum" definition="Radioactive waste from fertilizer production containing REEs and other critical metals">phosphogypsum</GlossaryTerm>, <GlossaryTerm term="Red Mud" definition="Caustic bauxite waste with REEs, Sc, and other metals">red mud</GlossaryTerm>, spent <GlossaryTerm term="Catalyst" definition="A substance that speeds up a chemical reaction without being consumed">catalysts</GlossaryTerm>, magnet scrap</p>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Integration</p>
               <p className="text-[#264563] text-sm">
                 Feed stream → <strong>selective binding</strong> → elution & recovery → purified metal stream
@@ -606,14 +606,15 @@ function EmerginTechCard({ expanded, onToggle }) {
             <div className="sm:pl-16">
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Key Parameters</p>
               <ul className="text-[#264563] text-sm space-y-1">
-                <li>• Time: Minutes to hours</li>
+                <li>• Time: Minutes to hours per contact</li>
+                <li className="text-xs italic text-[#264563]/70 ml-3">Bulk processing rate depends on feed chemistry and system design</li>
                 <li>• Temperature: Ambient (~20–40°C)</li>
                 <li>• pH: Typically 3–6 (feed dependent)</li>
                 <li>• Scale: Modular (columns, membranes, contactors)</li>
               </ul>
             </div>
           </div>
-          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-full sm:w-1/2">
+          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-full">
             <p className="text-xs font-semibold text-orange-500 mb-1">Common Challenges</p>
             <p className="text-orange-600 text-sm">Matrix effects, <GlossaryTerm term="Fouling" definition="Unwanted accumulation of material on equipment surfaces that reduces efficiency">fouling</GlossaryTerm>, immobilization strategies, feed chemistry variability</p>
           </div>
@@ -645,18 +646,18 @@ function BioremediationCard({ expanded, onToggle }) {
               <p className="text-emerald-700/70 text-xs">Constructed wetlands, <GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> bioreactors, and algae systems that remove metals and raise pH</p>
             </div>
             <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
-              <p className="text-emerald-800 font-semibold text-xs mb-1">Metal Recovery from AMD</p>
-              <p className="text-emerald-700/70 text-xs">Selective sorbents and biomineralization to recover copper (Cu), zinc (Zn), REEs, and other metals</p>
+              <p className="text-emerald-800 font-semibold text-xs mb-1">Metal Recovery from AMD & Municipal Waste</p>
+              <p className="text-emerald-700/70 text-xs">Selective sorbents and biomineralization to recover copper (Cu), zinc (Zn), REEs, and other metals from mine drainage and municipal waste</p>
             </div>
             <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
               <p className="text-emerald-800 font-semibold text-xs mb-1">E-waste & Urban Mining</p>
-              <p className="text-emerald-700/70 text-xs"><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> and <GlossaryTerm term="Biosorption" definition="Sorption of dissolved metals onto biomass or extracellular polymeric substances (EPS)">biosorption</GlossaryTerm> applied to circuit boards, magnets, and electronics</p>
+              <p className="text-emerald-700/70 text-xs"><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> and <GlossaryTerm term="Biosorption" definition="Sorption of dissolved metals onto biomass or extracellular polymeric substances (EPS)">biosorption</GlossaryTerm> applied to circuit boards, magnets, electronics, incinerator ashes, and other specialized waste</p>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
             <div>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Applications</p>
-              <p className="text-[#264563] text-sm mb-7">Mine drainage treatment, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> reprocessing, legacy site remediation, <GlossaryTerm term="E-waste" definition="Discarded electronics rich in Cu, Au, Pd, REEs, and critical metals, but with complex polymer/metal mixtures">e-waste</GlossaryTerm> and magnet scrap</p>
+              <p className="text-[#264563] text-sm mb-7">Mine drainage treatment, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> reprocessing, legacy site remediation, <GlossaryTerm term="E-waste" definition="Discarded electronics rich in Cu, Au, Pd, REEs, and critical metals, but with complex polymer/metal mixtures">e-waste</GlossaryTerm>, municipal waste, and other specialized waste</p>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Integration</p>
               <p className="text-[#264563] text-sm">Parameters and integration pathways vary by technique and site conditions</p>
             </div>
@@ -665,7 +666,7 @@ function BioremediationCard({ expanded, onToggle }) {
               <p className="text-[#264563] text-sm">• Highly site- and technique-dependent</p>
             </div>
           </div>
-          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-full sm:w-1/2">
+          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-full">
             <p className="text-xs font-semibold text-orange-500 mb-1">Common Challenges</p>
             <p className="text-orange-600 text-sm">Long treatment timescales, regulatory and discharge compliance</p>
           </div>
@@ -707,7 +708,7 @@ function ModalityCard({ title, description, applications, parameters, integratio
             </div>
           </div>
 
-          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-full sm:w-1/2">
+          <div className="bg-orange-50 rounded p-2 border border-orange-500 w-full">
             <p className="text-xs font-semibold text-orange-500 mb-1">Common Challenges</p>
             <p className="text-orange-600 text-sm">{challenges}</p>
           </div>

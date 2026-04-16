@@ -26,8 +26,8 @@ export default function ForBiologists() {
         <div className="flex gap-6 items-stretch">
           <div className="flex-[2] bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center py-10">
             <h1 className="text-2xl sm:text-4xl font-bold text-[#264563] mb-3 leading-tight">Mining 101</h1>
-            <p className="text-base text-[#264563]">
-            To deploy biology in mining, you need to understand where it fits in a mining flowsheet
+            <p className="text-base font-extralight text-[#264563]">
+            To deploy biology in mining, you need to understand where it fits in the mining value chain
             </p>
           </div>
           <TableOfContents />
@@ -86,7 +86,7 @@ export default function ForBiologists() {
                 whyBiology={[
                   "New bio-technologies can change which parts of a deposit are considered 'ore'",
                   "Enable recovery of critical by-product elements currently ignored",
-                  "Bio-assays and biosensors help explore and identify favorable geochemistry"
+                  "Bio-assays and biosensors help geologists explore and identify favorable geochemistry"
                 ]}
                 whereBio={[
                   "Biosensors for exploration",
@@ -100,29 +100,31 @@ export default function ForBiologists() {
                 color="amber"
                 what={<>Planners choose a mining method (<GlossaryTerm term="Open Pit Mine" definition="A surface mining method where ore is extracted from a large, open excavation on the earth's surface">open pit</GlossaryTerm> vs <GlossaryTerm term="Underground Mine" definition="A mining method where ore is extracted through tunnels and shafts beneath the earth's surface">underground</GlossaryTerm> — based on ore body depth, shape, and grade), mine layout, and material routing to ore stockpiles, low-grade stockpiles, waste dumps, or <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>.</>}
                 whyBiology={[
-                  "Decisions here govern tonnage, time, and access for your process",
+                  "Decisions here govern tonnage, time, and access for biomining",
                   <>Long-residence-time bio-processes best suited for stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm></>,
                   "Include bio-recovery in closure plans from day one"
                 ]}
                 whereBio={[
+                  "Flowsheet design with bio-process options",
                   "Biologically compatible stockpile design",
+                  "In-situ bio-recovery feasibility",
                   "Bioremediation and bio-recovery in closure plans"
                 ]}
               />
 
               <StageCard
                 number="3"
-                title="Mining: Getting The Rock Out"
+                title="Mining: Moving Rock at Massive Scale"
                 color="emerald"
-                what="Crews drill, blast, load, and haul rock at a scale of tens to hundreds of thousands of tonnes per day. The mix of ore and waste is imperfect."
+                what={<>Crews drill, blast, load, and haul rock at a scale of tens to hundreds of thousands of tonnes per day. <strong className="font-semibold">This is equivalent to 2,000 to 15,000 elephants&apos; worth of rock every day!</strong><br /><br /><strong className="font-semibold">What gets moved isn&apos;t uniform material — ore bodies are often extremely geologically and mineralogically complex.</strong> Once mined, rock is sorted by grade:<ul className="ml-5 my-2 list-none space-y-0.5"><li>high-grade ore → processing</li><li>low-grade → stockpiles</li><li>waste → dumps</li></ul>The boundary where high-value material ends and low-grade <GlossaryTerm term="Gangue" definition="Waste minerals in ore that have no commercial value and are separated out during processing">gangue</GlossaryTerm> begins is never clean in nature. Grade control always involves tradeoffs between diluted material reaching processing and valuable ore that never does.</>}
                 whyBiology={[
-                  "Input material is stressed, mixed, partly oxidized rock - not pure minerals",
-                  "Particle size distribution and surface damage from blasting affect leach kinetics",
-                  <>Water infiltration and oxygen diffusion are key for <GlossaryTerm term="Heap Leaching" definition="A process where crushed ore is stacked on a lined pad and irrigated with a lixiviant to dissolve and collect target metals">heaps</GlossaryTerm> and <GlossaryTerm term="In Situ Leach (ISL)" definition="A mining method that dissolves metals underground by injecting lixiviant into the ore body and pumping the metal-bearing solution to the surface">in-situ leaching</GlossaryTerm></>
+                  "Input material isn't pure - it's stressed, mixed, partially oxidized rock whose complex mineralogy significantly affects biomining effectiveness",
+                  "The scale of rock movement is enormous — biological technologies must be designed for such scale",
+                  "Biomining opportunities in waste rejection and ROM (run-of-mine) upgrading are missed when mining decisions happen without a clear proposed bio path"
                 ]}
                 whereBio={[
-                  "In-stope leaching (injecting solutions into fractured zones)",
-                  <>Blast patterns that favor <GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">bioleaching</GlossaryTerm> (fracture networks)</>
+                  <><GlossaryTerm term="In-stope Leaching">In-stope leaching</GlossaryTerm> (injecting solutions into fractured zones)</>,
+                  <><GlossaryTerm term="Biomineralization">MICP-based ground stabilization and dust suppression</GlossaryTerm></>
                 ]}
               />
 
@@ -221,8 +223,8 @@ export default function ForBiologists() {
               <ConstraintCard
                 title="Water, Reagents & Permitting"
                 icon={Droplets}
-                description="Water is often constrained. Reagents have costs, hazards, and permitting implications"
-                implication="Bio-solutions that reduce net reagent use, enable higher water recycling, or simplify permitting have extra strategic value"
+                description={<>Water is often constrained. <GlossaryTerm term="Reagent" definition="A substance that acts on another in a chemical reaction">Reagents</GlossaryTerm> have costs, hazards, and permitting implications</>}
+                implication={<>Bio-solutions that reduce net <GlossaryTerm term="Reagent" definition="A substance that acts on another in a chemical reaction">reagent</GlossaryTerm> use, enable higher water recycling, or simplify permitting have extra strategic value</>}
               />
             </div>
           </Section>
@@ -314,7 +316,7 @@ function StageCard({ number, title, subtitle, footerNote, color, what, whyBiolog
 
       <div className={`bg-gray-50 rounded p-3 border ${borderClass}`}>
         <h4 className={`text-sm font-semibold ${colorClass} mb-2`}>Where biology might plug in:</h4>
-        <ul className="space-y-1">
+        <ul className={whereBio.length > 2 ? 'grid grid-cols-2 gap-x-4 gap-y-1' : 'space-y-1'}>
           {whereBio.map((item, i) => (
             <li key={i} className={`${colorClass} text-sm flex items-start gap-2`}>
               <span className={colorClass}>→</span>

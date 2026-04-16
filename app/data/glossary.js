@@ -58,7 +58,7 @@ export const glossaryData = {
     },
     {
       term: "Critical Minerals",
-      definition: <>Minerals that are both essential to a nation&apos;s economy or national security and have supply chains that are vulnerable to disruption. Different jurisdictions maintain their own lists with substantial overlap: in the US, the <a href="https://mineralsexplorer.homeworld.bio/#introduction" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-700">US Geological Survey (USGS) and Department of Energy (DOE)</a> each publish one, and in the EU these are known as <a href="https://rmis.jrc.ec.europa.eu/critical-and-strategic-materials" target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-700">Critical Raw Materials (CRMs)</a>.</>,
+      definition: <>Minerals that are both essential to a nation&apos;s economy or national security and have supply chains that are vulnerable to disruption. Different jurisdictions maintain their own lists with substantial overlap: in the US, the US Geological Survey (USGS) and Department of Energy (DOE) each publish one (with substantial overlap), and in the EU these are known as Critical Raw Materials (CRMs). To learn more, check out <a href="https://mineralsexplorer.homeworld.bio/#introduction" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">Homeworld Collective&apos;s AI-powered Critical Minerals Explorer</a>.</>,
       examples: "Rare earth elements, Ni, Co, Li, Pt-group metals",
       forBiologists: "Often present as minor or trace elements. Selective bio-ligands can capture them as co-products.",
       forMiners: "Biology's selectivity advantage is strongest for complex, multi-metal systems with critical by-products."
@@ -86,7 +86,7 @@ export const glossaryData = {
     },
     {
       term: "Enhanced Geothermal Systems (EGS)",
-      definition: "Adding permeability to hot rock followed by injecting water. The water extracts the heat, which is then pumped to the surface to produce electricity.",
+      definition: "A novel geothermal technology that uses directional drilling and hydraulic fracturing to create artificial permeability in hot rocks. EGS extracts heat by circulating fluid between one or more wells and produced thermal energy or electricity at the surface.",
       examples: "Engineered reservoirs in granite or volcanic formations",
       forBiologists: "EGS brines can contain dissolved metals and minerals — a potential feedstock for bio-extraction as a co-product of energy generation.",
       forMiners: "EGS represents a potential new source of critical minerals from geothermal fluids."
@@ -162,11 +162,25 @@ export const glossaryData = {
       forMiners: "Low surface disturbance is attractive for permitting. Biology can generate lixiviants in situ, reducing chemical injection needs."
     },
     {
+      term: "In-stope Leaching",
+      definition: "Leaching within an underground stope — an excavated void created after blasting, where broken rock is left in place instead of being hauled to the surface. Lixiviant is circulated through the fractured rock to extract metals where ore was mined. A variant of in-situ leaching applied to mined-out underground zones.",
+      examples: "Bio-lixiviant injection into copper or uranium stopes left from conventional blasting",
+      forBiologists: "In-stope leaching puts biology directly inside the mine — acidophiles or engineered microbes operate on fractured underground rock, reducing the need for above-ground leach infrastructure.",
+      forMiners: "Can reduce material handling costs by extracting metals where ore was blasted, without surface heaps or full processing infrastructure. An emerging bio-mining method."
+    },
+    {
       term: "Ion Exchange (IX)",
       definition: "A reversible interchange of an adsorbed ion with a dissolved ion of like charge. In mining, this process is used with selective ion exchange resins to remove, recover, and purify specific metal ions from aqueous solutions, such as process water or brine.",
       examples: "Uranium recovery from leach solutions, lithium extraction from brines",
       forBiologists: "Bio-functionalized IX resins are an emerging area — biomolecules can add selectivity that synthetic resins lack.",
       forMiners: "Standard purification technology. Bio-enhanced resins may offer improved selectivity for complex or polymetallic solutions."
+    },
+    {
+      term: "Ionic Strength",
+      definition: "A measure of the total concentration of ions in a solution, weighted by the square of each ion's charge. High ionic strength solutions (e.g., brines, concentrated leach liquors) change how metals, minerals, and biological systems behave — affecting solubility, reaction kinetics, and binding selectivity.",
+      examples: "Dilute leach solutions (low), seawater (~0.7 M), concentrated brines and PLS (high)",
+      forBiologists: "Ionic strength affects enzyme activity, protein stability, and microbial growth. Processes developed at low ionic strength in the lab may fail in real mining solutions.",
+      forMiners: "A key constraint when designing biological systems for real process streams. Biomolecules and microbes must tolerate the ionic strength of leach liquors, brines, or wastewater — or the system requires dilution."
     },
     {
       term: "Leach",
@@ -295,6 +309,20 @@ export const glossaryData = {
       forMiners: "Conventional REE separation uses large volumes of organic solvents. Biological alternatives may reduce cost and environmental impact."
     },
     {
+      term: "Reagent",
+      definition: "A substance that acts on another in a chemical reaction — an agent used to produce, detect, or drive a chemical change. In mineral processing and hydrometallurgy, reagents drive most unit operations, including leaching, flotation, solvent extraction, precipitation, and solid–liquid separation.",
+      examples: "Inorganic reagents, naturally derived organic reagents, and synthetic organic reagents (including flotation reagents, solvent extractants, and polymers)",
+      forBiologists: "You already use reagents daily (buffers, enzymes, PCR mixes), but mining reagents are bulk industrial chemicals (acids, cyanide, flocculants) chosen for cost and scale. Knowing the role of mining reagents reveals where biology can supplement or replace them.",
+      forMiners: "Reagent consumption is a significant operating cost and environmental footprint driver. Biology offers potential to supplement or replace certain reagents with self-regenerating, selective alternatives."
+    },
+    {
+      term: "Catalyst",
+      definition: "A substance that speeds up a chemical reaction without being consumed in the process. Unlike reagents, catalysts are regenerated and can act repeatedly, often enabling reactions that would otherwise be too slow or require harsher conditions.",
+      examples: "Platinum in catalytic converters, enzymes in biological systems, iron-oxidizing microbes in bioleaching",
+      forBiologists: "Enzymes and whole-cell systems are nature's catalysts — often highly selective and operating under mild conditions compared to industrial alternatives.",
+      forMiners: "Biological catalysts can continuously regenerate oxidants (e.g., Fe³⁺) in bioleach circuits, reducing reagent inputs and enabling reactions at ambient temperature and pressure."
+    },
+    {
       term: "Redox Control",
       definition: "Tuning the concentrations of oxidants and reductants in a system to keep target metals soluble or drive selective precipitation.",
       examples: "Maintaining Fe³⁺/Fe²⁺ ratios in bioleach solutions, controlling Eh for selective metal precipitation",
@@ -352,7 +380,7 @@ export const glossaryData = {
     },
     {
       term: "Underground Mine",
-      definition: "The extraction of minerals and ores from deposits located deep beneath the Earth's surface through shafts and tunnels. Best suited to deep, narrow, high-grade deposits where surface mining is not economical, or to follow specific metal-bearing veins. Offers more targeted extraction with less surface disturbance, but at higher cost per tonne and greater operational complexity than open pit.",
+      definition: "The extraction of minerals and ores from deposits located deep beneath the Earth's surface through shafts and tunnels. Used where surface mining is uneconomical — whether to follow high-grade veins or to exploit large, low-grade disseminated deposits via bulk methods like block caving. Offers more targeted extraction with less surface disturbance, but at higher cost per tonne and greater operational complexity than open pit.",
       examples: "Deep gold mines (South Africa), block caving copper mines",
       forBiologists: "Underground environments host unique microbial communities adapted to extreme conditions — potential sources of novel biomining organisms.",
       forMiners: "In-stope bioleaching in fractured underground zones is an emerging concept that could reduce material handling costs."
@@ -549,6 +577,13 @@ export const glossaryData = {
       forMiners: "A living coating of microbes on rock or equipment surfaces. In heaps, biofilms on mineral surfaces are where most of the leaching chemistry happens."
     },
     {
+      term: "Biomineralization",
+      definition: "Microbial activity that alters local chemistry to precipitate dissolved metals or minerals as solids. Includes microbially-induced calcite precipitation (MICP) for ground stabilization and dust control, as well as metal precipitation for recovery or remediation.",
+      examples: "MICP (microbially-induced calcite precipitation) for soil stabilization and dust suppression; sulfate-reducing bacteria (SRB) precipitating copper and zinc as sulfides",
+      forBiologists: "A dual-use capability — the same microbial precipitation mechanisms can recover metals from solution (e.g., AMD) and produce structural minerals (e.g., calcite) for stabilizing materials in place.",
+      forMiners: "Two angles of application: metal recovery from process streams or AMD, and MICP-based ground stabilization or dust suppression at active mine sites."
+    },
+    {
       term: "Mesophile",
       definition: "An organism that grows best at moderate temperatures, typically between 20-45°C.",
       examples: "Acidithiobacillus ferrooxidans, Leptospirillum ferrooxidans",
@@ -603,6 +638,34 @@ export const glossaryData = {
       examples: "Fe²⁺ → Fe³⁺ → Fe²⁺ cycling in heap leach solutions, sulfur oxidation-reduction cycles",
       forBiologists: "Microbes catalyze redox cycling to obtain energy. The regenerated oxidant (e.g., Fe³⁺) then attacks mineral surfaces.",
       forMiners: "The engine of bioleaching — microbes continuously regenerate the chemical oxidants that dissolve metals, reducing the need for external reagent addition."
+    },
+    {
+      term: "Substrate",
+      definition: "In biology, the material a microbe consumes or acts upon to obtain energy, carbon, or electrons for growth and metabolism. Distinct from the mining sense of 'substrate' as underlying rock — here it refers to the chemical food source (e.g., sulfide minerals, organic carbon, ferrous iron).",
+      examples: "Sulfide minerals for acidophiles, organic carbon for SRBs, ferrous iron for iron oxidizers",
+      forBiologists: "Substrate choice drives microbial selection, growth kinetics, and process design. Matching substrate to target organism is foundational to bioprocess engineering.",
+      forMiners: "What your microbes eat determines what they can do. Sulfide ores feed acidophiles directly; oxide ores or low-sulfide systems may require external carbon or energy sources."
+    },
+    {
+      term: "Hyperaccumulator",
+      definition: "A plant species capable of absorbing and storing unusually high concentrations of metals in its tissues — often hundreds to thousands of times higher than non-accumulating plants growing in the same soil. The foundation of phytomining.",
+      examples: "Nickel hyperaccumulators like Alyssum, Pycnandra acuminata (blue-latex tree); zinc/cadmium hyperaccumulators like Arabidopsis halleri",
+      forBiologists: "Hyperaccumulation involves specialized metal transporters, chelation, and sequestration pathways — targets for bioengineering and for understanding metal homeostasis.",
+      forMiners: "Hyperaccumulators enable phytomining: growing, harvesting, and processing metal-rich biomass from low-grade soils, tailings, or mine waste where conventional extraction is uneconomic."
+    },
+    {
+      term: "Protein",
+      definition: "A large biological molecule made of chains of amino acids folded into specific three-dimensional shapes. Proteins carry out most biological functions — catalyzing reactions (as enzymes), binding and transporting molecules, providing structure, and sensing the environment. In biomining, proteins can be engineered or selected to bind specific metals with high affinity and selectivity.",
+      examples: "Enzymes, metal-binding peptides, transport proteins, antibodies, lanmodulin (REE-binding protein)",
+      forBiologists: "Proteins are the workhorse molecules of metabolism. Targeted engineering (directed evolution, rational design) lets you tune binding, stability, and selectivity for specific mining applications.",
+      forMiners: "Proteins can be used as ultra-selective binding agents — isolating individual metals from complex feeds where conventional reagents struggle. Often deployed as cell-free systems (no live organism required)."
+    },
+    {
+      term: "Metabolism",
+      definition: "The complete set of chemical reactions a cell carries out. Split into catabolism (breaking down substrates to release energy) and anabolism (building the molecules a cell needs — EPS, proteins, biofilm components, biomass). Microbial metabolism is what drives bioleaching, biooxidation, and most active biomining processes.",
+      examples: "Energy production (respiration, chemosynthesis), carbon fixation, synthesis of enzymes and metabolites",
+      forBiologists: "Metabolism determines what substrates a microbe can use, what products it generates, and what conditions it requires — the starting point for bioprocess design.",
+      forMiners: "Active biomining processes depend on microbial metabolism. Passive processes like biosorption do not require live, metabolizing cells — an important distinction when choosing a technology."
     }
   ]
 };

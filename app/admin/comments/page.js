@@ -271,7 +271,10 @@ export default function AdminCommentsPage() {
                             </span>
                           </div>
                           <div className="text-sm text-emerald-300 mb-2">
-                            Section: {comment.context.sectionTitle}
+                            Section: {displayPageName(pageData.page)}
+                            {comment.context?.sectionTitle && comment.context.sectionTitle !== 'Main Content'
+                              ? ` › ${comment.context.sectionTitle}`
+                              : ''}
                           </div>
                         </div>
 

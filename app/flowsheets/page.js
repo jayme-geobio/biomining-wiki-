@@ -47,7 +47,7 @@ const flowsheetData = [
     reality: [
       "Many 'non-biological' heaps already rely on native acidophiles - intentional bio-management improves performance",
       "Time scale: Months to years for full heap cycle",
-      "Scale: Very large - tens of millions of tonnes per year",
+      <><strong>Scale: Very large - tens of millions of tonnes per year</strong>; heap pads and associated <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after leaching ore or concentrate">PLS</GlossaryTerm>/<GlossaryTerm term="Raffinate" definition="The metal-depleted aqueous solution leaving a solvent extraction stage, typically recycled back to leaching">raffinate</GlossaryTerm> ponds can cover several km², circulating millions to hundreds of millions of liters of solution daily</>,
       <>Economics favor biology when ore <GlossaryTerm term="Grade" definition="The concentration of a target metal or mineral in ore, typically expressed as a percentage or grams per tonne">grade</GlossaryTerm> is too low for conventional <GlossaryTerm term="Milling" definition="Size reduction of ore by grinding in rotating drums with steel balls or rods">milling</GlossaryTerm>/<GlossaryTerm term="Froth Flotation" definition="Separation process that uses air bubbles and chemical reagents to selectively float target mineral particles to the surface">flotation</GlossaryTerm></>
     ],
     maturity: "Commercial - proven at major operations worldwide"
@@ -181,7 +181,7 @@ const flowsheetData = [
       "Passive treatment (wetlands) proven for low-flow systems; bioreactors for higher flows",
       "Time scale: Hours to days (bioreactor); weeks (wetlands)",
       "Dual benefit: regulatory compliance + revenue from recovered metals",
-      "Strongest case where discharge limits are tight or where critical metals (REEs) are present"
+      <>Strongest case where discharge limits are tight or where <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm> (like REEs) are present</>
     ],
     maturity: "Medium-High - wetlands are proven; metal recovery from AMD is emerging"
   }
@@ -203,7 +203,7 @@ export default function Flowsheets() {
         <div className="flex gap-6 items-stretch">
           <div className="flex-[2] bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center py-10">
             <h1 className="text-2xl sm:text-4xl font-bold text-[#264563] mb-3 leading-tight">Example Flowsheets</h1>
-            <p className="text-base text-[#264563]">
+            <p className="text-base font-extralight text-[#264563]">
               See how biology integrates into real mining operations — from proven commercial processes to emerging applications
             </p>
           </div>

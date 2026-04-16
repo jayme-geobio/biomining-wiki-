@@ -177,7 +177,7 @@ function TermCard({ term, id, expanded, onToggle }) {
           <span className={`px-2 py-1 rounded text-xs font-semibold text-white ${colors.badge}`}>
             {term.category === 'mining' ? <Mountain className="w-3 h-3 inline" /> : <Microscope className="w-3 h-3 inline" />}
           </span>
-          <span className="text-lg font-bold text-[#264563]">{term.term}</span>
+          <h3 className="text-lg font-bold text-[#264563]">{term.term}</h3>
         </div>
         <div className="flex items-center gap-2 text-[#264563]/50 text-sm shrink-0">
           <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>

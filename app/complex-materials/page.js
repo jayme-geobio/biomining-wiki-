@@ -214,7 +214,7 @@ export default function ComplexMaterials() {
         <div className="flex gap-6 items-stretch">
           <div className="flex-[2] bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center py-10">
             <h1 className="text-2xl sm:text-4xl font-bold text-[#264563] mb-3 leading-tight">Complex Materials Playbook</h1>
-            <p className="text-base text-[#264563]">
+            <p className="text-base font-extralight text-[#264563]">
               Materials too mineralogically complex, contaminated, or low-grade for conventional processing
             </p>
           </div>
@@ -225,7 +225,7 @@ export default function ComplexMaterials() {
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
           <h2 className="text-2xl font-bold text-[#264563] mb-3">The Best Opportunities</h2>
           <p className="text-[#264563]">
-            The sweet spot for biomining is where you're dealing with <strong>waste, legacy sites, or materials
+            The immediate sweet spot for biomining is where you're dealing with <strong>waste, legacy sites, or materials
             that benefit from alternative processing approaches</strong>. These are the contexts where biology's strengths
             (lower OPEX, mild conditions, selectivity, reduced environmental impact) are most valuable.
           </p>

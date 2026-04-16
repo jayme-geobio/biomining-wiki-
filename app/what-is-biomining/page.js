@@ -26,7 +26,7 @@ export default function WhatIsBiomining() {
         <div className="flex gap-6 items-stretch">
           <div className="flex-[2] bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center py-10">
             <h1 className="text-2xl sm:text-4xl font-bold text-[#264563] mb-3 leading-tight">What Is "Biomining"?</h1>
-            <p className="text-base text-[#264563]">
+            <p className="text-base font-extralight text-[#264563]">
               Definitions, mechanisms, and where biotech rivals chemistry
             </p>
           </div>
@@ -164,7 +164,7 @@ export default function WhatIsBiomining() {
                   "Microbes drive oxidation-reduction cycles (e.g., Fe²⁺ ↔ Fe³⁺, S⁰ ↔ sulfate) efficiently and regeneratively.",
                   "Potential to reduce the amount of external oxidant-reductant required."
                 ]}
-                valueTo="Cuts reagent cost by continuously regenerating oxidants on-site rather than purchasing and trucking them in."
+                valueTo={<>Cuts <GlossaryTerm term="Reagent" definition="A substance that acts on another in a chemical reaction">reagent</GlossaryTerm> cost by continuously regenerating oxidants on-site rather than purchasing and trucking them in.</>}
               />
               <AdvantageCard
                 title="Chelation and Complexation"

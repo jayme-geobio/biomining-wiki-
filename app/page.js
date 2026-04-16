@@ -13,18 +13,93 @@ export default function BiominingHome() {
         <div className="max-w-6xl mx-auto px-4 pt-4 pb-6">
           {/* Hero Card + Ghost Box */}
           <div className="mb-6">
-            <div className="flex gap-6 items-stretch">
-              {/* Solid card */}
-              <div className="flex-[2] bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center py-10">
-                <h1 className="text-3xl sm:text-5xl font-bold text-[#264563] leading-tight">
+            <div className="relative w-full" style={{ minHeight: '470px', isolation: 'isolate' }}>
+              {/* Pre-blurred backdrop matching body's background image, masked to green shape */}
+              {(() => {
+                const greenPath = "M56 791V90.5C56 73.6553 69.6553 60 86.5 60H1193.36C1206.88 60 1219.82 65.4465 1228.31 75.9557C1257.64 112.253 1323.03 207.029 1317 324.5C1309.85 463.669 1155.76 596.892 1131.66 616.914C1129.49 618.713 1127.53 620.576 1125.67 622.685C1075.48 679.403 1051.8 721.481 1041.88 793.998C1038.29 820.248 1016.8 841 990.303 841H106C78.3858 841 56 818.614 56 791Z";
+                const maskUrl = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='56 60 1900 781' preserveAspectRatio='none'><path d='${greenPath}' fill='white'/></svg>")`;
+                return (
+                  <div
+                    className="absolute inset-0 pointer-events-none overflow-hidden"
+                    style={{
+                      maskImage: maskUrl,
+                      WebkitMaskImage: maskUrl,
+                      maskSize: '100% 100%',
+                      WebkitMaskSize: '100% 100%',
+                      maskRepeat: 'no-repeat',
+                      WebkitMaskRepeat: 'no-repeat',
+                    }}
+                  >
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        backgroundImage: "url('/images/background.png')",
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundAttachment: 'fixed',
+                        filter: 'blur(18px)',
+                        transform: 'scale(1.1)',
+                      }}
+                    />
+                  </div>
+                );
+              })()}
+
+              {/* Single SVG with both shapes — curves always align */}
+              <svg
+                viewBox="56 60 1900 781"
+                className="absolute inset-0 w-full h-full"
+                preserveAspectRatio="none"
+              >
+                {/* Green title card shape */}
+                <path
+                  d="M56 791V90.5C56 73.6553 69.6553 60 86.5 60H1193.36C1206.88 60 1219.82 65.4465 1228.31 75.9557C1257.64 112.253 1323.03 207.029 1317 324.5C1309.85 463.669 1155.76 596.892 1131.66 616.914C1129.49 618.713 1127.53 620.576 1125.67 622.685C1075.48 679.403 1051.8 721.481 1041.88 793.998C1038.29 820.248 1016.8 841 990.303 841H106C78.3858 841 56 818.614 56 791Z"
+                  fill="#779883"
+                  fillOpacity="0.7"
+                />
+                <defs>
+                  <clipPath id="blueShapeClip">
+                    <path d="M1346.5 309C1351.4 225.926 1318.68 160.066 1284.83 107.173C1271.82 86.8478 1285.78 60 1309.92 60H1926.5C1943.07 60 1956.5 73.4315 1956.5 90V805C1956.5 821.569 1943.07 835 1926.5 835H1097.49C1084.89 835 1073.69 827.003 1072.45 814.46C1069.61 785.551 1074.25 729.991 1134 673C1220.5 590.5 1337.04 469.576 1346.5 309Z" />
+                  </clipPath>
+                </defs>
+                {/* Blue TOC shape with inside-only stroke (doubled width; outer half clipped to shape interior) */}
+                <path
+                  d="M1346.5 309C1351.4 225.926 1318.68 160.066 1284.83 107.173C1271.82 86.8478 1285.78 60 1309.92 60H1926.5C1943.07 60 1956.5 73.4315 1956.5 90V805C1956.5 821.569 1943.07 835 1926.5 835H1097.49C1084.89 835 1073.69 827.003 1072.45 814.46C1069.61 785.551 1074.25 729.991 1134 673C1220.5 590.5 1337.04 469.576 1346.5 309Z"
+                  fill="rgba(38, 69, 99, 0.95)"
+                  stroke="white"
+                  strokeWidth="8"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  shapeRendering="geometricPrecision"
+                  clipPath="url(#blueShapeClip)"
+                />
+              </svg>
+
+              {/* Homeworld logo - positioned within green shape */}
+              <img
+                src="/images/homeworld-logo-full.png"
+                alt="Homeworld Collective"
+                className="absolute z-10"
+                style={{ top: '6%', left: '3%', width: '16%' }}
+              />
+
+              {/* Title + subtitle */}
+              <div className="absolute z-10" style={{ bottom: '8%', left: '3%', right: '35%' }}>
+                <h1 className="text-5xl font-normal text-white tracking-tight" style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', lineHeight: '1.05' }}>
                   The Biomining Handbook
                 </h1>
-                <p className="text-base text-[#264563]">
+                <p className="text-xl text-white font-extralight mt-3">
                   A practical guide for biologists and mining professionals
                 </p>
               </div>
-              {/* Table of Contents */}
-              <TableOfContents />
+
+              {/* TOC - positioned within blue shape */}
+              <div
+                className="hidden sm:block absolute z-10"
+                style={{ top: '8%', right: '7%', bottom: '8%', width: '26%' }}
+              >
+                <TableOfContents bare />
+              </div>
             </div>
           </div>
 
