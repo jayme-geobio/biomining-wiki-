@@ -29,6 +29,13 @@ export const glossaryData = {
       forMiners: "Biology may unlock value from waste piles too expensive to process conventionally."
     },
     {
+      term: "Channeling",
+      definition: "The preferential flow of leach solution through specific pathways in a heap or ore pile, bypassing large volumes of material. Channeling leads to uneven wetting, reduced contact between solution and mineral surfaces, and lower overall recovery.",
+      examples: "Solution short-circuiting through coarse zones in a heap; dry pockets in tank leach piles",
+      forBiologists: "Channeling limits the distribution of microbes, nutrients, and oxygen throughout the heap — stranded biomass in dry zones doesn't contribute to leaching.",
+      forMiners: "A common and costly failure mode in heap leaching. Minimized by proper agglomeration, particle size control, and irrigation design."
+    },
+    {
       term: "Comminution",
       definition: "Grinding ore into small particles to increase surface area and facilitate extraction of targeted elements; also referred to as 'milling'.",
       examples: "Ball mills, SAG mills, HPGR (high-pressure grinding rolls)",
@@ -265,6 +272,13 @@ export const glossaryData = {
       examples: "Jarosite layers on chalcopyrite, silica coatings on ore particles",
       forBiologists: "A key challenge in bioleaching. Some microbes can disrupt passivation layers — understanding this mechanism is valuable.",
       forMiners: "Passivation limits recovery in both chemical and biological systems. Biology may offer novel approaches to overcome it."
+    },
+    {
+      term: "pH",
+      definition: "A measure of how acidic or basic a solution is, on a scale from 0 (very acidic) to 14 (very basic), with 7 being neutral.",
+      examples: "Bioleaching solutions at pH 1.5–2.5; neutral circuits for bioremediation",
+      forBiologists: "Each organism has a narrow pH range for optimal activity. Small shifts can dramatically change growth rates and metabolic output.",
+      forMiners: "pH drives mineral solubility, reagent behavior, and corrosion. It is one of the most tightly controlled parameters in a flowsheet."
     },
     {
       term: "Pregnant Leach Solution (PLS)",
@@ -542,6 +556,27 @@ export const glossaryData = {
       forMiners: "Rather than a single organism, biomining typically uses teams of microbes that divide labor — some generate acid, others oxidize iron, others scavenge nutrients."
     },
     {
+      term: "Bacteria",
+      definition: "Single-celled microorganisms without a true nucleus (prokaryotes). The most common and best-studied microbes in biomining — they drive iron and sulfur oxidation in heap and tank leaching.",
+      examples: "Acidithiobacillus ferrooxidans, Leptospirillum ferrooxidans",
+      forBiologists: "The workhorses of commercial bioleaching. Well-understood genetics and metabolism make them the default target for engineering.",
+      forMiners: "The most widely used microbes in biomining — they oxidize iron and sulfur to drive metal dissolution in heaps and tanks."
+    },
+    {
+      term: "Archaea",
+      definition: "Single-celled prokaryotes that are genetically and biochemically distinct from bacteria, often thriving in extreme environments (high temperature, low pH, high salinity).",
+      examples: "Sulfolobus, Acidianus, Ferroplasma",
+      forBiologists: "Many biomining-relevant extremophiles are archaea. Their membranes and enzymes tolerate conditions that destroy most bacteria.",
+      forMiners: "Heat- and acid-loving microbes used in high-temperature biooxidation tanks (65–85°C) where bacteria can't survive."
+    },
+    {
+      term: "Fungi",
+      definition: "Eukaryotic organisms (distinct from bacteria and archaea) that include yeasts and molds. In biomining, fungi are mainly used for heterotrophic leaching via organic-acid secretion.",
+      examples: "Aspergillus niger, Penicillium simplicissimum",
+      forBiologists: "Fungi can secrete powerful organic acids (citric, oxalic, gluconic) that chelate metals — useful for e-waste and oxide ores.",
+      forMiners: "Fungi are less common in commercial operations, but their organic acids can leach metals from materials where sulfur-oxidizing bacteria don't work (e.g., e-waste, spent catalysts)."
+    },
+    {
       term: "Metabolite",
       definition: "A small molecule produced or consumed during metabolism — including organic acids, siderophores, and other compounds that can mobilize or bind metals.",
       examples: "Organic acids (citric, oxalic), siderophores, amino acids",
@@ -620,7 +655,7 @@ export const glossaryData = {
     },
     {
       term: "Ligand",
-      definition: "A molecule that binds to a metal ion to form a complex. In biomining, ligands include siderophores, organic acids, peptides, and engineered proteins used to selectively capture or mobilize metals.",
+      definition: "A molecule or ion that binds to a metal ion to form a complex. In biomining, ligands are typically organic — siderophores, organic acids, peptides, and engineered proteins — used to selectively capture or mobilize metals.",
       examples: "Siderophores, citric acid, lanmodulin, peptide-based ligands",
       forBiologists: "Biological ligands offer tuneable selectivity for target metals. Engineering better ligands is a major research frontier.",
       forMiners: "A chemical that grabs onto a specific metal. Biological ligands can be far more selective than conventional extractants, especially for separating similar metals like REEs."

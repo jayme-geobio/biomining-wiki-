@@ -246,7 +246,10 @@ export default function Flowsheets() {
 
         {/* Box 4: Example Flowsheets */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
-          <h2 className="text-2xl font-bold text-[#264563] mb-6">Example Flowsheets</h2>
+          <h2 className="text-2xl font-bold text-[#264563] mb-3">Example Flowsheets</h2>
+          <p className="text-[#264563] mb-6">
+            The biggest gains come when flowsheets are designed around biology from the beginning — rather than retrofitting biological steps into existing processes.
+          </p>
           <div className="space-y-4">
             {flowsheetData.map(flowsheet => (
               <FlowsheetCard

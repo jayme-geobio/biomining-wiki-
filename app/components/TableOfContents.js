@@ -76,7 +76,7 @@ export default function TableOfContents({ bare = false }) {
                     }`}
                   >
                     <span>{page.name}</span>
-                    {isCurrent && <span className={`ml-auto font-bold ${bare ? '-mr-20' : ''}`}>←</span>}
+                    {isCurrent && <span className={`ml-auto font-bold ${bare ? '-mr-0 sm:-mr-4 md:-mr-10 lg:-mr-20' : ''}`}>←</span>}
                   </Link>
                 );
               })}

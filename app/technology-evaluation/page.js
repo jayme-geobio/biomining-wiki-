@@ -61,10 +61,10 @@ export default function TechnologyEvaluation() {
                   },
                   {
                     q: "What is the feedstock?",
-                    detail: "Ore, concentrate, tailings, AMD, e-waste, slag - mineralogy, grade, particle size"
+                    detail: "Ore, concentrate, tailings, AMD, e-waste, slag - mineralogy, grade, particle size. How does it perform in real mining conditions with complex geology and mineralogy?"
                   },
                   {
-                    q: "What is the competing conventional option?",
+                    q: "What's the conventional alternative, and how does it compare?",
                     detail: "Heap leach, tank leach, SX, smelting, lime neutralization"
                   },
                   {
@@ -118,12 +118,16 @@ export default function TechnologyEvaluation() {
                     detail: "Lab vs. pilot vs. commercial references. Performance in representative feedstocks, not just synthetic solutions."
                   },
                   {
+                    q: "What are the operating requirements and constraints?",
+                    detail: "Understanding the requirements, robustness and limitations of the technology within relevant mining conditions."
+                  },
+                  {
                     q: "Time scales and integration",
                     detail: "Does it fit within existing residence times? Can it run as a side-stream or bleed-stream process?"
                   },
                   {
                     q: "Risk and monitoring",
-                    detail: "What monitoring (sensors, assays) is required? What happens if it fails or stops?"
+                    detail: "What monitoring (sensors, assays) is required? What is required to maintain the bio-process? What happens if it fails or stops?"
                   },
                   {
                     q: "Regulatory and public-perception impacts",
@@ -160,15 +164,15 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
     <div className="rounded-xl mb-4 border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
+        className="w-full bg-[#264563] p-4 sm:p-6 flex items-center justify-between gap-2 hover:bg-[#1e3450] transition-colors"
       >
-        <div className="flex items-center gap-3">
-          <Icon className="w-6 h-6 text-white" />
-          <h2 className="text-lg font-bold text-white">{title}</h2>
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
+          <h2 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 1.125rem)' }}>{title}</h2>
         </div>
-        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
-          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
-          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+          <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
         </div>
       </button>
       {expanded && (

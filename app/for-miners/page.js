@@ -56,7 +56,7 @@ export default function ForMiners() {
             <div className="text-[#264563] space-y-3">
               <p>
                 Biology provides <strong>switchable, selective chemistry</strong> for metal extraction and management.
-                Like <GlossaryTerm term="Reagent" definition="A substance that acts on another in a chemical reaction">reagents</GlossaryTerm> and <GlossaryTerm term="Catalyst" definition="A substance that speeds up a chemical reaction without being consumed">catalysts</GlossaryTerm>, biological systems are constrained by temperature, pH, <GlossaryTerm term="Ionic Strength" definition="A measure of the total concentration of ions in a solution">ionic strength</GlossaryTerm>, inhibitors, and{' '}
+                Like <GlossaryTerm term="Reagent" definition="A substance that acts on another in a chemical reaction">reagents</GlossaryTerm> and <GlossaryTerm term="Catalyst" definition="A substance that speeds up a chemical reaction without being consumed">catalysts</GlossaryTerm>, biological systems are constrained by temperature, <GlossaryTerm term="pH">pH</GlossaryTerm>, <GlossaryTerm term="Ionic Strength" definition="A measure of the total concentration of ions in a solution">ionic strength</GlossaryTerm>, inhibitors, and{' '}
                 <GlossaryTerm term="Substrate" definition="In biology, the material a microbe consumes or acts upon to obtain energy, carbon, or electrons">substrate</GlossaryTerm> availability. Understanding these constraints is key to successful integration.              </p>
               <div className="bg-[#264563]/5 rounded-lg p-4 border-l-4 border-[#264563] mt-4">
                 <p className="text-[#264563]">
@@ -101,7 +101,7 @@ export default function ForMiners() {
                     integration={
                       <> <GlossaryTerm term="Comminution" definition="Size reduction of ore through crushing and grinding to liberate valuable minerals">Comminution</GlossaryTerm> → <strong>Bioleaching</strong> → <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after leaching ore or concentrate">PLS</GlossaryTerm> → <GlossaryTerm term="Solvent Extraction (SX)" definition="Liquid–liquid extraction process that selectively transfers dissolved metals between immiscible phases">SX</GlossaryTerm>/<GlossaryTerm term="Electrowinning (EW)" definition="Electrochemical process that deposits metal from solution onto a cathode">EW</GlossaryTerm> → metal cathodes </>
                     }
-                    challenges={<><GlossaryTerm term="Passivation" definition="Formation of a surface layer on ore particles that inhibits further leaching">Passivation</GlossaryTerm> layers, channeling, oxygen/nutrient limitations, large footprint, heavy earth-moving</>}
+                    challenges={<><GlossaryTerm term="Passivation" definition="Formation of a surface layer on ore particles that inhibits further leaching">Passivation</GlossaryTerm> layers, <GlossaryTerm term="Channeling">channeling</GlossaryTerm>, oxygen/nutrient limitations, large footprint, heavy earth-moving</>}
                     expanded={openModalities.has('dump')}
                     onToggle={() => toggleModality('dump')}
                   />
@@ -206,14 +206,14 @@ function BiologicalSystemsSection() {
             <div className="pt-4 space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">What Microbes Are</h4>
               <p>
-                Microorganisms (microbes) are microscopic living organisms such as bacteria, archaea, and fungi. Unlike chemical <GlossaryTerm term="Reagent" definition="A substance that acts on another in a chemical reaction">reagents</GlossaryTerm> or materials, they are living systems that grow, reproduce, and actively respond to their environment.
+                Microorganisms (microbes) are microscopic living organisms such as <GlossaryTerm term="Bacteria">bacteria</GlossaryTerm>, <GlossaryTerm term="Archaea">archaea</GlossaryTerm>, and <GlossaryTerm term="Fungi">fungi</GlossaryTerm>. Unlike chemical <GlossaryTerm term="Reagent" definition="A substance that acts on another in a chemical reaction">reagents</GlossaryTerm> or materials, they are living systems that grow, multiply, and actively respond to their environment.
               </p>
             </div>
 
             <div className="space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">How Microbes Work</h4>
               <p>
-                Think of microbes as <strong>tiny, tunable chemical factories</strong> — not just organisms that eat and grow, but programmable systems with customizable inputs and outputs. Microorganisms operate by carrying out chemical reactions to obtain energy from their environment. These <GlossaryTerm term="Metabolism" definition="The complete set of chemical reactions a cell carries out, split into catabolism (energy release) and anabolism (biosynthesis)">metabolic</GlossaryTerm> reactions generate energy, build cellular components (<GlossaryTerm term="Extracellular Polymeric Substances (EPS)" definition="Polymers secreted by microbes that form biofilms and modify local chemistry">EPS</GlossaryTerm>, <GlossaryTerm term="Biofilm" definition="Structured microbial communities embedded in self-produced EPS, often attached to surfaces">biofilms</GlossaryTerm>, <GlossaryTerm term="Protein" definition="A large biological molecule made of chains of amino acids; proteins carry out most biological functions">proteins</GlossaryTerm>), and produce new cells.
+                Think of microbes as <strong>tiny, tunable chemical factories</strong> — not just organisms that eat and grow, but programmable systems with customizable inputs and outputs. Microorganisms operate by carrying out chemical reactions to obtain energy from their environment. These <GlossaryTerm term="Metabolism" definition="The complete set of chemical reactions a cell carries out, split into catabolism (energy release) and anabolism (biosynthesis)">metabolic</GlossaryTerm> reactions generate energy, build cellular components (<GlossaryTerm term="Extracellular Polymeric Substances (EPS)" definition="Polymers secreted by microbes that form biofilms and modify local chemistry">EPS</GlossaryTerm>, <GlossaryTerm term="Biofilm" definition="Structured microbial communities embedded in self-produced EPS, often attached to surfaces">biofilms</GlossaryTerm>, <GlossaryTerm term="Protein" definition="A large biological molecule made of chains of amino acids; proteins carry out most biological functions">proteins</GlossaryTerm>), and multiply (produce new cells).
               </p>
               <p>
                 At a high level, microbes need three things to survive and do work:
@@ -283,7 +283,7 @@ function BiologicalSystemsSection() {
             <div className="pt-4 space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">What Biomolecules Are</h4>
               <p>
-                Biomolecular systems use biological molecules such as <GlossaryTerm term="Protein" definition="A large biological molecule made of chains of amino acids; proteins carry out most biological functions">proteins</GlossaryTerm>, <GlossaryTerm term="Peptide" definition="A short chain of amino acids that can be engineered to selectively bind metals">peptides</GlossaryTerm>, <GlossaryTerm term="Polysaccharide" definition="A large carbohydrate molecule made of repeating sugar units, often produced by microbes as part of EPS">polysaccharides</GlossaryTerm>, or other bio-derived materials to interact with metals. Unlike microbes, these are not living systems — they do not grow, reproduce, or <GlossaryTerm term="Metabolism" definition="The full set of chemical reactions that keep a cell alive — energy generation, growth, and reproduction">metabolize</GlossaryTerm>.
+                Biomolecular systems use biological molecules such as <GlossaryTerm term="Protein" definition="A large biological molecule made of chains of amino acids; proteins carry out most biological functions">proteins</GlossaryTerm>, <GlossaryTerm term="Peptide" definition="A short chain of amino acids that can be engineered to selectively bind metals">peptides</GlossaryTerm>, <GlossaryTerm term="Polysaccharide" definition="A large carbohydrate molecule made of repeating sugar units, often produced by microbes as part of EPS">polysaccharides</GlossaryTerm>, or other bio-derived materials to interact with metals. Unlike microbes, these are not living systems — they do not grow, produce new cells, or <GlossaryTerm term="Metabolism" definition="The full set of chemical reactions that keep a cell alive — energy generation, growth, and reproduction">metabolize</GlossaryTerm>.
               </p>
             </div>
 
@@ -303,34 +303,45 @@ function BiologicalSystemsSection() {
               <p>
                 At a high level, biomolecular systems function in three steps:
               </p>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <NeedCard
-                    title="Selective Binding"
-                    showExamplesLabel
-                    examples={[
-                      "Biomolecules bind specific metals.",
-                      "Binding can be highly selective.",
-                      "Enables capture of metals from complex mixtures."
-                    ]}
-                  />
-                  <NeedCard
-                    title="Seperation"
-                    showExamplesLabel
-                    examples={[
-                      "Bound metals stay on the biomolecule.",
-                      "Target metal concentrates."
-                    ]}
-                  />
-                  <NeedCard
-                    title="Release & Recovery"
-                    showExamplesLabel
-                    examples={[
-                      "Conditions are adjusted to release the bound metal.",
-                      "Metal is recovered in a concentrated stream.",
-                      "Biomolecules can often be reused."
-                    ]}
-                  />
+                <div className="flex flex-col md:flex-row gap-4 items-stretch">
+                  <div className="flex-1">
+                    <NeedCard
+                      title="Selective Binding"
+                      examples={[
+                        "Biomolecules bind specific metals",
+                        "Binding can be highly selective",
+                        "Enables capture of metals from complex mixtures"
+                      ]}
+                    />
                   </div>
+                  <div className="flex items-center justify-center text-[#264563] text-3xl font-bold md:px-1">
+                    <span className="hidden md:inline">→</span>
+                    <span className="md:hidden">↓</span>
+                  </div>
+                  <div className="flex-1">
+                    <NeedCard
+                      title="Separation"
+                      examples={[
+                        "Bound metals stay on the biomolecule",
+                        "Target metal concentrates"
+                      ]}
+                    />
+                  </div>
+                  <div className="flex items-center justify-center text-[#264563] text-3xl font-bold md:px-1">
+                    <span className="hidden md:inline">→</span>
+                    <span className="md:hidden">↓</span>
+                  </div>
+                  <div className="flex-1">
+                    <NeedCard
+                      title="Release & Recovery"
+                      examples={[
+                        "Conditions are adjusted to release the bound metal",
+                        "Metal is recovered in a concentrated stream",
+                        "Biomolecules can often be reused"
+                      ]}
+                    />
+                  </div>
+                </div>
                   <p className="italic text-[#264563]/50">
                   In practice, performance depends not just on binding strength, but also on selectivity, stability, and the ability to regenerate the material.
                   </p>
@@ -372,31 +383,42 @@ function BiologicalSystemsSection() {
                 At a high level, phytomining systems perform in three steps:
               </p>
 
-              <div className="grid md:grid-cols-3 gap-4">
-                <NeedCard
-                  title="Uptake"
-                  showExamplesLabel
-                  examples={[
-                    "Plant roots absorb dissolved metals from soil or water.",
-                    "Metals enter the plant through normal nutrient transport pathways."
-                  ]}
-                />
-                <NeedCard
-                  title="Transport & Accumulation"
-                  showExamplesLabel
-                  examples={[
-                    "Metals move through the plants vascular system.",
-                    "Some species concentrate metals in leaves, stems, or other tissues."
-                  ]}
-                />
-                <NeedCard
-                  title="Stable & Reusable Material"
-                  showExamplesLabel
-                  examples={[
-                    "Metal-rich biomass is harvested.",
-                    "Metals are recovered from the plant material through processing."
-                  ]}
-                />
+              <div className="flex flex-col md:flex-row gap-4 items-stretch">
+                <div className="flex-1">
+                  <NeedCard
+                    title="Uptake"
+                    examples={[
+                      "Plant roots absorb dissolved metals from soil or water",
+                      "Metals enter the plant through normal nutrient transport pathways"
+                    ]}
+                  />
+                </div>
+                <div className="flex items-center justify-center text-[#264563] text-3xl font-bold md:px-1">
+                  <span className="hidden md:inline">→</span>
+                  <span className="md:hidden">↓</span>
+                </div>
+                <div className="flex-1">
+                  <NeedCard
+                    title="Transport & Accumulation"
+                    examples={[
+                      "Metals move through the plants vascular system",
+                      "Some species concentrate metals in leaves, stems, or other tissues"
+                    ]}
+                  />
+                </div>
+                <div className="flex items-center justify-center text-[#264563] text-3xl font-bold md:px-1">
+                  <span className="hidden md:inline">→</span>
+                  <span className="md:hidden">↓</span>
+                </div>
+                <div className="flex-1">
+                  <NeedCard
+                    title="Stable & Reusable Material"
+                    examples={[
+                      "Metal-rich biomass is harvested",
+                      "Metals are recovered from the plant material through processing"
+                    ]}
+                  />
+                </div>
               </div>
 
               <p className="italic text-[#264563]/50">
@@ -489,15 +511,15 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
     <div className="rounded-xl mb-4 border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
+        className="w-full bg-[#264563] p-4 sm:p-6 flex items-center justify-between gap-2 hover:bg-[#1e3450] transition-colors"
       >
-        <div className="flex items-center gap-3">
-          <Icon className="w-6 h-6 text-white" />
-          <h2 className="text-lg font-bold text-white">{title}</h2>
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
+          <h2 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 1.125rem)' }}>{title}</h2>
         </div>
-        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
-          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
-          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+          <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
         </div>
       </button>
       {expanded && <div className="bg-[#edede6] p-6 border-t border-white/20">{children}</div>}
@@ -507,7 +529,7 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
 
 function NeedCard({ title, examples, showExamplesLabel }) {
   return (
-    <div className="bg-white rounded-lg p-4 border border-[#264563]/20">
+    <div className="bg-white rounded-lg p-4 border border-[#264563]/20 h-full">
       <h3 className="text-lg font-bold text-[#264563] mb-2">{title}</h3>
       {showExamplesLabel && (
         <p className="text-xs uppercase tracking-wider text-[#264563]/60 mb-1">Examples</p>
@@ -515,7 +537,7 @@ function NeedCard({ title, examples, showExamplesLabel }) {
       <ul className="space-y-1">
         {examples.map((ex, i) => (
           <li key={i} className="text-[#264563] text-sm flex items-start gap-2">
-            <span className="text-[#264563]" style={{marginTop: '0.05em'}}>→</span>
+            <span className="text-[#264563]">•</span>
             <span>{ex}</span>
           </li>
         ))}
@@ -569,12 +591,12 @@ function EmerginTechCard({ expanded, onToggle }) {
     <div className="rounded-xl border-2 border-emerald-600/20 overflow-hidden mt-4">
       <button
         onClick={onToggle}
-        className="w-full bg-emerald-700 px-6 py-4 flex items-center justify-between hover:bg-emerald-800 transition-colors"
+        className="w-full bg-emerald-700 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2 hover:bg-emerald-800 transition-colors"
       >
-        <h4 className="text-base font-bold text-white">Emerging Technologies for REEs & Complex Matrices</h4>
-        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
-          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
-          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        <h4 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1" style={{ fontSize: 'clamp(0.65rem, 1.6vw, 1rem)' }}>Emerging Technologies for REEs & Complex Matrices</h4>
+        <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+          <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
         </div>
       </button>
       {expanded && (
@@ -629,12 +651,12 @@ function BioremediationCard({ expanded, onToggle }) {
     <div className="rounded-xl border-2 border-emerald-600/20 overflow-hidden mt-4">
       <button
         onClick={onToggle}
-        className="w-full bg-emerald-700 px-6 py-4 flex items-center justify-between hover:bg-emerald-800 transition-colors"
+        className="w-full bg-emerald-700 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2 hover:bg-emerald-800 transition-colors"
       >
-        <h4 className="text-base font-bold text-white">Bioremediation & Recovery from Waste</h4>
-        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
-          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
-          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        <h4 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1" style={{ fontSize: 'clamp(0.65rem, 1.6vw, 1rem)' }}>Bioremediation & Recovery from Waste</h4>
+        <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+          <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
         </div>
       </button>
       {expanded && (

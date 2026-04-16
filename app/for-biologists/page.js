@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ChevronDown, ChevronRight, Mountain, Factory, Beaker, AlertCircle, TrendingUp, Clock, Droplets, FileCheck } from 'lucide-react';
+import { ChevronDown, ChevronRight, Mountain, Factory, Beaker, AlertCircle, TrendingUp, Clock, Droplets, FileCheck, Camera } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 import GlossaryTerm from '../components/GlossaryTerm';
 import TableOfContents from '../components/TableOfContents';
@@ -58,6 +58,10 @@ export default function ForBiologists() {
                 <li className="flex items-start gap-2">
                   <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
                   Timelines, water availability, and permitting often matter as much as chemistry
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
+                  Geological and mineralogical complexity is a defining challenge
                 </li>
               </ul>
               <p className="mt-4 font-semibold">
@@ -116,7 +120,11 @@ export default function ForBiologists() {
                 number="3"
                 title="Mining: Moving Rock at Massive Scale"
                 color="emerald"
-                what={<>Crews drill, blast, load, and haul rock at a scale of tens to hundreds of thousands of tonnes per day. <strong className="font-semibold">This is equivalent to 2,000 to 15,000 elephants&apos; worth of rock every day!</strong><br /><br /><strong className="font-semibold">What gets moved isn&apos;t uniform material — ore bodies are often extremely geologically and mineralogically complex.</strong> Once mined, rock is sorted by grade:<ul className="ml-5 my-2 list-none space-y-0.5"><li>high-grade ore → processing</li><li>low-grade → stockpiles</li><li>waste → dumps</li></ul>The boundary where high-value material ends and low-grade <GlossaryTerm term="Gangue" definition="Waste minerals in ore that have no commercial value and are separated out during processing">gangue</GlossaryTerm> begins is never clean in nature. Grade control always involves tradeoffs between diluted material reaching processing and valuable ore that never does.</>}
+                image="/images/open-pit-mine.jpg"
+                imageCaption="Open pit mine — the scale of rock movement in modern mining operations"
+                imageSource="Jayme Feyhl-Buska"
+                imageDate="Date unknown"
+                what={<>Crews drill, blast, load, and haul rock at a scale of tens to hundreds of thousands of tonnes per day. <strong className="font-semibold">This is equivalent to 2,000 to 15,000 elephants&apos; worth of rock every day!</strong><br /><br /><strong className="font-semibold">What gets moved isn&apos;t uniform material — ore bodies are often extremely geologically and mineralogically complex.</strong> Once mined, rock is sorted by grade:<ul className="ml-5 my-2 list-none space-y-0.5"><li>high-grade ore → processing</li><li>low-grade → stockpiles</li><li>waste → dumps</li></ul>The boundary where ore ends and <GlossaryTerm term="Gangue" definition="Waste minerals in ore that have no commercial value and are separated out during processing">gangue</GlossaryTerm> begins is never clean in nature. Grade control always involves tradeoffs between diluted material reaching processing and valuable ore that never does.</>}
                 whyBiology={[
                   "Input material isn't pure - it's stressed, mixed, partially oxidized rock whose complex mineralogy significantly affects biomining effectiveness",
                   "The scale of rock movement is enormous — biological technologies must be designed for such scale",
@@ -124,7 +132,8 @@ export default function ForBiologists() {
                 ]}
                 whereBio={[
                   <><GlossaryTerm term="In-stope Leaching">In-stope leaching</GlossaryTerm> (injecting solutions into fractured zones)</>,
-                  <><GlossaryTerm term="Biomineralization">MICP-based ground stabilization and dust suppression</GlossaryTerm></>
+                  <><GlossaryTerm term="Biomineralization">MICP</GlossaryTerm>-based ground stabilization and dust suppression</>,
+                  <>Mine planning that accounts for <GlossaryTerm term="Bioleaching" definition="Using microorganisms to extract metals from ores, concentrates, or waste materials">bioleaching</GlossaryTerm></>
                 ]}
               />
 
@@ -136,10 +145,11 @@ export default function ForBiologists() {
                 whyBiology={[
                   <><GlossaryTerm term="Comminution" definition="The process of crushing and grinding ore to reduce particle size and liberate valuable minerals">Comminution</GlossaryTerm> is often the most energy-intensive step in mining</>,
                   "Separation efficiency strongly depends on mineral surface chemistry and particle size",
-                  "Biology that allows coarser processing without sacrificing recovery is extremely valuable"
+                  "Biology that allows coarser processing without sacrificing recovery is extremely valuable",
+                  <><GlossaryTerm term="Particle Size Distribution (PSD)">Particle size distribution</GlossaryTerm> affects leach kinetics</>
                 ]}
                 whereBio={[
-                  "Bio-assisted comminution (microbes weakening grain boundaries)"
+                  "Bio-assisted comminution — microbes weakening grain boundaries (also known as pre-conditioning)"
                 ]}
               />
 
@@ -183,8 +193,8 @@ export default function ForBiologists() {
                 what={<>Operators manage <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> storage, <GlossaryTerm term="Mine Waste" definition="All non-valuable material removed during mining, including waste rock, overburden, and tailings">waste-rock dumps</GlossaryTerm>, water systems, and long-term closure obligations.</>}
                 whyBiology={[
                   <><GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">Acid mine drainage</GlossaryTerm> and seepage can persist for decades</>,
-                  "This is where liability and social license live",
-                  "Most mature biological applications are in this space"
+                  "This is where liability and social license to operate impact a company's risk profile",
+                  "Most mature biological applications are in this stage, currently offering the biggest value proposition"
                 ]}
                 whereBio={[
                   <>Constructed wetlands and <GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> reactors for <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm></>,
@@ -206,18 +216,22 @@ export default function ForBiologists() {
                 title="Time"
                 icon={Clock}
                 description="Operations expect fast processing times - often hours to days, not months to years (except in heap or dump leaching)"
-                implication={<>If your process is slow, consider treating stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm> where slow is acceptable, or use biology to polish/condition streams</>}
+                implication={<>If a biological process is slow, consider treating stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm> where slow is acceptable, or use biology to condition/polish streams</>}
               />
               <ConstraintCard
                 title="Throughput & Scale"
                 icon={TrendingUp}
                 description="Mid-size mines process tens of millions of tonnes of ore annually."
-                implication="Be explicit about scale. Side-stream bio-units are more realistic early targets than whole-plant replacements"
+                implication="Be explicit about scale. Side-stream bio-units that augment existing operations are more realistic early targets than whole-plant replacements"
+                image="/images/mine-scale.jpg"
+                imageCaption="Large-scale mining operation — millions of tonnes of ore and associated infrastructure"
+                imageSource="Jayme Feyhl-Buska"
+                imageDate="Date unknown"
               />
               <ConstraintCard
                 title="Process Integration & Risk"
                 icon={AlertCircle}
-                description="Mines are complex, coupled systems. Unexpected downtime is extremely expensive"
+                description="Mines are complex, coupled systems where unexpected downtime is extremely expensive."
                 implication="Design 'safe failure' modes with bypass options, emphasizing instrumentation and control. Provide clear lab → pilot → demonstration pathways"
               />
               <ConstraintCard
@@ -243,15 +257,15 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
     <div className="rounded-xl mb-4 border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
+        className="w-full bg-[#264563] p-4 sm:p-6 flex items-center justify-between gap-2 hover:bg-[#1e3450] transition-colors"
       >
-        <div className="flex items-center gap-3">
-          <Icon className="w-6 h-6 text-white" />
-          <h2 className="text-lg font-bold text-white">{title}</h2>
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
+          <h2 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 1.125rem)' }}>{title}</h2>
         </div>
-        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
-          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
-          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+          <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
         </div>
       </button>
       {expanded && (
@@ -263,7 +277,8 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
   );
 }
 
-function StageCard({ number, title, subtitle, footerNote, color, what, whyBiology, whereBio }) {
+function StageCard({ number, title, subtitle, footerNote, color, what, whyBiology, whereBio, image, imageCaption, imageSource, imageDate }) {
+  const [showImage, setShowImage] = useState(false);
   const colorClasses = {
     blue:    'text-blue-600',
     amber:   'text-amber-500',
@@ -288,9 +303,20 @@ function StageCard({ number, title, subtitle, footerNote, color, what, whyBiolog
   return (
     <div className={`relative bg-white rounded-lg p-5 border ${borderClass}`}>
       <div className="mb-3">
-        <div className="flex items-center gap-2">
-          <span className={`font-bold text-lg ${colorClass}`}>{number}.</span>
-          <h3 className={`text-lg font-bold ${colorClass}`}>{title}</h3>
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 min-w-0 flex-1">
+            <span className={`font-bold text-lg ${colorClass} flex-shrink-0`}>{number}.</span>
+            <h3 className={`text-lg font-bold ${colorClass}`}>{title}</h3>
+          </div>
+          {image && (
+            <button
+              onClick={() => setShowImage(true)}
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-600 hover:bg-amber-50 transition-colors flex-shrink-0 leading-none border border-amber-600 rounded px-2 py-1.5"
+            >
+              <Camera className="w-3.5 h-3.5" style={{marginTop: '-2px'}} />
+              <span className="hidden sm:inline">Click to Visualize</span>
+            </button>
+          )}
         </div>
         {subtitle && (
           <p className="text-xs italic text-[#264563]/70 mt-0.5">{subtitle}</p>
@@ -300,6 +326,38 @@ function StageCard({ number, title, subtitle, footerNote, color, what, whyBiolog
       <div className="mb-4">
         <h4 className="text-sm font-semibold text-[#264563] mb-1">What it is:</h4>
         <p className="text-[#264563] text-sm">{what}</p>
+        {image && showImage && (
+          <div
+            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+            onClick={() => setShowImage(false)}
+          >
+            <div
+              className="relative bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setShowImage(false)}
+                className="absolute top-2 right-2 z-10 bg-white/90 hover:bg-white rounded-full w-8 h-8 flex items-center justify-center text-[#264563] text-xl font-bold shadow-md"
+                aria-label="Close"
+              >
+                ×
+              </button>
+              <img src={image} alt={imageCaption || title} className="w-full h-auto object-contain max-h-[75vh]" />
+              <div className="px-4 py-3 bg-gray-50 border-t border-[#264563]/10">
+                {imageCaption && (
+                  <p className="text-sm italic text-[#264563]/80">{imageCaption}</p>
+                )}
+                {(imageSource || imageDate) && (
+                  <p className="text-xs text-[#264563]/60 mt-1">
+                    {imageSource && <>Source: {imageSource}</>}
+                    {imageSource && imageDate && ' · '}
+                    {imageDate && <>{imageDate}</>}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="mb-4">
@@ -316,7 +374,7 @@ function StageCard({ number, title, subtitle, footerNote, color, what, whyBiolog
 
       <div className={`bg-gray-50 rounded p-3 border ${borderClass}`}>
         <h4 className={`text-sm font-semibold ${colorClass} mb-2`}>Where biology might plug in:</h4>
-        <ul className={whereBio.length > 2 ? 'grid grid-cols-2 gap-x-4 gap-y-1' : 'space-y-1'}>
+        <ul className="space-y-1">
           {whereBio.map((item, i) => (
             <li key={i} className={`${colorClass} text-sm flex items-start gap-2`}>
               <span className={colorClass}>→</span>
@@ -332,12 +390,24 @@ function StageCard({ number, title, subtitle, footerNote, color, what, whyBiolog
   );
 }
 
-function ConstraintCard({ title, icon: Icon, description, implication }) {
+function ConstraintCard({ title, icon: Icon, description, implication, image, imageCaption, imageSource, imageDate }) {
+  const [showImage, setShowImage] = useState(false);
   return (
     <div className="bg-white rounded-lg p-5 border border-emerald-700">
-      <div className="flex items-center gap-2 mb-2">
-        <Icon className="w-5 h-5 text-[#264563]" />
-        <h3 className="text-lg font-bold text-[#264563]">{title}</h3>
+      <div className="flex items-center justify-between gap-2 mb-2">
+        <div className="flex items-center gap-2 min-w-0 flex-1">
+          <Icon className="w-5 h-5 text-[#264563] flex-shrink-0" />
+          <h3 className="text-lg font-bold text-[#264563]">{title}</h3>
+        </div>
+        {image && (
+          <button
+            onClick={() => setShowImage(true)}
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-600 hover:bg-amber-50 transition-colors flex-shrink-0 leading-none border border-amber-600 rounded px-2 py-1.5"
+          >
+            <Camera className="w-3.5 h-3.5" style={{marginTop: '-2px'}} />
+            <span className="hidden sm:inline">Click to Visualize</span>
+          </button>
+        )}
       </div>
       <p className="text-[#264563] text-sm mb-3">{description}</p>
       <div className="bg-emerald-50 rounded p-3 border-l-4 border-emerald-600">
@@ -345,6 +415,38 @@ function ConstraintCard({ title, icon: Icon, description, implication }) {
           <strong>Implication:</strong> {implication}
         </p>
       </div>
+      {image && showImage && (
+        <div
+          className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+          onClick={() => setShowImage(false)}
+        >
+          <div
+            className="relative bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowImage(false)}
+              className="absolute top-2 right-2 z-10 bg-white/90 hover:bg-white rounded-full w-8 h-8 flex items-center justify-center text-[#264563] text-xl font-bold shadow-md"
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <img src={image} alt={imageCaption || title} className="w-full h-auto object-contain max-h-[75vh]" />
+            <div className="px-4 py-3 bg-gray-50 border-t border-[#264563]/10">
+              {imageCaption && (
+                <p className="text-sm italic text-[#264563]/80">{imageCaption}</p>
+              )}
+              {(imageSource || imageDate) && (
+                <p className="text-xs text-[#264563]/60 mt-1">
+                  {imageSource && <>Source: {imageSource}</>}
+                  {imageSource && imageDate && ' · '}
+                  {imageDate && <>{imageDate}</>}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

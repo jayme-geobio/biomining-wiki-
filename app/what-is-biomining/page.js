@@ -27,7 +27,7 @@ export default function WhatIsBiomining() {
           <div className="flex-[2] bg-[#edede6] rounded-3xl px-6 sm:px-10 shadow-xl border border-white flex flex-col justify-center py-10">
             <h1 className="text-2xl sm:text-4xl font-bold text-[#264563] mb-3 leading-tight">What Is "Biomining"?</h1>
             <p className="text-base font-extralight text-[#264563]">
-              Definitions, mechanisms, and where biotech rivals chemistry
+              Definitions, mechanisms, and where biotech complements and rivals chemistry
             </p>
           </div>
           <TableOfContents />
@@ -62,15 +62,15 @@ export default function WhatIsBiomining() {
             </p>
             <ul className="ml-6 space-y-2">
               <li className="flex items-start gap-2">
-                <span className="text-emerald-600 mt-1">•</span>
-                <span>Complexity makes conventional chemistry expensive, blunt, or risky.</span>
+                <span className="text-emerald-600">•</span>
+                <span>This complexity can make conventional chemistry overly expensive, intensive, or risky.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-emerald-600 mt-1">•</span>
+                <span className="text-emerald-600">•</span>
                 <span>Selectivity, adaptation, or operation under milder conditions offer strategic advantages.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-emerald-600 mt-1">•</span>
+                <span className="text-emerald-600">•</span>
                 <span>Environmental outcomes (closure, water quality, social licence) add value beyond metal recovery.</span>
               </li>
             </ul>
@@ -85,6 +85,9 @@ export default function WhatIsBiomining() {
         {/* Box 4: Mechanisms & Competitive Edge */}
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
           <h2 className="text-2xl font-bold text-[#264563] mb-6">Mechanisms & Competitive Edge</h2>
+          <p className="text-[#264563] mb-6">
+            Biology isn't a universal solution — but in complex conditions, it does specific things exceptionally well. Integrating biology from the start, as a complement to existing processes, is how we unlock more value from mining.
+          </p>
           {/* Mechanisms */}
           <Section
             title="1. Biological Mechanisms in Mining"
@@ -142,7 +145,7 @@ export default function WhatIsBiomining() {
 
           {/* Where Biotech Excels */}
           <Section
-            title="2. Where Biotech Rivals Chemistry"
+            title="2. Where Biotech Complements and Rivals Chemistry"
             icon={Zap}
             expanded={openSections.has('excel')}
             onToggle={() => toggleSection('excel')}
@@ -215,15 +218,15 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
     <div className="rounded-xl mb-4 border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#264563]/80 transition-colors"
+        className="w-full bg-[#264563] p-4 sm:p-6 flex items-center justify-between gap-2 hover:bg-[#264563]/80 transition-colors"
       >
-        <div className="flex items-center gap-3">
-          <Icon className="w-6 h-6 text-white" />
-          <h2 className="text-lg font-bold text-white">{title}</h2>
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
+          <h2 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 1.125rem)' }}>{title}</h2>
         </div>
-        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
-          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
-          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+          <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
         </div>
       </button>
       {expanded && (

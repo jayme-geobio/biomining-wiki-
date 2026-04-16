@@ -105,7 +105,7 @@ export default function GlossaryTerm({ term, definition, children }) {
   const popup = open ? createPortal(
     <div
       ref={popupRef}
-      className="w-72 bg-white rounded-xl shadow-2xl border border-gray-200 p-4 text-left"
+      className="w-64 sm:w-72 max-w-[calc(100vw-16px)] bg-white rounded-xl shadow-2xl border border-gray-200 p-4 text-left"
       style={{ ...popupStyle, animation: 'popIn 0.15s ease-out' }}
     >
       <div className="flex items-start justify-between mb-2">

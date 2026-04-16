@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle, TrendingUp, Microscope } from 'lucide-react';
+import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle, TrendingUp, Microscope, Camera } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 import GlossaryTerm from '../components/GlossaryTerm';
 import TableOfContents from '../components/TableOfContents';
@@ -14,6 +14,10 @@ const materialsData = {
   ard: {
     name: "Acid Rock Drainage (ARD) / Acid Mine Drainage (AMD)",
     icon: Droplets,
+    image: "/images/amd-drainage.jpg",
+    imageCaption: "Iron-oxide and microbial precipitates formed by acid mine drainage",
+    imageSource: "Jayme Feyhl-Buska",
+    imageDate: "Date unknown",
     definition: "Acidic, metal-rich drainage formed when sulfide minerals are exposed to oxygen and water; often biologically accelerated",
     hazards: [
       "Ecological damage to watersheds and groundwater",
@@ -284,26 +288,72 @@ export default function ComplexMaterials() {
 
 function MaterialCard({ id, material, expanded, onToggle }) {
   const Icon = material.icon;
+  const [showImage, setShowImage] = useState(false);
   return (
     <div id={id} className="rounded-xl border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
+        className="w-full bg-[#264563] p-4 sm:p-6 flex items-center justify-between gap-2 hover:bg-[#1e3450] transition-colors"
       >
-        <div className="flex items-center gap-3 text-left">
-          <Icon className="w-6 h-6 text-white flex-shrink-0" />
-          <h2 className="text-lg font-bold text-white">{material.name}</h2>
+        <div className="flex items-center gap-2 sm:gap-3 text-left min-w-0 flex-1">
+          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
+          <h2 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 1.125rem)' }}>{material.name}</h2>
         </div>
-        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
-          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
-          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+          <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
         </div>
       </button>
 
       {expanded && (
         <div className="bg-[#edede6] p-6 space-y-5">
+          {/* Image Modal */}
+          {material.image && showImage && (
+            <div
+              className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+              onClick={() => setShowImage(false)}
+            >
+              <div
+                className="relative bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  onClick={() => setShowImage(false)}
+                  className="absolute top-2 right-2 z-10 bg-white/90 hover:bg-white rounded-full w-8 h-8 flex items-center justify-center text-[#264563] text-xl font-bold shadow-md"
+                  aria-label="Close"
+                >
+                  ×
+                </button>
+                <img src={material.image} alt={material.imageCaption || material.name} className="w-full h-auto object-contain max-h-[75vh]" />
+                <div className="px-4 py-3 bg-gray-50 border-t border-[#264563]/10">
+                  {material.imageCaption && (
+                    <p className="text-sm italic text-[#264563]/80">{material.imageCaption}</p>
+                  )}
+                  {(material.imageSource || material.imageDate) && (
+                    <p className="text-xs text-[#264563]/60 mt-1">
+                      {material.imageSource && <>Source: {material.imageSource}</>}
+                      {material.imageSource && material.imageDate && ' · '}
+                      {material.imageDate && <>{material.imageDate}</>}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Definition */}
-          <p className="text-[#264563] italic">{material.definition}</p>
+          <div className="flex items-start justify-between gap-3">
+            <p className="text-[#264563] italic min-w-0 flex-1">{material.definition}</p>
+            {material.image && (
+              <button
+                onClick={() => setShowImage(true)}
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-600 hover:bg-amber-50 transition-colors flex-shrink-0 leading-none border border-amber-600 rounded px-2 py-1.5"
+              >
+                <Camera className="w-3.5 h-3.5" style={{marginTop: '-2px'}} />
+                <span className="hidden sm:inline">Click to Visualize</span>
+              </button>
+            )}
+          </div>
 
           {/* Why Biology Works Here */}
           <div>

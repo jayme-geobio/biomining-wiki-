@@ -51,7 +51,7 @@ const themes = [
   {
     number: 5,
     title: "Biomining Has a Steep Learning Curve",
-    summary: "Mining struggles to attract new talent, and biomining is even harder—it requires understanding both biology and mining. Biologists find it difficult to grasp mining's scale and processes, while mining professionals struggle to understand biological constraints. The \"mining\" label also doesn't naturally attract climate-focused talent, even though biomining is relevant to sustainability.",
+    summary: "Biomining sits at the intersection of two disciplines that don't naturally overlap. Building a workforce that understands both biology and mining is one of the field's biggest challenges. Biologists find it difficult to grasp mining's scale and processes, while mining professionals are often constrained by existing workflows and timelines. The \"mining\" label also doesn't naturally attract climate-focused talent, even though biomining is relevant to sustainability.",
     details: [
       "Education, media, and rebranding efforts targeting students and the public.",
       "Creation of trusted knowledge hubs and accessible resources that bridge biology and mining domains.",
@@ -61,7 +61,7 @@ const themes = [
   {
     number: 6,
     title: "Developing Incentives and Structures for Collaboration",
-    summary: "Biomining would benefit from better collaboration between researchers, industry, and other stakeholders—but mining's historically secretive culture and weak connections to biology create barriers. Better collaboration would reduce miscommunications and knowledge gaps during onboarding and technology transfer.",
+    summary: "Biomining would benefit from better collaboration between researchers, industry, and other stakeholders—but mining's IP-protective, risk-averse culture and weak connections to biology create barriers. Better collaboration would reduce miscommunications, address knowledge gaps and improve adoption confidence during onboarding and technology transfer.",
     details: [
       "Cross-sector consortia that bring together mining companies, biotech firms, and researchers to align goals and share knowledge.",
       "Funding mechanisms that connect fundamental research with field pilots and industrial applications.",
@@ -71,7 +71,7 @@ const themes = [
   {
     number: 7,
     title: "Bridging Research to Industry",
-    summary: "Academics and mines have traditionally struggled to collaborate, and there is little awareness of the actual problems the mining industry faces. Bridging this gap would accelerate the path from discovery to deployment.",
+    summary: "Collaboration between academia and industry has historically been limited, and public research often lacks focus on the practical problems the mining industry faces. Bridging this gap would accelerate the path from discovery to deployment.",
     details: [
       "IP navigation and translational support for biomining innovators is lacking.",
       "Shared precompetitive pipelines could cut time and cost to deployable technologies.",
@@ -81,7 +81,7 @@ const themes = [
   {
     number: 8,
     title: "Integrating Biotech into Emerging Mining Innovations",
-    summary: "Mining rarely innovates—but when it does, biotech should be at the table. Some groups are already rethinking mining practices, and we need to identify where biotech fits into these new designs. From repurposing old mine sites to zero-waste processing, these opportunities range from immediately achievable to ambitious long-term goals.",
+    summary: "With thin margins, well-developed processes, and costly downtime, mining is rightfully cautious when adopting new technologies. Positioning biology as a tool to augment existing practices — rather than replace them — is key to gaining adoption. Some groups are already rethinking mining practices, but we need to design and engineer complementary flowsheets to leverage biology's potential rather than bolting it on as an afterthought. From repurposing old mine sites to zero-waste processing, these opportunities range from immediately achievable to ambitious long-term goals.",
     details: [
       "Shared scale-up infrastructure and tools, including repurposing former mines and contaminated sites as testing grounds and creating standardized pilot plants.",
       "Centralized biotech facilities that process tailings and waste for small operators who can't afford their own infrastructure.",

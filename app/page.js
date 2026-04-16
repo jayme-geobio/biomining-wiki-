@@ -11,9 +11,9 @@ export default function BiominingHome() {
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 pt-4 pb-6">
-          {/* Hero Card + Ghost Box */}
-          <div className="mb-6">
-            <div className="relative w-full" style={{ minHeight: '470px', isolation: 'isolate' }}>
+          {/* Hero Card + Ghost Box — full SVG version for wide screens (sm+) */}
+          <div className="mb-6 hidden sm:block">
+            <div className="relative w-full hero-svg-container" style={{ isolation: 'isolate' }}>
               {/* Pre-blurred backdrop matching body's background image, masked to green shape */}
               {(() => {
                 const greenPath = "M56 791V90.5C56 73.6553 69.6553 60 86.5 60H1193.36C1206.88 60 1219.82 65.4465 1228.31 75.9557C1257.64 112.253 1323.03 207.029 1317 324.5C1309.85 463.669 1155.76 596.892 1131.66 616.914C1129.49 618.713 1127.53 620.576 1125.67 622.685C1075.48 679.403 1051.8 721.481 1041.88 793.998C1038.29 820.248 1016.8 841 990.303 841H106C78.3858 841 56 818.614 56 791Z";
@@ -80,25 +80,54 @@ export default function BiominingHome() {
                 src="/images/homeworld-logo-full.png"
                 alt="Homeworld Collective"
                 className="absolute z-10"
-                style={{ top: '6%', left: '3%', width: '16%' }}
+                style={{ top: '6%', left: '3%', width: 'clamp(140px, 16%, 320px)' }}
               />
 
               {/* Title + subtitle */}
-              <div className="absolute z-10" style={{ bottom: '8%', left: '3%', right: '35%' }}>
-                <h1 className="text-5xl font-normal text-white tracking-tight" style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', lineHeight: '1.05' }}>
-                  The Biomining Handbook
+              <div className="absolute z-10" style={{ bottom: '8%', left: '3%', right: '38%' }}>
+                <h1 className="text-white font-normal" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 5rem)', lineHeight: '1.05' }}>
+                  The Biomining<br />Handbook
                 </h1>
-                <p className="text-xl text-white font-extralight mt-3">
+                <p className="text-white font-extralight mt-3" style={{ fontSize: 'clamp(0.75rem, 1.2vw, 1.125rem)', lineHeight: '1.3', maxWidth: '85%' }}>
                   A practical guide for biologists and mining professionals
                 </p>
               </div>
 
               {/* TOC - positioned within blue shape */}
               <div
-                className="hidden sm:block absolute z-10"
+                className="absolute z-10"
                 style={{ top: '8%', right: '7%', bottom: '8%', width: '26%' }}
               >
                 <TableOfContents bare />
+              </div>
+            </div>
+          </div>
+
+          {/* Simpler hero for very narrow screens (below sm) */}
+          <div className="mb-6 sm:hidden">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-white" style={{ backgroundColor: '#779883' }}>
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: "url('/images/background.png')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  filter: 'blur(14px)',
+                  opacity: 0.7,
+                }}
+              />
+              <div className="relative p-6 sm:p-8">
+                <img
+                  src="/images/homeworld-logo-full.png"
+                  alt="Homeworld Collective"
+                  className="w-32 sm:w-40 mb-8"
+                />
+                <h1 className="text-white font-normal text-4xl sm:text-5xl leading-tight">
+                  The Biomining Handbook
+                </h1>
+                <p className="text-white font-extralight mt-3 text-base sm:text-lg">
+                  A practical guide for biologists and mining professionals
+                </p>
               </div>
             </div>
           </div>
@@ -174,11 +203,17 @@ export default function BiominingHome() {
                       <Atom className="w-5 h-5 text-emerald-600" />
                       <h4 className="text-[#264563] font-semibold">Mechanisms</h4>
                     </div>
-                    <ul className="text-[#264563] text-sm space-y-1.5 ml-1">
-                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Bioleaching & biooxidation</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Bioseparation & biosorption</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Bioprecipitation</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Monitoring & biosensing</li>
+                    <ul className="text-[#264563] text-sm ml-1 grid grid-cols-2 gap-x-3 gap-y-1.5">
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Bioleaching</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Biooxidation</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Bioseparation</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Biosorption</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Bioaccumulation</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Bioprecipitation</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Biomineralization</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Bioflotation</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Phytomining</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Biosensing</li>
                     </ul>
                   </div>
                   <ArrowRight className="w-10 h-10 text-[#264563] flex-shrink-0 rotate-90 sm:rotate-0" />
@@ -187,11 +222,17 @@ export default function BiominingHome() {
                       <Hammer className="w-5 h-5 text-emerald-600" />
                       <h4 className="text-[#264563] font-semibold">Applications</h4>
                     </div>
-                    <ul className="text-[#264563] text-sm space-y-1.5 ml-1">
-                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Heap & tank leaching</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Metal separation & polishing</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>AMD treatment & closure</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600 mt-0.5">•</span>Tailings reprocessing</li>
+                    <ul className="text-[#264563] text-sm ml-1 grid grid-cols-2 gap-x-3 gap-y-1.5">
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Heap leaching</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Tank leaching</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>In-stope leaching</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Metal separation</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Stream polishing</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>AMD treatment</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Mine closure</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Tailings reprocessing</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>E-waste recovery</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Ground stabilization</li>
                     </ul>
                   </div>
                 </div>
@@ -215,7 +256,7 @@ export default function BiominingHome() {
                   polymetallic ores, process waters with diverse co-metals, legacy wastes, and tight operational constraints.
                 </p>
                 <p className="text-emerald-700 font-semibold">
-                  This complexity makes conventional chemistry expensive, blunt, or risky. Biology can couple selectivity with adaptation to unlock value.
+                  This complexity can make conventional chemistry overly expensive, intensive, or risky. Biology can couple selectivity with adaptation to unlock value.
                 </p>
               </div>
             </div>
@@ -224,28 +265,28 @@ export default function BiominingHome() {
           {/* Dual Path Selection */}
           <div className="grid md:grid-cols-2 gap-8 mt-6">
             <PathCard
-              title="Biology 101"
-              subtitle="Understand how biology can enhance your operations"
+              title="Mining 101"
+              subtitle="Learn how your biology fits into mining operations"
               icon={Mountain}
               color="blue"
+              sections={[
+                { title: "Mining Value Chain - Stage by Stage", icon: Factory },
+                { title: "Constraints That Shape Bio-Adoption", icon: AlertTriangle }
+              ]}
+              link="/for-biologists"
+            />
+
+            <PathCard
+              title="Biology 101"
+              subtitle="Understand how biology can enhance your operations"
+              icon={Microscope}
+              color="emerald"
               sections={[
                 { title: "Biological Systems in Mining", icon: Microscope },
                 { title: "Mechanisms of Metal Mobilization & Capture", icon: Beaker },
                 { title: "Biomining Modalities & Flowsheets", icon: Factory }
               ]}
               link="/for-miners"
-            />
-
-            <PathCard
-              title="Mining 101"
-              subtitle="Learn how your biology fits into mining operations"
-              icon={Microscope}
-              color="emerald"
-              sections={[
-                { title: "Mining Value Chain - Stage by Stage", icon: Factory },
-                { title: "Constraints That Shape Bio-Adoption", icon: AlertTriangle }
-              ]}
-              link="/for-biologists"
             />
           </div>
 
@@ -258,7 +299,7 @@ export default function BiominingHome() {
               <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
                 <ResourceCard
                   title="What Is Biomining?"
-                  description="Definitions, mechanisms, and where biotech rivals chemistry"
+                  description="Definitions, mechanisms, and where biotech complements and rivals chemistry"
                   icon={GraduationCap}
                   link="/what-is-biomining"
                 />
