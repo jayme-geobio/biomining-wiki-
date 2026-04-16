@@ -26,7 +26,8 @@ const themes = [
     details: [
       <>An 'environment-first' perspective could reveal <GlossaryTerm term="Metabolism">metabolisms</GlossaryTerm> or organisms not otherwise considered for biomining.</>,
       "Frameworks that connect biological possibilities to corresponding mineralogy or geochemistry are needed.",
-      "Understanding evolutionary fitness and environmental context can guide which biology to deploy where."
+      "Understanding evolutionary fitness and environmental context can guide which biology to deploy where.",
+      "Many geomicrobiological discoveries that could be relevant to biomining have not yet left academic labs, leaving a reservoir of untapped biology waiting to be matched with real mining challenges."
     ]
   },
   {
