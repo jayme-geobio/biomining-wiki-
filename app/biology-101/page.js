@@ -91,7 +91,7 @@ export default function ForMiners() {
                   <ModalityCard
                     title="Dump & Heap Bioleaching"
                     description={<><GlossaryTerm term="Bulk Waste Rock" definition="Rock discarded prior to metallurgical extraction (overburden, low-grade, refractory, or gangue-rich material)">Low-grade sulfide ores</GlossaryTerm> piled on pads and irrigated with acidic ferric solutions. Native or <GlossaryTerm term="Inoculum" definition="A prepared microbial culture introduced to initiate or enhance biological activity in a process">inoculated</GlossaryTerm> <GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">acidophiles</GlossaryTerm> catalyze Fe & S oxidation and metal release.</>}
-                    applications="Common for copper sulfide ores, with growing interest for other sulfides"
+                    applications="Common for copper sulfide ores, with growing interest for other sulfides and some oxide ores"
                     parameters={[
                       "Time: Months to years",
                       "Temperature: Ambient to ~50°C",

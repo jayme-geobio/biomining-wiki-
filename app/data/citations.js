@@ -252,6 +252,19 @@ export const citationsData = {
       pages: "319-326",
       tags: ["e-waste", "bioleaching"]
     }
+  ],
+  inspiredBy: [
+    {
+      id: 25,
+      authors: "Project InnerSpace",
+      year: "2023/2024",
+      title: "From Core to Code: The Future of Geothermal Energy",
+      journal: "Project InnerSpace",
+      volume: "",
+      pages: "",
+      link: "https://projectinnerspace.org/resources/Powering-the-AI-Revolution.pdf",
+      tags: ["inspiration", "geothermal", "report"]
+    }
   ]
 };
 
@@ -262,5 +275,6 @@ export const categoryLabels = {
   bioseparation: "Bioseparation & REEs",
   remediation: "Remediation & AMD Treatment",
   phytomining: "Phytomining & Agromining",
-  ewaste: "E-waste & Urban Mining"
+  ewaste: "E-waste & Urban Mining",
+  inspiredBy: "Inspired By"
 };

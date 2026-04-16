@@ -121,10 +121,10 @@ export default function ForBiologists() {
                 number="3"
                 title="Mining: Moving Rock at Massive Scale"
                 color="emerald"
-                image="/images/open-pit-mine.jpg"
+                image="/images/open-pit-mine-kalgoorlie.jpg"
                 imageCaption="Open pit mine — the scale of rock movement in modern mining operations"
-                imageSource="Jayme Feyhl-Buska"
-                imageDate="Date unknown"
+                imageSource="Photo by Matthew de Livera on Unsplash"
+                imageDate="August 9, 2021"
                 what={<>Crews drill, blast, load, and haul rock at a scale of tens to hundreds of thousands of tonnes per day. <strong className="font-semibold">This is equivalent to 2,000 to 15,000 elephants&apos; worth of rock every day!</strong><br /><br /><strong className="font-semibold">What gets moved isn&apos;t uniform material — ore bodies are often extremely geologically and mineralogically complex.</strong> Once mined, rock is sorted by grade:<ul className="ml-5 my-2 list-none space-y-0.5"><li>high-grade ore → processing</li><li>low-grade → stockpiles</li><li>waste → dumps</li></ul>The boundary where ore ends and <GlossaryTerm term="Gangue" definition="Waste minerals in ore that have no commercial value and are separated out during processing">gangue</GlossaryTerm> begins is never clean in nature. Grade control always involves tradeoffs between diluted material reaching processing and valuable ore that never does.</>}
                 whyBiology={[
                   <>Input material isn't pure - it's stressed, mixed, partially oxidized rock whose complex mineralogy significantly affects <GlossaryTerm term="Biomining">biomining</GlossaryTerm> effectiveness</>,
@@ -224,10 +224,10 @@ export default function ForBiologists() {
                 icon={TrendingUp}
                 description="Mid-size mines process tens of millions of tonnes of ore annually."
                 implication="Be explicit about scale. Side-stream bio-units that augment existing operations are more realistic early targets than whole-plant replacements"
-                image="/images/mine-scale.jpg"
+                image="/images/mine-scale-chuquicamata.jpg"
                 imageCaption="Large-scale mining operation — millions of tonnes of ore and associated infrastructure"
-                imageSource="Jayme Feyhl-Buska"
-                imageDate="Date unknown"
+                imageSource="Photo by Bruna Fiscuk on Unsplash"
+                imageDate="June 5, 2019"
               />
               <ConstraintCard
                 title="Process Integration & Risk"

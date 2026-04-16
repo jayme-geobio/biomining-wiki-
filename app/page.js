@@ -91,7 +91,7 @@ export default function BiominingHome() {
                 <h1 className="text-white font-normal" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 5rem)', lineHeight: '1.05' }}>
                   The Biomining<br />Handbook
                 </h1>
-                <p className="text-white font-extralight mt-3" style={{ fontSize: 'clamp(0.75rem, 1.2vw, 1.125rem)', lineHeight: '1.3', maxWidth: '85%' }}>
+                <p className="text-white font-extralight mt-3" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.25rem)', lineHeight: '1.3', maxWidth: '85%' }}>
                   A practical guide for biologists and mining professionals
                 </p>
               </div>
@@ -128,7 +128,7 @@ export default function BiominingHome() {
                 <h1 className="text-white font-normal text-4xl sm:text-5xl leading-tight">
                   The Biomining Handbook
                 </h1>
-                <p className="text-white font-extralight mt-3 text-base sm:text-lg">
+                <p className="text-white font-extralight mt-3" style={{ fontSize: '20px' }}>
                   A practical guide for biologists and mining professionals
                 </p>
               </div>
@@ -203,42 +203,42 @@ export default function BiominingHome() {
                   Any biological mechanism used to aid metal recovery, mineral processing, or the management of
                   mining-related wastes and liabilities.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
+                <div className="flex flex-col lg:flex-row items-center gap-4 mt-6">
                   <div className="bg-gray-50 rounded-xl p-5 border-2 border-[#264563]/20 flex-1 w-full">
                     <div className="flex items-center gap-2 mb-3">
                       <Atom className="w-5 h-5 text-emerald-600" />
                       <h4 className="text-[#264563] font-semibold">Mechanisms</h4>
                     </div>
                     <ul className="text-[#264563] text-sm ml-1 grid grid-cols-2 gap-x-3 gap-y-1.5">
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Bioleaching">Bioleaching</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Biooxidation">Biooxidation</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Bioseparation">Bioseparation</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Biosorption">Biosorption</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Bioaccumulation">Bioaccumulation</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Bioprecipitation">Bioprecipitation</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Biomineralization">Biomineralization</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Bioflotation">Bioflotation</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Phytomining">Phytomining</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Biosensing">Biosensing</GlossaryTerm></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Bioleaching">Bioleaching</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Biooxidation">Biooxidation</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Bioseparation">Bioseparation</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Biosorption">Biosorption</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Bioaccumulation">Bioaccumulation</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Bioprecipitation">Bioprecipitation</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Biomineralization">Biomineralization</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Bioflotation">Bioflotation</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Phytomining">Phytomining</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Biosensing">Biosensing</GlossaryTerm></span></li>
                     </ul>
                   </div>
-                  <ArrowRight className="w-10 h-10 text-[#264563] flex-shrink-0 rotate-90 sm:rotate-0" />
+                  <ArrowRight className="w-10 h-10 text-[#264563] flex-shrink-0 rotate-90 lg:rotate-0" />
                   <div className="bg-gray-50 rounded-xl p-5 border-2 border-[#264563]/20 flex-1 w-full">
                     <div className="flex items-center gap-2 mb-3">
                       <Hammer className="w-5 h-5 text-emerald-600" />
                       <h4 className="text-[#264563] font-semibold">Applications</h4>
                     </div>
                     <ul className="text-[#264563] text-sm ml-1 grid grid-cols-2 gap-x-3 gap-y-1.5">
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Heap Leaching">Heap leaching</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Tank Leaching">Tank leaching</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="In-stope Leaching">In-stope leaching</GlossaryTerm></li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Metal separation</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Stream polishing</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Acid Mine Drainage (AMD)">AMD</GlossaryTerm> treatment</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Mine closure</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Tailings">Tailings</GlossaryTerm> reprocessing</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Electronic Waste (E-waste)">E-waste</GlossaryTerm> recovery</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Ground stabilization</li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Heap Leaching">Heap leaching</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Tank Leaching">Tank leaching</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="In-stope Leaching">In-stope leaching</GlossaryTerm></span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words">Metal separation</span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words">Stream polishing</span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Acid Mine Drainage (AMD)">AMD</GlossaryTerm> treatment</span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words">Mine closure</span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Tailings">Tailings</GlossaryTerm> reprocessing</span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words"><GlossaryTerm term="Electronic Waste (E-waste)">E-waste</GlossaryTerm> recovery</span></li>
+                      <li className="flex items-start gap-2 min-w-0 break-words"><span className="text-emerald-600 flex-shrink-0">•</span><span className="min-w-0 break-words">Ground stabilization</span></li>
                     </ul>
                   </div>
                 </div>

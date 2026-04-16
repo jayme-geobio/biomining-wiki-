@@ -120,6 +120,19 @@ export default function Citations() {
                           <span className="text-[#264563]/70">{ref.journal}</span>
                           {ref.volume && <span className="text-[#264563]/70">, {ref.volume}</span>}
                           {ref.pages && <span className="text-[#264563]/70">, {ref.pages}</span>}.
+                          {ref.link && (
+                            <>
+                              {' '}
+                              <a
+                                href={ref.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-emerald-700 hover:text-emerald-800 underline font-medium"
+                              >
+                                Link
+                              </a>
+                            </>
+                          )}
                         </p>
                         <div className="flex gap-1.5 mt-2 flex-wrap">
                           {ref.tags.map((tag, i) => (

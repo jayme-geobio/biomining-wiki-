@@ -15,10 +15,6 @@ const materialsData = {
   ard: {
     name: "Acid Rock Drainage (ARD) / Acid Mine Drainage (AMD)",
     icon: Droplets,
-    image: "/images/amd-drainage.jpg",
-    imageCaption: "Iron-oxide and microbial precipitates formed by acid mine drainage",
-    imageSource: "Jayme Feyhl-Buska",
-    imageDate: "Date unknown",
     definition: "Acidic, metal-rich drainage formed when sulfide minerals are exposed to oxygen and water; often biologically accelerated",
     hazards: [
       "Ecological damage to watersheds and groundwater",
