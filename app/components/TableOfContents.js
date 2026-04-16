@@ -16,8 +16,8 @@ const chapters = [
     name: 'Learn',
     pages: [
       { name: 'What Is Biomining?', href: '/what-is-biomining' },
-      { name: 'Mining 101', href: '/for-biologists' },
-      { name: 'Biology 101', href: '/for-miners' },
+      { name: 'Mining 101', href: '/mining-101' },
+      { name: 'Biology 101', href: '/biology-101' },
       { name: 'Complex Materials Playbook', href: '/complex-materials' },
       { name: 'Example Flowsheets', href: '/flowsheets' },
     ],
@@ -26,16 +26,16 @@ const chapters = [
     number: 3,
     name: 'For Professionals',
     pages: [
-      { name: 'Technology Assessment', href: '/technology-evaluation' },
+      { name: 'Technology Assessment', href: '/technology-assessment' },
     ],
   },
   {
     number: 4,
     name: 'Resources',
     pages: [
-      { name: 'Frontier Challenges', href: '/research' },
+      { name: 'Frontier Challenges', href: '/frontier-challenges' },
       { name: 'Core Glossary', href: '/glossary' },
-      { name: 'References', href: '/citations' },
+      { name: 'References', href: '/references' },
     ],
   },
 ];

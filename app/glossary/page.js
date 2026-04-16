@@ -173,14 +173,14 @@ function TermCard({ term, id, expanded, onToggle }) {
         onClick={onToggle}
         className="w-full p-4 flex items-center justify-between hover:bg-gray-100 transition-colors"
       >
-        <div className="flex items-center gap-3">
-          <span className={`px-2 py-1 rounded text-xs font-semibold text-white ${colors.badge}`}>
+        <div className="flex items-center gap-3 text-left min-w-0 flex-1">
+          <span className={`px-2 py-1 rounded text-xs font-semibold text-white flex-shrink-0 ${colors.badge}`}>
             {term.category === 'mining' ? <Mountain className="w-3 h-3 inline" /> : <Microscope className="w-3 h-3 inline" />}
           </span>
-          <h3 className="text-lg font-bold text-[#264563]">{term.term}</h3>
+          <h3 className="font-bold text-[#264563] whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.85rem, 2vw, 1.125rem)' }}>{term.term}</h3>
         </div>
-        <div className="flex items-center gap-2 text-[#264563]/50 text-sm shrink-0">
-          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+        <div className="flex items-center gap-1 sm:gap-2 text-[#264563]/50 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+          <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
           {expanded ? <ChevronDown className="w-4 h-4 text-[#264563]" /> : <ChevronRight className="w-4 h-4 text-[#264563]" />}
         </div>
       </button>

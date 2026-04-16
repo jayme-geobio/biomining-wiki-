@@ -6,6 +6,7 @@ import { ChevronDown, ChevronRight } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 import TableOfContents from '../components/TableOfContents';
 import PageNavigation from '../components/PageNavigation';
+import GlossaryTerm from '../components/GlossaryTerm';
 
 const themes = [
   {
@@ -23,7 +24,7 @@ const themes = [
     title: "Engineering by Thinking Backwards from the Source Material",
     summary: "Most biomining approaches start with known microbial capabilities and look for applications. We need to flip this: start with the mining challenge or environment, then work backwards to identify relevant biology. This requires better frameworks for matching geological conditions with geobiological mechanisms—thinking from the environment to predict relevant biology, and from biological capabilities to identify targetable mineralogy.",
     details: [
-      "An 'environment-first' perspective could reveal metabolisms or organisms not otherwise considered for biomining.",
+      <>An 'environment-first' perspective could reveal <GlossaryTerm term="Metabolism">metabolisms</GlossaryTerm> or organisms not otherwise considered for biomining.</>,
       "Frameworks that connect biological possibilities to corresponding mineralogy or geochemistry are needed.",
       "Understanding evolutionary fitness and environmental context can guide which biology to deploy where."
     ]
@@ -35,7 +36,7 @@ const themes = [
     details: [
       "Transparency standards like traceable datasets and provenance markers would build confidence and enable comparison across projects.",
       "Measurement and control systems including real-time monitoring and functional feedback can track whether existing technologies are effective in the field.",
-      "Engineering biology for improved mining through programmable metallophores and engineered binding proteins opens new possibilities for selective metal recovery."
+      <>Engineering biology for improved mining through programmable <GlossaryTerm term="Metallophores / Siderophores">metallophores</GlossaryTerm> and engineered binding <GlossaryTerm term="Protein">proteins</GlossaryTerm> opens new possibilities for selective metal recovery.</>
     ]
   },
   {
@@ -84,8 +85,8 @@ const themes = [
     summary: "With thin margins, well-developed processes, and costly downtime, mining is rightfully cautious when adopting new technologies. Positioning biology as a tool to augment existing practices — rather than replace them — is key to gaining adoption. Some groups are already rethinking mining practices, but we need to design and engineer complementary flowsheets to leverage biology's potential rather than bolting it on as an afterthought. From repurposing old mine sites to zero-waste processing, these opportunities range from immediately achievable to ambitious long-term goals.",
     details: [
       "Shared scale-up infrastructure and tools, including repurposing former mines and contaminated sites as testing grounds and creating standardized pilot plants.",
-      "Centralized biotech facilities that process tailings and waste for small operators who can't afford their own infrastructure.",
-      "Shared resources like biobanks of microbes from legacy mine sites and Superfund sites for bioprospecting."
+      <>Centralized biotech facilities that process <GlossaryTerm term="Tailings">tailings</GlossaryTerm> and waste for small operators who can't afford their own infrastructure.</>,
+      <>Shared resources like biobanks of microbes from legacy mine sites and Superfund sites for <GlossaryTerm term="Bioprospecting">bioprospecting</GlossaryTerm>.</>
     ]
   }
 ];
@@ -144,14 +145,15 @@ export default function Research() {
               <div key={idx}>
                 <button
                   onClick={() => toggleTheme(idx)}
-                  className={`w-full rounded-xl border-2 ${openThemes.has(idx) ? 'border-[#264563]/40' : 'border-white'} bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors h-24`}
+                  className={`w-full rounded-xl border-2 ${openThemes.has(idx) ? 'border-[#264563]/40' : 'border-white'} bg-[#264563] px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2 hover:bg-[#1e3450] transition-colors`}
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="text-white font-bold text-lg w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">{theme.number}</span>
-                    <h3 className="text-lg font-bold text-white text-left">{theme.title}</h3>
+                  <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                    <span className="text-white font-bold w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0" style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.125rem)' }}>{theme.number}</span>
+                    <h3 className="font-bold text-white text-left whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1" style={{ fontSize: 'clamp(0.65rem, 1.6vw, 1.125rem)' }}>{theme.title}</h3>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70 text-sm shrink-0 ml-2">
-                    {openThemes.has(idx) ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+                  <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+                    <span className="hidden sm:inline">{openThemes.has(idx) ? 'Click to collapse' : 'Click to expand'}</span>
+                    {openThemes.has(idx) ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
                   </div>
                 </button>
                 {openThemes.has(idx) && (

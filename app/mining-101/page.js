@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Mountain, Factory, Beaker, AlertCircle, TrendingUp, Clock, Droplets, FileCheck, Camera } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
@@ -43,25 +44,25 @@ export default function ForBiologists() {
             </h2>
             <div className="text-[#264563] space-y-3">
               <p>
-                From the mining side, <strong>"biomining" is not a magical stand-alone box</strong>. It's a candidate
+                From the mining side, <strong>"<GlossaryTerm term="Biomining">biomining</GlossaryTerm>" is not a magical stand-alone box</strong>. It's a candidate
                 step in a tightly constrained value chain where:
               </p>
               <ul className="ml-6 space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
-                  Rock is moved at a scale of <strong>billions of tonnes per year</strong>
+                  <span className="text-[#264563] flex-shrink-0" style={{marginTop: '-0.1em'}}>•</span>
+                  <span className="min-w-0">Rock is moved at a scale of <strong>billions of tonnes per year</strong></span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
-                  Margins can be thin and metal prices are volatile
+                  <span className="text-[#264563] flex-shrink-0" style={{marginTop: '-0.1em'}}>•</span>
+                  <span className="min-w-0">Margins can be thin and metal prices are volatile</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
-                  Timelines, water availability, and permitting often matter as much as chemistry
+                  <span className="text-[#264563] flex-shrink-0" style={{marginTop: '-0.1em'}}>•</span>
+                  <span className="min-w-0">Timelines, water availability, and permitting often matter as much as chemistry</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#264563]" style={{marginTop: '-0.1em'}}>•</span>
-                  Geological and mineralogical complexity is a defining challenge
+                  <span className="text-[#264563] flex-shrink-0" style={{marginTop: '-0.1em'}}>•</span>
+                  <span className="min-w-0">Geological and mineralogical complexity is a defining challenge</span>
                 </li>
               </ul>
               <p className="mt-4 font-semibold">
@@ -76,7 +77,7 @@ export default function ForBiologists() {
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
           <h2 className="text-2xl font-bold text-[#264563] mb-6">Mining Operations & Constraints</h2>
           <Section
-            title="Mining Value Chain - Stage by Stage"
+            title="Mining Value Chain — Stage by Stage"
             icon={Factory}
             expanded={openSections.has('stages')}
             onToggle={() => toggleSection('stages')}
@@ -104,12 +105,12 @@ export default function ForBiologists() {
                 color="amber"
                 what={<>Planners choose a mining method (<GlossaryTerm term="Open Pit Mine" definition="A surface mining method where ore is extracted from a large, open excavation on the earth's surface">open pit</GlossaryTerm> vs <GlossaryTerm term="Underground Mine" definition="A mining method where ore is extracted through tunnels and shafts beneath the earth's surface">underground</GlossaryTerm> — based on ore body depth, shape, and grade), mine layout, and material routing to ore stockpiles, low-grade stockpiles, waste dumps, or <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>.</>}
                 whyBiology={[
-                  "Decisions here govern tonnage, time, and access for biomining",
+                  <>Decisions here govern tonnage, time, and access for <GlossaryTerm term="Biomining">biomining</GlossaryTerm></>,
                   <>Long-residence-time bio-processes best suited for stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm></>,
                   "Include bio-recovery in closure plans from day one"
                 ]}
                 whereBio={[
-                  "Flowsheet design with bio-process options",
+                  <><GlossaryTerm term="Flowsheet">Flowsheet</GlossaryTerm> design with bio-process options</>,
                   "Biologically compatible stockpile design",
                   "In-situ bio-recovery feasibility",
                   "Bioremediation and bio-recovery in closure plans"
@@ -126,9 +127,9 @@ export default function ForBiologists() {
                 imageDate="Date unknown"
                 what={<>Crews drill, blast, load, and haul rock at a scale of tens to hundreds of thousands of tonnes per day. <strong className="font-semibold">This is equivalent to 2,000 to 15,000 elephants&apos; worth of rock every day!</strong><br /><br /><strong className="font-semibold">What gets moved isn&apos;t uniform material — ore bodies are often extremely geologically and mineralogically complex.</strong> Once mined, rock is sorted by grade:<ul className="ml-5 my-2 list-none space-y-0.5"><li>high-grade ore → processing</li><li>low-grade → stockpiles</li><li>waste → dumps</li></ul>The boundary where ore ends and <GlossaryTerm term="Gangue" definition="Waste minerals in ore that have no commercial value and are separated out during processing">gangue</GlossaryTerm> begins is never clean in nature. Grade control always involves tradeoffs between diluted material reaching processing and valuable ore that never does.</>}
                 whyBiology={[
-                  "Input material isn't pure - it's stressed, mixed, partially oxidized rock whose complex mineralogy significantly affects biomining effectiveness",
+                  <>Input material isn't pure - it's stressed, mixed, partially oxidized rock whose complex mineralogy significantly affects <GlossaryTerm term="Biomining">biomining</GlossaryTerm> effectiveness</>,
                   "The scale of rock movement is enormous — biological technologies must be designed for such scale",
-                  "Biomining opportunities in waste rejection and ROM (run-of-mine) upgrading are missed when mining decisions happen without a clear proposed bio path"
+                  <><GlossaryTerm term="Biomining">Biomining</GlossaryTerm> opportunities in waste rejection and ROM (run-of-mine) upgrading are missed when mining decisions happen without a clear proposed bio path</>
                 ]}
                 whereBio={[
                   <><GlossaryTerm term="In-stope Leaching">In-stope leaching</GlossaryTerm> (injecting solutions into fractured zones)</>,
@@ -149,7 +150,7 @@ export default function ForBiologists() {
                   <><GlossaryTerm term="Particle Size Distribution (PSD)">Particle size distribution</GlossaryTerm> affects leach kinetics</>
                 ]}
                 whereBio={[
-                  "Bio-assisted comminution — microbes weakening grain boundaries (also known as pre-conditioning)"
+                  <>Bio-assisted <GlossaryTerm term="Comminution">comminution</GlossaryTerm> — microbes weakening grain boundaries (also known as pre-conditioning)</>
                 ]}
               />
 
@@ -158,15 +159,15 @@ export default function ForBiologists() {
                 title="Concentration & Leaching"
                 color="sky"
                 footerNote={<>Stages 5 &amp; 6 are sometimes collectively called <strong>&apos;mineral processing&apos;</strong></>}
-                what={<>Metals are either concentrated using flotation, gravity, or magnetic separation, or extracted by leaching into solution. These routes produce either <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrate</GlossaryTerm> or a metal-bearing leach solution, often called a <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="The metal-bearing solution produced when a lixiviant dissolves target metals from ore during leaching">pregnant leach solution (PLS)</GlossaryTerm>.</>}
+                what={<>Metals are either concentrated using <GlossaryTerm term="Froth Flotation">flotation</GlossaryTerm>, gravity, or magnetic separation, or extracted by <GlossaryTerm term="Leach">leaching</GlossaryTerm> into solution. These routes produce either <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrate</GlossaryTerm> or a metal-bearing leach solution, often called a <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="The metal-bearing solution produced when a lixiviant dissolves target metals from ore during leaching">pregnant leach solution (PLS)</GlossaryTerm>.</>}
                 whyBiology={[
                   <>Mineral surface chemistry governs <GlossaryTerm term="Froth Flotation" definition="A separation process that uses air bubbles and chemical reagents to selectively float target minerals to the surface for collection">flotation</GlossaryTerm> selectivity and <GlossaryTerm term="Leach" definition="The process of dissolving metals or minerals from ore using a chemical solution (lixiviant)">leach</GlossaryTerm> kinetics</>,
                   "Biology can modify mineral surfaces to improve or suppress flotation of specific minerals",
                   <><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> can replace or supplement chemical leaching for sulfide ores</>
                 ]}
                 whereBio={[
-                  "Bio-modification of mineral surfaces to improve flotation or separation",
-                  <>Bioleaching/<GlossaryTerm term="Biooxidation" definition="Microbially driven oxidation of sulfides where the valuable metal remains in the solid phase">biooxidation</GlossaryTerm> for direct metal extraction</>,
+                  <>Bio-modification of <GlossaryTerm term="Mineral">mineral</GlossaryTerm> surfaces to improve <GlossaryTerm term="Froth Flotation">flotation</GlossaryTerm> or separation</>,
+                  <><GlossaryTerm term="Bioleaching">Bioleaching</GlossaryTerm>/<GlossaryTerm term="Biooxidation" definition="Microbially driven oxidation of sulfides where the valuable metal remains in the solid phase">biooxidation</GlossaryTerm> for direct metal extraction</>,
                 ]}
               />
 
@@ -215,7 +216,7 @@ export default function ForBiologists() {
               <ConstraintCard
                 title="Time"
                 icon={Clock}
-                description="Operations expect fast processing times - often hours to days, not months to years (except in heap or dump leaching)"
+                description="Operations expect fast processing times — often hours to days, not months to years (except in heap or dump leaching)"
                 implication={<>If a biological process is slow, consider treating stockpiles, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm>, or <GlossaryTerm term="Acid Mine Drainage (AMD)" definition="Acidic, metal-rich water produced when sulfide minerals in mine waste are exposed to air and water; often accelerated by microbial activity">AMD</GlossaryTerm> where slow is acceptable, or use biology to condition/polish streams</>}
               />
               <ConstraintCard
@@ -259,7 +260,7 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
         onClick={onToggle}
         className="w-full bg-[#264563] p-4 sm:p-6 flex items-center justify-between gap-2 hover:bg-[#1e3450] transition-colors"
       >
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+        <div className="flex items-center gap-2 sm:gap-3 text-left min-w-0 flex-1">
           <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
           <h2 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 1.125rem)' }}>{title}</h2>
         </div>
@@ -326,9 +327,9 @@ function StageCard({ number, title, subtitle, footerNote, color, what, whyBiolog
       <div className="mb-4">
         <h4 className="text-sm font-semibold text-[#264563] mb-1">What it is:</h4>
         <p className="text-[#264563] text-sm">{what}</p>
-        {image && showImage && (
+        {image && showImage && typeof document !== 'undefined' && createPortal(
           <div
-            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4"
             onClick={() => setShowImage(false)}
           >
             <div
@@ -356,7 +357,8 @@ function StageCard({ number, title, subtitle, footerNote, color, what, whyBiolog
                 )}
               </div>
             </div>
-          </div>
+          </div>,
+          document.body
         )}
       </div>
 
@@ -415,9 +417,9 @@ function ConstraintCard({ title, icon: Icon, description, implication, image, im
           <strong>Implication:</strong> {implication}
         </p>
       </div>
-      {image && showImage && (
+      {image && showImage && typeof document !== 'undefined' && createPortal(
         <div
-          className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4"
           onClick={() => setShowImage(false)}
         >
           <div
@@ -445,7 +447,8 @@ function ConstraintCard({ title, icon: Icon, description, implication, image, im
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

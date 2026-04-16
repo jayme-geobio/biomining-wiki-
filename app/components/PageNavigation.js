@@ -6,14 +6,14 @@ import { usePathname } from 'next/navigation';
 const pages = [
   { name: 'About', href: '/' },
   { name: 'What Is Biomining?', href: '/what-is-biomining' },
-  { name: 'Mining 101', href: '/for-biologists' },
-  { name: 'Biology 101', href: '/for-miners' },
+  { name: 'Mining 101', href: '/mining-101' },
+  { name: 'Biology 101', href: '/biology-101' },
   { name: 'Complex Materials Playbook', href: '/complex-materials' },
   { name: 'Example Flowsheets', href: '/flowsheets' },
-  { name: 'Technology Assessment', href: '/technology-evaluation' },
-  { name: 'Frontier Challenges', href: '/research' },
+  { name: 'Technology Assessment', href: '/technology-assessment' },
+  { name: 'Frontier Challenges', href: '/frontier-challenges' },
   { name: 'Core Glossary', href: '/glossary' },
-  { name: 'References', href: '/citations' },
+  { name: 'References', href: '/references' },
 ];
 
 export default function PageNavigation() {

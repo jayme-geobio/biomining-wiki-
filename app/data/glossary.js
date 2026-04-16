@@ -229,7 +229,7 @@ export const glossaryData = {
       definition: "A solid inorganic substance with a well-defined crystal structure and chemical composition.",
       examples: "Quartz, chalcopyrite, pyrite",
       forBiologists: "Minerals are the building blocks of rocks that biological systems interact with. Different minerals require different biological strategies for metal extraction.",
-      forMiners: "Standard definition - biology doesn't change mineralogy, but can change reaction pathways."
+      forMiners: "Standard definition — biology doesn't change mineralogy, but can change reaction pathways."
     },
     {
       term: "Mining",
@@ -355,7 +355,7 @@ export const glossaryData = {
       definition: "A solid, naturally occurring aggregate of one or more minerals or organic matter.",
       examples: "Granite, basalt, ore bodies",
       forBiologists: "Your feedstock is rock, not pure minerals. Expect heterogeneity and variable reactivity.",
-      forMiners: "Biology works on real rock, not idealized single minerals - important for lab-to-field translation."
+      forMiners: "Biology works on real rock, not idealized single minerals — important for lab-to-field translation."
     },
     {
       term: "Scaling",
@@ -426,6 +426,41 @@ export const glossaryData = {
       examples: "Scale buildup in pipes, biofilm fouling of membranes, precipitate fouling of ion-exchange (IX) resins",
       forBiologists: "Biofouling can reduce bioseparation performance. Design for regeneration and cleaning cycles.",
       forMiners: "A common operational issue. Biological systems can both cause fouling (biofilms) and help prevent it (enzymatic cleaning)."
+    },
+    {
+      term: "Electronic Waste (E-waste)",
+      definition: "Discarded electronic devices — phones, computers, circuit boards, batteries, magnets — rich in copper, gold, silver, palladium, rare earth elements, and other critical metals embedded in complex polymer, glass, and ceramic matrices.",
+      examples: "Printed circuit boards, permanent magnets from hard drives and motors, spent lithium-ion batteries",
+      forBiologists: "A fast-growing, metal-rich feedstock. Complex matrices challenge selectivity. Bioleaching and engineered metal-binding proteins are active research areas.",
+      forMiners: "The fastest-growing waste stream globally. Thin margins and complex composition make it a natural target for lower-cost, more selective biological recovery."
+    },
+    {
+      term: "Phosphogypsum",
+      definition: "A solid byproduct of phosphate fertilizer manufacturing, produced when phosphate rock is treated with sulfuric acid. Contains trace radionuclides (uranium, radium decay products) plus rare earth elements and other critical metals.",
+      examples: "Stacks from phosphate fertilizer plants in Florida, Morocco, China",
+      forBiologists: "Contains recoverable REEs. Radionuclide content requires careful containment and process design.",
+      forMiners: "Billions of tonnes stockpiled globally. Limited current disposal options make it a candidate for biological valorization — recover REEs while stabilizing the residue."
+    },
+    {
+      term: "Red Mud",
+      definition: "Highly alkaline (pH ~10–13) caustic residue from the Bayer process of refining bauxite into alumina. Contains iron oxides, aluminum, titanium, scandium, and rare earth elements in a complex mineral matrix.",
+      examples: "Residue stacks at alumina refineries worldwide; notable spill in Ajka, Hungary (2010)",
+      forBiologists: "Extremely alkaline and high ionic strength — requires alkaliphilic organisms or neutralization pretreatment. REE and Sc recovery are active targets.",
+      forMiners: "Massive global stockpile (~4 billion tonnes). Bioleaching of Sc, REEs, and other metals could turn a liability into a revenue stream."
+    },
+    {
+      term: "Refractory Ores",
+      definition: "Ores where the target metal is locked inside a resistant mineral matrix (typically sulfides like pyrite or arsenopyrite) and cannot be recovered by direct leaching. Requires a breakdown step — roasting, pressure oxidation, or biooxidation — before conventional recovery.",
+      examples: "Refractory gold in arsenopyrite, refractory copper in chalcopyrite",
+      forBiologists: "Biooxidation (BIOX®, BacTech) is a commercially proven alternative to roasting and pressure oxidation for refractory gold. Opportunities exist for other metals.",
+      forMiners: "Reserves of easy-to-leach ores are declining, making refractory ores an increasing share of supply. Biology offers a lower-energy, lower-emissions alternative to thermal or high-pressure breakdown."
+    },
+    {
+      term: "Tank Leaching",
+      definition: "A leaching method in which ore, concentrate, or waste material is mixed with lixiviant inside a stirred tank reactor. Higher capital cost than heap leaching but offers controlled temperature, pH, aeration, and residence time, and faster kinetics.",
+      examples: "Stirred-tank biooxidation of refractory gold concentrate (BIOX®); tank bioleaching of polymetallic sulfides",
+      forBiologists: "Tanks allow close control of microbial conditions — ideal for thermophiles, fast kinetics, or complex feedstocks. Typical residence times are days to weeks.",
+      forMiners: "Used where higher recovery justifies the capital. Modular, controllable, and well-suited to valuable concentrates rather than bulk low-grade feed."
     }
   ],
   biology: [
@@ -441,7 +476,7 @@ export const glossaryData = {
       definition: "An organism that can grow on non-biological sources of energy, e.g. by fixing CO₂ into organic compounds using energy from light or mineral oxidation/reduction, which can then feed other organisms.",
       examples: "Acidithiobacillus ferrooxidans, sulfur-oxidizing bacteria",
       forBiologists: "Most bioleaching microbes are autotrophs (CO₂ fixers). They don't need organic carbon — simpler media requirements.",
-      forMiners: "Autotrophs don't need organic carbon - cheaper to operate in metal-rich, nutrient-poor environments."
+      forMiners: "Autotrophs don't need organic carbon — cheaper to operate in metal-rich, nutrient-poor environments."
     },
     {
       term: "Bioleaching",
@@ -518,7 +553,7 @@ export const glossaryData = {
       definition: "An organism that uses a mineral substrate as an energy source (a kind of autotroph).",
       examples: "Iron-oxidizers, sulfur-oxidizers",
       forBiologists: "Key players in bioleaching. They obtain electrons from inorganic minerals.",
-      forMiners: "Lithotrophs are the workforce of bioleaching - they generate the acids and oxidants that dissolve metals."
+      forMiners: "Lithotrophs are the workforce of bioleaching — they generate the acids and oxidants that dissolve metals."
     },
     {
       term: "Metallophores / Siderophores",
@@ -701,6 +736,34 @@ export const glossaryData = {
       examples: "Energy production (respiration, chemosynthesis), carbon fixation, synthesis of enzymes and metabolites",
       forBiologists: "Metabolism determines what substrates a microbe can use, what products it generates, and what conditions it requires — the starting point for bioprocess design.",
       forMiners: "Active biomining processes depend on microbial metabolism. Passive processes like biosorption do not require live, metabolizing cells — an important distinction when choosing a technology."
+    },
+    {
+      term: "Bioflotation",
+      definition: "The use of microbes or biomolecules to selectively alter mineral surface chemistry — making target minerals more or less hydrophobic — to improve separation in froth flotation.",
+      examples: "Microbial surface modification of pyrite to improve copper–iron separation",
+      forBiologists: "A relatively young field. Opportunities in adhesion biology and surface chemistry of industrial organisms.",
+      forMiners: "Potential to improve flotation selectivity for complex ores where conventional reagents struggle."
+    },
+    {
+      term: "Bioprecipitation",
+      definition: "Microbial activity that causes dissolved metals to precipitate out of solution as solid minerals, typically by altering local pH, Eh, or sulfide concentration. A core mechanism for recovering and immobilizing metals from dilute streams.",
+      examples: "Sulfate-reducing bacteria (SRB) precipitating Cu and Zn as metal sulfides; urease-driven calcite precipitation for ground stabilization",
+      forBiologists: "Closely related to biomineralization, but emphasizes the precipitation event as the unit operation. SRB-driven metal sulfide precipitation is commercially used in water treatment.",
+      forMiners: "A natural fit for AMD treatment and metal recovery from dilute streams, with the co-benefit of generating sellable metal sulfide concentrate."
+    },
+    {
+      term: "Biosensing",
+      definition: "Use of biological tools — whole cells, enzymes, engineered proteins, or molecular assays — to detect specific chemicals, metals, redox states, or biological activity, typically as inputs to process monitoring and control.",
+      examples: "Whole-cell biosensors for heavy metal detection in water; molecular assays for monitoring microbial community function in heaps",
+      forBiologists: "Emerging area combining synthetic biology with environmental monitoring. Strong overlap with bioprocess analytics and digital mining.",
+      forMiners: "Cheaper, more specific, often faster than laboratory analytics. Useful for early warning on leach chemistry drift or AMD risk."
+    },
+    {
+      term: "Phytomining",
+      definition: "The use of hyperaccumulator plants to absorb metals from soils, mine waste, or low-grade ore through their roots. Metals concentrate in plant tissues, which are harvested and processed (often by burning to a metal-rich ash) to recover the target metal.",
+      examples: "Nickel phytomining in ultramafic soils; recovery of cobalt, zinc, and rare earth elements from contaminated sites",
+      forBiologists: "Bridges plant biology, soil science, and metallurgy. Selection and breeding of hyperaccumulators is an active research area.",
+      forMiners: "Low throughput but very low cost. Best suited to large, low-grade, contaminated areas where other technologies are uneconomic — and offers co-benefits of land rehabilitation."
     }
   ]
 };

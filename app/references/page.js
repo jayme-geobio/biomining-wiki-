@@ -47,8 +47,8 @@ export default function Citations() {
             </p>
           </div>
 
-          <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 mb-6 text-center">
-            <p className="text-orange-700 text-sm italic">References below are being used as placeholders. Final references will be updated prior to publication.</p>
+          <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6 text-center">
+            <p className="text-emerald-700 text-sm italic">This reference list will continue to grow as the handbook evolves. Please use the comment feature to suggest additions or corrections.</p>
           </div>
 
           {/* Search and Filter */}
@@ -103,11 +103,11 @@ export default function Citations() {
                   onClick={() => toggleCategory(cat)}
                   className="w-full bg-[#264563] p-4 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
                 >
-                  <h2 className="font-bold text-white" style={{ fontSize: 'clamp(0.75rem, 2vw, 1.125rem)' }}>{categoryLabels[cat]}</h2>
-                  <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
-                    <span className="text-white/60">{refs.length} reference{refs.length !== 1 ? 's' : ''}</span>
-                    <span>{openCategories.has(cat) ? 'Click to collapse' : 'Click to expand'}</span>
-                    {openCategories.has(cat) ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+                  <h2 className="font-bold text-white text-left" style={{ fontSize: 'clamp(0.75rem, 2vw, 1.125rem)' }}>{categoryLabels[cat]}</h2>
+                  <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+                    <span className="text-white/60">{refs.length} ref{refs.length !== 1 ? 's' : ''}</span>
+                    <span className="hidden sm:inline">{openCategories.has(cat) ? 'Click to collapse' : 'Click to expand'}</span>
+                    {openCategories.has(cat) ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
                   </div>
                 </button>
                 {openCategories.has(cat) && (

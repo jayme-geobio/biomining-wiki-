@@ -6,6 +6,7 @@ import { ChevronDown, ChevronRight, FileCheck } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
 import TableOfContents from '../components/TableOfContents';
 import PageNavigation from '../components/PageNavigation';
+import GlossaryTerm from '../components/GlossaryTerm';
 
 
 export default function TechnologyEvaluation() {
@@ -61,7 +62,7 @@ export default function TechnologyEvaluation() {
                   },
                   {
                     q: "What is the feedstock?",
-                    detail: "Ore, concentrate, tailings, AMD, e-waste, slag - mineralogy, grade, particle size. How does it perform in real mining conditions with complex geology and mineralogy?"
+                    detail: <>Ore, concentrate, <GlossaryTerm term="Tailings">tailings</GlossaryTerm>, <GlossaryTerm term="Acid Mine Drainage (AMD)">AMD</GlossaryTerm>, <GlossaryTerm term="Electronic Waste (E-waste)">e-waste</GlossaryTerm>, <GlossaryTerm term="Slag">slag</GlossaryTerm> - mineralogy, grade, particle size. How does it perform in real mining conditions with complex geology and mineralogy?</>
                   },
                   {
                     q: "What's the conventional alternative, and how does it compare?",
@@ -77,7 +78,7 @@ export default function TechnologyEvaluation() {
                   },
                   {
                     q: "What is your realistic first deployment?",
-                    detail: "Side-stream polishing, tailings/AMD reprocessing, pilot at legacy site"
+                    detail: <>Side-stream polishing, <GlossaryTerm term="Tailings">tailings</GlossaryTerm>/<GlossaryTerm term="Acid Mine Drainage (AMD)">AMD</GlossaryTerm> reprocessing, pilot at legacy site</>
                   }
                 ].map((item, i) => (
                   <div key={i}>
@@ -166,7 +167,7 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
         onClick={onToggle}
         className="w-full bg-[#264563] p-4 sm:p-6 flex items-center justify-between gap-2 hover:bg-[#1e3450] transition-colors"
       >
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+        <div className="flex items-center gap-2 sm:gap-3 text-left min-w-0 flex-1">
           <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
           <h2 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 1.125rem)' }}>{title}</h2>
         </div>

@@ -49,6 +49,98 @@ export const citationsData = {
       volume: "84(1-2)",
       pages: "81-108",
       tags: ["bioleaching", "copper", "review"]
+    },
+    {
+      id: 16,
+      authors: "Rawlings, D.E. & Johnson, D.B. (Eds.)",
+      year: 2007,
+      title: "Biomining",
+      journal: "Springer",
+      volume: "",
+      pages: "",
+      tags: ["biomining", "textbook", "foundational"]
+    },
+    {
+      id: 17,
+      authors: "Schippers, A., Hedrich, S., Vasters, J., Drobe, M., Sand, W. & Willscher, S.",
+      year: 2014,
+      title: "Biomining: metal recovery from ores with microorganisms",
+      journal: "Advances in Biochemical Engineering/Biotechnology",
+      volume: "141",
+      pages: "1-47",
+      tags: ["biomining", "review"]
+    },
+    {
+      id: 18,
+      authors: "Donati, E.R. & Sand, W. (Eds.)",
+      year: 2007,
+      title: "Microbial Processing of Metal Sulfides",
+      journal: "Springer",
+      volume: "",
+      pages: "",
+      tags: ["biomining", "sulfides", "textbook"]
+    }
+  ],
+  mineralProcessing: [
+    {
+      id: 19,
+      authors: "Wills, B.A. & Finch, J.A.",
+      year: 2016,
+      title: "Wills' Mineral Processing Technology: An Introduction to the Practical Aspects of Ore Treatment and Mineral Recovery (8th ed.)",
+      journal: "Butterworth-Heinemann",
+      volume: "",
+      pages: "",
+      tags: ["textbook", "mineral processing"]
+    },
+    {
+      id: 20,
+      authors: "Dunne, R.C., Kawatra, S.K. & Young, C.A. (Eds.)",
+      year: 2019,
+      title: "SME Mineral Processing & Extractive Metallurgy Handbook",
+      journal: "Society for Mining, Metallurgy & Exploration",
+      volume: "",
+      pages: "",
+      tags: ["handbook", "mineral processing", "metallurgy"]
+    },
+    {
+      id: 21,
+      authors: "Hartman, H.L. & Mutmansky, J.M.",
+      year: 2002,
+      title: "Introductory Mining Engineering (2nd ed.)",
+      journal: "Wiley",
+      volume: "",
+      pages: "",
+      tags: ["textbook", "mining engineering"]
+    },
+    {
+      id: 22,
+      authors: "Schlesinger, M.E., Sole, K.C., Davenport, W.G. & Alvear Flores, G.R.F.",
+      year: 2021,
+      title: "Extractive Metallurgy of Copper (6th ed.)",
+      journal: "Elsevier",
+      volume: "",
+      pages: "",
+      tags: ["textbook", "copper", "metallurgy"]
+    },
+    {
+      id: 23,
+      authors: "International Network for Acid Prevention (INAP)",
+      year: 2009,
+      title: "The Global Acid Rock Drainage Guide (GARD Guide)",
+      journal: "INAP",
+      volume: "",
+      pages: "",
+      tags: ["AMD", "ARD", "guide", "standards"]
+    },
+    {
+      id: 24,
+      authors: "U.S. Geological Survey",
+      year: 2024,
+      title: "Mineral Commodity Summaries 2024",
+      journal: "U.S. Geological Survey",
+      volume: "",
+      pages: "",
+      tags: ["critical minerals", "commodities", "annual"]
     }
   ],
   biooxidation: [
@@ -57,9 +149,9 @@ export const citationsData = {
       authors: "van Aswegen, P.C., van Niekerk, J. & Olivier, W.",
       year: 2007,
       title: "The BIOX process for the treatment of refractory gold concentrates",
-      journal: "Biomining",
+      journal: "In Rawlings, D.E. & Johnson, D.B. (Eds.), Biomining. Springer",
       volume: "",
-      pages: "1-33",
+      pages: "pp. 1-33",
       tags: ["biooxidation", "gold", "BIOX"]
     },
     {
@@ -76,7 +168,7 @@ export const citationsData = {
   bioseparation: [
     {
       id: 8,
-      authors: "Cotruvo, J.A., Feber, E.R. & Jové, A.D.",
+      authors: "Cotruvo, J.A. Jr., Featherston, E.R., Mattocks, J.A., Ho, J.Y. & Laremore, T.N.",
       year: 2018,
       title: "Lanmodulin: A highly selective lanthanide-binding protein from a lanthanide-utilizing bacterium",
       journal: "Journal of the American Chemical Society",
@@ -86,12 +178,12 @@ export const citationsData = {
     },
     {
       id: 9,
-      authors: "Park, D.M. et al.",
-      year: 2023,
+      authors: "Park, D.M., Reed, D.W., Yung, M.C., Eslamimanesh, A., Lencka, M.M., Anderko, A., Fujita, Y., Riman, R.E., Navrotsky, A. & Jiao, Y.",
+      year: 2016,
       title: "Bioadsorption of rare earth elements through cell surface display of lanthanide binding tags",
       journal: "Environmental Science & Technology",
-      volume: "54(9)",
-      pages: "5956-5964",
+      volume: "50(5)",
+      pages: "2735-2742",
       tags: ["bioseparation", "REE", "biosorption"]
     }
   ],
@@ -165,6 +257,7 @@ export const citationsData = {
 
 export const categoryLabels = {
   foundational: "Foundational Biomining",
+  mineralProcessing: "General Mining & Mineral Processing",
   biooxidation: "Biooxidation & Refractory Ores",
   bioseparation: "Bioseparation & REEs",
   remediation: "Remediation & AMD Treatment",

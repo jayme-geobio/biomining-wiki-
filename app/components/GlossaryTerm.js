@@ -33,6 +33,7 @@ const termToMaterialMap = {
 // Map glossary term names (lowercase) to page links
 const termToPageMap = {
   "flowsheet": { href: "/flowsheets", label: "View Example Flowsheets", icon: Target },
+  "complex materials": { href: "/complex-materials", label: "View Complex Materials Playbook", icon: Layers },
 };
 
 export default function GlossaryTerm({ term, definition, children }) {

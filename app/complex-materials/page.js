@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight, Droplets, Mountain, Factory, Cpu, Beaker, AlertTriangle, TrendingUp, Microscope, Camera } from 'lucide-react';
 import CommentableContent from '../components/CommentableContent';
@@ -45,7 +46,7 @@ const materialsData = {
 
       }
     ],
-    whyBiology: "Microbes cause AMD but can also help solve it. Biology offers passive, low-cost treatment that can simultaneously recover value.",
+    whyBiology: <>Microbes cause <GlossaryTerm term="Acid Mine Drainage (AMD)">AMD</GlossaryTerm> but can also help solve it. Biology offers passive, low-cost treatment that can simultaneously recover value.</>,
     maturityLevel: "High",
     maturityDetail: "Proven in constructed wetlands and pilot-scale SRB reactors"
   },
@@ -78,7 +79,7 @@ const materialsData = {
         description: "Stockpile bio-leaching with multi-year residence times acceptable for previously uneconomic material"
       }
     ],
-    whyBiology: "Biology can unlock value from material too expensive to process conventionally - turning waste into revenue at lower operating costs.",
+    whyBiology: "Biology can unlock value from material too expensive to process conventionally — turning waste into revenue at lower operating costs.",
     maturityLevel: "Medium-High",
     maturityDetail: "Proven for refractory gold; emerging for low-grade stockpiles and critical metal co-products"
   },
@@ -90,7 +91,7 @@ const materialsData = {
       "Dam failures cause catastrophic loss of life",
       "Dust carries heavy metals to nearby communities",
       "Long-term seepage and groundwater contamination",
-      "Tailings volumes grow as ore grades decline globally"
+      <>Tailings volumes grow as ore <GlossaryTerm term="Grade">grades</GlossaryTerm> decline globally</>
     ],
     bioOpportunities: [
       {
@@ -104,7 +105,7 @@ const materialsData = {
       },
       {
         title: "Tailings Revalorization",
-        description: <>Historic tailings often contain <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm> that weren't extracted originally - making <GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">bioleaching</GlossaryTerm> possible without expensive re-mining infrastructure</>
+        description: <>Historic tailings often contain <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm> that weren't extracted originally — making <GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">bioleaching</GlossaryTerm> possible without expensive re-mining infrastructure</>
 
       },
       {
@@ -113,7 +114,7 @@ const materialsData = {
 
       }
     ],
-    whyBiology: "Bioleaching is cheaper than rebuilding infrastructure. Biocement and stabilization avoid toxic chemical transport to remote sites.",
+    whyBiology: <><GlossaryTerm term="Bioleaching">Bioleaching</GlossaryTerm> is cheaper than rebuilding infrastructure. Biocement and stabilization avoid toxic chemical transport to remote sites.</>,
     maturityLevel: "Medium",
     maturityDetail: "Proven for some metals; emerging for REEs and biological stabilization"
   },
@@ -123,7 +124,7 @@ const materialsData = {
     definition: <>Discarded electronics rich in Cu, Au, Pd, <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm>, and critical metals, but with complex polymer/metal mixtures</>,
     hazards: [
       "World's fastest growing waste stream (74.7M tons by 2030)",
-      "Complex mix of metals, plastics, glass - hard to separate",
+      "Complex mix of metals, plastics, glass — hard to separate",
       "Current recycling exposes workers to carcinogens",
       "Thin profit margins sends material to landfills"
     ],
@@ -154,12 +155,12 @@ const materialsData = {
   other: {
     name: "Other Secondary Resources",
     icon: Beaker,
-    definition: <><GlossaryTerm term="Slag" definition="Glassy byproduct of smelting, containing metal oxides and silicates">Slag</GlossaryTerm>, <GlossaryTerm term="Fly Ash" definition="Fine particulate residue from coal combustion; can contain REEs and heavy metals">fly ash</GlossaryTerm>, phosphogypsum, red mud, <GlossaryTerm term="Produced Water" definition="Water extracted alongside oil and gas, often containing dissolved metals and salts">produced waters</GlossaryTerm>, and <GlossaryTerm term="Geothermal Brine" definition="Hot, mineral-rich water from geothermal reservoirs; can contain lithium and other valuable elements">geothermal brines</GlossaryTerm></>,
+    definition: <><GlossaryTerm term="Slag" definition="Glassy byproduct of smelting, containing metal oxides and silicates">Slag</GlossaryTerm>, <GlossaryTerm term="Fly Ash" definition="Fine particulate residue from coal combustion; can contain REEs and heavy metals">fly ash</GlossaryTerm>, <GlossaryTerm term="Phosphogypsum">phosphogypsum</GlossaryTerm>, <GlossaryTerm term="Red Mud">red mud</GlossaryTerm>, <GlossaryTerm term="Produced Water" definition="Water extracted alongside oil and gas, often containing dissolved metals and salts">produced waters</GlossaryTerm>, and <GlossaryTerm term="Geothermal Brine" definition="Hot, mineral-rich water from geothermal reservoirs; can contain lithium and other valuable elements">geothermal brines</GlossaryTerm></>,
     hazards: [
       <><GlossaryTerm term="Slag" definition="Glassy byproduct of smelting, containing metal oxides and silicates">Slag</GlossaryTerm>: Metal oxides from <GlossaryTerm term="Smelting" definition="A pyrometallurgical process using high temperatures to separate metal from ore">smelting</GlossaryTerm>; heavy metals leach into groundwater over decades if untreated</>,
       <><GlossaryTerm term="Fly Ash" definition="Fine particulate residue from coal combustion; can contain REEs and heavy metals">Fly ash</GlossaryTerm>: Coal combustion byproduct with <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm> and heavy metals; billions of tons stockpiled globally with limited disposal options</>,
-      "Phosphogypsum: Radioactive waste from fertilizer production",
-      "Red mud: Caustic bauxite waste with REEs, Sc, and other metals"
+      <><GlossaryTerm term="Phosphogypsum">Phosphogypsum</GlossaryTerm>: Radioactive waste from fertilizer production</>,
+      <><GlossaryTerm term="Red Mud">Red mud</GlossaryTerm>: Caustic bauxite waste with REEs, Sc, and other metals</>
     ],
     bioOpportunities: [
       {
@@ -307,10 +308,10 @@ function MaterialCard({ id, material, expanded, onToggle }) {
 
       {expanded && (
         <div className="bg-[#edede6] p-6 space-y-5">
-          {/* Image Modal */}
-          {material.image && showImage && (
+          {/* Image Modal — rendered via portal to document.body so it overlays the viewport correctly even with transformed ancestors (PageTransition) */}
+          {material.image && showImage && typeof document !== 'undefined' && createPortal(
             <div
-              className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+              className="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4"
               onClick={() => setShowImage(false)}
             >
               <div
@@ -338,7 +339,8 @@ function MaterialCard({ id, material, expanded, onToggle }) {
                   )}
                 </div>
               </div>
-            </div>
+            </div>,
+            document.body
           )}
 
           {/* Definition */}

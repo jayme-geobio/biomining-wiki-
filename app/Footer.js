@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { track } from '@vercel/analytics';
 import { AlertCircle } from 'lucide-react';
 import ContributeModal from './components/ContributeModal';
+import { currentVersion } from './data/versions';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -15,8 +16,8 @@ export default function Footer() {
   const navLinks = [
     { name: 'Biomining Handbook', href: '/' },
     { name: 'Learn', href: '/what-is-biomining' },
-    { name: 'For Professionals', href: '/technology-evaluation' },
-    { name: 'Resources', href: '/research' },
+    { name: 'For Professionals', href: '/technology-assessment' },
+    { name: 'Resources', href: '/frontier-challenges' },
     { name: 'Get Involved', href: null },
   ];
 
@@ -127,8 +128,22 @@ export default function Footer() {
 
           {/* Bottom row */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-sm text-white/50">
-            <span>© Homeworld Collective Inc {new Date().getFullYear()}  |  <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></span>
-            <span>Somerville, MA | San Francisco, CA</span>
+            <span>
+              © Homeworld Collective Inc {new Date().getFullYear()}
+              {'  |  '}
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            </span>
+            <span className="sm:text-center">Somerville, MA | San Francisco, CA</span>
+            <Link
+              href={`/version-history#v${currentVersion.version}`}
+              className="hover:text-white transition-colors sm:text-right"
+              title="View version history, authors, and contributors"
+            >
+              v{currentVersion.version}
+              {process.env.NEXT_PUBLIC_BUILD_DATE && (
+                <> · Updated {new Date(process.env.NEXT_PUBLIC_BUILD_DATE).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</>
+              )}
+            </Link>
           </div>
 
         </footer>

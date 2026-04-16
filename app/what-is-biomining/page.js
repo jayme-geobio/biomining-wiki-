@@ -128,7 +128,7 @@ export default function WhatIsBiomining() {
                 number="4"
                 title="Bioprecipitation and Controlled Mineral Formation"
                 description="Microbially driven precipitation of minerals that concentrate or immobilize metals, enabling their recovery or stabilization"
-                details="Includes biomineralization, biocement, and microbially induced mineral formation (e.g., metal sulfides, carbonates, phosphates)."
+                details={<>Includes <GlossaryTerm term="Biomineralization">biomineralization</GlossaryTerm>, biocement, and microbially induced mineral formation (e.g., metal sulfides, carbonates, phosphates).</>}
                 icon={Beaker}
                 color="teal"
               />
@@ -157,7 +157,7 @@ export default function WhatIsBiomining() {
               </p>
               <div className="bg-emerald-600 rounded-lg p-5 border border-emerald-600 mt-6">
                 <p className="text-white">
-                  <strong>Biotech's strongest foothold:</strong> <Link href="/complex-materials" className="underline decoration-dotted decoration-white/50 underline-offset-2 cursor-pointer hover:decoration-white transition-colors">Complex materials</Link> and operating conditions
+                  <strong>Biotech's strongest foothold:</strong> <GlossaryTerm term="Complex Materials" definition="Mining materials too mineralogically complex, contaminated, or low-grade for conventional processing — including acid mine drainage, tailings, waste rock, e-waste, slag, fly ash, and other secondary resources.">Complex materials</GlossaryTerm> and operating conditions
                   where conventional solutions are too costly, too carbon-intensive, or too permitting-constrained to scale.
                 </p>
               </div>
@@ -180,7 +180,7 @@ export default function WhatIsBiomining() {
               <AdvantageCard
                 title="Binding Selectivity"
                 items={[
-                  "Proteins and biopolymers act as 'molecular coin sorters', discriminating between metals with similar chemistry.",
+                  <><GlossaryTerm term="Protein">Proteins</GlossaryTerm> and biopolymers act as 'molecular coin sorters', discriminating between metals with similar chemistry.</>,
                   <>Critical for <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">rare earth elements</GlossaryTerm>, platinum group metals (PGMs), and complex polymetallic streams.</>
                 ]}
                 valueTo="Produces higher-purity products with fewer processing steps, meaning better off-take pricing and less downstream rework."
@@ -188,7 +188,7 @@ export default function WhatIsBiomining() {
               <AdvantageCard
                 title="Mineral Transformation and Precipitation"
                 items={[
-                  "Biomineralization and biocement enable controlled precipitation of metal sulfides and carbonates.",
+                  <><GlossaryTerm term="Biomineralization">Biomineralization</GlossaryTerm> and biocement enable controlled precipitation of metal sulfides and carbonates.</>,
                   <>Useful for both recovery and stabilization of <GlossaryTerm term="Mine Waste" definition="Any material removed or displaced during mining that has no current economic value, including tailings, waste rock, and slag">wastes</GlossaryTerm> — waste management is a major burden on mining OPEX and carries significant environmental liability.</>
                 ]}
                 valueTo="Reduces closure liability by stabilizing problematic metals in waste, turning a long-term cost into a manageable one."
@@ -199,7 +199,7 @@ export default function WhatIsBiomining() {
                   "Systems that can evolve toward function—design the ecosystem, not just the strain.",
                   "Adaptive communities can tune metal recovery rates and tolerance to changing feed chemistry over time, maintaining throughput as conditions evolve."
                 ]}
-                valueTo="Less re-engineering as ore grades shift over the life of mine — the biology adjusts, so the process keeps running without costly shutdowns or redesigns."
+                valueTo={<>Less re-engineering as ore <GlossaryTerm term="Grade">grades</GlossaryTerm> shift over the life of mine — the biology adjusts, so the process keeps running without costly shutdowns or redesigns.</>}
               />
             </div>
           </Section>
@@ -220,7 +220,7 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
         onClick={onToggle}
         className="w-full bg-[#264563] p-4 sm:p-6 flex items-center justify-between gap-2 hover:bg-[#264563]/80 transition-colors"
       >
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+        <div className="flex items-center gap-2 sm:gap-3 text-left min-w-0 flex-1">
           <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
           <h2 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 1.125rem)' }}>{title}</h2>
         </div>

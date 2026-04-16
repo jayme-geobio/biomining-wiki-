@@ -112,6 +112,94 @@ git push
 
 Vercel will automatically rebuild and redeploy your site!
 
+## Making Updates After Publication
+
+Once the site is live, you may want to make changes and share them with a reviewer **before** they go live to the public. Vercel's GitHub integration handles this automatically — every non-`main` branch gets its own shareable preview URL, while the live site at your production domain stays on `main` and is untouched.
+
+### The Workflow
+
+1. **Create a feature branch** locally for your round of changes:
+
+   ```bash
+   git checkout -b reviewer-changes-round-3
+   ```
+
+2. **Bump the version** (manual — this is the only manual step). Open `app/data/versions.js` and add a new entry at the **top** of the `versions` array. For example:
+
+   ```js
+   {
+     version: '1.1',
+     publishedDate: '2026-05-20',
+     summary: 'Round 2 of reviewer revisions.',
+     changes: [
+       'Expanded the Complex Materials Playbook with three new case studies.',
+       'Added photos of refractory gold ore.',
+       'Revised the Example Flowsheets section.',
+     ],
+     authors: ['Ariana Caiati', 'Colbey Derwin'],
+     contributors: [
+       'Jayme Feyhl-Buska',
+       'Erin Marshall',
+       // Any person named as the Source of a new photo added this round
+       // must be listed here too (unless they're already in `authors`).
+     ],
+   },
+   ```
+
+   **Why manual:** creating a branch alone does **not** bump the version — small commits shouldn't each become a new version. You only add an entry when starting a meaningful review round. Each version entry has its own authors + contributors so each revision credits the right people.
+
+   **What IS automatic:** the `Updated [date]` stamp in the footer. It refreshes on every push without you touching anything, so ongoing commits on the branch keep the date fresh while the version number stays pinned to what you set.
+
+3. **Make your content edits, commit, and push the branch:**
+
+   ```bash
+   git add .
+   git commit -m "Round 2 reviewer updates + v1.1 entry"
+   git push -u origin reviewer-changes-round-3
+   ```
+
+4. **Open a Pull Request** on GitHub (or just leave the branch pushed). Vercel will automatically:
+   - Build the branch
+   - Post a comment on the PR with a unique preview URL, e.g.
+     `https://biomining-wiki-git-reviewer-changes-round-3-jayme-geobio.vercel.app`
+   - Re-deploy that preview every time you push new commits to the branch
+
+5. **Share the preview URL with your reviewer.** They can see every change in real time. The production site remains unchanged.
+
+6. **When the reviewer approves**, merge the PR into `main` (via GitHub "Merge pull request" button, or `git checkout main && git merge reviewer-changes-round-3 && git push`). Vercel promotes the merged code to production automatically — the footer chip on the live site will now read `v1.1 · Updated [date]`.
+
+7. **Clean up** (optional):
+
+   ```bash
+   git branch -d reviewer-changes-round-3
+   git push origin --delete reviewer-changes-round-3
+   ```
+
+### Verify Your Vercel Settings
+
+In the Vercel dashboard (`vercel.com` → biomining-wiki project → **Settings → Git**), confirm:
+
+- **Production Branch** is set to `main` only
+- **Preview Deployments** are enabled for "All branches" (this is the default)
+
+### Optional: Restrict Who Can View Previews
+
+By default, preview URLs are public — anyone with the link can view them. To require a login before a reviewer can view work-in-progress:
+
+- Go to **Settings → Deployment Protection**
+- Enable **Vercel Authentication** for Preview deployments
+
+This ensures only people you invite to the Vercel team can see previews.
+
+### Quick Reference
+
+| Action | What happens |
+|---|---|
+| `git push` to `main` | Production site updates immediately (date stamp refreshes, version unchanged) |
+| `git push` to any other branch | A shareable preview URL is created/updated (date stamp refreshes, version unchanged) |
+| Add a new entry to `app/data/versions.js` and push | Version number bumps on that branch's deployment |
+| Merge PR into `main` | Preview is promoted to production — new version goes live |
+
 ## Build Settings (Vercel Auto-Detects These)
 
 - **Framework Preset:** Next.js

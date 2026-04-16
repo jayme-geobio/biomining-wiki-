@@ -1,11 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronRight, Microscope, Mountain, BookOpen, Beaker, Droplets, GraduationCap, Factory, AlertTriangle, Target, TrendingUp, MessageSquare, HelpCircle, ArrowRight, Atom, Hammer } from 'lucide-react';
 import TableOfContents from './components/TableOfContents';
+import GlossaryTerm from './components/GlossaryTerm';
+import ContributeModal from './components/ContributeModal';
 
 export default function BiominingHome() {
+  const [showContribute, setShowContribute] = useState(false);
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -143,7 +146,7 @@ export default function BiominingHome() {
                   Biomining holds enormous potential for critical mineral recovery, but the field lacks a centralized resource bridging biological solutions and mining challenges. This handbook aims to address that gap.
                 </p>
                 <p>
-                  Born from Homeworld's <Link href="/research#building-the-research-roadmap" className="underline decoration-dotted decoration-emerald-600/50 underline-offset-2 cursor-pointer hover:decoration-emerald-600 transition-colors">Biomining Under Complex Conditions Workshop</Link>, <strong>our goal is a gold-standard, technically accurate resource for both communities to design better projects together.</strong>
+                  Born from Homeworld's <Link href="/frontier-challenges#building-the-research-roadmap" className="underline decoration-dotted decoration-emerald-600/50 underline-offset-2 cursor-pointer hover:decoration-emerald-600 transition-colors">Biomining Under Complex Conditions Workshop</Link>, <strong>our goal is a gold-standard, technically accurate resource for both communities to design better projects together.</strong>
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-[#264563] rounded-xl p-4">
@@ -168,9 +171,12 @@ export default function BiominingHome() {
                     </div>
                   </div>
                   <div className="rounded-xl p-4 border-2 border-[#264563]">
-                    <p className="font-semibold text-[#264563] mb-2">
+                    <button
+                      onClick={() => setShowContribute(true)}
+                      className="font-semibold text-[#264563] hover:text-[#264563]/60 mb-2 transition-colors cursor-pointer text-left"
+                    >
                       Contribute to This Handbook:
-                    </p>
+                    </button>
                     <p className="text-[#264563] text-sm">
                       To keep this resource current and accurate, we've added a commenting feature. Highlight any text and click the <MessageSquare className="w-3.5 h-3.5 inline text-emerald-600" /> icon that appears to suggest updates, additions, or corrections.
                     </p>
@@ -204,16 +210,16 @@ export default function BiominingHome() {
                       <h4 className="text-[#264563] font-semibold">Mechanisms</h4>
                     </div>
                     <ul className="text-[#264563] text-sm ml-1 grid grid-cols-2 gap-x-3 gap-y-1.5">
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Bioleaching</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Biooxidation</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Bioseparation</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Biosorption</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Bioaccumulation</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Bioprecipitation</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Biomineralization</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Bioflotation</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Phytomining</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Biosensing</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Bioleaching">Bioleaching</GlossaryTerm></li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Biooxidation">Biooxidation</GlossaryTerm></li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Bioseparation">Bioseparation</GlossaryTerm></li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Biosorption">Biosorption</GlossaryTerm></li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Bioaccumulation">Bioaccumulation</GlossaryTerm></li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Bioprecipitation">Bioprecipitation</GlossaryTerm></li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Biomineralization">Biomineralization</GlossaryTerm></li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Bioflotation">Bioflotation</GlossaryTerm></li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Phytomining">Phytomining</GlossaryTerm></li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Biosensing">Biosensing</GlossaryTerm></li>
                     </ul>
                   </div>
                   <ArrowRight className="w-10 h-10 text-[#264563] flex-shrink-0 rotate-90 sm:rotate-0" />
@@ -223,15 +229,15 @@ export default function BiominingHome() {
                       <h4 className="text-[#264563] font-semibold">Applications</h4>
                     </div>
                     <ul className="text-[#264563] text-sm ml-1 grid grid-cols-2 gap-x-3 gap-y-1.5">
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Heap leaching</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Tank leaching</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>In-stope leaching</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Heap Leaching">Heap leaching</GlossaryTerm></li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Tank Leaching">Tank leaching</GlossaryTerm></li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="In-stope Leaching">In-stope leaching</GlossaryTerm></li>
                       <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Metal separation</li>
                       <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Stream polishing</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>AMD treatment</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Acid Mine Drainage (AMD)">AMD</GlossaryTerm> treatment</li>
                       <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Mine closure</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Tailings reprocessing</li>
-                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>E-waste recovery</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Tailings">Tailings</GlossaryTerm> reprocessing</li>
+                      <li className="flex items-start gap-2"><span className="text-emerald-600">•</span><GlossaryTerm term="Electronic Waste (E-waste)">E-waste</GlossaryTerm> recovery</li>
                       <li className="flex items-start gap-2"><span className="text-emerald-600">•</span>Ground stabilization</li>
                     </ul>
                   </div>
@@ -270,10 +276,10 @@ export default function BiominingHome() {
               icon={Mountain}
               color="blue"
               sections={[
-                { title: "Mining Value Chain - Stage by Stage", icon: Factory },
+                { title: "Mining Value Chain — Stage by Stage", icon: Factory },
                 { title: "Constraints That Shape Bio-Adoption", icon: AlertTriangle }
               ]}
-              link="/for-biologists"
+              link="/mining-101"
             />
 
             <PathCard
@@ -286,7 +292,7 @@ export default function BiominingHome() {
                 { title: "Mechanisms of Metal Mobilization & Capture", icon: Beaker },
                 { title: "Biomining Modalities & Flowsheets", icon: Factory }
               ]}
-              link="/for-miners"
+              link="/biology-101"
             />
           </div>
 
@@ -319,13 +325,13 @@ export default function BiominingHome() {
                   title="Technology Assessment Checklist"
                   description="Evaluate biomining technologies against mining requirements"
                   icon={BookOpen}
-                  link="/technology-evaluation"
+                  link="/technology-assessment"
                 />
                 <ResourceCard
                   title="Frontier Challenges"
                   description="Key research gaps and the roadmap ahead for biomining"
                   icon={TrendingUp}
-                  link="/research"
+                  link="/frontier-challenges"
                 />
               </div>
               <div className="flex justify-end mt-12">
@@ -339,6 +345,8 @@ export default function BiominingHome() {
 
         </div>
       </div>
+
+      <ContributeModal isOpen={showContribute} onClose={() => setShowContribute(false)} />
     </div>
   );
 }

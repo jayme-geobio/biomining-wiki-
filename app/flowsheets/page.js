@@ -45,12 +45,12 @@ const flowsheetData = [
       }
     ],
     reality: [
-      "Many 'non-biological' heaps already rely on native acidophiles - intentional bio-management improves performance",
+      <>Many 'non-biological' heaps already rely on native <GlossaryTerm term="Acidophile">acidophiles</GlossaryTerm> - intentional bio-management improves performance</>,
       "Time scale: Months to years for full heap cycle",
       <><strong>Scale: Very large - tens of millions of tonnes per year</strong>; heap pads and associated <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after leaching ore or concentrate">PLS</GlossaryTerm>/<GlossaryTerm term="Raffinate" definition="The metal-depleted aqueous solution leaving a solvent extraction stage, typically recycled back to leaching">raffinate</GlossaryTerm> ponds can cover several km², circulating millions to hundreds of millions of liters of solution daily</>,
       <>Economics favor biology when ore <GlossaryTerm term="Grade" definition="The concentration of a target metal or mineral in ore, typically expressed as a percentage or grams per tonne">grade</GlossaryTerm> is too low for conventional <GlossaryTerm term="Milling" definition="Size reduction of ore by grinding in rotating drums with steel balls or rods">milling</GlossaryTerm>/<GlossaryTerm term="Froth Flotation" definition="Separation process that uses air bubbles and chemical reagents to selectively float target mineral particles to the surface">flotation</GlossaryTerm></>
     ],
-    maturity: "Commercial - proven at major operations worldwide"
+    maturity: "Commercial — proven at major operations worldwide"
   },
   {
     id: 'refractory-gold',
@@ -72,13 +72,13 @@ const flowsheetData = [
       {
         stage: "Biooxidation Tanks",
         role: <><GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">Acidophilic</GlossaryTerm> Fe/S-oxidizing bacteria (<GlossaryTerm term="Mesophile" definition="An organism that grows best at moderate temperatures, typically 20-45°C">mesophiles</GlossaryTerm> or <GlossaryTerm term="Thermophile" definition="An organism that thrives at elevated temperatures, typically 45-80°C">thermophiles</GlossaryTerm>)</>,
-        what: "Oxidize sulfide minerals (pyrite, arsenopyrite) to expose encapsulated gold for cyanidation",
-        control: "Temperature (40-50°C mesophile or 65-85°C thermophile), pH 1.5-2.0, air flow, retention time 4-7 days"
+        what: <>Oxidize sulfide minerals (pyrite, arsenopyrite) to expose encapsulated gold for <GlossaryTerm term="Cyanidation">cyanidation</GlossaryTerm></>,
+        control: <>Temperature (40-50°C <GlossaryTerm term="Mesophile">mesophile</GlossaryTerm> or 65-85°C <GlossaryTerm term="Thermophile">thermophile</GlossaryTerm>), pH 1.5-2.0, air flow, retention time 4-7 days</>
       },
       {
         stage: "Post-Bioox Neutralization",
         role: "Chemical (lime) or biological buffering",
-        what: "Raise pH from ~1.5 to 10-11 for cyanidation step",
+        what: <>Raise pH from ~1.5 to 10-11 for <GlossaryTerm term="Cyanidation">cyanidation</GlossaryTerm> step</>,
         control: "Careful pH management to avoid gold losses"
       },
       {
@@ -89,13 +89,13 @@ const flowsheetData = [
       }
     ],
     reality: [
-      "Core biooxidation step is already fully biological - proven technology (BIOX®, BacTech)",
+      <>Core <GlossaryTerm term="Biooxidation">biooxidation</GlossaryTerm> step is already fully biological - proven technology (BIOX®, BacTech)</>,
       "Time scale: Days to weeks (tank residence)",
       <>Scale: Moderate - thousands of tonnes of <GlossaryTerm term="Concentrate" definition="The enriched product of mineral processing, containing a high proportion of the target mineral">concentrate</GlossaryTerm> per year</>,
-      "Enables processing of refractory ores that would otherwise be uneconomic",
-      "Capital intensive but OPEX-competitive with alternatives like roasting or pressure oxidation"
+      <>Enables processing of <GlossaryTerm term="Refractory Ores">refractory ores</GlossaryTerm> that would otherwise be uneconomic</>,
+      <>Capital intensive but OPEX-competitive with alternatives like <GlossaryTerm term="Roasting">roasting</GlossaryTerm> or pressure oxidation</>
     ],
-    maturity: "Commercial - operating for 30+ years at multiple sites"
+    maturity: "Commercial — operating for 30+ years at multiple sites"
   },
   {
     id: 'tailings-recovery',
@@ -115,18 +115,18 @@ const flowsheetData = [
       {
         stage: "Bioleaching",
         role: <><GlossaryTerm term="Acidophile" definition="Organism that thrives at low pH (typically pH &lt; 3)">Acidophiles</GlossaryTerm> for bulk metal solubilization</>,
-        what: "Re-leach metals left behind in original processing - Cu, Zn, Co, Ni, REEs",
+        what: "Re-leach metals left behind in original processing — Cu, Zn, Co, Ni, REEs",
         control: "Tank or heap configuration, pH, temperature, solids loading"
       },
       {
         stage: "Bioseparations",
         role: <>Selective biomolecules (proteins, <GlossaryTerm term="Peptide" definition="A short chain of amino acids that can bind metals">peptides</GlossaryTerm>, <GlossaryTerm term="Metallophores / Siderophores" definition="Small molecules secreted by microbes that chelate metals with high affinity">siderophores</GlossaryTerm>)</>,
-        what: <>Separate and concentrate specific metals from complex <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after lixiviant percolates through ore">PLS</GlossaryTerm> - especially valuable for <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm> and Co</>,
+        what: <>Separate and concentrate specific metals from complex <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after lixiviant percolates through ore">PLS</GlossaryTerm> — especially valuable for <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm> and Co</>,
         control: <>{`Immobilized `}<GlossaryTerm term="Ligand" definition="A molecule that binds to a metal ion to form a complex">ligands</GlossaryTerm>{`, regeneration, matrix tolerance`}</>
       },
       {
         stage: "Tailings Stabilization",
-        role: "MICP (microbially-induced calcite precipitation) or vegetation",
+        role: "Microbially-Induced Calcite Precipitation (MICP) or vegetation",
         what: "Stabilize re-processed tailings to reduce dust and seepage for final closure",
         control: "Nutrient injection for MICP, vegetation establishment"
       }
@@ -134,11 +134,11 @@ const flowsheetData = [
     reality: [
       <>Historic tailings often contain <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm> (Co, REEs, platinum group metals (PGMs)) that weren't economic to recover originally</>,
       <><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> avoids need to re-mine and rebuild processing infrastructure</>,
-      "Time scale: Flexible - can be slow (years for heap-style) or moderate (weeks for tanks)",
+      "Time scale: Flexible — can be slow (years for heap-style) or moderate (weeks for tanks)",
       "Dual benefit: environmental remediation + resource recovery",
       "Regulatory advantage: improves closure outcomes while generating revenue"
     ],
-    maturity: "Pilot to Early Commercial - case-by-case evaluation needed"
+    maturity: "Pilot to Early Commercial — case-by-case evaluation needed"
   },
   {
     id: 'amd-treatment',
@@ -183,7 +183,7 @@ const flowsheetData = [
       "Dual benefit: regulatory compliance + revenue from recovered metals",
       <>Strongest case where discharge limits are tight or where <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm> (like REEs) are present</>
     ],
-    maturity: "Medium-High - wetlands are proven; metal recovery from AMD is emerging"
+    maturity: "Medium-High — wetlands are proven; metal recovery from AMD is emerging"
   }
 ];
 
@@ -248,7 +248,7 @@ export default function Flowsheets() {
         <div className="bg-[#edede6] rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-white">
           <h2 className="text-2xl font-bold text-[#264563] mb-3">Example Flowsheets</h2>
           <p className="text-[#264563] mb-6">
-            The biggest gains come when flowsheets are designed around biology from the beginning — rather than retrofitting biological steps into existing processes.
+            The biggest gains come when <GlossaryTerm term="Flowsheet">flowsheets</GlossaryTerm> are designed around biology from the beginning — rather than retrofitting biological steps into existing processes.
           </p>
           <div className="space-y-4">
             {flowsheetData.map(flowsheet => (
@@ -282,23 +282,23 @@ function FlowsheetCard({ flowsheet, expanded, onToggle }) {
     <div className="rounded-xl border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full bg-[#264563] p-6 flex items-center justify-between hover:bg-[#1e3450] transition-colors text-left"
+        className="w-full bg-[#264563] px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2 hover:bg-[#1e3450] transition-colors text-left"
       >
-        <div>
-          <div className="flex items-center gap-3 mb-2 flex-wrap">
-            <span className={`px-3 py-1 rounded-full text-xs font-semibold text-white ${typeColors[flowsheet.type]}`}>
+        <div className="min-w-0 flex-1 text-left">
+          <div className="flex items-center gap-2 sm:gap-3 mb-2 flex-wrap">
+            <span className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full font-semibold text-white ${typeColors[flowsheet.type]}`} style={{ fontSize: 'clamp(0.6rem, 1vw, 0.75rem)' }}>
               {flowsheet.type}
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-semibold text-white/70 bg-white/10">
+            <span className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full font-semibold text-white/70 bg-white/10" style={{ fontSize: 'clamp(0.6rem, 1vw, 0.75rem)' }}>
               {flowsheet.maturity}
             </span>
           </div>
-          <h2 className="text-lg font-bold text-white mb-1">{flowsheet.title}</h2>
-          <p className="text-white/80 text-sm">{flowsheet.description}</p>
+          <h2 className="font-bold text-white mb-1" style={{ fontSize: 'clamp(0.75rem, 1.8vw, 1.125rem)' }}>{flowsheet.title}</h2>
+          <p className="text-white/80" style={{ fontSize: 'clamp(0.65rem, 1.3vw, 0.875rem)' }}>{flowsheet.description}</p>
         </div>
-        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0 ml-4">
-          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
-          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+          <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
         </div>
       </button>
 

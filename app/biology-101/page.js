@@ -99,7 +99,7 @@ export default function ForMiners() {
                       "Scale: Very large (Mt)"
                     ]}
                     integration={
-                      <> <GlossaryTerm term="Comminution" definition="Size reduction of ore through crushing and grinding to liberate valuable minerals">Comminution</GlossaryTerm> → <strong>Bioleaching</strong> → <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after leaching ore or concentrate">PLS</GlossaryTerm> → <GlossaryTerm term="Solvent Extraction (SX)" definition="Liquid–liquid extraction process that selectively transfers dissolved metals between immiscible phases">SX</GlossaryTerm>/<GlossaryTerm term="Electrowinning (EW)" definition="Electrochemical process that deposits metal from solution onto a cathode">EW</GlossaryTerm> → metal cathodes </>
+                      <> <GlossaryTerm term="Comminution" definition="Size reduction of ore through crushing and grinding to liberate valuable minerals">Comminution</GlossaryTerm> → <GlossaryTerm term="Bioleaching"><strong>Bioleaching</strong></GlossaryTerm> → <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after leaching ore or concentrate">PLS</GlossaryTerm> → <GlossaryTerm term="Solvent Extraction (SX)" definition="Liquid–liquid extraction process that selectively transfers dissolved metals between immiscible phases">SX</GlossaryTerm>/<GlossaryTerm term="Electrowinning (EW)" definition="Electrochemical process that deposits metal from solution onto a cathode">EW</GlossaryTerm> → metal cathodes </>
                     }
                     challenges={<><GlossaryTerm term="Passivation" definition="Formation of a surface layer on ore particles that inhibits further leaching">Passivation</GlossaryTerm> layers, <GlossaryTerm term="Channeling">channeling</GlossaryTerm>, oxygen/nutrient limitations, large footprint, heavy earth-moving</>}
                     expanded={openModalities.has('dump')}
@@ -108,7 +108,7 @@ export default function ForMiners() {
 
                   <ModalityCard
                     title="Stirred-Tank Biooxidation"
-                    description={<><GlossaryTerm term="Refractory Gold" definition="Heterogeneous rock with low grades and/or refractory mineralogy; can contain 'hidden' critical metals">Refractory gold</GlossaryTerm> or polymetallic sulfide <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrates</GlossaryTerm> oxidized in aerated reactors prior to cyanidation or other leaching.</>}
+                    description={<><GlossaryTerm term="Refractory Gold" definition="Heterogeneous rock with low grades and/or refractory mineralogy; can contain 'hidden' critical metals">Refractory gold</GlossaryTerm> or polymetallic sulfide <GlossaryTerm term="Concentrate" definition="The product of mineral processing that contains a higher concentration of valuable minerals than the original ore, produced by removing gangue through flotation, gravity, or magnetic separation">concentrates</GlossaryTerm> oxidized in aerated reactors prior to <GlossaryTerm term="Cyanidation">cyanidation</GlossaryTerm> or other leaching.</>}
                     applications={<>Proven technology for <GlossaryTerm term="Refractory Gold" definition="Heterogeneous rock with low grades and/or refractory mineralogy; can contain 'hidden' critical metals">refractory gold</GlossaryTerm> (BIOX®, BacTech)</>}
                     parameters={[
                       "Time: Days to weeks",
@@ -117,7 +117,7 @@ export default function ForMiners() {
                       "Scale: Moderate (kt concentrate)"
                     ]}
                     integration={
-                       <><GlossaryTerm term="Froth Flotation" definition="A process that separates hydrophobic valuable minerals from hydrophilic gangue by attaching them to air bubbles in a slurry">Flotation</GlossaryTerm> → <strong>biooxidation</strong> → cyanidation → recovery</>
+                       <><GlossaryTerm term="Froth Flotation" definition="A process that separates hydrophobic valuable minerals from hydrophilic gangue by attaching them to air bubbles in a slurry">Flotation</GlossaryTerm> → <GlossaryTerm term="Biooxidation"><strong>biooxidation</strong></GlossaryTerm> → <GlossaryTerm term="Cyanidation">cyanidation</GlossaryTerm> → recovery</>
                     }
                     challenges="Capital intensive, energy costs, solids loading limits"
                     expanded={openModalities.has('stirred')}
@@ -135,7 +135,7 @@ export default function ForMiners() {
                       "Scale: Highly variable"
                     ]}
                     integration={
-                      <>Injection wells → <strong>bioleaching</strong> → collection → processing</>
+                      <>Injection wells → <GlossaryTerm term="Bioleaching"><strong>bioleaching</strong></GlossaryTerm> → collection → processing</>
                     }
                     challenges="Fracture propagation, fluid containment, hydrogeological impact, regulatory hurdles"
                     expanded={openModalities.has('insitu')}
@@ -184,7 +184,7 @@ function BiologicalSystemsSection() {
   return (
     <div className="space-y-6">
       <p className="text-[#264563]">
-        Biology's superpower is customizability, enabling tunable interactions with metals and minerals across three main forms: 
+        Biology's superpower is customizability, enabling tunable interactions with metals and minerals across three main forms:
       </p>
 
       <div className="rounded-xl border border-[#264563]/20 overflow-hidden bg-white">
@@ -192,11 +192,11 @@ function BiologicalSystemsSection() {
           onClick={() => toggleSubsection('living')}
           className="w-full p-5 flex items-center justify-between hover:bg-[#264563]/5 transition-colors"
         >
-          <h3 className="text-lg font-semibold text-[#264563]">
+          <h3 className="font-semibold text-[#264563] whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1 text-left pr-2" style={{ fontSize: 'clamp(0.85rem, 1.8vw, 1.125rem)' }}>
             Microbial Systems
           </h3>
-          <div className="flex items-center gap-2 text-[#264563]/50 text-sm shrink-0">
-            <span>{openSubsections.has('living') ? 'Click to collapse' : 'Click to expand'}</span>
+          <div className="flex items-center gap-1 sm:gap-2 text-[#264563]/50 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+            <span className="hidden sm:inline">{openSubsections.has('living') ? 'Click to collapse' : 'Click to expand'}</span>
             {openSubsections.has('living') ? <ChevronDown className="w-4 h-4 text-[#264563]" /> : <ChevronRight className="w-4 h-4 text-[#264563]" />}
           </div>
         </button>
@@ -269,11 +269,11 @@ function BiologicalSystemsSection() {
           onClick={() => toggleSubsection('nonliving')}
           className="w-full p-5 flex items-center justify-between hover:bg-[#264563]/5 transition-colors"
         >
-          <h3 className="text-lg font-semibold text-[#264563]">
+          <h3 className="font-semibold text-[#264563] whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1 text-left pr-2" style={{ fontSize: 'clamp(0.85rem, 1.8vw, 1.125rem)' }}>
             Biomolecular Systems
           </h3>
-          <div className="flex items-center gap-2 text-[#264563]/50 text-sm shrink-0">
-            <span>{openSubsections.has('nonliving') ? 'Click to collapse' : 'Click to expand'}</span>
+          <div className="flex items-center gap-1 sm:gap-2 text-[#264563]/50 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+            <span className="hidden sm:inline">{openSubsections.has('nonliving') ? 'Click to collapse' : 'Click to expand'}</span>
             {openSubsections.has('nonliving') ? <ChevronDown className="w-4 h-4 text-[#264563]" /> : <ChevronRight className="w-4 h-4 text-[#264563]" />}
           </div>
         </button>
@@ -290,7 +290,7 @@ function BiologicalSystemsSection() {
             <div className="space-y-3 text-[#264563]">
               <h4 className="text-base font-semibold">How Biomolecules Work</h4>
               <p>
-                Biomolecules interact with metals through specific chemical binding sites on their molecular structure, which can coordinate (trap) metal ions and hold them in place. In natural biological systems, these interactions allow organisms to transport, store, and control metals needed for cellular processes. 
+                Biomolecules interact with metals through specific chemical binding sites on their molecular structure, which can coordinate (trap) metal ions and hold them in place. In natural biological systems, these interactions allow organisms to transport, store, and control metals needed for cellular processes. Think of it as a custom-shaped trap that only catches the metal you want — similar to an <GlossaryTerm term="Ion Exchange (IX)">ion-exchange</GlossaryTerm> resin, but far more selective between chemically similar metals.
               </p>
               
             </div>
@@ -356,11 +356,11 @@ function BiologicalSystemsSection() {
           onClick={() => toggleSubsection('phyto')}
           className="w-full p-5 flex items-center justify-between hover:bg-[#264563]/5 transition-colors"
         >
-          <h3 className="text-lg font-semibold text-[#264563]">
+          <h3 className="font-semibold text-[#264563] whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1 text-left pr-2" style={{ fontSize: 'clamp(0.85rem, 1.8vw, 1.125rem)' }}>
             Phytomining
           </h3>
-          <div className="flex items-center gap-2 text-[#264563]/50 text-sm shrink-0">
-            <span>{openSubsections.has('phyto') ? 'Click to collapse' : 'Click to expand'}</span>
+          <div className="flex items-center gap-1 sm:gap-2 text-[#264563]/50 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+            <span className="hidden sm:inline">{openSubsections.has('phyto') ? 'Click to collapse' : 'Click to expand'}</span>
             {openSubsections.has('phyto') ? <ChevronDown className="w-4 h-4 text-[#264563]" /> : <ChevronRight className="w-4 h-4 text-[#264563]" />}
           </div>
         </button>
@@ -441,12 +441,12 @@ function BiologicalSystemsSection() {
           onClick={() => toggleSubsection('mechanisms')}
           className="w-full p-5 bg-[#264563] flex items-center justify-between hover:bg-[#1e3450] transition-colors"
         >
-          <h3 className="text-lg font-semibold text-white">
+          <h3 className="font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1 text-left pr-2" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 1.125rem)' }}>
             Key Mechanisms of Metal Mobilization & Capture
           </h3>
-          <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
-            <span>{openSubsections.has('mechanisms') ? 'Click to collapse' : 'Click to expand'}</span>
-            {openSubsections.has('mechanisms') ? <ChevronDown className="w-4 h-4 text-white" /> : <ChevronRight className="w-4 h-4 text-white" />}
+          <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+            <span className="hidden sm:inline">{openSubsections.has('mechanisms') ? 'Click to collapse' : 'Click to expand'}</span>
+            {openSubsections.has('mechanisms') ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
           </div>
         </button>
 
@@ -513,7 +513,7 @@ function Section({ title, icon: Icon, expanded, onToggle, children }) {
         onClick={onToggle}
         className="w-full bg-[#264563] p-4 sm:p-6 flex items-center justify-between gap-2 hover:bg-[#1e3450] transition-colors"
       >
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+        <div className="flex items-center gap-2 sm:gap-3 text-left min-w-0 flex-1">
           <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0" />
           <h2 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.65rem, 1.8vw, 1.125rem)' }}>{title}</h2>
         </div>
@@ -593,7 +593,7 @@ function EmerginTechCard({ expanded, onToggle }) {
         onClick={onToggle}
         className="w-full bg-emerald-700 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2 hover:bg-emerald-800 transition-colors"
       >
-        <h4 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1" style={{ fontSize: 'clamp(0.65rem, 1.6vw, 1rem)' }}>Emerging Technologies for REEs & Complex Matrices</h4>
+        <h4 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1 text-left" style={{ fontSize: 'clamp(0.65rem, 1.6vw, 1rem)' }}>Emerging Technologies for REEs & Complex Matrices</h4>
         <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
           <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
           {expanded ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
@@ -602,7 +602,7 @@ function EmerginTechCard({ expanded, onToggle }) {
       {expanded && (
         <div className="bg-white p-5">
           <p className="text-[#264563] text-sm mb-7">Biomolecular ligands and non-chromatographic formats that selectively capture and concentrate <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements (lanthanides plus scandium and yttrium) critical for electronics, magnets, and clean energy">rare earth elements</GlossaryTerm> and <GlossaryTerm term="Critical Minerals" definition="Minerals essential to economic or national security with supply chains vulnerable to disruption">critical metals</GlossaryTerm> from complex, dilute feed streams.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-7">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-7">
             <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
               <p className="text-emerald-800 font-semibold text-xs mb-1">Protein/Peptide-Based Ligands</p>
               <p className="text-emerald-700/70 text-xs">(e.g., lanmodulin) for selective REE capture</p>
@@ -616,7 +616,7 @@ function EmerginTechCard({ expanded, onToggle }) {
               <p className="text-emerald-700/70 text-xs">Membranes, beads, structured packings for <GlossaryTerm term="Pregnant Leach Solution (PLS)" definition="Metal-bearing solution collected after leaching ore or concentrate">PLS</GlossaryTerm> polishing</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
             <div>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Applications</p>
               <p className="text-[#264563] text-sm mb-7"><GlossaryTerm term="Coal By-products" definition="Coal combustion byproducts including fly ash and bottom ash, rich in REEs and heavy metals; billions of tons stockpiled globally with limited disposal options">Coal by-products</GlossaryTerm>, <GlossaryTerm term="Phosphogypsum" definition="Radioactive waste from fertilizer production containing REEs and other critical metals">phosphogypsum</GlossaryTerm>, <GlossaryTerm term="Red Mud" definition="Caustic bauxite waste with REEs, Sc, and other metals">red mud</GlossaryTerm>, spent <GlossaryTerm term="Catalyst" definition="A substance that speeds up a chemical reaction without being consumed">catalysts</GlossaryTerm>, magnet scrap</p>
@@ -625,7 +625,7 @@ function EmerginTechCard({ expanded, onToggle }) {
                 Feed stream → <strong>selective binding</strong> → elution & recovery → purified metal stream
               </p>
             </div>
-            <div className="sm:pl-16">
+            <div className="md:pl-16">
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Key Parameters</p>
               <ul className="text-[#264563] text-sm space-y-1">
                 <li>• Time: Minutes to hours per contact</li>
@@ -653,7 +653,7 @@ function BioremediationCard({ expanded, onToggle }) {
         onClick={onToggle}
         className="w-full bg-emerald-700 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2 hover:bg-emerald-800 transition-colors"
       >
-        <h4 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1" style={{ fontSize: 'clamp(0.65rem, 1.6vw, 1rem)' }}>Bioremediation & Recovery from Waste</h4>
+        <h4 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1 text-left" style={{ fontSize: 'clamp(0.65rem, 1.6vw, 1rem)' }}>Bioremediation & Recovery from Waste</h4>
         <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
           <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
           {expanded ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
@@ -662,7 +662,7 @@ function BioremediationCard({ expanded, onToggle }) {
       {expanded && (
         <div className="bg-white p-5">
           <p className="text-[#264563] text-sm mb-7">Biological systems that remove or recover metals from mine drainage, waste streams, and secondary sources — converting liabilities into recoverable resources.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-7">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-7">
             <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-600/20">
               <p className="text-emerald-800 font-semibold text-xs mb-1">AMD/ARD Bioremediation</p>
               <p className="text-emerald-700/70 text-xs">Constructed wetlands, <GlossaryTerm term="Sulfate-Reducing Bacteria (SRB)" definition="Bacteria that use sulfate as electron acceptor, producing sulfide">SRB</GlossaryTerm> bioreactors, and algae systems that remove metals and raise pH</p>
@@ -676,14 +676,14 @@ function BioremediationCard({ expanded, onToggle }) {
               <p className="text-emerald-700/70 text-xs"><GlossaryTerm term="Bioleaching" definition="Microbially mediated solubilization of metals from solids (ores, tailings, wastes)">Bioleaching</GlossaryTerm> and <GlossaryTerm term="Biosorption" definition="Sorption of dissolved metals onto biomass or extracellular polymeric substances (EPS)">biosorption</GlossaryTerm> applied to circuit boards, magnets, electronics, incinerator ashes, and other specialized waste</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
             <div>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Applications</p>
               <p className="text-[#264563] text-sm mb-7">Mine drainage treatment, <GlossaryTerm term="Tailings" definition="Fine-grained residues after metal extraction; typically stored in engineered impoundments">tailings</GlossaryTerm> reprocessing, legacy site remediation, <GlossaryTerm term="E-waste" definition="Discarded electronics rich in Cu, Au, Pd, REEs, and critical metals, but with complex polymer/metal mixtures">e-waste</GlossaryTerm>, municipal waste, and other specialized waste</p>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Integration</p>
               <p className="text-[#264563] text-sm">Parameters and integration pathways vary by technique and site conditions</p>
             </div>
-            <div className="sm:pl-16">
+            <div className="md:pl-16">
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Key Parameters</p>
               <p className="text-[#264563] text-sm">• Highly site- and technique-dependent</p>
             </div>
@@ -703,26 +703,26 @@ function ModalityCard({ title, description, applications, parameters, integratio
     <div className="rounded-xl border-2 border-white overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full bg-[#264563] px-6 py-4 flex items-center justify-between hover:bg-[#1e3450] transition-colors"
+        className="w-full bg-[#264563] px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2 hover:bg-[#1e3450] transition-colors"
       >
-        <h4 className="text-base font-bold text-white">{title}</h4>
-        <div className="flex items-center gap-2 text-white/70 text-sm shrink-0">
-          <span>{expanded ? 'Click to collapse' : 'Click to expand'}</span>
-          {expanded ? <ChevronDown className="w-5 h-5 text-white" /> : <ChevronRight className="w-5 h-5 text-white" />}
+        <h4 className="font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis min-w-0 flex-1 text-left" style={{ fontSize: 'clamp(0.65rem, 1.6vw, 1rem)' }}>{title}</h4>
+        <div className="flex items-center gap-1 sm:gap-2 text-white/70 flex-shrink-0" style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.875rem)' }}>
+          <span className="hidden sm:inline">{expanded ? 'Click to collapse' : 'Click to expand'}</span>
+          {expanded ? <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
         </div>
       </button>
       {expanded && (
         <div className="bg-white p-5 border-t border-white/20">
           <p className="text-[#264563] text-sm mb-7">{description}</p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
             <div>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Applications</p>
               <p className="text-[#264563] text-sm mb-7">{applications}</p>
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Integration</p>
               <p className="text-[#264563] text-sm">{integration}</p>
             </div>
-            <div className="sm:pl-16">
+            <div className="md:pl-16">
               <p className="text-sm font-semibold text-[#264563] mb-1 underline">Key Parameters</p>
               <ul className="text-[#264563] text-sm space-y-1">
                 {parameters.map((p, i) => <li key={i}>• {p}</li>)}
