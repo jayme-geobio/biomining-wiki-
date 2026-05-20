@@ -228,7 +228,7 @@ export default function ComplexMaterials() {
           <p className="text-[#264563]">
             The immediate sweet spot for biomining is where you're dealing with <strong>waste, legacy sites, or materials
             that benefit from alternative processing approaches</strong>. These are the contexts where biology's strengths
-            (lower OPEX, mild conditions, selectivity, reduced environmental impact) are most valuable.
+            (lower OPEX, lower-intensity processing, selectivity, reduced environmental impact) are most valuable.
           </p>
         </div>
 
