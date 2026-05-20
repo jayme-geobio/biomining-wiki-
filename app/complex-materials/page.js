@@ -30,7 +30,7 @@ const materialsData = {
       },
       {
         title: "Engineered Consortia for Bio-immobilization",
-        description: "Designed microbial communities for biological 'polishing' of metals and co-recovery of critical metals"
+        description: <>Designed microbial communities for biological 'polishing' of metals and co-recovery of <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm></>
       },
       {
         title: "AMD as Resource",
@@ -49,7 +49,7 @@ const materialsData = {
   wasteRock: {
     name: "Bulk Waste Rock & Refractory Ores",
     icon: Mountain,
-    definition: "Heterogeneous rock with low grades and/or refractory mineralogy; can contain 'hidden' critical metals",
+    definition: <>Heterogeneous rock with low grades and/or refractory mineralogy; can contain 'hidden' <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm></>,
     hazards: [
       "Potential leaching of metals over time",
       "Slope instability in waste dumps",
@@ -67,8 +67,8 @@ const materialsData = {
         description: <>Microbes produce organic acids, ferric iron, iodide, or cyanide locally to reduce chemical transport costs and enable site-specific <GlossaryTerm term="Leach" definition="Dissolving metals from solid material using a chemical solution (lixiviant)">leaching</GlossaryTerm></>
       },
       {
-        title: "Hidden Critical Metals",
-        description: "Re-evaluation of 'waste' piles as future resources. Extract critical by-products (Co, REEs, Ni) that weren't original targets"
+        title: <>Hidden <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">Critical Metals</GlossaryTerm></>,
+        description: <>Re-evaluation of 'waste' piles as future resources. Extract <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical by-products</GlossaryTerm> (Co, REEs, Ni) that weren't original targets</>
       },
       {
         title: "Long Time-Horizon Processing",
@@ -77,7 +77,7 @@ const materialsData = {
     ],
     whyBiology: "Biology can unlock value from material too expensive to process conventionally — turning waste into revenue at lower operating costs.",
     maturityLevel: "Medium-High",
-    maturityDetail: "Proven for refractory gold; emerging for low-grade stockpiles and critical metal co-products"
+    maturityDetail: <>Proven for refractory gold; emerging for low-grade stockpiles and <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metal co-products</GlossaryTerm></>
   },
   tailings: {
     name: "Tailings",
@@ -117,7 +117,7 @@ const materialsData = {
   ewaste: {
     name: "Electronic Waste (E-waste)",
     icon: Cpu,
-    definition: <>Discarded electronics rich in Cu, Au, Pd, <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm>, and critical metals, but with complex polymer/metal mixtures</>,
+    definition: <>Discarded electronics rich in Cu, Au, Pd, <GlossaryTerm term="Rare Earth Elements (REEs)" definition="A group of 17 metallic elements critical for electronics, magnets, and clean energy technologies">REEs</GlossaryTerm>, and <GlossaryTerm term="Critical Minerals" definition="Elements deemed essential to economic or national security and vulnerable to supply disruption">critical metals</GlossaryTerm>, but with complex polymer/metal mixtures</>,
     hazards: [
       "World's fastest growing waste stream (74.7M tons by 2030)",
       "Complex mix of metals, plastics, glass — hard to separate",
